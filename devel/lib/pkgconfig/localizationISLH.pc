@@ -1,0 +1,8 @@
+prefix=/home/berkay/catkin_ws/devel
+
+Name: localizationISLH
+Description: Description of localizationISLH
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

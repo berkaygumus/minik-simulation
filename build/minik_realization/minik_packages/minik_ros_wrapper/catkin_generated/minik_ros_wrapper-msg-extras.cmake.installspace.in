@@ -1,0 +1,2 @@
+set(minik_ros_wrapper_MESSAGE_FILES "msg/minikSetPositionMsg.msg;msg/minikSetVelocityMsg.msg;msg/minikSetPIDPositionMsg.msg;msg/minikSetPIDVelocityMsg.msg;msg/minikSetLedMsg.msg;msg/minikGetPositionMsg.msg;msg/minikGetVelocityMsg.msg;msg/minikGetPIDPositionMsg.msg;msg/minikGetPIDVelocityMsg.msg;msg/minikGetDistSensorMsg.msg;msg/minikGetLineFollowerSensorMsg.msg;msg/minikGetLedMsg.msg;msg/minikGetButtonMsg.msg;msg/minikSetConfigMsg.msg")
+set(minik_ros_wrapper_SERVICE_FILES "")

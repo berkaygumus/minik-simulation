@@ -1,0 +1,8 @@
+prefix=/home/berkay/catkin_ws/install
+
+Name: error_comp
+Description: Description of error_comp
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy std_msgs genmsg ISLH_msgs

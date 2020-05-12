@@ -1,0 +1,8 @@
+prefix=/home/berkay/catkin_ws/install
+
+Name: pos_calculator
+Description: Description of pos_calculator
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy std_msgs genmsg ISLH_msgs
