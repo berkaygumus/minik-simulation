@@ -79,7 +79,7 @@ void RosThread::errorCalculate(){
         dx = calcPos[i][j][0] - realPos[i][j][0];
         dy = calcPos[i][j][1] - realPos[i][j][1];
         d = sqrt(pow(dx,2)+pow(dy,2));
-        cout << i << "-->" << j << " error dx dy d: " << dx << " " << dy << " " << d << endl; 
+        cout << i << "-->" << j << " error dx dy d: " << dx << " " << dy << " " << d << endl;
       }
     }
   }
@@ -89,9 +89,9 @@ void RosThread::errorCalculate(){
 
 void RosThread::work(){
 
-  ros::Subscriber calc_sub1 = poseSub.subscribe("/robotPos0",1000,&RosThread::calcCallback0,this);
-  ros::Subscriber calc_sub2 = poseSub.subscribe("/robotPos1",1000,&RosThread::calcCallback1,this);
-  ros::Subscriber calc_sub3 = poseSub.subscribe("/robotPos2",1000,&RosThread::calcCallback2,this);
+  ros::Subscriber calc_sub1 = poseSub.subscribe("/completedPos0",1000,&RosThread::calcCallback0,this);
+  ros::Subscriber calc_sub2 = poseSub.subscribe("/completedPos1",1000,&RosThread::calcCallback1,this);
+  ros::Subscriber calc_sub3 = poseSub.subscribe("/completedPos2",1000,&RosThread::calcCallback2,this);
 
   ros::Subscriber real_sub1 = poseSub.subscribe("/realPos0",1000,&RosThread::realCallback0,this);
   ros::Subscriber real_sub2 = poseSub.subscribe("/realPos1",1000,&RosThread::realCallback1,this);

@@ -3,7 +3,8 @@
 #include <math.h>
 #include <string>
 #include <sstream>
-
+#define FOV 98
+#define ERROR 2
 using namespace std;
 
 
@@ -181,7 +182,7 @@ bool RosThread::checkRange(int r1, int r2){
   //cout << " diff2 " << diff ;
   diff = abs(diff);
   //cout << " diff3 " << diff << endl;
-  return diff < 40 ;
+  return diff < FOV/2 ;
 }
 
 vector<double> RosThread::calculatePos(int i, int j){
@@ -190,7 +191,7 @@ vector<double> RosThread::calculatePos(int i, int j){
   double initY = initPos[i][1];
   double initTheta = initPos[i][2];
 
-  //for the position wrt frame 0
+  //for the position wrt world frame
   double posX0 = b[j][0];
   double posY0 = b[j][1];
 
@@ -220,9 +221,17 @@ void RosThread::publishPos(){
       robotPosReal[i][j][0] = tempPos[0];
       robotPosReal[i][j][1] = tempPos[1];
       if(RosThread::checkRange(i,j)){
-        robotsSeen[i][j][0] = tempPos[0] + addError(0.1);
-        robotsSeen[i][j][1] = tempPos[1] + addError(0.1);
-        cout << i <<"-->" << j << " pos: " << robotsSeen[i][j][0] << " " << robotsSeen[i][j][1] << endl;
+        if(i==j){
+          robotsSeen[i][j][0] = tempPos[0];
+          robotsSeen[i][j][1] = tempPos[1];
+          cout <<"pos " << j << " wrt robot "<<i <<": "  << robotsSeen[i][j][0] << " " << robotsSeen[i][j][1] << endl;
+        }
+        else{
+          robotsSeen[i][j][0] = tempPos[0] + addError(ERROR);
+          robotsSeen[i][j][1] = tempPos[1] + addError(ERROR);
+          cout <<"pos " << j << " wrt robot "<<i <<": "  << robotsSeen[i][j][0] << " " << robotsSeen[i][j][1] << endl;
+        }
+
       }
       else{
         robotsSeen[i][j][0] = -1000;
@@ -291,7 +300,7 @@ void RosThread::work(){
       for(int i=0; i<N; i++){
         //ROS_INFO("b %d: %f , %f",i,b[i][0],b[i][1]);
         //cout << "init pos   " << i << ": " << initPos[i][0] << "  "<< initPos[i][1] << "  "<< initPos[i][2] << endl;
-        cout << "pos " << i << ": " << b[i][0] << "  "<< b[i][1] << "  "<< b[i][2] << endl;
+        cout << "pos "<<i <<"  wrt world frame: "<< b[i][0] << "  "<< b[i][1] << "  "<< b[i][2] << endl;
 
 
         //ROS_INFO("work ");

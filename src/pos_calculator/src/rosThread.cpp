@@ -331,9 +331,9 @@ void RosThread::calculateRobotPos(){
 
 void RosThread::work(){
 
-  ros::Publisher pos_pub0 = posPub.advertise<geometry_msgs::PoseArray>("/robotPos0", 100);
-  ros::Publisher pos_pub1 = posPub.advertise<geometry_msgs::PoseArray>("/robotPos1", 100);
-  ros::Publisher pos_pub2 = posPub.advertise<geometry_msgs::PoseArray>("/robotPos2", 100);
+  ros::Publisher pos_pub0 = posPub.advertise<geometry_msgs::PoseArray>("/completedPos0", 100);
+  ros::Publisher pos_pub1 = posPub.advertise<geometry_msgs::PoseArray>("/completedPos1", 100);
+  ros::Publisher pos_pub2 = posPub.advertise<geometry_msgs::PoseArray>("/completedPos2", 100);
   ros::Publisher transform_pub = trPub.advertise<std_msgs::Bool>("transformCompleted",100);
 
 

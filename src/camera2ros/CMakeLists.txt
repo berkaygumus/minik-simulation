@@ -13,7 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   #nav_msgs
   roscpp
   std_msgs
-  #ISLH_msgs
+  ISLH_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -121,7 +121,7 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES camera2ros
-  CATKIN_DEPENDS roscpp std_msgs #cv_bridge image_transport nav_msgs roscpp std_msgs ISLH_msgs
+  CATKIN_DEPENDS roscpp std_msgs ISLH_msgs #cv_bridge image_transport nav_msgs 
 #  DEPENDS system_lib
 )
 
@@ -170,6 +170,10 @@ target_link_libraries(select_hsv_range_node ${PROJECT_NAME})
 target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 add_executable(capture_image_node src/capture_image.cpp)
 target_link_libraries(capture_image_node ${PROJECT_NAME})
+
+target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${Eigen3_LIBRARIES} )
+add_executable(process_image_node src/process_image.cpp ${camera2ros_SOURCES} ${camera2ros_HEADERS})
+target_link_libraries(process_image_node ${PROJECT_NAME})
 
 #target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${Eigen3_LIBRARIES} )
 #add_executable(stereo_match_node src/stereo_match.cpp ${camera2ros_SOURCES} ${camera2ros_HEADERS})

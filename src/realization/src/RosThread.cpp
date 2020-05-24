@@ -641,9 +641,9 @@ void RosThread::work(){
   ros::Subscriber tr_sub = trSub.subscribe("/transformCompleted",1000,&RosThread::transformCallback,this);
 
 
-  ros::Subscriber calc_sub1 = poseSub.subscribe("/robotPos0",1000,&RosThread::calcPosCallback0,this);
-  ros::Subscriber calc_sub2 = poseSub.subscribe("/robotPos1",1000,&RosThread::calcPosCallback1,this);
-  ros::Subscriber calc_sub3 = poseSub.subscribe("/robotPos2",1000,&RosThread::calcPosCallback2,this);
+  ros::Subscriber calc_sub1 = poseSub.subscribe("/completedPos0",1000,&RosThread::calcPosCallback0,this);
+  ros::Subscriber calc_sub2 = poseSub.subscribe("/completedPos1",1000,&RosThread::calcPosCallback1,this);
+  ros::Subscriber calc_sub3 = poseSub.subscribe("/completedPos2",1000,&RosThread::calcPosCallback2,this);
 
   //ros::Subscriber pose_over_sub=poseOverheadCamSub.subscribe<ISLH_msgs::robotPositions>("robots_final_positions",1,&RosThread::poseOverCallback,this);
 

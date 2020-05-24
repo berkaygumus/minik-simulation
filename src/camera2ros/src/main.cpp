@@ -120,7 +120,12 @@ int main(int argc,char** argv){
 
 
 
-      imshow("disparity", disp8);
+      imshow("scaled disparity", disp8);
+      imshow("disparity", disp);
+      stringstream ss1;
+      ss1 << "/home/berkay/catkin_ws/src/camera2ros/disp.jpg";
+      imwrite(ss1.str(),disp8);
+
 
       waitKey(25);
       ros::spinOnce();

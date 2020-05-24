@@ -54,12 +54,12 @@ Mat colorThreshold(int colorID, Mat hsv_image, int himsizex, int himsizey){
 
      // morphological opening (remove small objects from the foreground)
 
-     erode(obs_r1, obs_r1, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
-     dilate( obs_r1, obs_r1, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
+     erode(obs_r1, obs_r1, getStructuringElement(MORPH_RECT, Size(25, 25)) );
+     dilate( obs_r1, obs_r1, getStructuringElement(MORPH_RECT, Size(25, 25)) );
 
      //morphological closing (fill small holes in the foreground)
-     dilate( obs_r1, obs_r1, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
-     erode(obs_r1, obs_r1, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
+     dilate( obs_r1, obs_r1, getStructuringElement(MORPH_RECT, Size(25, 25)) );
+     erode(obs_r1, obs_r1, getStructuringElement(MORPH_RECT, Size(25, 25)) );
 
      resize(obs_r1,obs_r1,Size(sizex,sizey));
      return obs_r1;
@@ -269,6 +269,7 @@ int main(int argc,char** argv){
       //imshow("init_right",frame_right);
       //imshow("undist_left",rgb_left);
       //imshow("undist_right",rgb_right);
+      cout << "elapsed calib : " << ros::Time::now() - begin << endl;
 
       //rgb to hsv
       cvtColor(rgb_right, hsv_right, COLOR_BGR2HSV);
@@ -277,22 +278,22 @@ int main(int argc,char** argv){
 
       //pos calculation
       object_pos object1;
-      object1 = detectObject(hsv_left,hsv_right, 0,calib);
-      cout << "elapsed object1 : " << ros::Time::now() - begin << endl;
+      object1 = detectObject(hsv_left,hsv_right, 1,calib);
       cout << "object 1 pos " << object1.x << " " << object1.y << " " << object1.radius << endl;
       geometry_msgs::Pose2D robotPose1;
       robotPose1.x = object1.x;
       robotPose1.y = object1.y;
       robotPublisher1.publish(robotPose1);
+      cout << "elapsed object1 : " << ros::Time::now() - begin << endl;
 
       object_pos object2;
-      object2 = detectObject(hsv_left,hsv_right, 1,calib);
-      cout << "elapsed object2 : " << ros::Time::now() - begin << endl;
+      object2 = detectObject(hsv_left,hsv_right, 2,calib);
       cout << "object 2 pos " << object2.x << " " << object2.y << " " << object2.radius << endl;
       geometry_msgs::Pose2D robotPose2;
       robotPose2.x = object2.x;
       robotPose2.y = object2.y;
       robotPublisher2.publish(robotPose2);
+      cout << "elapsed object2 : " << ros::Time::now() - begin << endl;
 
       waitKey(25);
       ros::spinOnce();

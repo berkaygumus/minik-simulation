@@ -1154,6 +1154,19 @@ camera2ros/fast:
 .PHONY : camera2ros/fast
 
 #=============================================================================
+# Target rules for targets named process_image_node
+
+# Build rule for target.
+process_image_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 process_image_node
+.PHONY : process_image_node
+
+# fast build rule for target.
+process_image_node/fast:
+	$(MAKE) -f camera2ros/CMakeFiles/process_image_node.dir/build.make camera2ros/CMakeFiles/process_image_node.dir/build
+.PHONY : process_image_node/fast
+
+#=============================================================================
 # Target rules for targets named capture_image_node
 
 # Build rule for target.
@@ -2022,6 +2035,7 @@ help:
 	@echo "... detect_object_node"
 	@echo "... camera2ros_node"
 	@echo "... camera2ros"
+	@echo "... process_image_node"
 	@echo "... capture_image_node"
 	@echo "... select_hsv_range_node"
 	@echo "... error_comp"
