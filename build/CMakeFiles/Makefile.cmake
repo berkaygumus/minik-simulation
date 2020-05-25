@@ -341,6 +341,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "camera2ros/CMakeFiles/camera2ros_node.dir/DependInfo.cmake"
   "camera2ros/CMakeFiles/camera2ros.dir/DependInfo.cmake"
   "camera2ros/CMakeFiles/process_image_node.dir/DependInfo.cmake"
+  "camera2ros/CMakeFiles/aruco_pose_node.dir/DependInfo.cmake"
   "camera2ros/CMakeFiles/capture_image_node.dir/DependInfo.cmake"
   "camera2ros/CMakeFiles/select_hsv_range_node.dir/DependInfo.cmake"
   "error_comp/CMakeFiles/error_comp.dir/DependInfo.cmake"

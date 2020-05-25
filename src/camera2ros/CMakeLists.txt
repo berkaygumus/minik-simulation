@@ -121,7 +121,7 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES camera2ros
-  CATKIN_DEPENDS roscpp std_msgs ISLH_msgs #cv_bridge image_transport nav_msgs 
+  CATKIN_DEPENDS roscpp std_msgs ISLH_msgs #cv_bridge image_transport nav_msgs
 #  DEPENDS system_lib
 )
 
@@ -174,6 +174,10 @@ target_link_libraries(capture_image_node ${PROJECT_NAME})
 target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${Eigen3_LIBRARIES} )
 add_executable(process_image_node src/process_image.cpp ${camera2ros_SOURCES} ${camera2ros_HEADERS})
 target_link_libraries(process_image_node ${PROJECT_NAME})
+
+target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${Eigen3_LIBRARIES} )
+add_executable(aruco_pose_node src/aruco_pose.cpp ${camera2ros_SOURCES} ${camera2ros_HEADERS})
+target_link_libraries(aruco_pose_node ${PROJECT_NAME})
 
 #target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${Eigen3_LIBRARIES} )
 #add_executable(stereo_match_node src/stereo_match.cpp ${camera2ros_SOURCES} ${camera2ros_HEADERS})

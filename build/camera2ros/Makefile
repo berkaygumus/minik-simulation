@@ -79,17 +79,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -100,6 +89,17 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -241,6 +241,21 @@ process_image_node/fast:
 .PHONY : process_image_node/fast
 
 # Convenience name for target.
+camera2ros/CMakeFiles/aruco_pose_node.dir/rule:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera2ros/CMakeFiles/aruco_pose_node.dir/rule
+.PHONY : camera2ros/CMakeFiles/aruco_pose_node.dir/rule
+
+# Convenience name for target.
+aruco_pose_node: camera2ros/CMakeFiles/aruco_pose_node.dir/rule
+
+.PHONY : aruco_pose_node
+
+# fast build rule for target.
+aruco_pose_node/fast:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/aruco_pose_node.dir/build.make camera2ros/CMakeFiles/aruco_pose_node.dir/build
+.PHONY : aruco_pose_node/fast
+
+# Convenience name for target.
 camera2ros/CMakeFiles/capture_image_node.dir/rule:
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera2ros/CMakeFiles/capture_image_node.dir/rule
 .PHONY : camera2ros/CMakeFiles/capture_image_node.dir/rule
@@ -270,6 +285,33 @@ select_hsv_range_node/fast:
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/select_hsv_range_node.dir/build.make camera2ros/CMakeFiles/select_hsv_range_node.dir/build
 .PHONY : select_hsv_range_node/fast
 
+src/aruco_pose.o: src/aruco_pose.cpp.o
+
+.PHONY : src/aruco_pose.o
+
+# target to build an object file
+src/aruco_pose.cpp.o:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/aruco_pose_node.dir/build.make camera2ros/CMakeFiles/aruco_pose_node.dir/src/aruco_pose.cpp.o
+.PHONY : src/aruco_pose.cpp.o
+
+src/aruco_pose.i: src/aruco_pose.cpp.i
+
+.PHONY : src/aruco_pose.i
+
+# target to preprocess a source file
+src/aruco_pose.cpp.i:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/aruco_pose_node.dir/build.make camera2ros/CMakeFiles/aruco_pose_node.dir/src/aruco_pose.cpp.i
+.PHONY : src/aruco_pose.cpp.i
+
+src/aruco_pose.s: src/aruco_pose.cpp.s
+
+.PHONY : src/aruco_pose.s
+
+# target to generate assembly for a file
+src/aruco_pose.cpp.s:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/aruco_pose_node.dir/build.make camera2ros/CMakeFiles/aruco_pose_node.dir/src/aruco_pose.cpp.s
+.PHONY : src/aruco_pose.cpp.s
+
 src/camera_calibration.o: src/camera_calibration.cpp.o
 
 .PHONY : src/camera_calibration.o
@@ -280,6 +322,7 @@ src/camera_calibration.cpp.o:
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/detect_object_node.dir/build.make camera2ros/CMakeFiles/detect_object_node.dir/src/camera_calibration.cpp.o
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/camera2ros_node.dir/build.make camera2ros/CMakeFiles/camera2ros_node.dir/src/camera_calibration.cpp.o
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/process_image_node.dir/build.make camera2ros/CMakeFiles/process_image_node.dir/src/camera_calibration.cpp.o
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/aruco_pose_node.dir/build.make camera2ros/CMakeFiles/aruco_pose_node.dir/src/camera_calibration.cpp.o
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/select_hsv_range_node.dir/build.make camera2ros/CMakeFiles/select_hsv_range_node.dir/src/camera_calibration.cpp.o
 .PHONY : src/camera_calibration.cpp.o
 
@@ -293,6 +336,7 @@ src/camera_calibration.cpp.i:
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/detect_object_node.dir/build.make camera2ros/CMakeFiles/detect_object_node.dir/src/camera_calibration.cpp.i
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/camera2ros_node.dir/build.make camera2ros/CMakeFiles/camera2ros_node.dir/src/camera_calibration.cpp.i
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/process_image_node.dir/build.make camera2ros/CMakeFiles/process_image_node.dir/src/camera_calibration.cpp.i
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/aruco_pose_node.dir/build.make camera2ros/CMakeFiles/aruco_pose_node.dir/src/camera_calibration.cpp.i
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/select_hsv_range_node.dir/build.make camera2ros/CMakeFiles/select_hsv_range_node.dir/src/camera_calibration.cpp.i
 .PHONY : src/camera_calibration.cpp.i
 
@@ -306,6 +350,7 @@ src/camera_calibration.cpp.s:
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/detect_object_node.dir/build.make camera2ros/CMakeFiles/detect_object_node.dir/src/camera_calibration.cpp.s
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/camera2ros_node.dir/build.make camera2ros/CMakeFiles/camera2ros_node.dir/src/camera_calibration.cpp.s
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/process_image_node.dir/build.make camera2ros/CMakeFiles/process_image_node.dir/src/camera_calibration.cpp.s
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/aruco_pose_node.dir/build.make camera2ros/CMakeFiles/aruco_pose_node.dir/src/camera_calibration.cpp.s
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/select_hsv_range_node.dir/build.make camera2ros/CMakeFiles/select_hsv_range_node.dir/src/camera_calibration.cpp.s
 .PHONY : src/camera_calibration.cpp.s
 
@@ -484,6 +529,7 @@ src/settings.cpp.o:
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/detect_object_node.dir/build.make camera2ros/CMakeFiles/detect_object_node.dir/src/settings.cpp.o
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/camera2ros_node.dir/build.make camera2ros/CMakeFiles/camera2ros_node.dir/src/settings.cpp.o
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/process_image_node.dir/build.make camera2ros/CMakeFiles/process_image_node.dir/src/settings.cpp.o
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/aruco_pose_node.dir/build.make camera2ros/CMakeFiles/aruco_pose_node.dir/src/settings.cpp.o
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/select_hsv_range_node.dir/build.make camera2ros/CMakeFiles/select_hsv_range_node.dir/src/settings.cpp.o
 .PHONY : src/settings.cpp.o
 
@@ -497,6 +543,7 @@ src/settings.cpp.i:
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/detect_object_node.dir/build.make camera2ros/CMakeFiles/detect_object_node.dir/src/settings.cpp.i
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/camera2ros_node.dir/build.make camera2ros/CMakeFiles/camera2ros_node.dir/src/settings.cpp.i
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/process_image_node.dir/build.make camera2ros/CMakeFiles/process_image_node.dir/src/settings.cpp.i
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/aruco_pose_node.dir/build.make camera2ros/CMakeFiles/aruco_pose_node.dir/src/settings.cpp.i
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/select_hsv_range_node.dir/build.make camera2ros/CMakeFiles/select_hsv_range_node.dir/src/settings.cpp.i
 .PHONY : src/settings.cpp.i
 
@@ -510,6 +557,7 @@ src/settings.cpp.s:
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/detect_object_node.dir/build.make camera2ros/CMakeFiles/detect_object_node.dir/src/settings.cpp.s
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/camera2ros_node.dir/build.make camera2ros/CMakeFiles/camera2ros_node.dir/src/settings.cpp.s
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/process_image_node.dir/build.make camera2ros/CMakeFiles/process_image_node.dir/src/settings.cpp.s
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/aruco_pose_node.dir/build.make camera2ros/CMakeFiles/aruco_pose_node.dir/src/settings.cpp.s
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/select_hsv_range_node.dir/build.make camera2ros/CMakeFiles/select_hsv_range_node.dir/src/settings.cpp.s
 .PHONY : src/settings.cpp.s
 
@@ -523,6 +571,7 @@ src/stereo_calib.cpp.o:
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/detect_object_node.dir/build.make camera2ros/CMakeFiles/detect_object_node.dir/src/stereo_calib.cpp.o
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/camera2ros_node.dir/build.make camera2ros/CMakeFiles/camera2ros_node.dir/src/stereo_calib.cpp.o
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/process_image_node.dir/build.make camera2ros/CMakeFiles/process_image_node.dir/src/stereo_calib.cpp.o
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/aruco_pose_node.dir/build.make camera2ros/CMakeFiles/aruco_pose_node.dir/src/stereo_calib.cpp.o
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/select_hsv_range_node.dir/build.make camera2ros/CMakeFiles/select_hsv_range_node.dir/src/stereo_calib.cpp.o
 .PHONY : src/stereo_calib.cpp.o
 
@@ -536,6 +585,7 @@ src/stereo_calib.cpp.i:
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/detect_object_node.dir/build.make camera2ros/CMakeFiles/detect_object_node.dir/src/stereo_calib.cpp.i
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/camera2ros_node.dir/build.make camera2ros/CMakeFiles/camera2ros_node.dir/src/stereo_calib.cpp.i
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/process_image_node.dir/build.make camera2ros/CMakeFiles/process_image_node.dir/src/stereo_calib.cpp.i
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/aruco_pose_node.dir/build.make camera2ros/CMakeFiles/aruco_pose_node.dir/src/stereo_calib.cpp.i
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/select_hsv_range_node.dir/build.make camera2ros/CMakeFiles/select_hsv_range_node.dir/src/stereo_calib.cpp.i
 .PHONY : src/stereo_calib.cpp.i
 
@@ -549,6 +599,7 @@ src/stereo_calib.cpp.s:
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/detect_object_node.dir/build.make camera2ros/CMakeFiles/detect_object_node.dir/src/stereo_calib.cpp.s
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/camera2ros_node.dir/build.make camera2ros/CMakeFiles/camera2ros_node.dir/src/stereo_calib.cpp.s
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/process_image_node.dir/build.make camera2ros/CMakeFiles/process_image_node.dir/src/stereo_calib.cpp.s
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/aruco_pose_node.dir/build.make camera2ros/CMakeFiles/aruco_pose_node.dir/src/stereo_calib.cpp.s
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera2ros/CMakeFiles/select_hsv_range_node.dir/build.make camera2ros/CMakeFiles/select_hsv_range_node.dir/src/stereo_calib.cpp.s
 .PHONY : src/stereo_calib.cpp.s
 
@@ -560,18 +611,22 @@ help:
 	@echo "... depend"
 	@echo "... install"
 	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... camera2ros_imread_node"
 	@echo "... detect_object_node"
 	@echo "... rebuild_cache"
 	@echo "... camera2ros_node"
 	@echo "... camera2ros"
 	@echo "... process_image_node"
-	@echo "... test"
+	@echo "... aruco_pose_node"
 	@echo "... capture_image_node"
 	@echo "... list_install_components"
 	@echo "... select_hsv_range_node"
 	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... src/aruco_pose.o"
+	@echo "... src/aruco_pose.i"
+	@echo "... src/aruco_pose.s"
 	@echo "... src/camera_calibration.o"
 	@echo "... src/camera_calibration.i"
 	@echo "... src/camera_calibration.s"

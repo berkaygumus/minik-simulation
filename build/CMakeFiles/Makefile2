@@ -247,7 +247,7 @@ gtest/preinstall: gtest/gtest/preinstall
 gtest/CMakeFiles/gmock.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gmock.dir/build.make gtest/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gmock.dir/build.make gtest/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=64,65 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=65,66 "Built target gmock"
 .PHONY : gtest/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -279,7 +279,7 @@ clean: gtest/CMakeFiles/gmock.dir/clean
 gtest/CMakeFiles/gmock_main.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gmock_main.dir/build.make gtest/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gmock_main.dir/build.make gtest/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=66,67 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=67,68 "Built target gmock_main"
 .PHONY : gtest/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -330,7 +330,7 @@ gtest/gtest/preinstall:
 gtest/gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest.dir/build.make gtest/gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest.dir/build.make gtest/gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=68 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=69 "Built target gtest"
 .PHONY : gtest/gtest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -362,7 +362,7 @@ clean: gtest/gtest/CMakeFiles/gtest.dir/clean
 gtest/gtest/CMakeFiles/gtest_main.dir/all: gtest/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest_main.dir/build.make gtest/gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest_main.dir/build.make gtest/gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=69 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=70 "Built target gtest_main"
 .PHONY : gtest/gtest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -996,12 +996,12 @@ ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_py.dir/all: ISLH_msgs/CMakeFile
 ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_py.dir/all: ISLH_msgs/CMakeFiles/_ISLH_msgs_generate_messages_check_deps_robotPose.dir/all
 	$(MAKE) -f ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_py.dir/build.make ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_py.dir/depend
 	$(MAKE) -f ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_py.dir/build.make ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=40,41,42,43,44,45,46,47,48,49,50 "Built target ISLH_msgs_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=39,40,41,42,43,44,45,46,47,48 "Built target ISLH_msgs_generate_messages_py"
 .PHONY : ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_py.dir/rule
@@ -1074,7 +1074,7 @@ all: ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages.dir/all
 
 # Build rule for subdir invocation for target.
 ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 50
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 48
 	$(MAKE) -f CMakeFiles/Makefile2 ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages.dir/rule
@@ -1106,7 +1106,7 @@ ISLH_msgs/CMakeFiles/ISLH_msgs_genpy.dir/all: ISLH_msgs/CMakeFiles/ISLH_msgs_gen
 
 # Build rule for subdir invocation for target.
 ISLH_msgs/CMakeFiles/ISLH_msgs_genpy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 ISLH_msgs/CMakeFiles/ISLH_msgs_genpy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : ISLH_msgs/CMakeFiles/ISLH_msgs_genpy.dir/rule
@@ -1280,12 +1280,12 @@ ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_lisp.dir/all: ISLH_msgs/CMakeFi
 ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_lisp.dir/all: ISLH_msgs/CMakeFiles/_ISLH_msgs_generate_messages_check_deps_robotPose.dir/all
 	$(MAKE) -f ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_lisp.dir/build.make ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_lisp.dir/depend
 	$(MAKE) -f ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_lisp.dir/build.make ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=21,22,23,24,25,26,27,28,29 "Built target ISLH_msgs_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=20,21,22,23,24,25,26,27,28,29 "Built target ISLH_msgs_generate_messages_lisp"
 .PHONY : ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_lisp.dir/rule
@@ -1317,7 +1317,7 @@ ISLH_msgs/CMakeFiles/ISLH_msgs_gennodejs.dir/all: ISLH_msgs/CMakeFiles/ISLH_msgs
 
 # Build rule for subdir invocation for target.
 ISLH_msgs/CMakeFiles/ISLH_msgs_gennodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 ISLH_msgs/CMakeFiles/ISLH_msgs_gennodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : ISLH_msgs/CMakeFiles/ISLH_msgs_gennodejs.dir/rule
@@ -1907,12 +1907,12 @@ ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_eus.dir/all: ISLH_msgs/CMakeFil
 ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_eus.dir/all: ISLH_msgs/CMakeFiles/_ISLH_msgs_generate_messages_check_deps_robotPose.dir/all
 	$(MAKE) -f ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_eus.dir/build.make ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_eus.dir/depend
 	$(MAKE) -f ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_eus.dir/build.make ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=10,11,12,13,14,15,16,17,18,19,20 "Built target ISLH_msgs_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=10,11,12,13,14,15,16,17,18,19 "Built target ISLH_msgs_generate_messages_eus"
 .PHONY : ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_eus.dir/rule
@@ -2232,7 +2232,7 @@ ISLH_msgs/CMakeFiles/ISLH_msgs_genlisp.dir/all: ISLH_msgs/CMakeFiles/ISLH_msgs_g
 
 # Build rule for subdir invocation for target.
 ISLH_msgs/CMakeFiles/ISLH_msgs_genlisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 ISLH_msgs/CMakeFiles/ISLH_msgs_genlisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : ISLH_msgs/CMakeFiles/ISLH_msgs_genlisp.dir/rule
@@ -2310,12 +2310,12 @@ ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_nodejs.dir/all: ISLH_msgs/CMake
 ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_nodejs.dir/all: ISLH_msgs/CMakeFiles/_ISLH_msgs_generate_messages_check_deps_robotPose.dir/all
 	$(MAKE) -f ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_nodejs.dir/build.make ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_nodejs.dir/depend
 	$(MAKE) -f ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_nodejs.dir/build.make ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=30,31,32,33,34,35,36,37,38,39 "Built target ISLH_msgs_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=30,31,32,33,34,35,36,37,38 "Built target ISLH_msgs_generate_messages_nodejs"
 .PHONY : ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_nodejs.dir/rule
@@ -2622,7 +2622,7 @@ ISLH_msgs/CMakeFiles/ISLH_msgs_geneus.dir/all: ISLH_msgs/CMakeFiles/ISLH_msgs_ge
 
 # Build rule for subdir invocation for target.
 ISLH_msgs/CMakeFiles/ISLH_msgs_geneus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 ISLH_msgs/CMakeFiles/ISLH_msgs_geneus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : ISLH_msgs/CMakeFiles/ISLH_msgs_geneus.dir/rule
@@ -2651,6 +2651,7 @@ camera2ros/all: camera2ros/CMakeFiles/detect_object_node.dir/all
 camera2ros/all: camera2ros/CMakeFiles/camera2ros_node.dir/all
 camera2ros/all: camera2ros/CMakeFiles/camera2ros.dir/all
 camera2ros/all: camera2ros/CMakeFiles/process_image_node.dir/all
+camera2ros/all: camera2ros/CMakeFiles/aruco_pose_node.dir/all
 camera2ros/all: camera2ros/CMakeFiles/capture_image_node.dir/all
 camera2ros/all: camera2ros/CMakeFiles/select_hsv_range_node.dir/all
 
@@ -2662,6 +2663,7 @@ camera2ros/clean: camera2ros/CMakeFiles/detect_object_node.dir/clean
 camera2ros/clean: camera2ros/CMakeFiles/camera2ros_node.dir/clean
 camera2ros/clean: camera2ros/CMakeFiles/camera2ros.dir/clean
 camera2ros/clean: camera2ros/CMakeFiles/process_image_node.dir/clean
+camera2ros/clean: camera2ros/CMakeFiles/aruco_pose_node.dir/clean
 camera2ros/clean: camera2ros/CMakeFiles/capture_image_node.dir/clean
 camera2ros/clean: camera2ros/CMakeFiles/select_hsv_range_node.dir/clean
 
@@ -2679,7 +2681,7 @@ camera2ros/preinstall:
 camera2ros/CMakeFiles/camera2ros_imread_node.dir/all: camera2ros/CMakeFiles/camera2ros.dir/all
 	$(MAKE) -f camera2ros/CMakeFiles/camera2ros_imread_node.dir/build.make camera2ros/CMakeFiles/camera2ros_imread_node.dir/depend
 	$(MAKE) -f camera2ros/CMakeFiles/camera2ros_imread_node.dir/build.make camera2ros/CMakeFiles/camera2ros_imread_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=52,53 "Built target camera2ros_imread_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=53,54,55 "Built target camera2ros_imread_node"
 .PHONY : camera2ros/CMakeFiles/camera2ros_imread_node.dir/all
 
 # Include target in all.
@@ -2689,7 +2691,7 @@ all: camera2ros/CMakeFiles/camera2ros_imread_node.dir/all
 
 # Build rule for subdir invocation for target.
 camera2ros/CMakeFiles/camera2ros_imread_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 camera2ros/CMakeFiles/camera2ros_imread_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : camera2ros/CMakeFiles/camera2ros_imread_node.dir/rule
@@ -2716,7 +2718,7 @@ clean: camera2ros/CMakeFiles/camera2ros_imread_node.dir/clean
 camera2ros/CMakeFiles/detect_object_node.dir/all: camera2ros/CMakeFiles/camera2ros.dir/all
 	$(MAKE) -f camera2ros/CMakeFiles/detect_object_node.dir/build.make camera2ros/CMakeFiles/detect_object_node.dir/depend
 	$(MAKE) -f camera2ros/CMakeFiles/detect_object_node.dir/build.make camera2ros/CMakeFiles/detect_object_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=58,59,60 "Built target detect_object_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=59,60,61 "Built target detect_object_node"
 .PHONY : camera2ros/CMakeFiles/detect_object_node.dir/all
 
 # Include target in all.
@@ -2753,7 +2755,7 @@ clean: camera2ros/CMakeFiles/detect_object_node.dir/clean
 camera2ros/CMakeFiles/camera2ros_node.dir/all: camera2ros/CMakeFiles/camera2ros.dir/all
 	$(MAKE) -f camera2ros/CMakeFiles/camera2ros_node.dir/build.make camera2ros/CMakeFiles/camera2ros_node.dir/depend
 	$(MAKE) -f camera2ros/CMakeFiles/camera2ros_node.dir/build.make camera2ros/CMakeFiles/camera2ros_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=54,55,56 "Built target camera2ros_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=56,57 "Built target camera2ros_node"
 .PHONY : camera2ros/CMakeFiles/camera2ros_node.dir/all
 
 # Include target in all.
@@ -2763,7 +2765,7 @@ all: camera2ros/CMakeFiles/camera2ros_node.dir/all
 
 # Build rule for subdir invocation for target.
 camera2ros/CMakeFiles/camera2ros_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 camera2ros/CMakeFiles/camera2ros_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : camera2ros/CMakeFiles/camera2ros_node.dir/rule
@@ -2790,7 +2792,7 @@ clean: camera2ros/CMakeFiles/camera2ros_node.dir/clean
 camera2ros/CMakeFiles/camera2ros.dir/all:
 	$(MAKE) -f camera2ros/CMakeFiles/camera2ros.dir/build.make camera2ros/CMakeFiles/camera2ros.dir/depend
 	$(MAKE) -f camera2ros/CMakeFiles/camera2ros.dir/build.make camera2ros/CMakeFiles/camera2ros.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=51 "Built target camera2ros"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=52 "Built target camera2ros"
 .PHONY : camera2ros/CMakeFiles/camera2ros.dir/all
 
 # Include target in all.
@@ -2827,7 +2829,7 @@ clean: camera2ros/CMakeFiles/camera2ros.dir/clean
 camera2ros/CMakeFiles/process_image_node.dir/all: camera2ros/CMakeFiles/camera2ros.dir/all
 	$(MAKE) -f camera2ros/CMakeFiles/process_image_node.dir/build.make camera2ros/CMakeFiles/process_image_node.dir/depend
 	$(MAKE) -f camera2ros/CMakeFiles/process_image_node.dir/build.make camera2ros/CMakeFiles/process_image_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=73,74,75 "Built target process_image_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=74,75,76 "Built target process_image_node"
 .PHONY : camera2ros/CMakeFiles/process_image_node.dir/all
 
 # Include target in all.
@@ -2858,13 +2860,50 @@ clean: camera2ros/CMakeFiles/process_image_node.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target camera2ros/CMakeFiles/aruco_pose_node.dir
+
+# All Build rule for target.
+camera2ros/CMakeFiles/aruco_pose_node.dir/all: camera2ros/CMakeFiles/camera2ros.dir/all
+	$(MAKE) -f camera2ros/CMakeFiles/aruco_pose_node.dir/build.make camera2ros/CMakeFiles/aruco_pose_node.dir/depend
+	$(MAKE) -f camera2ros/CMakeFiles/aruco_pose_node.dir/build.make camera2ros/CMakeFiles/aruco_pose_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=49,50,51 "Built target aruco_pose_node"
+.PHONY : camera2ros/CMakeFiles/aruco_pose_node.dir/all
+
+# Include target in all.
+all: camera2ros/CMakeFiles/aruco_pose_node.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+camera2ros/CMakeFiles/aruco_pose_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 camera2ros/CMakeFiles/aruco_pose_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
+.PHONY : camera2ros/CMakeFiles/aruco_pose_node.dir/rule
+
+# Convenience name for target.
+aruco_pose_node: camera2ros/CMakeFiles/aruco_pose_node.dir/rule
+
+.PHONY : aruco_pose_node
+
+# clean rule for target.
+camera2ros/CMakeFiles/aruco_pose_node.dir/clean:
+	$(MAKE) -f camera2ros/CMakeFiles/aruco_pose_node.dir/build.make camera2ros/CMakeFiles/aruco_pose_node.dir/clean
+.PHONY : camera2ros/CMakeFiles/aruco_pose_node.dir/clean
+
+# clean rule for target.
+clean: camera2ros/CMakeFiles/aruco_pose_node.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target camera2ros/CMakeFiles/capture_image_node.dir
 
 # All Build rule for target.
 camera2ros/CMakeFiles/capture_image_node.dir/all: camera2ros/CMakeFiles/camera2ros.dir/all
 	$(MAKE) -f camera2ros/CMakeFiles/capture_image_node.dir/build.make camera2ros/CMakeFiles/capture_image_node.dir/depend
 	$(MAKE) -f camera2ros/CMakeFiles/capture_image_node.dir/build.make camera2ros/CMakeFiles/capture_image_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=57 "Built target capture_image_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=58 "Built target capture_image_node"
 .PHONY : camera2ros/CMakeFiles/capture_image_node.dir/all
 
 # Include target in all.
@@ -2970,7 +3009,7 @@ error_comp/preinstall:
 error_comp/CMakeFiles/error_comp.dir/all:
 	$(MAKE) -f error_comp/CMakeFiles/error_comp.dir/build.make error_comp/CMakeFiles/error_comp.dir/depend
 	$(MAKE) -f error_comp/CMakeFiles/error_comp.dir/build.make error_comp/CMakeFiles/error_comp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=61 "Built target error_comp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=62 "Built target error_comp"
 .PHONY : error_comp/CMakeFiles/error_comp.dir/all
 
 # Include target in all.
@@ -3144,7 +3183,7 @@ clean: error_comp/CMakeFiles/error_comp_geneus.dir/clean
 error_comp/CMakeFiles/error_comp_node.dir/all: error_comp/CMakeFiles/error_comp.dir/all
 	$(MAKE) -f error_comp/CMakeFiles/error_comp_node.dir/build.make error_comp/CMakeFiles/error_comp_node.dir/depend
 	$(MAKE) -f error_comp/CMakeFiles/error_comp_node.dir/build.make error_comp/CMakeFiles/error_comp_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=62,63 "Built target error_comp_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=63,64 "Built target error_comp_node"
 .PHONY : error_comp/CMakeFiles/error_comp_node.dir/all
 
 # Include target in all.
@@ -3437,7 +3476,7 @@ pos_calculator/preinstall:
 pos_calculator/CMakeFiles/pos_calculator_node.dir/all: pos_calculator/CMakeFiles/pos_calculator.dir/all
 	$(MAKE) -f pos_calculator/CMakeFiles/pos_calculator_node.dir/build.make pos_calculator/CMakeFiles/pos_calculator_node.dir/depend
 	$(MAKE) -f pos_calculator/CMakeFiles/pos_calculator_node.dir/build.make pos_calculator/CMakeFiles/pos_calculator_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=72 "Built target pos_calculator_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=72,73 "Built target pos_calculator_node"
 .PHONY : pos_calculator/CMakeFiles/pos_calculator_node.dir/all
 
 # Include target in all.
@@ -3447,7 +3486,7 @@ all: pos_calculator/CMakeFiles/pos_calculator_node.dir/all
 
 # Build rule for subdir invocation for target.
 pos_calculator/CMakeFiles/pos_calculator_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 pos_calculator/CMakeFiles/pos_calculator_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : pos_calculator/CMakeFiles/pos_calculator_node.dir/rule
@@ -3538,7 +3577,7 @@ clean: pos_calculator/CMakeFiles/pos_calculator_gencpp.dir/clean
 pos_calculator/CMakeFiles/pos_calculator.dir/all:
 	$(MAKE) -f pos_calculator/CMakeFiles/pos_calculator.dir/build.make pos_calculator/CMakeFiles/pos_calculator.dir/depend
 	$(MAKE) -f pos_calculator/CMakeFiles/pos_calculator.dir/build.make pos_calculator/CMakeFiles/pos_calculator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=70 "Built target pos_calculator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=71 "Built target pos_calculator"
 .PHONY : pos_calculator/CMakeFiles/pos_calculator.dir/all
 
 # Include target in all.
@@ -3653,7 +3692,7 @@ all: pos_calculator/CMakeFiles/pos_calculator_generate_messages.dir/all
 
 # Build rule for subdir invocation for target.
 pos_calculator/CMakeFiles/pos_calculator_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 pos_calculator/CMakeFiles/pos_calculator_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : pos_calculator/CMakeFiles/pos_calculator_generate_messages.dir/rule
@@ -3685,7 +3724,7 @@ pos_calculator/CMakeFiles/pos_calculator_geneus.dir/all: pos_calculator/CMakeFil
 
 # Build rule for subdir invocation for target.
 pos_calculator/CMakeFiles/pos_calculator_geneus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 pos_calculator/CMakeFiles/pos_calculator_geneus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : pos_calculator/CMakeFiles/pos_calculator_geneus.dir/rule
@@ -3776,12 +3815,12 @@ clean: pos_calculator/CMakeFiles/pos_calculator_genlisp.dir/clean
 pos_calculator/CMakeFiles/pos_calculator_generate_messages_eus.dir/all: ISLH_msgs/CMakeFiles/std_msgs_generate_messages_eus.dir/all
 	$(MAKE) -f pos_calculator/CMakeFiles/pos_calculator_generate_messages_eus.dir/build.make pos_calculator/CMakeFiles/pos_calculator_generate_messages_eus.dir/depend
 	$(MAKE) -f pos_calculator/CMakeFiles/pos_calculator_generate_messages_eus.dir/build.make pos_calculator/CMakeFiles/pos_calculator_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=71 "Built target pos_calculator_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num= "Built target pos_calculator_generate_messages_eus"
 .PHONY : pos_calculator/CMakeFiles/pos_calculator_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 pos_calculator/CMakeFiles/pos_calculator_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 pos_calculator/CMakeFiles/pos_calculator_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : pos_calculator/CMakeFiles/pos_calculator_generate_messages_eus.dir/rule
@@ -4044,12 +4083,12 @@ clean: realization/CMakeFiles/realization_generate_messages_lisp.dir/clean
 realization/CMakeFiles/realization_generate_messages_eus.dir/all: ISLH_msgs/CMakeFiles/std_msgs_generate_messages_eus.dir/all
 	$(MAKE) -f realization/CMakeFiles/realization_generate_messages_eus.dir/build.make realization/CMakeFiles/realization_generate_messages_eus.dir/depend
 	$(MAKE) -f realization/CMakeFiles/realization_generate_messages_eus.dir/build.make realization/CMakeFiles/realization_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=77 "Built target realization_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num= "Built target realization_generate_messages_eus"
 .PHONY : realization/CMakeFiles/realization_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 realization/CMakeFiles/realization_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 realization/CMakeFiles/realization_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : realization/CMakeFiles/realization_generate_messages_eus.dir/rule
@@ -4076,7 +4115,7 @@ clean: realization/CMakeFiles/realization_generate_messages_eus.dir/clean
 realization/CMakeFiles/realization_node4.dir/all: realization/CMakeFiles/realization.dir/all
 	$(MAKE) -f realization/CMakeFiles/realization_node4.dir/build.make realization/CMakeFiles/realization_node4.dir/depend
 	$(MAKE) -f realization/CMakeFiles/realization_node4.dir/build.make realization/CMakeFiles/realization_node4.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=84,85 "Built target realization_node4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=85 "Built target realization_node4"
 .PHONY : realization/CMakeFiles/realization_node4.dir/all
 
 # Include target in all.
@@ -4086,7 +4125,7 @@ all: realization/CMakeFiles/realization_node4.dir/all
 
 # Build rule for subdir invocation for target.
 realization/CMakeFiles/realization_node4.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 realization/CMakeFiles/realization_node4.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : realization/CMakeFiles/realization_node4.dir/rule
@@ -4159,7 +4198,7 @@ all: realization/CMakeFiles/realization_generate_messages.dir/all
 
 # Build rule for subdir invocation for target.
 realization/CMakeFiles/realization_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 realization/CMakeFiles/realization_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : realization/CMakeFiles/realization_generate_messages.dir/rule
@@ -4218,7 +4257,7 @@ clean: realization/CMakeFiles/realization_genpy.dir/clean
 realization/CMakeFiles/realization.dir/all:
 	$(MAKE) -f realization/CMakeFiles/realization.dir/build.make realization/CMakeFiles/realization.dir/depend
 	$(MAKE) -f realization/CMakeFiles/realization.dir/build.make realization/CMakeFiles/realization.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=76 "Built target realization"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=77 "Built target realization"
 .PHONY : realization/CMakeFiles/realization.dir/all
 
 # Include target in all.
@@ -4292,7 +4331,7 @@ realization/CMakeFiles/realization_geneus.dir/all: realization/CMakeFiles/realiz
 
 # Build rule for subdir invocation for target.
 realization/CMakeFiles/realization_geneus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 realization/CMakeFiles/realization_geneus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : realization/CMakeFiles/realization_geneus.dir/rule
@@ -4319,7 +4358,7 @@ clean: realization/CMakeFiles/realization_geneus.dir/clean
 realization/CMakeFiles/realization_node0.dir/all: realization/CMakeFiles/realization.dir/all
 	$(MAKE) -f realization/CMakeFiles/realization_node0.dir/build.make realization/CMakeFiles/realization_node0.dir/depend
 	$(MAKE) -f realization/CMakeFiles/realization_node0.dir/build.make realization/CMakeFiles/realization_node0.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=78 "Built target realization_node0"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=78,79 "Built target realization_node0"
 .PHONY : realization/CMakeFiles/realization_node0.dir/all
 
 # Include target in all.
@@ -4329,7 +4368,7 @@ all: realization/CMakeFiles/realization_node0.dir/all
 
 # Build rule for subdir invocation for target.
 realization/CMakeFiles/realization_node0.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 realization/CMakeFiles/realization_node0.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : realization/CMakeFiles/realization_node0.dir/rule
@@ -4356,7 +4395,7 @@ clean: realization/CMakeFiles/realization_node0.dir/clean
 realization/CMakeFiles/realization_node1.dir/all: realization/CMakeFiles/realization.dir/all
 	$(MAKE) -f realization/CMakeFiles/realization_node1.dir/build.make realization/CMakeFiles/realization_node1.dir/depend
 	$(MAKE) -f realization/CMakeFiles/realization_node1.dir/build.make realization/CMakeFiles/realization_node1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=79,80 "Built target realization_node1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=80 "Built target realization_node1"
 .PHONY : realization/CMakeFiles/realization_node1.dir/all
 
 # Include target in all.
@@ -4366,7 +4405,7 @@ all: realization/CMakeFiles/realization_node1.dir/all
 
 # Build rule for subdir invocation for target.
 realization/CMakeFiles/realization_node1.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 realization/CMakeFiles/realization_node1.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : realization/CMakeFiles/realization_node1.dir/rule
@@ -4393,7 +4432,7 @@ clean: realization/CMakeFiles/realization_node1.dir/clean
 realization/CMakeFiles/realization_node3.dir/all: realization/CMakeFiles/realization.dir/all
 	$(MAKE) -f realization/CMakeFiles/realization_node3.dir/build.make realization/CMakeFiles/realization_node3.dir/depend
 	$(MAKE) -f realization/CMakeFiles/realization_node3.dir/build.make realization/CMakeFiles/realization_node3.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=83 "Built target realization_node3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=83,84 "Built target realization_node3"
 .PHONY : realization/CMakeFiles/realization_node3.dir/all
 
 # Include target in all.
@@ -4403,7 +4442,7 @@ all: realization/CMakeFiles/realization_node3.dir/all
 
 # Build rule for subdir invocation for target.
 realization/CMakeFiles/realization_node3.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 realization/CMakeFiles/realization_node3.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : realization/CMakeFiles/realization_node3.dir/rule
@@ -4430,7 +4469,7 @@ clean: realization/CMakeFiles/realization_node3.dir/clean
 realization/CMakeFiles/realization_node6.dir/all: realization/CMakeFiles/realization.dir/all
 	$(MAKE) -f realization/CMakeFiles/realization_node6.dir/build.make realization/CMakeFiles/realization_node6.dir/depend
 	$(MAKE) -f realization/CMakeFiles/realization_node6.dir/build.make realization/CMakeFiles/realization_node6.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=87,88 "Built target realization_node6"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=88 "Built target realization_node6"
 .PHONY : realization/CMakeFiles/realization_node6.dir/all
 
 # Include target in all.
@@ -4440,7 +4479,7 @@ all: realization/CMakeFiles/realization_node6.dir/all
 
 # Build rule for subdir invocation for target.
 realization/CMakeFiles/realization_node6.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 realization/CMakeFiles/realization_node6.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : realization/CMakeFiles/realization_node6.dir/rule
@@ -4536,7 +4575,7 @@ clean: realization/CMakeFiles/realization_node2.dir/clean
 realization/CMakeFiles/realization_node5.dir/all: realization/CMakeFiles/realization.dir/all
 	$(MAKE) -f realization/CMakeFiles/realization_node5.dir/build.make realization/CMakeFiles/realization_node5.dir/depend
 	$(MAKE) -f realization/CMakeFiles/realization_node5.dir/build.make realization/CMakeFiles/realization_node5.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=86 "Built target realization_node5"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=86,87 "Built target realization_node5"
 .PHONY : realization/CMakeFiles/realization_node5.dir/all
 
 # Include target in all.
@@ -4546,7 +4585,7 @@ all: realization/CMakeFiles/realization_node5.dir/all
 
 # Build rule for subdir invocation for target.
 realization/CMakeFiles/realization_node5.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 realization/CMakeFiles/realization_node5.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : realization/CMakeFiles/realization_node5.dir/rule
@@ -4802,12 +4841,12 @@ clean: sensor/CMakeFiles/sensor_generate_messages_py.dir/clean
 sensor/CMakeFiles/sensor_generate_messages_eus.dir/all: ISLH_msgs/CMakeFiles/std_msgs_generate_messages_eus.dir/all
 	$(MAKE) -f sensor/CMakeFiles/sensor_generate_messages_eus.dir/build.make sensor/CMakeFiles/sensor_generate_messages_eus.dir/depend
 	$(MAKE) -f sensor/CMakeFiles/sensor_generate_messages_eus.dir/build.make sensor/CMakeFiles/sensor_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num= "Built target sensor_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=93 "Built target sensor_generate_messages_eus"
 .PHONY : sensor/CMakeFiles/sensor_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 sensor/CMakeFiles/sensor_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 sensor/CMakeFiles/sensor_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : sensor/CMakeFiles/sensor_generate_messages_eus.dir/rule
@@ -4848,7 +4887,7 @@ all: sensor/CMakeFiles/sensor_generate_messages.dir/all
 
 # Build rule for subdir invocation for target.
 sensor/CMakeFiles/sensor_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 sensor/CMakeFiles/sensor_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : sensor/CMakeFiles/sensor_generate_messages.dir/rule
@@ -4875,7 +4914,7 @@ clean: sensor/CMakeFiles/sensor_generate_messages.dir/clean
 sensor/CMakeFiles/sensor_node.dir/all: sensor/CMakeFiles/sensor.dir/all
 	$(MAKE) -f sensor/CMakeFiles/sensor_node.dir/build.make sensor/CMakeFiles/sensor_node.dir/depend
 	$(MAKE) -f sensor/CMakeFiles/sensor_node.dir/build.make sensor/CMakeFiles/sensor_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=93,94 "Built target sensor_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=94 "Built target sensor_node"
 .PHONY : sensor/CMakeFiles/sensor_node.dir/all
 
 # Include target in all.
@@ -4885,7 +4924,7 @@ all: sensor/CMakeFiles/sensor_node.dir/all
 
 # Build rule for subdir invocation for target.
 sensor/CMakeFiles/sensor_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 sensor/CMakeFiles/sensor_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : sensor/CMakeFiles/sensor_node.dir/rule
@@ -4917,7 +4956,7 @@ sensor/CMakeFiles/sensor_geneus.dir/all: sensor/CMakeFiles/sensor_generate_messa
 
 # Build rule for subdir invocation for target.
 sensor/CMakeFiles/sensor_geneus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 sensor/CMakeFiles/sensor_geneus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : sensor/CMakeFiles/sensor_geneus.dir/rule

@@ -114,13 +114,14 @@
 /home/berkay/catkin_ws/build/ISLH_msgs/CMakeFiles/ISLH_msgs_geneus.dir
 /home/berkay/catkin_ws/build/camera2ros/CMakeFiles/install.dir
 /home/berkay/catkin_ws/build/camera2ros/CMakeFiles/edit_cache.dir
+/home/berkay/catkin_ws/build/camera2ros/CMakeFiles/test.dir
 /home/berkay/catkin_ws/build/camera2ros/CMakeFiles/camera2ros_imread_node.dir
 /home/berkay/catkin_ws/build/camera2ros/CMakeFiles/detect_object_node.dir
 /home/berkay/catkin_ws/build/camera2ros/CMakeFiles/rebuild_cache.dir
 /home/berkay/catkin_ws/build/camera2ros/CMakeFiles/camera2ros_node.dir
 /home/berkay/catkin_ws/build/camera2ros/CMakeFiles/camera2ros.dir
 /home/berkay/catkin_ws/build/camera2ros/CMakeFiles/process_image_node.dir
-/home/berkay/catkin_ws/build/camera2ros/CMakeFiles/test.dir
+/home/berkay/catkin_ws/build/camera2ros/CMakeFiles/aruco_pose_node.dir
 /home/berkay/catkin_ws/build/camera2ros/CMakeFiles/capture_image_node.dir
 /home/berkay/catkin_ws/build/camera2ros/CMakeFiles/list_install_components.dir
 /home/berkay/catkin_ws/build/camera2ros/CMakeFiles/select_hsv_range_node.dir

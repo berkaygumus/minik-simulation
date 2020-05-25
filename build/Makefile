@@ -1167,6 +1167,19 @@ process_image_node/fast:
 .PHONY : process_image_node/fast
 
 #=============================================================================
+# Target rules for targets named aruco_pose_node
+
+# Build rule for target.
+aruco_pose_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 aruco_pose_node
+.PHONY : aruco_pose_node
+
+# fast build rule for target.
+aruco_pose_node/fast:
+	$(MAKE) -f camera2ros/CMakeFiles/aruco_pose_node.dir/build.make camera2ros/CMakeFiles/aruco_pose_node.dir/build
+.PHONY : aruco_pose_node/fast
+
+#=============================================================================
 # Target rules for targets named capture_image_node
 
 # Build rule for target.
@@ -2036,6 +2049,7 @@ help:
 	@echo "... camera2ros_node"
 	@echo "... camera2ros"
 	@echo "... process_image_node"
+	@echo "... aruco_pose_node"
 	@echo "... capture_image_node"
 	@echo "... select_hsv_range_node"
 	@echo "... error_comp"
