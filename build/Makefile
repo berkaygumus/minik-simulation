@@ -1206,6 +1206,19 @@ select_hsv_range_node/fast:
 .PHONY : select_hsv_range_node/fast
 
 #=============================================================================
+# Target rules for targets named calibrate_node
+
+# Build rule for target.
+calibrate_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 calibrate_node
+.PHONY : calibrate_node
+
+# fast build rule for target.
+calibrate_node/fast:
+	$(MAKE) -f camera2ros/CMakeFiles/calibrate_node.dir/build.make camera2ros/CMakeFiles/calibrate_node.dir/build
+.PHONY : calibrate_node/fast
+
+#=============================================================================
 # Target rules for targets named error_comp
 
 # Build rule for target.
@@ -2052,6 +2065,7 @@ help:
 	@echo "... aruco_pose_node"
 	@echo "... capture_image_node"
 	@echo "... select_hsv_range_node"
+	@echo "... calibrate_node"
 	@echo "... error_comp"
 	@echo "... error_comp_gencpp"
 	@echo "... error_comp_generate_messages_cpp"

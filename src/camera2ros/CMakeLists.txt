@@ -179,6 +179,10 @@ target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${
 add_executable(aruco_pose_node src/aruco_pose.cpp ${camera2ros_SOURCES} ${camera2ros_HEADERS})
 target_link_libraries(aruco_pose_node ${PROJECT_NAME})
 
+target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${Eigen3_LIBRARIES} )
+add_executable(calibrate_node src/calibrate.cpp ${camera2ros_SOURCES} ${camera2ros_HEADERS})
+target_link_libraries(calibrate_node ${PROJECT_NAME})
+
 #target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${Eigen3_LIBRARIES} )
 #add_executable(stereo_match_node src/stereo_match.cpp ${camera2ros_SOURCES} ${camera2ros_HEADERS})
 #target_link_libraries(stereo_match_node ${PROJECT_NAME})

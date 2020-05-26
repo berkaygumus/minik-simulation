@@ -54,7 +54,7 @@ int Camera_Calibration::calibrateMain(int argc, char* argv[])
 
     //! [file_read]
     Settings s;
-    const string inputSettingsFile = argc > 1 ? argv[1] : "default.xml";
+    const string inputSettingsFile = argc > 1 ? argv[1] :"default.xml";
     FileStorage fs(inputSettingsFile, FileStorage::READ); // Read the settings
     if (!fs.isOpened())
     {
