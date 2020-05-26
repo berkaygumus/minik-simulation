@@ -7,6 +7,7 @@
 subdirs(gtest)
 subdirs(serial)
 subdirs(ISLH_msgs)
+subdirs(aruco_marker)
 subdirs(camera2ros)
 subdirs(error_comp)
 subdirs(pos_calculator)

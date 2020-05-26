@@ -26,11 +26,13 @@ struct robotPositions_
 
   robotPositions_()
     : positions()
-    , directions()  {
+    , directions()
+    , IDs()  {
     }
   robotPositions_(const ContainerAllocator& _alloc)
     : positions(_alloc)
-    , directions(_alloc)  {
+    , directions(_alloc)
+    , IDs(_alloc)  {
   (void)_alloc;
     }
 
@@ -41,6 +43,9 @@ struct robotPositions_
 
    typedef std::vector<float, typename ContainerAllocator::template rebind<float>::other >  _directions_type;
   _directions_type directions;
+
+   typedef std::vector<int32_t, typename ContainerAllocator::template rebind<int32_t>::other >  _IDs_type;
+  _IDs_type IDs;
 
 
 
@@ -120,12 +125,12 @@ struct MD5Sum< ::ISLH_msgs::robotPositions_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "7b8470ea0d581e5724ea0df486cf9d5a";
+    return "34cbcefe1d81906e675edae485d8d875";
   }
 
   static const char* value(const ::ISLH_msgs::robotPositions_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x7b8470ea0d581e57ULL;
-  static const uint64_t static_value2 = 0x24ea0df486cf9d5aULL;
+  static const uint64_t static_value1 = 0x34cbcefe1d81906eULL;
+  static const uint64_t static_value2 = 0x675edae485d8d875ULL;
 };
 
 template<class ContainerAllocator>
@@ -149,6 +154,8 @@ struct Definition< ::ISLH_msgs::robotPositions_<ContainerAllocator> >
 geometry_msgs/Pose2D[] positions\n\
 \n\
 float32[] directions\n\
+\n\
+int32[] IDs\n\
 \n\
 ================================================================================\n\
 MSG: geometry_msgs/Pose2D\n\
@@ -185,6 +192,7 @@ namespace serialization
     {
       stream.next(m.positions);
       stream.next(m.directions);
+      stream.next(m.IDs);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -216,6 +224,12 @@ struct Printer< ::ISLH_msgs::robotPositions_<ContainerAllocator> >
     {
       s << indent << "  directions[" << i << "]: ";
       Printer<float>::stream(s, indent + "  ", v.directions[i]);
+    }
+    s << indent << "IDs[]" << std::endl;
+    for (size_t i = 0; i < v.IDs.size(); ++i)
+    {
+      s << indent << "  IDs[" << i << "]: ";
+      Printer<int32_t>::stream(s, indent + "  ", v.IDs[i]);
     }
   }
 };

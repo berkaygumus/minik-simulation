@@ -112,6 +112,15 @@
 /home/berkay/catkin_ws/build/ISLH_msgs/CMakeFiles/_ISLH_msgs_generate_messages_check_deps_robotPose.dir
 /home/berkay/catkin_ws/build/ISLH_msgs/CMakeFiles/ISLH_msgs_generate_messages_cpp.dir
 /home/berkay/catkin_ws/build/ISLH_msgs/CMakeFiles/ISLH_msgs_geneus.dir
+/home/berkay/catkin_ws/build/aruco_marker/CMakeFiles/list_install_components.dir
+/home/berkay/catkin_ws/build/aruco_marker/CMakeFiles/install.dir
+/home/berkay/catkin_ws/build/aruco_marker/CMakeFiles/rebuild_cache.dir
+/home/berkay/catkin_ws/build/aruco_marker/CMakeFiles/edit_cache.dir
+/home/berkay/catkin_ws/build/aruco_marker/CMakeFiles/test.dir
+/home/berkay/catkin_ws/build/aruco_marker/CMakeFiles/aruco_marker.dir
+/home/berkay/catkin_ws/build/aruco_marker/CMakeFiles/aruco_marker_node.dir
+/home/berkay/catkin_ws/build/aruco_marker/CMakeFiles/install/strip.dir
+/home/berkay/catkin_ws/build/aruco_marker/CMakeFiles/install/local.dir
 /home/berkay/catkin_ws/build/camera2ros/CMakeFiles/install.dir
 /home/berkay/catkin_ws/build/camera2ros/CMakeFiles/edit_cache.dir
 /home/berkay/catkin_ws/build/camera2ros/CMakeFiles/test.dir

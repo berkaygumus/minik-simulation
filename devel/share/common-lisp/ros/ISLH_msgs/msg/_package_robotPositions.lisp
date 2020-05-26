@@ -3,4 +3,6 @@
           POSITIONS
           DIRECTIONS-VAL
           DIRECTIONS
+          IDS-VAL
+          IDS
 ))

@@ -21,6 +21,7 @@ class robotPositions {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.positions = null;
       this.directions = null;
+      this.IDs = null;
     }
     else {
       if (initObj.hasOwnProperty('positions')) {
@@ -35,6 +36,12 @@ class robotPositions {
       else {
         this.directions = [];
       }
+      if (initObj.hasOwnProperty('IDs')) {
+        this.IDs = initObj.IDs
+      }
+      else {
+        this.IDs = [];
+      }
     }
   }
 
@@ -48,6 +55,8 @@ class robotPositions {
     });
     // Serialize message field [directions]
     bufferOffset = _arraySerializer.float32(obj.directions, buffer, bufferOffset, null);
+    // Serialize message field [IDs]
+    bufferOffset = _arraySerializer.int32(obj.IDs, buffer, bufferOffset, null);
     return bufferOffset;
   }
 
@@ -64,6 +73,8 @@ class robotPositions {
     }
     // Deserialize message field [directions]
     data.directions = _arrayDeserializer.float32(buffer, bufferOffset, null)
+    // Deserialize message field [IDs]
+    data.IDs = _arrayDeserializer.int32(buffer, bufferOffset, null)
     return data;
   }
 
@@ -71,7 +82,8 @@ class robotPositions {
     let length = 0;
     length += 24 * object.positions.length;
     length += 4 * object.directions.length;
-    return length + 8;
+    length += 4 * object.IDs.length;
+    return length + 12;
   }
 
   static datatype() {
@@ -81,7 +93,7 @@ class robotPositions {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '7b8470ea0d581e5724ea0df486cf9d5a';
+    return '34cbcefe1d81906e675edae485d8d875';
   }
 
   static messageDefinition() {
@@ -92,6 +104,8 @@ class robotPositions {
     geometry_msgs/Pose2D[] positions
     
     float32[] directions
+    
+    int32[] IDs
     
     ================================================================================
     MSG: geometry_msgs/Pose2D
@@ -133,6 +147,13 @@ class robotPositions {
     }
     else {
       resolved.directions = []
+    }
+
+    if (msg.IDs !== undefined) {
+      resolved.IDs = msg.IDs;
+    }
+    else {
+      resolved.IDs = []
     }
 
     return resolved;

@@ -5,11 +5,18 @@
 #include <opencv2/aruco.hpp>
 #include <opencv2/videoio.hpp>
 
+#include <geometry_msgs/Pose2D.h>
+#include "ISLH_msgs/robotPositions.h"
+#include "float.h"
+
 int main(int argc,char** argv){
 
     ros::init(argc,argv,"camera2ros");
     ros::NodeHandle n;
     ros::Rate loop_rate(10);
+
+    ros::Publisher robotsPublisher = n.advertise<ISLH_msgs::robotPositions>("robot_list",1);
+
     Camera_Calibration* calib  = new Camera_Calibration();
 
     VideoCapture cap1(1); //left cam
@@ -80,7 +87,7 @@ Dist : [  -0.36019 ,    0.19207 ,    0.00165 ,  -0.00967 ,  -0.06027]*/
       //Mat outputImage;
       //imageCopy.copyTo(outputImage);
       vector<Vec3d> positions;
-      vector<double> headings;
+      vector<float> headings;
       vector<int> robot_IDs;
       for (int i = 0; i < rvecs.size(); ++i) {
           cv::Vec3d rvec = rvecs[i];
@@ -127,16 +134,14 @@ Dist : [  -0.36019 ,    0.19207 ,    0.00165 ,  -0.00967 ,  -0.06027]*/
       //mu.erase(mu.begin() + i);
  			//i--;
 
-      vector<Vec3d> c_positions;
-      vector<double> c_headings;
-      vector<int> c_robot_IDs;
+
       for(int i=0; i < positions.size();i++){
         for(int j=i+1; j < positions.size();j++){
           if(robot_IDs[i]==robot_IDs[j]){
-              cv::Vec3d c_pos = (positions[i]+positions[j])/2;
-              double c_heading = (headings[i]+headings[j])/2;
-              positions[i] = c_pos;
-              headings[i] = c_heading;
+              cv::Vec3d temp_pos = (positions[i]+positions[j])/2;
+              double temp_heading = (headings[i]+headings[j])/2;
+              positions[i] = temp_pos;
+              headings[i] = temp_heading;
               positions.erase(positions.begin() + j);
               headings.erase(headings.begin() + j);
               robot_IDs.erase(robot_IDs.begin() + j);
@@ -148,6 +153,30 @@ Dist : [  -0.36019 ,    0.19207 ,    0.00165 ,  -0.00967 ,  -0.06027]*/
 
 
       cv::imshow("out", imageCopy);
+
+      ISLH_msgs::robotPositions msg;
+      vector<geometry_msgs::Pose2D > msg_positions;
+      //vector<float32> directions;
+      for(int i=0;i<robot_IDs.size();i++){
+        geometry_msgs::Pose2D temp_pos;
+        //float temp_dir;
+        //float temp_ID;
+        temp_pos.x = positions[i][2];
+        temp_pos.y = -positions[i][0];
+        temp_pos.theta = headings[i];
+        //temp_dir = headings[i];
+        //temp_ID = robot_IDs[i];
+
+        msg_positions.push_back(temp_pos);
+        //directions.push_back(temp_pos);
+        //positions.push_back(temp_pos);
+
+      }
+        msg.positions = msg_positions;
+        msg.directions = headings;
+        msg.IDs = robot_IDs;
+        
+        robotsPublisher.publish(msg);
 
       waitKey(25);
       ros::spinOnce();

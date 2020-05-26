@@ -1102,6 +1102,32 @@ ISLH_msgs_geneus/fast:
 .PHONY : ISLH_msgs_geneus/fast
 
 #=============================================================================
+# Target rules for targets named aruco_marker
+
+# Build rule for target.
+aruco_marker: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 aruco_marker
+.PHONY : aruco_marker
+
+# fast build rule for target.
+aruco_marker/fast:
+	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker.dir/build.make aruco_marker/CMakeFiles/aruco_marker.dir/build
+.PHONY : aruco_marker/fast
+
+#=============================================================================
+# Target rules for targets named aruco_marker_node
+
+# Build rule for target.
+aruco_marker_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 aruco_marker_node
+.PHONY : aruco_marker_node
+
+# fast build rule for target.
+aruco_marker_node/fast:
+	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/build
+.PHONY : aruco_marker_node/fast
+
+#=============================================================================
 # Target rules for targets named camera2ros_imread_node
 
 # Build rule for target.
@@ -2057,6 +2083,8 @@ help:
 	@echo "... _ISLH_msgs_generate_messages_check_deps_robotPose"
 	@echo "... ISLH_msgs_generate_messages_cpp"
 	@echo "... ISLH_msgs_geneus"
+	@echo "... aruco_marker"
+	@echo "... aruco_marker_node"
 	@echo "... camera2ros_imread_node"
 	@echo "... detect_object_node"
 	@echo "... camera2ros_node"

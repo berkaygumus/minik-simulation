@@ -16,17 +16,19 @@
 
 (defclass ISLH_msgs::robotPositions
   :super ros::object
-  :slots (_positions _directions ))
+  :slots (_positions _directions _IDs ))
 
 (defmethod ISLH_msgs::robotPositions
   (:init
    (&key
     ((:positions __positions) (let (r) (dotimes (i 0) (push (instance geometry_msgs::Pose2D :init) r)) r))
     ((:directions __directions) (make-array 0 :initial-element 0.0 :element-type :float))
+    ((:IDs __IDs) (make-array 0 :initial-element 0 :element-type :integer))
     )
    (send-super :init)
    (setq _positions __positions)
    (setq _directions __directions)
+   (setq _IDs __IDs)
    self)
   (:positions
    (&rest __positions)
@@ -38,6 +40,9 @@
   (:directions
    (&optional __directions)
    (if __directions (setq _directions __directions)) _directions)
+  (:IDs
+   (&optional __IDs)
+   (if __IDs (setq _IDs __IDs)) _IDs)
   (:serialization-length
    ()
    (+
@@ -45,6 +50,8 @@
     (apply #'+ (send-all _positions :serialization-length)) 4
     ;; float32[] _directions
     (* 4    (length _directions)) 4
+    ;; int32[] _IDs
+    (* 4    (length _IDs)) 4
     ))
   (:serialize
    (&optional strm)
@@ -59,6 +66,11 @@
      (write-long (length _directions) s)
      (dotimes (i (length _directions))
        (sys::poke (elt _directions i) (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+       )
+     ;; int32[] _IDs
+     (write-long (length _IDs) s)
+     (dotimes (i (length _IDs))
+       (write-long (elt _IDs i) s)
        )
      ;;
      (if (null strm) (get-output-stream-string s))))
@@ -78,11 +90,18 @@
      (dotimes (i n)
      (setf (elt _directions i) (sys::peek buf ptr- :float)) (incf ptr- 4)
      ))
+   ;; int32[] _IDs
+   (let (n)
+     (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4)
+     (setq _IDs (instantiate integer-vector n))
+     (dotimes (i n)
+     (setf (elt _IDs i) (sys::peek buf ptr- :integer)) (incf ptr- 4)
+     ))
    ;;
    self)
   )
 
-(setf (get ISLH_msgs::robotPositions :md5sum-) "7b8470ea0d581e5724ea0df486cf9d5a")
+(setf (get ISLH_msgs::robotPositions :md5sum-) "34cbcefe1d81906e675edae485d8d875")
 (setf (get ISLH_msgs::robotPositions :datatype-) "ISLH_msgs/robotPositions")
 (setf (get ISLH_msgs::robotPositions :definition-)
       "#The robots' position information
@@ -90,6 +109,8 @@
 geometry_msgs/Pose2D[] positions
 
 float32[] directions
+
+int32[] IDs
 
 ================================================================================
 MSG: geometry_msgs/Pose2D
@@ -111,6 +132,6 @@ float64 theta
 
 
 
-(provide :ISLH_msgs/robotPositions "7b8470ea0d581e5724ea0df486cf9d5a")
+(provide :ISLH_msgs/robotPositions "34cbcefe1d81906e675edae485d8d875")
 
 

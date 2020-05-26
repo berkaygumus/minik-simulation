@@ -8,7 +8,7 @@ import struct
 import geometry_msgs.msg
 
 class robotPositions(genpy.Message):
-  _md5sum = "7b8470ea0d581e5724ea0df486cf9d5a"
+  _md5sum = "34cbcefe1d81906e675edae485d8d875"
   _type = "ISLH_msgs/robotPositions"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """#The robots' position information
@@ -16,6 +16,8 @@ class robotPositions(genpy.Message):
 geometry_msgs/Pose2D[] positions
 
 float32[] directions
+
+int32[] IDs
 
 ================================================================================
 MSG: geometry_msgs/Pose2D
@@ -33,8 +35,8 @@ float64 x
 float64 y
 float64 theta
 """
-  __slots__ = ['positions','directions']
-  _slot_types = ['geometry_msgs/Pose2D[]','float32[]']
+  __slots__ = ['positions','directions','IDs']
+  _slot_types = ['geometry_msgs/Pose2D[]','float32[]','int32[]']
 
   def __init__(self, *args, **kwds):
     """
@@ -44,7 +46,7 @@ float64 theta
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       positions,directions
+       positions,directions,IDs
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -57,9 +59,12 @@ float64 theta
         self.positions = []
       if self.directions is None:
         self.directions = []
+      if self.IDs is None:
+        self.IDs = []
     else:
       self.positions = []
       self.directions = []
+      self.IDs = []
 
   def _get_types(self):
     """
@@ -82,6 +87,10 @@ float64 theta
       buff.write(_struct_I.pack(length))
       pattern = '<%sf'%length
       buff.write(struct.pack(pattern, *self.directions))
+      length = len(self.IDs)
+      buff.write(_struct_I.pack(length))
+      pattern = '<%si'%length
+      buff.write(struct.pack(pattern, *self.IDs))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -112,6 +121,13 @@ float64 theta
       start = end
       end += struct.calcsize(pattern)
       self.directions = struct.unpack(pattern, str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      pattern = '<%si'%length
+      start = end
+      end += struct.calcsize(pattern)
+      self.IDs = struct.unpack(pattern, str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -133,6 +149,10 @@ float64 theta
       buff.write(_struct_I.pack(length))
       pattern = '<%sf'%length
       buff.write(self.directions.tostring())
+      length = len(self.IDs)
+      buff.write(_struct_I.pack(length))
+      pattern = '<%si'%length
+      buff.write(self.IDs.tostring())
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -164,6 +184,13 @@ float64 theta
       start = end
       end += struct.calcsize(pattern)
       self.directions = numpy.frombuffer(str[start:end], dtype=numpy.float32, count=length)
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      pattern = '<%si'%length
+      start = end
+      end += struct.calcsize(pattern)
+      self.IDs = numpy.frombuffer(str[start:end], dtype=numpy.int32, count=length)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
