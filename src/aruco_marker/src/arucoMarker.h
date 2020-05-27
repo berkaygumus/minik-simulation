@@ -1,9 +1,9 @@
 /*
  File name: arucoMarker.h
- Author: Berkay Gümüş
+ Author: Berkay Gumus
  E-mail: berkay.gumus@boun.edu.tr
  Date created: 20.05.2020
- Date last modified:
+ Date last modified: 27.05.2020
  */
 
 #include "ros/ros.h"
@@ -13,6 +13,10 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/aruco.hpp>
 
+#include <geometry_msgs/Pose2D.h>
+#include "ISLH_msgs/robotPositions.h"
+#include "float.h"
+
 using namespace std;
 using namespace cv;
 
@@ -21,7 +25,7 @@ class ArucoMarker{
 
     ArucoMarker();
     ~ArucoMarker();
-    void markerGenerater(int);
+    void markerGenerater(vector<int>);
     void setCamParameters();
     void calculateRobotPos();
 

@@ -1,8 +1,12 @@
-#include "arucoMarker.h"
+/*
+ File name: arucoMarker.cpp
+ Author: Berkay Gumus
+ E-mail: berkay.gumus@boun.edu.tr
+ Date created: 20.05.2020
+ Date last modified: 27.05.2020
+ */
 
-#include <geometry_msgs/Pose2D.h>
-#include "ISLH_msgs/robotPositions.h"
-#include "float.h"
+#include "arucoMarker.h"
 
 ArucoMarker::ArucoMarker(){
 
@@ -12,7 +16,7 @@ ArucoMarker::~ArucoMarker(){
 
 }
 
-void ArucoMarker::markerGenerater(int robotID){
+void ArucoMarker::markerGenerater(vector<int> robotIDs){
 
   Mat markerImage;
   //aruco marker dictionary
@@ -36,31 +40,21 @@ back: 4*(id-1) + 3
 left: 4*(id-1) + 4
 */
 
-  ostringstream id;
-  id << robotID;
-  aruco::drawMarker(dictionary, 4*(robotID-1)+1, 200, markerImage, 1);//creates aruco marker
-  imwrite(aruco_marker_folder + "robot" + id.str() + "front.jpg", markerImage);
-  aruco::drawMarker(dictionary, 4*(robotID-1)+2, 200, markerImage, 1);
-  imwrite(aruco_marker_folder + "robot" + id.str()  + "right.jpg", markerImage);
-  aruco::drawMarker(dictionary, 4*(robotID-1)+3, 200, markerImage, 1);
-  imwrite(aruco_marker_folder + "robot" + id.str()  + "back.jpg", markerImage);
-  aruco::drawMarker(dictionary, 4*(robotID-1)+4, 200, markerImage, 1);
-  imwrite(aruco_marker_folder + "robot" + id.str()  + "left.jpg", markerImage);
+  for(int i=0;i<robotIDs.size();i++){
+    int robotID = robotIDs[i];
+    ostringstream id;
+    id << robotIDs[i];
+    aruco::drawMarker(dictionary, 4*(robotID-1)+1, 200, markerImage, 1);//creates aruco marker
+    imwrite(aruco_marker_folder + "robot" + id.str() + "front.jpg", markerImage);
+    aruco::drawMarker(dictionary, 4*(robotID-1)+2, 200, markerImage, 1);
+    imwrite(aruco_marker_folder + "robot" + id.str()  + "right.jpg", markerImage);
+    aruco::drawMarker(dictionary, 4*(robotID-1)+3, 200, markerImage, 1);
+    imwrite(aruco_marker_folder + "robot" + id.str()  + "back.jpg", markerImage);
+    aruco::drawMarker(dictionary, 4*(robotID-1)+4, 200, markerImage, 1);
+    imwrite(aruco_marker_folder + "robot" + id.str()  + "left.jpg", markerImage);
+  }
+
   cout << "markers are generated" << endl;
-
-/*string fileName = aruco_marker_folder + "robot" + id.str() + "front.jpg";
-ifstream infile(fileName);
-cout << "file: " << infile.good() << endl;;*/
-
-  /*Mat read_image;
-  read_image = imread("/home/berkay/catkin_ws/src/camera2ros/src/aruco_markers/marker23.jpg");
-  cout << "written " << endl;
-
-  while(ros::ok()){
-
-    imshow("read_image",read_image);
-
-  }*/
 }
 
 void ArucoMarker::setCamParameters(){
@@ -213,7 +207,7 @@ void ArucoMarker::calculateRobotPos(){
 
       msg_positions.push_back(temp_pos);
     }
-    
+
       msg.positions = msg_positions;
       msg.directions = headings;
       msg.IDs = robot_IDs;

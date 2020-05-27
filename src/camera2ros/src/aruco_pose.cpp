@@ -11,7 +11,6 @@
 
 int main(int argc,char** argv){
 
-    ros::init(argc,argv,"aruco_pose");
     ros::NodeHandle n;
     ros::Rate loop_rate(10);
 
