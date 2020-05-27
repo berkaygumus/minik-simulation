@@ -4,18 +4,28 @@ project(aruco_marker)
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
 
+## Find catkin macros and libraries
+## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
+## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  ISLH_msgs
   roscpp
   std_msgs
-  ISLH_msgs
 )
+
+## System dependencies are found with CMake's conventions
+# find_package(Boost REQUIRED COMPONENTS system)
 
 find_package( OpenCV REQUIRED )
 find_package(Eigen3 REQUIRED)
-
 include_directories(${OpenCV_INCLUDE_DIRS} ${EIGEN3_INCLUDE_DIR})
 
+SET(aruco_marker_HEADERS src/arucoMarker.h)
+SET(aruco_marker_SOURCES src/arucoMarker.cpp)
+
 include_directories(./src/)
+
+
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -70,7 +80,7 @@ include_directories(./src/)
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   std_msgs
+#   ISLH_msgs#   std_msgs
 # )
 
 ################################################
@@ -105,7 +115,7 @@ include_directories(./src/)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES aruco_marker
-  CATKIN_DEPENDS roscpp std_msgs ISLH_msgs
+  CATKIN_DEPENDS ISLH_msgs roscpp std_msgs
 #  DEPENDS system_lib
 )
 
@@ -121,9 +131,9 @@ include_directories(
 )
 
 ## Declare a C++ library
-add_library(${PROJECT_NAME}
-   src/aruco_marker.cpp
-)
+# add_library(${PROJECT_NAME}
+#   src/${PROJECT_NAME}/aruco_marker.cpp
+# )
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
@@ -134,10 +144,6 @@ add_library(${PROJECT_NAME}
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/aruco_marker_node.cpp)
-
-target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES})
-add_executable(aruco_marker_node src/aruco_marker.cpp )
-target_link_libraries(aruco_marker_node ${PROJECT_NAME})
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -153,6 +159,13 @@ target_link_libraries(aruco_marker_node ${PROJECT_NAME})
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
+
+add_library(${PROJECT_NAME} src/main.cpp)
+
+target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${Eigen3_LIBRARIES})
+add_executable(aruco_marker_node src/main.cpp ${aruco_marker_SOURCES} ${aruco_marker_HEADERS})
+target_link_libraries(aruco_marker_node ${PROJECT_NAME})
+
 
 #############
 ## Install ##

@@ -1,5 +1,5 @@
 const int numrobots = 3;
-const int robIDList[3][2] = {{0,0},{1,0},{0,1}};
+const int robIDList[3][2] = {{2,0},{1,0},{0,1}};
 
 // HLOW,SLOW,VLOW, HHIGH, SHIGH, VHIGH
 // Robot colors

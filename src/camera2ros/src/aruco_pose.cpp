@@ -11,7 +11,7 @@
 
 int main(int argc,char** argv){
 
-    ros::init(argc,argv,"camera2ros");
+    ros::init(argc,argv,"aruco_pose");
     ros::NodeHandle n;
     ros::Rate loop_rate(10);
 
@@ -57,7 +57,7 @@ int main(int argc,char** argv){
       imshow("undist_right",undist2);
 
       cv::Mat image,imageCopy;
-      undist1.copyTo(image);
+      frame1.copyTo(image);
       image.copyTo(imageCopy);
       std::vector<int> ids;
       std::vector<std::vector<cv::Point2f> > corners;
@@ -67,10 +67,10 @@ int main(int argc,char** argv){
           cv::aruco::drawDetectedMarkers(imageCopy, corners, ids);
       //cv::imshow("out", imageCopy);
 
-      Mat distCoeffs = Mat::zeros(1, 5, CV_32F);//{0,0,0,0,0};
-      Mat cameraMatrix = (Mat_<double>(3,3) << 3.2980705649113719e+02, 0., 3.0991789834865335e+02,0.,3.2749961188628993e+02, 2.1460654247926990e+02,0., 0., 1.);
-      //Mat cameraMatrix = (Mat_<double>(3,3) << 371.42398 ,    0.00000 ,  312.84805 ,  0.00000 ,  371.39846 ,  231.62992 ,  0.00000 ,    0.00000 ,    1.00000);
-      //Mat distCoeffs = (Mat_<double>(1,5) <<  -0.36019 ,    0.19207 ,    0.00165 ,  -0.00967 ,  -0.06027);
+      //Mat distCoeffs = Mat::zeros(1, 5, CV_32F);//{0,0,0,0,0};
+      //Mat cameraMatrix = (Mat_<double>(3,3) << 3.2980705649113719e+02, 0., 3.0991789834865335e+02,0.,3.2749961188628993e+02, 2.1460654247926990e+02,0., 0., 1.);
+      Mat cameraMatrix = (Mat_<double>(3,3) << 371.42398 ,    0.00000 ,  312.84805 ,  0.00000 ,  371.39846 ,  231.62992 ,  0.00000 ,    0.00000 ,    1.00000);
+      Mat distCoeffs = (Mat_<double>(1,5) <<  -0.36019 ,    0.19207 ,    0.00165 ,  -0.00967 ,  -0.06027);
       /*K : [ 371.42398 ,    0.00000 ,  312.84805 ,
    0.00000 ,  371.39846 ,  231.62992 ,
    0.00000 ,    0.00000 ,    1.00000]
@@ -175,7 +175,7 @@ Dist : [  -0.36019 ,    0.19207 ,    0.00165 ,  -0.00967 ,  -0.06027]*/
         msg.positions = msg_positions;
         msg.directions = headings;
         msg.IDs = robot_IDs;
-        
+
         robotsPublisher.publish(msg);
 
       waitKey(25);

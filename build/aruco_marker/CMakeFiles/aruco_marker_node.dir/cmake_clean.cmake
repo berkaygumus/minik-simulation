@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/aruco_marker_node.dir/src/aruco_marker.cpp.o"
+  "CMakeFiles/aruco_marker_node.dir/src/main.cpp.o"
+  "CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o"
   "/home/berkay/catkin_ws/devel/lib/aruco_marker/aruco_marker_node.pdb"
   "/home/berkay/catkin_ws/devel/lib/aruco_marker/aruco_marker_node"
 )

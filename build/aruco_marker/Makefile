@@ -195,35 +195,62 @@ aruco_marker_node/fast:
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/build
 .PHONY : aruco_marker_node/fast
 
-src/aruco_marker.o: src/aruco_marker.cpp.o
+src/arucoMarker.o: src/arucoMarker.cpp.o
 
-.PHONY : src/aruco_marker.o
+.PHONY : src/arucoMarker.o
 
 # target to build an object file
-src/aruco_marker.cpp.o:
-	cd /home/berkay/catkin_ws/build && $(MAKE) -f aruco_marker/CMakeFiles/aruco_marker.dir/build.make aruco_marker/CMakeFiles/aruco_marker.dir/src/aruco_marker.cpp.o
-	cd /home/berkay/catkin_ws/build && $(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/src/aruco_marker.cpp.o
-.PHONY : src/aruco_marker.cpp.o
+src/arucoMarker.cpp.o:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o
+.PHONY : src/arucoMarker.cpp.o
 
-src/aruco_marker.i: src/aruco_marker.cpp.i
+src/arucoMarker.i: src/arucoMarker.cpp.i
 
-.PHONY : src/aruco_marker.i
+.PHONY : src/arucoMarker.i
 
 # target to preprocess a source file
-src/aruco_marker.cpp.i:
-	cd /home/berkay/catkin_ws/build && $(MAKE) -f aruco_marker/CMakeFiles/aruco_marker.dir/build.make aruco_marker/CMakeFiles/aruco_marker.dir/src/aruco_marker.cpp.i
-	cd /home/berkay/catkin_ws/build && $(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/src/aruco_marker.cpp.i
-.PHONY : src/aruco_marker.cpp.i
+src/arucoMarker.cpp.i:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.i
+.PHONY : src/arucoMarker.cpp.i
 
-src/aruco_marker.s: src/aruco_marker.cpp.s
+src/arucoMarker.s: src/arucoMarker.cpp.s
 
-.PHONY : src/aruco_marker.s
+.PHONY : src/arucoMarker.s
 
 # target to generate assembly for a file
-src/aruco_marker.cpp.s:
-	cd /home/berkay/catkin_ws/build && $(MAKE) -f aruco_marker/CMakeFiles/aruco_marker.dir/build.make aruco_marker/CMakeFiles/aruco_marker.dir/src/aruco_marker.cpp.s
-	cd /home/berkay/catkin_ws/build && $(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/src/aruco_marker.cpp.s
-.PHONY : src/aruco_marker.cpp.s
+src/arucoMarker.cpp.s:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.s
+.PHONY : src/arucoMarker.cpp.s
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f aruco_marker/CMakeFiles/aruco_marker.dir/build.make aruco_marker/CMakeFiles/aruco_marker.dir/src/main.cpp.o
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f aruco_marker/CMakeFiles/aruco_marker.dir/build.make aruco_marker/CMakeFiles/aruco_marker.dir/src/main.cpp.i
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f aruco_marker/CMakeFiles/aruco_marker.dir/build.make aruco_marker/CMakeFiles/aruco_marker.dir/src/main.cpp.s
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -240,9 +267,12 @@ help:
 	@echo "... aruco_marker_node"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... src/aruco_marker.o"
-	@echo "... src/aruco_marker.i"
-	@echo "... src/aruco_marker.s"
+	@echo "... src/arucoMarker.o"
+	@echo "... src/arucoMarker.i"
+	@echo "... src/arucoMarker.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

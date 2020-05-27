@@ -4,7 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/berkay/catkin_ws/src/aruco_marker/src/aruco_marker.cpp" "/home/berkay/catkin_ws/build/aruco_marker/CMakeFiles/aruco_marker_node.dir/src/aruco_marker.cpp.o"
+  "/home/berkay/catkin_ws/src/aruco_marker/src/arucoMarker.cpp" "/home/berkay/catkin_ws/build/aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o"
+  "/home/berkay/catkin_ws/src/aruco_marker/src/main.cpp" "/home/berkay/catkin_ws/build/aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

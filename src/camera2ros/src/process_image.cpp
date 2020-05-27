@@ -581,11 +581,11 @@ int main(int argc,char** argv){
   			if (mcs_r[2][i].x == mcs_r[2][i].x && mcs_r[2][i].y == mcs_r[2][i].y)
   				colorCircle(blue_r, (int)mcs_r[2][i].x, (int)mcs_r[2][i].y, 10, Scalar(55));
 
-        //imshow("blue left", blue_l);
+        imshow("blue left", blue_l);
         imshow("red left", red_l);
         //imshow("yellow left", yellow_l);
         imshow("green left", green_l);
-        //imshow("blue right", blue_r);
+        imshow("blue right", blue_r);
         imshow("red right", red_r);
         //imshow("yellow right", yellow_r);
         imshow("green right", green_r);
@@ -594,10 +594,10 @@ int main(int argc,char** argv){
         checkConsistency(mcs_r);
 
         vector<Robot> robots = findRobots(mcs_l, mcs_r,calib);
-				cout << "final robot size: " << robots.size() << endl;
+				//cout << "final robot size: " << robots.size() << endl;
 
 				for(int i=0;i<robots.size();i++){
-					cout << "robot " << i << " id : " << robots[i].ID << " pos: " << robots[i].center << endl;
+					//cout << "robot " << i << " id : " << robots[i].ID << " pos: " << robots[i].center << endl;
 				}
 
 				ISLH_msgs::robotPositions msg;
