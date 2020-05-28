@@ -58,6 +58,7 @@ left: 4*(id-1) + 4
 }
 
 void ArucoMarker::setCamParameters(){
+  Camera_Calibration* calib  = new Camera_Calibration();
   cameraMatrix = (Mat_<double>(3,3) << 371.42398 ,    0.00000 ,  312.84805 ,  0.00000 ,  371.39846 ,  231.62992 ,  0.00000 ,    0.00000 ,    1.00000);
   distCoeffs = (Mat_<double>(1,5) <<  -0.36019 ,    0.19207 ,    0.00165 ,  -0.00967 ,  -0.06027);
 }

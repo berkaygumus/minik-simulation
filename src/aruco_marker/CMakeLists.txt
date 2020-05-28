@@ -11,6 +11,8 @@ find_package(catkin REQUIRED COMPONENTS
   ISLH_msgs
   roscpp
   std_msgs
+  camera_calibration
+  error_comp
 )
 
 ## System dependencies are found with CMake's conventions
@@ -115,7 +117,7 @@ include_directories(./src/)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES aruco_marker
-  CATKIN_DEPENDS ISLH_msgs roscpp std_msgs
+  CATKIN_DEPENDS ISLH_msgs roscpp std_msgs camera_calibration
 #  DEPENDS system_lib
 )
 

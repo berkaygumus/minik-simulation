@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/error_comp.dir/src/main.cpp.o"
+  "CMakeFiles/error_comp.dir/src/deneme_lib.cpp.o"
   "/home/berkay/catkin_ws/devel/lib/liberror_comp.pdb"
   "/home/berkay/catkin_ws/devel/lib/liberror_comp.so"
 )

@@ -360,13 +360,39 @@ error_comp_gennodejs/fast:
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f error_comp/CMakeFiles/error_comp_gennodejs.dir/build.make error_comp/CMakeFiles/error_comp_gennodejs.dir/build
 .PHONY : error_comp_gennodejs/fast
 
+src/deneme_lib.o: src/deneme_lib.cpp.o
+
+.PHONY : src/deneme_lib.o
+
+# target to build an object file
+src/deneme_lib.cpp.o:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f error_comp/CMakeFiles/error_comp.dir/build.make error_comp/CMakeFiles/error_comp.dir/src/deneme_lib.cpp.o
+.PHONY : src/deneme_lib.cpp.o
+
+src/deneme_lib.i: src/deneme_lib.cpp.i
+
+.PHONY : src/deneme_lib.i
+
+# target to preprocess a source file
+src/deneme_lib.cpp.i:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f error_comp/CMakeFiles/error_comp.dir/build.make error_comp/CMakeFiles/error_comp.dir/src/deneme_lib.cpp.i
+.PHONY : src/deneme_lib.cpp.i
+
+src/deneme_lib.s: src/deneme_lib.cpp.s
+
+.PHONY : src/deneme_lib.s
+
+# target to generate assembly for a file
+src/deneme_lib.cpp.s:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f error_comp/CMakeFiles/error_comp.dir/build.make error_comp/CMakeFiles/error_comp.dir/src/deneme_lib.cpp.s
+.PHONY : src/deneme_lib.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
 
 # target to build an object file
 src/main.cpp.o:
-	cd /home/berkay/catkin_ws/build && $(MAKE) -f error_comp/CMakeFiles/error_comp.dir/build.make error_comp/CMakeFiles/error_comp.dir/src/main.cpp.o
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f error_comp/CMakeFiles/error_comp_node.dir/build.make error_comp/CMakeFiles/error_comp_node.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
@@ -376,7 +402,6 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	cd /home/berkay/catkin_ws/build && $(MAKE) -f error_comp/CMakeFiles/error_comp.dir/build.make error_comp/CMakeFiles/error_comp.dir/src/main.cpp.i
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f error_comp/CMakeFiles/error_comp_node.dir/build.make error_comp/CMakeFiles/error_comp_node.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
@@ -386,7 +411,6 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	cd /home/berkay/catkin_ws/build && $(MAKE) -f error_comp/CMakeFiles/error_comp.dir/build.make error_comp/CMakeFiles/error_comp.dir/src/main.cpp.s
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f error_comp/CMakeFiles/error_comp_node.dir/build.make error_comp/CMakeFiles/error_comp_node.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
@@ -443,6 +467,9 @@ help:
 	@echo "... install"
 	@echo "... error_comp_genlisp"
 	@echo "... error_comp_gennodejs"
+	@echo "... src/deneme_lib.o"
+	@echo "... src/deneme_lib.i"
+	@echo "... src/deneme_lib.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

@@ -4,7 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/berkay/catkin_ws/src/camera2ros/src/camera_calibration.cpp" "/home/berkay/catkin_ws/build/camera2ros/CMakeFiles/camera2ros.dir/src/camera_calibration.cpp.o"
   "/home/berkay/catkin_ws/src/camera2ros/src/main.cpp" "/home/berkay/catkin_ws/build/camera2ros/CMakeFiles/camera2ros.dir/src/main.cpp.o"
+  "/home/berkay/catkin_ws/src/camera2ros/src/settings.cpp" "/home/berkay/catkin_ws/build/camera2ros/CMakeFiles/camera2ros.dir/src/settings.cpp.o"
+  "/home/berkay/catkin_ws/src/camera2ros/src/stereo_calib.cpp" "/home/berkay/catkin_ws/build/camera2ros/CMakeFiles/camera2ros.dir/src/stereo_calib.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -21,6 +24,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv"
   "/usr/include/eigen3"
   "/home/berkay/catkin_ws/src/camera2ros/./src"
+  "/home/berkay/catkin_ws/src/camera2ros/include"
   "/home/berkay/catkin_ws/devel/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"

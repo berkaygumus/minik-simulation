@@ -9,6 +9,7 @@ int main(int argc,char** argv){
     cout << "aruco_marker_node" << endl;
     ArucoMarker* aruco_marker  = new ArucoMarker();
 
+
     //generates 4 markers for one robot
     //takes robotIDs vector as input
     /*

@@ -81,14 +81,92 @@ camera2ros/CMakeFiles/camera2ros.dir/src/main.cpp.o.provides: camera2ros/CMakeFi
 camera2ros/CMakeFiles/camera2ros.dir/src/main.cpp.o.provides.build: camera2ros/CMakeFiles/camera2ros.dir/src/main.cpp.o
 
 
+camera2ros/CMakeFiles/camera2ros.dir/src/camera_calibration.cpp.o: camera2ros/CMakeFiles/camera2ros.dir/flags.make
+camera2ros/CMakeFiles/camera2ros.dir/src/camera_calibration.cpp.o: /home/berkay/catkin_ws/src/camera2ros/src/camera_calibration.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object camera2ros/CMakeFiles/camera2ros.dir/src/camera_calibration.cpp.o"
+	cd /home/berkay/catkin_ws/build/camera2ros && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/camera2ros.dir/src/camera_calibration.cpp.o -c /home/berkay/catkin_ws/src/camera2ros/src/camera_calibration.cpp
+
+camera2ros/CMakeFiles/camera2ros.dir/src/camera_calibration.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/camera2ros.dir/src/camera_calibration.cpp.i"
+	cd /home/berkay/catkin_ws/build/camera2ros && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/berkay/catkin_ws/src/camera2ros/src/camera_calibration.cpp > CMakeFiles/camera2ros.dir/src/camera_calibration.cpp.i
+
+camera2ros/CMakeFiles/camera2ros.dir/src/camera_calibration.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/camera2ros.dir/src/camera_calibration.cpp.s"
+	cd /home/berkay/catkin_ws/build/camera2ros && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/berkay/catkin_ws/src/camera2ros/src/camera_calibration.cpp -o CMakeFiles/camera2ros.dir/src/camera_calibration.cpp.s
+
+camera2ros/CMakeFiles/camera2ros.dir/src/camera_calibration.cpp.o.requires:
+
+.PHONY : camera2ros/CMakeFiles/camera2ros.dir/src/camera_calibration.cpp.o.requires
+
+camera2ros/CMakeFiles/camera2ros.dir/src/camera_calibration.cpp.o.provides: camera2ros/CMakeFiles/camera2ros.dir/src/camera_calibration.cpp.o.requires
+	$(MAKE) -f camera2ros/CMakeFiles/camera2ros.dir/build.make camera2ros/CMakeFiles/camera2ros.dir/src/camera_calibration.cpp.o.provides.build
+.PHONY : camera2ros/CMakeFiles/camera2ros.dir/src/camera_calibration.cpp.o.provides
+
+camera2ros/CMakeFiles/camera2ros.dir/src/camera_calibration.cpp.o.provides.build: camera2ros/CMakeFiles/camera2ros.dir/src/camera_calibration.cpp.o
+
+
+camera2ros/CMakeFiles/camera2ros.dir/src/stereo_calib.cpp.o: camera2ros/CMakeFiles/camera2ros.dir/flags.make
+camera2ros/CMakeFiles/camera2ros.dir/src/stereo_calib.cpp.o: /home/berkay/catkin_ws/src/camera2ros/src/stereo_calib.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object camera2ros/CMakeFiles/camera2ros.dir/src/stereo_calib.cpp.o"
+	cd /home/berkay/catkin_ws/build/camera2ros && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/camera2ros.dir/src/stereo_calib.cpp.o -c /home/berkay/catkin_ws/src/camera2ros/src/stereo_calib.cpp
+
+camera2ros/CMakeFiles/camera2ros.dir/src/stereo_calib.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/camera2ros.dir/src/stereo_calib.cpp.i"
+	cd /home/berkay/catkin_ws/build/camera2ros && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/berkay/catkin_ws/src/camera2ros/src/stereo_calib.cpp > CMakeFiles/camera2ros.dir/src/stereo_calib.cpp.i
+
+camera2ros/CMakeFiles/camera2ros.dir/src/stereo_calib.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/camera2ros.dir/src/stereo_calib.cpp.s"
+	cd /home/berkay/catkin_ws/build/camera2ros && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/berkay/catkin_ws/src/camera2ros/src/stereo_calib.cpp -o CMakeFiles/camera2ros.dir/src/stereo_calib.cpp.s
+
+camera2ros/CMakeFiles/camera2ros.dir/src/stereo_calib.cpp.o.requires:
+
+.PHONY : camera2ros/CMakeFiles/camera2ros.dir/src/stereo_calib.cpp.o.requires
+
+camera2ros/CMakeFiles/camera2ros.dir/src/stereo_calib.cpp.o.provides: camera2ros/CMakeFiles/camera2ros.dir/src/stereo_calib.cpp.o.requires
+	$(MAKE) -f camera2ros/CMakeFiles/camera2ros.dir/build.make camera2ros/CMakeFiles/camera2ros.dir/src/stereo_calib.cpp.o.provides.build
+.PHONY : camera2ros/CMakeFiles/camera2ros.dir/src/stereo_calib.cpp.o.provides
+
+camera2ros/CMakeFiles/camera2ros.dir/src/stereo_calib.cpp.o.provides.build: camera2ros/CMakeFiles/camera2ros.dir/src/stereo_calib.cpp.o
+
+
+camera2ros/CMakeFiles/camera2ros.dir/src/settings.cpp.o: camera2ros/CMakeFiles/camera2ros.dir/flags.make
+camera2ros/CMakeFiles/camera2ros.dir/src/settings.cpp.o: /home/berkay/catkin_ws/src/camera2ros/src/settings.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object camera2ros/CMakeFiles/camera2ros.dir/src/settings.cpp.o"
+	cd /home/berkay/catkin_ws/build/camera2ros && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/camera2ros.dir/src/settings.cpp.o -c /home/berkay/catkin_ws/src/camera2ros/src/settings.cpp
+
+camera2ros/CMakeFiles/camera2ros.dir/src/settings.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/camera2ros.dir/src/settings.cpp.i"
+	cd /home/berkay/catkin_ws/build/camera2ros && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/berkay/catkin_ws/src/camera2ros/src/settings.cpp > CMakeFiles/camera2ros.dir/src/settings.cpp.i
+
+camera2ros/CMakeFiles/camera2ros.dir/src/settings.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/camera2ros.dir/src/settings.cpp.s"
+	cd /home/berkay/catkin_ws/build/camera2ros && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/berkay/catkin_ws/src/camera2ros/src/settings.cpp -o CMakeFiles/camera2ros.dir/src/settings.cpp.s
+
+camera2ros/CMakeFiles/camera2ros.dir/src/settings.cpp.o.requires:
+
+.PHONY : camera2ros/CMakeFiles/camera2ros.dir/src/settings.cpp.o.requires
+
+camera2ros/CMakeFiles/camera2ros.dir/src/settings.cpp.o.provides: camera2ros/CMakeFiles/camera2ros.dir/src/settings.cpp.o.requires
+	$(MAKE) -f camera2ros/CMakeFiles/camera2ros.dir/build.make camera2ros/CMakeFiles/camera2ros.dir/src/settings.cpp.o.provides.build
+.PHONY : camera2ros/CMakeFiles/camera2ros.dir/src/settings.cpp.o.provides
+
+camera2ros/CMakeFiles/camera2ros.dir/src/settings.cpp.o.provides.build: camera2ros/CMakeFiles/camera2ros.dir/src/settings.cpp.o
+
+
 # Object files for target camera2ros
 camera2ros_OBJECTS = \
-"CMakeFiles/camera2ros.dir/src/main.cpp.o"
+"CMakeFiles/camera2ros.dir/src/main.cpp.o" \
+"CMakeFiles/camera2ros.dir/src/camera_calibration.cpp.o" \
+"CMakeFiles/camera2ros.dir/src/stereo_calib.cpp.o" \
+"CMakeFiles/camera2ros.dir/src/settings.cpp.o"
 
 # External object files for target camera2ros
 camera2ros_EXTERNAL_OBJECTS =
 
 /home/berkay/catkin_ws/devel/lib/libcamera2ros.so: camera2ros/CMakeFiles/camera2ros.dir/src/main.cpp.o
+/home/berkay/catkin_ws/devel/lib/libcamera2ros.so: camera2ros/CMakeFiles/camera2ros.dir/src/camera_calibration.cpp.o
+/home/berkay/catkin_ws/devel/lib/libcamera2ros.so: camera2ros/CMakeFiles/camera2ros.dir/src/stereo_calib.cpp.o
+/home/berkay/catkin_ws/devel/lib/libcamera2ros.so: camera2ros/CMakeFiles/camera2ros.dir/src/settings.cpp.o
 /home/berkay/catkin_ws/devel/lib/libcamera2ros.so: camera2ros/CMakeFiles/camera2ros.dir/build.make
 /home/berkay/catkin_ws/devel/lib/libcamera2ros.so: /opt/ros/kinetic/lib/libroscpp.so
 /home/berkay/catkin_ws/devel/lib/libcamera2ros.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
@@ -288,7 +366,7 @@ camera2ros_EXTERNAL_OBJECTS =
 /home/berkay/catkin_ws/devel/lib/libcamera2ros.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1
 /home/berkay/catkin_ws/devel/lib/libcamera2ros.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1
 /home/berkay/catkin_ws/devel/lib/libcamera2ros.so: camera2ros/CMakeFiles/camera2ros.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library /home/berkay/catkin_ws/devel/lib/libcamera2ros.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared library /home/berkay/catkin_ws/devel/lib/libcamera2ros.so"
 	cd /home/berkay/catkin_ws/build/camera2ros && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/camera2ros.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -297,6 +375,9 @@ camera2ros/CMakeFiles/camera2ros.dir/build: /home/berkay/catkin_ws/devel/lib/lib
 .PHONY : camera2ros/CMakeFiles/camera2ros.dir/build
 
 camera2ros/CMakeFiles/camera2ros.dir/requires: camera2ros/CMakeFiles/camera2ros.dir/src/main.cpp.o.requires
+camera2ros/CMakeFiles/camera2ros.dir/requires: camera2ros/CMakeFiles/camera2ros.dir/src/camera_calibration.cpp.o.requires
+camera2ros/CMakeFiles/camera2ros.dir/requires: camera2ros/CMakeFiles/camera2ros.dir/src/stereo_calib.cpp.o.requires
+camera2ros/CMakeFiles/camera2ros.dir/requires: camera2ros/CMakeFiles/camera2ros.dir/src/settings.cpp.o.requires
 
 .PHONY : camera2ros/CMakeFiles/camera2ros.dir/requires
 

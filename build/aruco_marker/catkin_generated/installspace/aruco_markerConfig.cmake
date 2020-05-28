@@ -185,7 +185,7 @@ foreach(t ${aruco_marker_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "ISLH_msgs;roscpp;std_msgs")
+set(depends "ISLH_msgs;roscpp;std_msgs;camera_calibration")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

@@ -117,6 +117,8 @@ aruco_marker_node_EXTERNAL_OBJECTS =
 /home/berkay/catkin_ws/devel/lib/aruco_marker/aruco_marker_node: aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o
 /home/berkay/catkin_ws/devel/lib/aruco_marker/aruco_marker_node: aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make
 /home/berkay/catkin_ws/devel/lib/aruco_marker/aruco_marker_node: /home/berkay/catkin_ws/devel/lib/libaruco_marker.so
+/home/berkay/catkin_ws/devel/lib/aruco_marker/aruco_marker_node: /home/berkay/catkin_ws/devel/lib/libcamera_calibration.so
+/home/berkay/catkin_ws/devel/lib/aruco_marker/aruco_marker_node: /home/berkay/catkin_ws/devel/lib/liberror_comp.so
 /home/berkay/catkin_ws/devel/lib/aruco_marker/aruco_marker_node: /opt/ros/kinetic/lib/libroscpp.so
 /home/berkay/catkin_ws/devel/lib/aruco_marker/aruco_marker_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 /home/berkay/catkin_ws/devel/lib/aruco_marker/aruco_marker_node: /usr/lib/x86_64-linux-gnu/libboost_signals.so

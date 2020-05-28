@@ -3,6 +3,6 @@ prefix=/home/berkay/catkin_ws/install
 Name: camera2ros
 Description: Description of camera2ros
 Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lcamera2ros
 Requires: roscpp std_msgs ISLH_msgs

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/berkay/catkin_ws/src/error_comp/src/main.cpp" "/home/berkay/catkin_ws/build/error_comp/CMakeFiles/error_comp.dir/src/main.cpp.o"
+  "/home/berkay/catkin_ws/src/error_comp/src/deneme_lib.cpp" "/home/berkay/catkin_ws/build/error_comp/CMakeFiles/error_comp.dir/src/deneme_lib.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

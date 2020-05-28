@@ -57,38 +57,38 @@ include error_comp/CMakeFiles/error_comp.dir/progress.make
 # Include the compile flags for this target's objects.
 include error_comp/CMakeFiles/error_comp.dir/flags.make
 
-error_comp/CMakeFiles/error_comp.dir/src/main.cpp.o: error_comp/CMakeFiles/error_comp.dir/flags.make
-error_comp/CMakeFiles/error_comp.dir/src/main.cpp.o: /home/berkay/catkin_ws/src/error_comp/src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object error_comp/CMakeFiles/error_comp.dir/src/main.cpp.o"
-	cd /home/berkay/catkin_ws/build/error_comp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/error_comp.dir/src/main.cpp.o -c /home/berkay/catkin_ws/src/error_comp/src/main.cpp
+error_comp/CMakeFiles/error_comp.dir/src/deneme_lib.cpp.o: error_comp/CMakeFiles/error_comp.dir/flags.make
+error_comp/CMakeFiles/error_comp.dir/src/deneme_lib.cpp.o: /home/berkay/catkin_ws/src/error_comp/src/deneme_lib.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object error_comp/CMakeFiles/error_comp.dir/src/deneme_lib.cpp.o"
+	cd /home/berkay/catkin_ws/build/error_comp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/error_comp.dir/src/deneme_lib.cpp.o -c /home/berkay/catkin_ws/src/error_comp/src/deneme_lib.cpp
 
-error_comp/CMakeFiles/error_comp.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/error_comp.dir/src/main.cpp.i"
-	cd /home/berkay/catkin_ws/build/error_comp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/berkay/catkin_ws/src/error_comp/src/main.cpp > CMakeFiles/error_comp.dir/src/main.cpp.i
+error_comp/CMakeFiles/error_comp.dir/src/deneme_lib.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/error_comp.dir/src/deneme_lib.cpp.i"
+	cd /home/berkay/catkin_ws/build/error_comp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/berkay/catkin_ws/src/error_comp/src/deneme_lib.cpp > CMakeFiles/error_comp.dir/src/deneme_lib.cpp.i
 
-error_comp/CMakeFiles/error_comp.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/error_comp.dir/src/main.cpp.s"
-	cd /home/berkay/catkin_ws/build/error_comp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/berkay/catkin_ws/src/error_comp/src/main.cpp -o CMakeFiles/error_comp.dir/src/main.cpp.s
+error_comp/CMakeFiles/error_comp.dir/src/deneme_lib.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/error_comp.dir/src/deneme_lib.cpp.s"
+	cd /home/berkay/catkin_ws/build/error_comp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/berkay/catkin_ws/src/error_comp/src/deneme_lib.cpp -o CMakeFiles/error_comp.dir/src/deneme_lib.cpp.s
 
-error_comp/CMakeFiles/error_comp.dir/src/main.cpp.o.requires:
+error_comp/CMakeFiles/error_comp.dir/src/deneme_lib.cpp.o.requires:
 
-.PHONY : error_comp/CMakeFiles/error_comp.dir/src/main.cpp.o.requires
+.PHONY : error_comp/CMakeFiles/error_comp.dir/src/deneme_lib.cpp.o.requires
 
-error_comp/CMakeFiles/error_comp.dir/src/main.cpp.o.provides: error_comp/CMakeFiles/error_comp.dir/src/main.cpp.o.requires
-	$(MAKE) -f error_comp/CMakeFiles/error_comp.dir/build.make error_comp/CMakeFiles/error_comp.dir/src/main.cpp.o.provides.build
-.PHONY : error_comp/CMakeFiles/error_comp.dir/src/main.cpp.o.provides
+error_comp/CMakeFiles/error_comp.dir/src/deneme_lib.cpp.o.provides: error_comp/CMakeFiles/error_comp.dir/src/deneme_lib.cpp.o.requires
+	$(MAKE) -f error_comp/CMakeFiles/error_comp.dir/build.make error_comp/CMakeFiles/error_comp.dir/src/deneme_lib.cpp.o.provides.build
+.PHONY : error_comp/CMakeFiles/error_comp.dir/src/deneme_lib.cpp.o.provides
 
-error_comp/CMakeFiles/error_comp.dir/src/main.cpp.o.provides.build: error_comp/CMakeFiles/error_comp.dir/src/main.cpp.o
+error_comp/CMakeFiles/error_comp.dir/src/deneme_lib.cpp.o.provides.build: error_comp/CMakeFiles/error_comp.dir/src/deneme_lib.cpp.o
 
 
 # Object files for target error_comp
 error_comp_OBJECTS = \
-"CMakeFiles/error_comp.dir/src/main.cpp.o"
+"CMakeFiles/error_comp.dir/src/deneme_lib.cpp.o"
 
 # External object files for target error_comp
 error_comp_EXTERNAL_OBJECTS =
 
-/home/berkay/catkin_ws/devel/lib/liberror_comp.so: error_comp/CMakeFiles/error_comp.dir/src/main.cpp.o
+/home/berkay/catkin_ws/devel/lib/liberror_comp.so: error_comp/CMakeFiles/error_comp.dir/src/deneme_lib.cpp.o
 /home/berkay/catkin_ws/devel/lib/liberror_comp.so: error_comp/CMakeFiles/error_comp.dir/build.make
 /home/berkay/catkin_ws/devel/lib/liberror_comp.so: /opt/ros/kinetic/lib/libroscpp.so
 /home/berkay/catkin_ws/devel/lib/liberror_comp.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
@@ -118,7 +118,7 @@ error_comp/CMakeFiles/error_comp.dir/build: /home/berkay/catkin_ws/devel/lib/lib
 
 .PHONY : error_comp/CMakeFiles/error_comp.dir/build
 
-error_comp/CMakeFiles/error_comp.dir/requires: error_comp/CMakeFiles/error_comp.dir/src/main.cpp.o.requires
+error_comp/CMakeFiles/error_comp.dir/requires: error_comp/CMakeFiles/error_comp.dir/src/deneme_lib.cpp.o.requires
 
 .PHONY : error_comp/CMakeFiles/error_comp.dir/requires
 

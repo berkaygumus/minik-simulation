@@ -90,6 +90,8 @@ aruco_marker_EXTERNAL_OBJECTS =
 
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: aruco_marker/CMakeFiles/aruco_marker.dir/src/main.cpp.o
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: aruco_marker/CMakeFiles/aruco_marker.dir/build.make
+/home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /home/berkay/catkin_ws/devel/lib/libcamera_calibration.so
+/home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /home/berkay/catkin_ws/devel/lib/liberror_comp.so
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/libroscpp.so
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
@@ -135,21 +137,21 @@ aruco_marker_EXTERNAL_OBJECTS =
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ximgproc3.so.3.3.1
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xobjdetect3.so.3.3.1
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xphoto3.so.3.3.1
-/home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_shape3.so.3.3.1
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_photo3.so.3.3.1
+/home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_viz3.so.3.3.1
+/home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_phase_unwrapping3.so.3.3.1
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_datasets3.so.3.3.1
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_plot3.so.3.3.1
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_text3.so.3.3.1
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_dnn3.so.3.3.1
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ml3.so.3.3.1
+/home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_shape3.so.3.3.1
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_video3.so.3.3.1
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_calib3d3.so.3.3.1
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_features2d3.so.3.3.1
+/home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_flann3.so.3.3.1
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_highgui3.so.3.3.1
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_videoio3.so.3.3.1
-/home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_viz3.so.3.3.1
-/home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_phase_unwrapping3.so.3.3.1
-/home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_flann3.so.3.3.1
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_objdetect3.so.3.3.1
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1
