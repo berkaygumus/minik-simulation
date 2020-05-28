@@ -1,5 +1,5 @@
 #include <ros/ros.h>
-#include <arucoMarker.h>
+#include <aruco_marker/arucoMarker.h>
 
 using namespace std;
 

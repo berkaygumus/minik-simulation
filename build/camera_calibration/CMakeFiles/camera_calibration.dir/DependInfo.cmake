@@ -23,7 +23,6 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv"
   "/usr/include/eigen3"
   "/home/berkay/catkin_ws/src/camera_calibration/include"
-  "/home/berkay/catkin_ws/devel/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )

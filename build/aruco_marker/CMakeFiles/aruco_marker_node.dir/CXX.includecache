@@ -24,9 +24,9 @@ ros/message_operations.h
 geometry_msgs/Pose2D.h
 -
 
-/home/berkay/catkin_ws/src/aruco_marker/./src/arucoMarker.h
+/home/berkay/catkin_ws/src/aruco_marker/include/aruco_marker/arucoMarker.h
 ros/ros.h
-/home/berkay/catkin_ws/src/aruco_marker/./src/ros/ros.h
+/home/berkay/catkin_ws/src/aruco_marker/include/aruco_marker/ros/ros.h
 iostream
 -
 string
@@ -40,42 +40,20 @@ opencv2/aruco.hpp
 geometry_msgs/Pose2D.h
 -
 ISLH_msgs/robotPositions.h
-/home/berkay/catkin_ws/src/aruco_marker/./src/ISLH_msgs/robotPositions.h
+/home/berkay/catkin_ws/src/aruco_marker/include/aruco_marker/ISLH_msgs/robotPositions.h
 float.h
-/home/berkay/catkin_ws/src/aruco_marker/./src/float.h
+/home/berkay/catkin_ws/src/aruco_marker/include/aruco_marker/float.h
 camera_calibration/camera_calibration.h
-/home/berkay/catkin_ws/src/aruco_marker/./src/camera_calibration/camera_calibration.h
+/home/berkay/catkin_ws/src/aruco_marker/include/aruco_marker/camera_calibration/camera_calibration.h
 
 /home/berkay/catkin_ws/src/aruco_marker/src/arucoMarker.cpp
-arucoMarker.h
-/home/berkay/catkin_ws/src/aruco_marker/src/arucoMarker.h
-
-/home/berkay/catkin_ws/src/aruco_marker/src/arucoMarker.h
-ros/ros.h
-/home/berkay/catkin_ws/src/aruco_marker/src/ros/ros.h
-iostream
--
-string
--
-sstream
--
-opencv2/opencv.hpp
--
-opencv2/aruco.hpp
--
-geometry_msgs/Pose2D.h
--
-ISLH_msgs/robotPositions.h
-/home/berkay/catkin_ws/src/aruco_marker/src/ISLH_msgs/robotPositions.h
-float.h
-/home/berkay/catkin_ws/src/aruco_marker/src/float.h
-camera_calibration/camera_calibration.h
-/home/berkay/catkin_ws/src/aruco_marker/src/camera_calibration/camera_calibration.h
+aruco_marker/arucoMarker.h
+/home/berkay/catkin_ws/src/aruco_marker/src/aruco_marker/arucoMarker.h
 
 /home/berkay/catkin_ws/src/aruco_marker/src/main.cpp
 ros/ros.h
 -
-arucoMarker.h
+aruco_marker/arucoMarker.h
 -
 
 /home/berkay/catkin_ws/src/camera_calibration/include/camera_calibration/camera_calibration.h

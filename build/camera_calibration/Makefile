@@ -100,6 +100,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
@@ -121,17 +132,6 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -180,6 +180,21 @@ camera_calibration/fast:
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera_calibration/CMakeFiles/camera_calibration.dir/build.make camera_calibration/CMakeFiles/camera_calibration.dir/build
 .PHONY : camera_calibration/fast
 
+# Convenience name for target.
+camera_calibration/CMakeFiles/camera_calibration_node.dir/rule:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_calibration/CMakeFiles/camera_calibration_node.dir/rule
+.PHONY : camera_calibration/CMakeFiles/camera_calibration_node.dir/rule
+
+# Convenience name for target.
+camera_calibration_node: camera_calibration/CMakeFiles/camera_calibration_node.dir/rule
+
+.PHONY : camera_calibration_node
+
+# fast build rule for target.
+camera_calibration_node/fast:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera_calibration/CMakeFiles/camera_calibration_node.dir/build.make camera_calibration/CMakeFiles/camera_calibration_node.dir/build
+.PHONY : camera_calibration_node/fast
+
 src/camera_calibration.o: src/camera_calibration.cpp.o
 
 .PHONY : src/camera_calibration.o
@@ -206,6 +221,33 @@ src/camera_calibration.s: src/camera_calibration.cpp.s
 src/camera_calibration.cpp.s:
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera_calibration/CMakeFiles/camera_calibration.dir/build.make camera_calibration/CMakeFiles/camera_calibration.dir/src/camera_calibration.cpp.s
 .PHONY : src/camera_calibration.cpp.s
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera_calibration/CMakeFiles/camera_calibration_node.dir/build.make camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera_calibration/CMakeFiles/camera_calibration_node.dir/build.make camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera_calibration/CMakeFiles/camera_calibration_node.dir/build.make camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 src/settings.o: src/settings.cpp.o
 
@@ -271,13 +313,17 @@ help:
 	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... camera_calibration"
+	@echo "... camera_calibration_node"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... test"
 	@echo "... src/camera_calibration.o"
 	@echo "... src/camera_calibration.i"
 	@echo "... src/camera_calibration.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 	@echo "... src/settings.o"
 	@echo "... src/settings.i"
 	@echo "... src/settings.s"

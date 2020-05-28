@@ -3,6 +3,6 @@ prefix=/home/berkay/catkin_ws/install
 Name: aruco_marker
 Description: Description of aruco_marker
 Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: ISLH_msgs roscpp std_msgs camera_calibration
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -laruco_marker
+Requires: roscpp std_msgs

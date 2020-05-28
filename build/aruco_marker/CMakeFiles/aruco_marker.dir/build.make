@@ -57,41 +57,40 @@ include aruco_marker/CMakeFiles/aruco_marker.dir/progress.make
 # Include the compile flags for this target's objects.
 include aruco_marker/CMakeFiles/aruco_marker.dir/flags.make
 
-aruco_marker/CMakeFiles/aruco_marker.dir/src/main.cpp.o: aruco_marker/CMakeFiles/aruco_marker.dir/flags.make
-aruco_marker/CMakeFiles/aruco_marker.dir/src/main.cpp.o: /home/berkay/catkin_ws/src/aruco_marker/src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object aruco_marker/CMakeFiles/aruco_marker.dir/src/main.cpp.o"
-	cd /home/berkay/catkin_ws/build/aruco_marker && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aruco_marker.dir/src/main.cpp.o -c /home/berkay/catkin_ws/src/aruco_marker/src/main.cpp
+aruco_marker/CMakeFiles/aruco_marker.dir/src/arucoMarker.cpp.o: aruco_marker/CMakeFiles/aruco_marker.dir/flags.make
+aruco_marker/CMakeFiles/aruco_marker.dir/src/arucoMarker.cpp.o: /home/berkay/catkin_ws/src/aruco_marker/src/arucoMarker.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object aruco_marker/CMakeFiles/aruco_marker.dir/src/arucoMarker.cpp.o"
+	cd /home/berkay/catkin_ws/build/aruco_marker && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aruco_marker.dir/src/arucoMarker.cpp.o -c /home/berkay/catkin_ws/src/aruco_marker/src/arucoMarker.cpp
 
-aruco_marker/CMakeFiles/aruco_marker.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aruco_marker.dir/src/main.cpp.i"
-	cd /home/berkay/catkin_ws/build/aruco_marker && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/berkay/catkin_ws/src/aruco_marker/src/main.cpp > CMakeFiles/aruco_marker.dir/src/main.cpp.i
+aruco_marker/CMakeFiles/aruco_marker.dir/src/arucoMarker.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aruco_marker.dir/src/arucoMarker.cpp.i"
+	cd /home/berkay/catkin_ws/build/aruco_marker && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/berkay/catkin_ws/src/aruco_marker/src/arucoMarker.cpp > CMakeFiles/aruco_marker.dir/src/arucoMarker.cpp.i
 
-aruco_marker/CMakeFiles/aruco_marker.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aruco_marker.dir/src/main.cpp.s"
-	cd /home/berkay/catkin_ws/build/aruco_marker && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/berkay/catkin_ws/src/aruco_marker/src/main.cpp -o CMakeFiles/aruco_marker.dir/src/main.cpp.s
+aruco_marker/CMakeFiles/aruco_marker.dir/src/arucoMarker.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aruco_marker.dir/src/arucoMarker.cpp.s"
+	cd /home/berkay/catkin_ws/build/aruco_marker && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/berkay/catkin_ws/src/aruco_marker/src/arucoMarker.cpp -o CMakeFiles/aruco_marker.dir/src/arucoMarker.cpp.s
 
-aruco_marker/CMakeFiles/aruco_marker.dir/src/main.cpp.o.requires:
+aruco_marker/CMakeFiles/aruco_marker.dir/src/arucoMarker.cpp.o.requires:
 
-.PHONY : aruco_marker/CMakeFiles/aruco_marker.dir/src/main.cpp.o.requires
+.PHONY : aruco_marker/CMakeFiles/aruco_marker.dir/src/arucoMarker.cpp.o.requires
 
-aruco_marker/CMakeFiles/aruco_marker.dir/src/main.cpp.o.provides: aruco_marker/CMakeFiles/aruco_marker.dir/src/main.cpp.o.requires
-	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker.dir/build.make aruco_marker/CMakeFiles/aruco_marker.dir/src/main.cpp.o.provides.build
-.PHONY : aruco_marker/CMakeFiles/aruco_marker.dir/src/main.cpp.o.provides
+aruco_marker/CMakeFiles/aruco_marker.dir/src/arucoMarker.cpp.o.provides: aruco_marker/CMakeFiles/aruco_marker.dir/src/arucoMarker.cpp.o.requires
+	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker.dir/build.make aruco_marker/CMakeFiles/aruco_marker.dir/src/arucoMarker.cpp.o.provides.build
+.PHONY : aruco_marker/CMakeFiles/aruco_marker.dir/src/arucoMarker.cpp.o.provides
 
-aruco_marker/CMakeFiles/aruco_marker.dir/src/main.cpp.o.provides.build: aruco_marker/CMakeFiles/aruco_marker.dir/src/main.cpp.o
+aruco_marker/CMakeFiles/aruco_marker.dir/src/arucoMarker.cpp.o.provides.build: aruco_marker/CMakeFiles/aruco_marker.dir/src/arucoMarker.cpp.o
 
 
 # Object files for target aruco_marker
 aruco_marker_OBJECTS = \
-"CMakeFiles/aruco_marker.dir/src/main.cpp.o"
+"CMakeFiles/aruco_marker.dir/src/arucoMarker.cpp.o"
 
 # External object files for target aruco_marker
 aruco_marker_EXTERNAL_OBJECTS =
 
-/home/berkay/catkin_ws/devel/lib/libaruco_marker.so: aruco_marker/CMakeFiles/aruco_marker.dir/src/main.cpp.o
+/home/berkay/catkin_ws/devel/lib/libaruco_marker.so: aruco_marker/CMakeFiles/aruco_marker.dir/src/arucoMarker.cpp.o
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: aruco_marker/CMakeFiles/aruco_marker.dir/build.make
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /home/berkay/catkin_ws/devel/lib/libcamera_calibration.so
-/home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /home/berkay/catkin_ws/devel/lib/liberror_comp.so
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /opt/ros/kinetic/lib/libroscpp.so
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 /home/berkay/catkin_ws/devel/lib/libaruco_marker.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
@@ -165,7 +164,7 @@ aruco_marker/CMakeFiles/aruco_marker.dir/build: /home/berkay/catkin_ws/devel/lib
 
 .PHONY : aruco_marker/CMakeFiles/aruco_marker.dir/build
 
-aruco_marker/CMakeFiles/aruco_marker.dir/requires: aruco_marker/CMakeFiles/aruco_marker.dir/src/main.cpp.o.requires
+aruco_marker/CMakeFiles/aruco_marker.dir/requires: aruco_marker/CMakeFiles/aruco_marker.dir/src/arucoMarker.cpp.o.requires
 
 .PHONY : aruco_marker/CMakeFiles/aruco_marker.dir/requires
 

@@ -6,7 +6,7 @@
  Date last modified: 27.05.2020
  */
 
-#include "arucoMarker.h"
+#include "aruco_marker/arucoMarker.h"
 
 ArucoMarker::ArucoMarker(){
 
@@ -59,8 +59,17 @@ left: 4*(id-1) + 4
 
 void ArucoMarker::setCamParameters(){
   Camera_Calibration* calib  = new Camera_Calibration();
+  calib->loadCameraCalibrationParams();
+
+  //cameraMatrix = calib->getMonoCalibCamMat();// (Mat_<double>(3,3) << 371.42398 ,    0.00000 ,  312.84805 ,  0.00000 ,  371.39846 ,  231.62992 ,  0.00000 ,    0.00000 ,    1.00000);
+  //distCoeffs = calib->getMonoCalibDistMat(); //
+  //distCoeffs = (Mat_<double>(1,4) <<  -0.2180602166232231, 0.4587474927427831, -0.8959683693934485, 0.5567232386016293);
+
   cameraMatrix = (Mat_<double>(3,3) << 371.42398 ,    0.00000 ,  312.84805 ,  0.00000 ,  371.39846 ,  231.62992 ,  0.00000 ,    0.00000 ,    1.00000);
   distCoeffs = (Mat_<double>(1,5) <<  -0.36019 ,    0.19207 ,    0.00165 ,  -0.00967 ,  -0.06027);
+
+  cout << "cam mat: " << cameraMatrix << endl;
+  cout << "dist mat: " << distCoeffs << endl;
 }
 
 void ArucoMarker::calculateRobotPos(){
@@ -74,6 +83,7 @@ void ArucoMarker::calculateRobotPos(){
   cap.set(CV_CAP_PROP_FRAME_WIDTH, 640);
   cap.set(CV_CAP_PROP_FRAME_HEIGHT, 480);
   Mat src_image;//source image
+  cap >> src_image;
 
   //sets camera parameters: camera matrix and distortion coefficients
   setCamParameters();

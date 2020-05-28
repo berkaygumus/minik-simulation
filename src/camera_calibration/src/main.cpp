@@ -34,9 +34,9 @@ int main(int argc,char** argv){
     //cap1 >> frame1;
     //calib->calibrateMain(argc, argv);
     //for mono camera
-    //calib->calibrate();
+    calib->calibrate();
 
-    calib->runStereoCalibrationAndSave();
+    //calib->runStereoCalibrationAndSave();
 
     //aruco marker dictionary
 

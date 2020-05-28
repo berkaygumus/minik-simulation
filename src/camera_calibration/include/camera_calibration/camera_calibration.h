@@ -118,6 +118,9 @@ public:
     Mat getCameraFocalLength();
     Mat getStereoCameraBaseline();
 
+    Mat getMonoCalibCamMat();
+    Mat getMonoCalibDistMat();
+
 public:
 
      // Single camera coefficients;
@@ -129,6 +132,9 @@ private:
     bool isVerticalStereo;
     Mat baselineVector;
     Mat cameraMatrix;
+
+    Mat mono_calib_camera_matrix;
+    Mat mono_calib_distortion_matrix;
 
 };
 #endif // CAMERA_CALIBRATION

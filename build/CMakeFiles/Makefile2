@@ -247,12 +247,12 @@ gtest/preinstall: gtest/gtest/preinstall
 gtest/CMakeFiles/gmock.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gmock.dir/build.make gtest/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gmock.dir/build.make gtest/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=68 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=68,69 "Built target gmock"
 .PHONY : gtest/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
 gtest/CMakeFiles/gmock.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 gtest/CMakeFiles/gmock.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : gtest/CMakeFiles/gmock.dir/rule
@@ -279,7 +279,7 @@ clean: gtest/CMakeFiles/gmock.dir/clean
 gtest/CMakeFiles/gmock_main.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gmock_main.dir/build.make gtest/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gmock_main.dir/build.make gtest/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=69,70 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=70,71 "Built target gmock_main"
 .PHONY : gtest/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -330,7 +330,7 @@ gtest/gtest/preinstall:
 gtest/gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest.dir/build.make gtest/gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest.dir/build.make gtest/gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=71 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=72 "Built target gtest"
 .PHONY : gtest/gtest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -362,7 +362,7 @@ clean: gtest/gtest/CMakeFiles/gtest.dir/clean
 gtest/gtest/CMakeFiles/gtest_main.dir/all: gtest/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest_main.dir/build.make gtest/gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest_main.dir/build.make gtest/gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=72 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=73 "Built target gtest_main"
 .PHONY : gtest/gtest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2683,7 +2683,7 @@ camera2ros/preinstall:
 camera2ros/CMakeFiles/camera2ros_imread_node.dir/all: camera2ros/CMakeFiles/camera2ros.dir/all
 	$(MAKE) -f camera2ros/CMakeFiles/camera2ros_imread_node.dir/build.make camera2ros/CMakeFiles/camera2ros_imread_node.dir/depend
 	$(MAKE) -f camera2ros/CMakeFiles/camera2ros_imread_node.dir/build.make camera2ros/CMakeFiles/camera2ros_imread_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=55,56 "Built target camera2ros_imread_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=54,55,56 "Built target camera2ros_imread_node"
 .PHONY : camera2ros/CMakeFiles/camera2ros_imread_node.dir/all
 
 # Include target in all.
@@ -2730,7 +2730,7 @@ all: camera2ros/CMakeFiles/detect_object_node.dir/all
 
 # Build rule for subdir invocation for target.
 camera2ros/CMakeFiles/detect_object_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 camera2ros/CMakeFiles/detect_object_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : camera2ros/CMakeFiles/detect_object_node.dir/rule
@@ -2757,7 +2757,7 @@ clean: camera2ros/CMakeFiles/detect_object_node.dir/clean
 camera2ros/CMakeFiles/camera2ros_node.dir/all: camera2ros/CMakeFiles/camera2ros.dir/all
 	$(MAKE) -f camera2ros/CMakeFiles/camera2ros_node.dir/build.make camera2ros/CMakeFiles/camera2ros_node.dir/depend
 	$(MAKE) -f camera2ros/CMakeFiles/camera2ros_node.dir/build.make camera2ros/CMakeFiles/camera2ros_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=57,58,59 "Built target camera2ros_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=57,58 "Built target camera2ros_node"
 .PHONY : camera2ros/CMakeFiles/camera2ros_node.dir/all
 
 # Include target in all.
@@ -2767,7 +2767,7 @@ all: camera2ros/CMakeFiles/camera2ros_node.dir/all
 
 # Build rule for subdir invocation for target.
 camera2ros/CMakeFiles/camera2ros_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 camera2ros/CMakeFiles/camera2ros_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : camera2ros/CMakeFiles/camera2ros_node.dir/rule
@@ -2794,7 +2794,7 @@ clean: camera2ros/CMakeFiles/camera2ros_node.dir/clean
 camera2ros/CMakeFiles/camera2ros.dir/all:
 	$(MAKE) -f camera2ros/CMakeFiles/camera2ros.dir/build.make camera2ros/CMakeFiles/camera2ros.dir/depend
 	$(MAKE) -f camera2ros/CMakeFiles/camera2ros.dir/build.make camera2ros/CMakeFiles/camera2ros.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=52,53,54 "Built target camera2ros"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=52,53 "Built target camera2ros"
 .PHONY : camera2ros/CMakeFiles/camera2ros.dir/all
 
 # Include target in all.
@@ -2804,7 +2804,7 @@ all: camera2ros/CMakeFiles/camera2ros.dir/all
 
 # Build rule for subdir invocation for target.
 camera2ros/CMakeFiles/camera2ros.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 camera2ros/CMakeFiles/camera2ros.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : camera2ros/CMakeFiles/camera2ros.dir/rule
@@ -2841,7 +2841,7 @@ all: camera2ros/CMakeFiles/process_image_node.dir/all
 
 # Build rule for subdir invocation for target.
 camera2ros/CMakeFiles/process_image_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 camera2ros/CMakeFiles/process_image_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : camera2ros/CMakeFiles/process_image_node.dir/rule
@@ -2868,7 +2868,7 @@ clean: camera2ros/CMakeFiles/process_image_node.dir/clean
 camera2ros/CMakeFiles/aruco_pose_node.dir/all: camera2ros/CMakeFiles/camera2ros.dir/all
 	$(MAKE) -f camera2ros/CMakeFiles/aruco_pose_node.dir/build.make camera2ros/CMakeFiles/aruco_pose_node.dir/depend
 	$(MAKE) -f camera2ros/CMakeFiles/aruco_pose_node.dir/build.make camera2ros/CMakeFiles/aruco_pose_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=48,49 "Built target aruco_pose_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=47,48,49 "Built target aruco_pose_node"
 .PHONY : camera2ros/CMakeFiles/aruco_pose_node.dir/all
 
 # Include target in all.
@@ -2915,7 +2915,7 @@ all: camera2ros/CMakeFiles/capture_image_node.dir/all
 
 # Build rule for subdir invocation for target.
 camera2ros/CMakeFiles/capture_image_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 camera2ros/CMakeFiles/capture_image_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : camera2ros/CMakeFiles/capture_image_node.dir/rule
@@ -2952,7 +2952,7 @@ all: camera2ros/CMakeFiles/select_hsv_range_node.dir/all
 
 # Build rule for subdir invocation for target.
 camera2ros/CMakeFiles/select_hsv_range_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 camera2ros/CMakeFiles/select_hsv_range_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : camera2ros/CMakeFiles/select_hsv_range_node.dir/rule
@@ -2989,7 +2989,7 @@ all: camera2ros/CMakeFiles/calibrate_node.dir/all
 
 # Build rule for subdir invocation for target.
 camera2ros/CMakeFiles/calibrate_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 camera2ros/CMakeFiles/calibrate_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : camera2ros/CMakeFiles/calibrate_node.dir/rule
@@ -3014,11 +3014,13 @@ clean: camera2ros/CMakeFiles/calibrate_node.dir/clean
 
 # Convenience name for "all" pass in the directory.
 camera_calibration/all: camera_calibration/CMakeFiles/camera_calibration.dir/all
+camera_calibration/all: camera_calibration/CMakeFiles/camera_calibration_node.dir/all
 
 .PHONY : camera_calibration/all
 
 # Convenience name for "clean" pass in the directory.
 camera_calibration/clean: camera_calibration/CMakeFiles/camera_calibration.dir/clean
+camera_calibration/clean: camera_calibration/CMakeFiles/camera_calibration_node.dir/clean
 
 .PHONY : camera_calibration/clean
 
@@ -3034,7 +3036,7 @@ camera_calibration/preinstall:
 camera_calibration/CMakeFiles/camera_calibration.dir/all:
 	$(MAKE) -f camera_calibration/CMakeFiles/camera_calibration.dir/build.make camera_calibration/CMakeFiles/camera_calibration.dir/depend
 	$(MAKE) -f camera_calibration/CMakeFiles/camera_calibration.dir/build.make camera_calibration/CMakeFiles/camera_calibration.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=60,61 "Built target camera_calibration"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=59,60 "Built target camera_calibration"
 .PHONY : camera_calibration/CMakeFiles/camera_calibration.dir/all
 
 # Include target in all.
@@ -3061,6 +3063,138 @@ camera_calibration/CMakeFiles/camera_calibration.dir/clean:
 
 # clean rule for target.
 clean: camera_calibration/CMakeFiles/camera_calibration.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target camera_calibration/CMakeFiles/camera_calibration_node.dir
+
+# All Build rule for target.
+camera_calibration/CMakeFiles/camera_calibration_node.dir/all: camera_calibration/CMakeFiles/camera_calibration.dir/all
+	$(MAKE) -f camera_calibration/CMakeFiles/camera_calibration_node.dir/build.make camera_calibration/CMakeFiles/camera_calibration_node.dir/depend
+	$(MAKE) -f camera_calibration/CMakeFiles/camera_calibration_node.dir/build.make camera_calibration/CMakeFiles/camera_calibration_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=61 "Built target camera_calibration_node"
+.PHONY : camera_calibration/CMakeFiles/camera_calibration_node.dir/all
+
+# Include target in all.
+all: camera_calibration/CMakeFiles/camera_calibration_node.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+camera_calibration/CMakeFiles/camera_calibration_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 camera_calibration/CMakeFiles/camera_calibration_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
+.PHONY : camera_calibration/CMakeFiles/camera_calibration_node.dir/rule
+
+# Convenience name for target.
+camera_calibration_node: camera_calibration/CMakeFiles/camera_calibration_node.dir/rule
+
+.PHONY : camera_calibration_node
+
+# clean rule for target.
+camera_calibration/CMakeFiles/camera_calibration_node.dir/clean:
+	$(MAKE) -f camera_calibration/CMakeFiles/camera_calibration_node.dir/build.make camera_calibration/CMakeFiles/camera_calibration_node.dir/clean
+.PHONY : camera_calibration/CMakeFiles/camera_calibration_node.dir/clean
+
+# clean rule for target.
+clean: camera_calibration/CMakeFiles/camera_calibration_node.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory aruco_marker
+
+# Convenience name for "all" pass in the directory.
+aruco_marker/all: aruco_marker/CMakeFiles/aruco_marker.dir/all
+aruco_marker/all: aruco_marker/CMakeFiles/aruco_marker_node.dir/all
+
+.PHONY : aruco_marker/all
+
+# Convenience name for "clean" pass in the directory.
+aruco_marker/clean: aruco_marker/CMakeFiles/aruco_marker.dir/clean
+aruco_marker/clean: aruco_marker/CMakeFiles/aruco_marker_node.dir/clean
+
+.PHONY : aruco_marker/clean
+
+# Convenience name for "preinstall" pass in the directory.
+aruco_marker/preinstall:
+
+.PHONY : aruco_marker/preinstall
+
+#=============================================================================
+# Target rules for target aruco_marker/CMakeFiles/aruco_marker.dir
+
+# All Build rule for target.
+aruco_marker/CMakeFiles/aruco_marker.dir/all: camera_calibration/CMakeFiles/camera_calibration.dir/all
+	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker.dir/build.make aruco_marker/CMakeFiles/aruco_marker.dir/depend
+	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker.dir/build.make aruco_marker/CMakeFiles/aruco_marker.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=45 "Built target aruco_marker"
+.PHONY : aruco_marker/CMakeFiles/aruco_marker.dir/all
+
+# Include target in all.
+all: aruco_marker/CMakeFiles/aruco_marker.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+aruco_marker/CMakeFiles/aruco_marker.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 aruco_marker/CMakeFiles/aruco_marker.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
+.PHONY : aruco_marker/CMakeFiles/aruco_marker.dir/rule
+
+# Convenience name for target.
+aruco_marker: aruco_marker/CMakeFiles/aruco_marker.dir/rule
+
+.PHONY : aruco_marker
+
+# clean rule for target.
+aruco_marker/CMakeFiles/aruco_marker.dir/clean:
+	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker.dir/build.make aruco_marker/CMakeFiles/aruco_marker.dir/clean
+.PHONY : aruco_marker/CMakeFiles/aruco_marker.dir/clean
+
+# clean rule for target.
+clean: aruco_marker/CMakeFiles/aruco_marker.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target aruco_marker/CMakeFiles/aruco_marker_node.dir
+
+# All Build rule for target.
+aruco_marker/CMakeFiles/aruco_marker_node.dir/all: camera_calibration/CMakeFiles/camera_calibration.dir/all
+aruco_marker/CMakeFiles/aruco_marker_node.dir/all: aruco_marker/CMakeFiles/aruco_marker.dir/all
+	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/depend
+	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=46 "Built target aruco_marker_node"
+.PHONY : aruco_marker/CMakeFiles/aruco_marker_node.dir/all
+
+# Include target in all.
+all: aruco_marker/CMakeFiles/aruco_marker_node.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+aruco_marker/CMakeFiles/aruco_marker_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 aruco_marker/CMakeFiles/aruco_marker_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
+.PHONY : aruco_marker/CMakeFiles/aruco_marker_node.dir/rule
+
+# Convenience name for target.
+aruco_marker_node: aruco_marker/CMakeFiles/aruco_marker_node.dir/rule
+
+.PHONY : aruco_marker_node
+
+# clean rule for target.
+aruco_marker/CMakeFiles/aruco_marker_node.dir/clean:
+	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/clean
+.PHONY : aruco_marker/CMakeFiles/aruco_marker_node.dir/clean
+
+# clean rule for target.
+clean: aruco_marker/CMakeFiles/aruco_marker_node.dir/clean
 
 .PHONY : clean
 
@@ -3532,103 +3666,6 @@ clean: error_comp/CMakeFiles/error_comp_gennodejs.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory aruco_marker
-
-# Convenience name for "all" pass in the directory.
-aruco_marker/all: aruco_marker/CMakeFiles/aruco_marker.dir/all
-aruco_marker/all: aruco_marker/CMakeFiles/aruco_marker_node.dir/all
-
-.PHONY : aruco_marker/all
-
-# Convenience name for "clean" pass in the directory.
-aruco_marker/clean: aruco_marker/CMakeFiles/aruco_marker.dir/clean
-aruco_marker/clean: aruco_marker/CMakeFiles/aruco_marker_node.dir/clean
-
-.PHONY : aruco_marker/clean
-
-# Convenience name for "preinstall" pass in the directory.
-aruco_marker/preinstall:
-
-.PHONY : aruco_marker/preinstall
-
-#=============================================================================
-# Target rules for target aruco_marker/CMakeFiles/aruco_marker.dir
-
-# All Build rule for target.
-aruco_marker/CMakeFiles/aruco_marker.dir/all: camera_calibration/CMakeFiles/camera_calibration.dir/all
-aruco_marker/CMakeFiles/aruco_marker.dir/all: error_comp/CMakeFiles/error_comp.dir/all
-	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker.dir/build.make aruco_marker/CMakeFiles/aruco_marker.dir/depend
-	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker.dir/build.make aruco_marker/CMakeFiles/aruco_marker.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=45 "Built target aruco_marker"
-.PHONY : aruco_marker/CMakeFiles/aruco_marker.dir/all
-
-# Include target in all.
-all: aruco_marker/CMakeFiles/aruco_marker.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-aruco_marker/CMakeFiles/aruco_marker.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 aruco_marker/CMakeFiles/aruco_marker.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
-.PHONY : aruco_marker/CMakeFiles/aruco_marker.dir/rule
-
-# Convenience name for target.
-aruco_marker: aruco_marker/CMakeFiles/aruco_marker.dir/rule
-
-.PHONY : aruco_marker
-
-# clean rule for target.
-aruco_marker/CMakeFiles/aruco_marker.dir/clean:
-	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker.dir/build.make aruco_marker/CMakeFiles/aruco_marker.dir/clean
-.PHONY : aruco_marker/CMakeFiles/aruco_marker.dir/clean
-
-# clean rule for target.
-clean: aruco_marker/CMakeFiles/aruco_marker.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target aruco_marker/CMakeFiles/aruco_marker_node.dir
-
-# All Build rule for target.
-aruco_marker/CMakeFiles/aruco_marker_node.dir/all: camera_calibration/CMakeFiles/camera_calibration.dir/all
-aruco_marker/CMakeFiles/aruco_marker_node.dir/all: error_comp/CMakeFiles/error_comp.dir/all
-aruco_marker/CMakeFiles/aruco_marker_node.dir/all: aruco_marker/CMakeFiles/aruco_marker.dir/all
-	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/depend
-	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=46,47 "Built target aruco_marker_node"
-.PHONY : aruco_marker/CMakeFiles/aruco_marker_node.dir/all
-
-# Include target in all.
-all: aruco_marker/CMakeFiles/aruco_marker_node.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-aruco_marker/CMakeFiles/aruco_marker_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 6
-	$(MAKE) -f CMakeFiles/Makefile2 aruco_marker/CMakeFiles/aruco_marker_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
-.PHONY : aruco_marker/CMakeFiles/aruco_marker_node.dir/rule
-
-# Convenience name for target.
-aruco_marker_node: aruco_marker/CMakeFiles/aruco_marker_node.dir/rule
-
-.PHONY : aruco_marker_node
-
-# clean rule for target.
-aruco_marker/CMakeFiles/aruco_marker_node.dir/clean:
-	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/clean
-.PHONY : aruco_marker/CMakeFiles/aruco_marker_node.dir/clean
-
-# clean rule for target.
-clean: aruco_marker/CMakeFiles/aruco_marker_node.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Directory level rules for directory pos_calculator
 
 # Convenience name for "all" pass in the directory.
@@ -3768,7 +3805,7 @@ clean: pos_calculator/CMakeFiles/pos_calculator_gencpp.dir/clean
 pos_calculator/CMakeFiles/pos_calculator.dir/all:
 	$(MAKE) -f pos_calculator/CMakeFiles/pos_calculator.dir/build.make pos_calculator/CMakeFiles/pos_calculator.dir/depend
 	$(MAKE) -f pos_calculator/CMakeFiles/pos_calculator.dir/build.make pos_calculator/CMakeFiles/pos_calculator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=73 "Built target pos_calculator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=74 "Built target pos_calculator"
 .PHONY : pos_calculator/CMakeFiles/pos_calculator.dir/all
 
 # Include target in all.
@@ -3883,7 +3920,7 @@ all: pos_calculator/CMakeFiles/pos_calculator_generate_messages.dir/all
 
 # Build rule for subdir invocation for target.
 pos_calculator/CMakeFiles/pos_calculator_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 pos_calculator/CMakeFiles/pos_calculator_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : pos_calculator/CMakeFiles/pos_calculator_generate_messages.dir/rule
@@ -3915,7 +3952,7 @@ pos_calculator/CMakeFiles/pos_calculator_geneus.dir/all: pos_calculator/CMakeFil
 
 # Build rule for subdir invocation for target.
 pos_calculator/CMakeFiles/pos_calculator_geneus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 pos_calculator/CMakeFiles/pos_calculator_geneus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : pos_calculator/CMakeFiles/pos_calculator_geneus.dir/rule
@@ -4006,12 +4043,12 @@ clean: pos_calculator/CMakeFiles/pos_calculator_genlisp.dir/clean
 pos_calculator/CMakeFiles/pos_calculator_generate_messages_eus.dir/all: ISLH_msgs/CMakeFiles/std_msgs_generate_messages_eus.dir/all
 	$(MAKE) -f pos_calculator/CMakeFiles/pos_calculator_generate_messages_eus.dir/build.make pos_calculator/CMakeFiles/pos_calculator_generate_messages_eus.dir/depend
 	$(MAKE) -f pos_calculator/CMakeFiles/pos_calculator_generate_messages_eus.dir/build.make pos_calculator/CMakeFiles/pos_calculator_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=74 "Built target pos_calculator_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num= "Built target pos_calculator_generate_messages_eus"
 .PHONY : pos_calculator/CMakeFiles/pos_calculator_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 pos_calculator/CMakeFiles/pos_calculator_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 pos_calculator/CMakeFiles/pos_calculator_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : pos_calculator/CMakeFiles/pos_calculator_generate_messages_eus.dir/rule
@@ -4306,7 +4343,7 @@ clean: realization/CMakeFiles/realization_generate_messages_eus.dir/clean
 realization/CMakeFiles/realization_node4.dir/all: realization/CMakeFiles/realization.dir/all
 	$(MAKE) -f realization/CMakeFiles/realization_node4.dir/build.make realization/CMakeFiles/realization_node4.dir/depend
 	$(MAKE) -f realization/CMakeFiles/realization_node4.dir/build.make realization/CMakeFiles/realization_node4.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=86 "Built target realization_node4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=86,87 "Built target realization_node4"
 .PHONY : realization/CMakeFiles/realization_node4.dir/all
 
 # Include target in all.
@@ -4316,7 +4353,7 @@ all: realization/CMakeFiles/realization_node4.dir/all
 
 # Build rule for subdir invocation for target.
 realization/CMakeFiles/realization_node4.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 realization/CMakeFiles/realization_node4.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : realization/CMakeFiles/realization_node4.dir/rule
@@ -4623,7 +4660,7 @@ clean: realization/CMakeFiles/realization_node1.dir/clean
 realization/CMakeFiles/realization_node3.dir/all: realization/CMakeFiles/realization.dir/all
 	$(MAKE) -f realization/CMakeFiles/realization_node3.dir/build.make realization/CMakeFiles/realization_node3.dir/depend
 	$(MAKE) -f realization/CMakeFiles/realization_node3.dir/build.make realization/CMakeFiles/realization_node3.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=84,85 "Built target realization_node3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=85 "Built target realization_node3"
 .PHONY : realization/CMakeFiles/realization_node3.dir/all
 
 # Include target in all.
@@ -4633,7 +4670,7 @@ all: realization/CMakeFiles/realization_node3.dir/all
 
 # Build rule for subdir invocation for target.
 realization/CMakeFiles/realization_node3.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 realization/CMakeFiles/realization_node3.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : realization/CMakeFiles/realization_node3.dir/rule
@@ -4729,7 +4766,7 @@ clean: realization/CMakeFiles/realization_generate_messages_cpp.dir/clean
 realization/CMakeFiles/realization_node2.dir/all: realization/CMakeFiles/realization.dir/all
 	$(MAKE) -f realization/CMakeFiles/realization_node2.dir/build.make realization/CMakeFiles/realization_node2.dir/depend
 	$(MAKE) -f realization/CMakeFiles/realization_node2.dir/build.make realization/CMakeFiles/realization_node2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=83 "Built target realization_node2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=83,84 "Built target realization_node2"
 .PHONY : realization/CMakeFiles/realization_node2.dir/all
 
 # Include target in all.
@@ -4739,7 +4776,7 @@ all: realization/CMakeFiles/realization_node2.dir/all
 
 # Build rule for subdir invocation for target.
 realization/CMakeFiles/realization_node2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 realization/CMakeFiles/realization_node2.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : realization/CMakeFiles/realization_node2.dir/rule
@@ -4766,7 +4803,7 @@ clean: realization/CMakeFiles/realization_node2.dir/clean
 realization/CMakeFiles/realization_node5.dir/all: realization/CMakeFiles/realization.dir/all
 	$(MAKE) -f realization/CMakeFiles/realization_node5.dir/build.make realization/CMakeFiles/realization_node5.dir/depend
 	$(MAKE) -f realization/CMakeFiles/realization_node5.dir/build.make realization/CMakeFiles/realization_node5.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=87,88 "Built target realization_node5"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=88 "Built target realization_node5"
 .PHONY : realization/CMakeFiles/realization_node5.dir/all
 
 # Include target in all.
@@ -4776,7 +4813,7 @@ all: realization/CMakeFiles/realization_node5.dir/all
 
 # Build rule for subdir invocation for target.
 realization/CMakeFiles/realization_node5.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 realization/CMakeFiles/realization_node5.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
 .PHONY : realization/CMakeFiles/realization_node5.dir/rule

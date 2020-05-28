@@ -22,9 +22,9 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv"
   "/usr/include/eigen3"
   "/home/berkay/catkin_ws/src/aruco_marker/./src"
+  "/home/berkay/catkin_ws/src/aruco_marker/include"
   "/home/berkay/catkin_ws/devel/include"
   "/home/berkay/catkin_ws/src/camera_calibration/include"
-  "/home/berkay/catkin_ws/src/error_comp/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )
@@ -33,7 +33,6 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/berkay/catkin_ws/build/aruco_marker/CMakeFiles/aruco_marker.dir/DependInfo.cmake"
   "/home/berkay/catkin_ws/build/camera_calibration/CMakeFiles/camera_calibration.dir/DependInfo.cmake"
-  "/home/berkay/catkin_ws/build/error_comp/CMakeFiles/error_comp.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

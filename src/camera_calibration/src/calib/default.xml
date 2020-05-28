@@ -24,12 +24,12 @@
   <Input_Delay>100</Input_Delay>
 
   <!-- How many frames to use, for calibration. -->
-  <Calibrate_NrOfFrameToUse>5</Calibrate_NrOfFrameToUse>
+  <Calibrate_NrOfFrameToUse>23</Calibrate_NrOfFrameToUse>
   <!-- Consider only fy as a free parameter, the ratio fx/fy stays the same as in the input cameraMatrix.
 	   Use or not setting. 0 - False Non-Zero - True-->
   <Calibrate_FixAspectRatio> 0 </Calibrate_FixAspectRatio>
   <!-- If true (non-zero) tangential distortion coefficients  are set to zeros and stay zero.-->
-  <Calibrate_AssumeZeroTangentialDistortion>1</Calibrate_AssumeZeroTangentialDistortion>
+  <Calibrate_AssumeZeroTangentialDistortion>0</Calibrate_AssumeZeroTangentialDistortion>
   <!-- If true (non-zero) the principal point is not changed during the global optimization.-->
   <Calibrate_FixPrincipalPointAtTheCenter> 1 </Calibrate_FixPrincipalPointAtTheCenter>
 
@@ -50,7 +50,7 @@
   <!-- If true (non-zero) distortion coefficient k3 will be equals to zero.-->
   <Fix_K3>0</Fix_K3>
   <!-- If true (non-zero) distortion coefficient k4 will be equals to zero.-->
-  <Fix_K4>1</Fix_K4>
+  <Fix_K4>0</Fix_K4>
   <!-- If true (non-zero) distortion coefficient k5 will be equals to zero.-->
   <Fix_K5>1</Fix_K5>
 </Settings>

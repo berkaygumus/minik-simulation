@@ -49,7 +49,6 @@
   <!-- Use doc_depend for packages you need only for building documentation: -->
   <!--   <doc_depend>doxygen</doc_depend> -->
   <depend>camera_calibration</depend>
-  <depend>error_comp</depend>
 
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>ISLH_msgs</build_depend>

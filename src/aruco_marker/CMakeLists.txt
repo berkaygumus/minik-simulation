@@ -12,7 +12,6 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
   camera_calibration
-  error_comp
 )
 
 ## System dependencies are found with CMake's conventions
@@ -22,7 +21,7 @@ find_package( OpenCV REQUIRED )
 find_package(Eigen3 REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS} ${EIGEN3_INCLUDE_DIR})
 
-SET(aruco_marker_HEADERS src/arucoMarker.h)
+SET(aruco_marker_HEADERS include/aruco_marker/arucoMarker.h)
 SET(aruco_marker_SOURCES src/arucoMarker.cpp)
 
 include_directories(./src/)
@@ -115,9 +114,9 @@ include_directories(./src/)
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES aruco_marker
-  CATKIN_DEPENDS ISLH_msgs roscpp std_msgs camera_calibration
+  INCLUDE_DIRS include
+  LIBRARIES aruco_marker
+  CATKIN_DEPENDS roscpp std_msgs
 #  DEPENDS system_lib
 )
 
@@ -128,14 +127,14 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
+ include
   ${catkin_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
-# add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/aruco_marker.cpp
-# )
+ add_library(${PROJECT_NAME}
+   src/arucoMarker.cpp
+ )
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
@@ -161,8 +160,6 @@ include_directories(
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
-
-add_library(${PROJECT_NAME} src/main.cpp)
 
 target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${Eigen3_LIBRARIES})
 add_executable(aruco_marker_node src/main.cpp ${aruco_marker_SOURCES} ${aruco_marker_HEADERS})

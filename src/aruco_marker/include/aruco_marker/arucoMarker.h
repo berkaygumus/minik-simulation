@@ -38,7 +38,7 @@ class ArucoMarker{
     ros::NodeHandle n;
 
     string aruco_marker_folder = "/home/berkay/catkin_ws/src/aruco_marker/aruco_markers/";//folder to add aruco marker images for markerGenerater function
-    int cameraID = 0;//camera ID
+    int cameraID = 1;//camera ID
 
     Mat cameraMatrix;
     Mat distCoeffs;

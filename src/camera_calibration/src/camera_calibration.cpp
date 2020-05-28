@@ -565,8 +565,36 @@ bool Camera_Calibration::runCalibration( Settings& s, Size& imageSize, Mat& came
 
     if (s.useFisheye) {
         Mat _rvecs, _tvecs;
+
+        /*int flags = 0;
+        flags |= cv::fisheye::CALIB_RECOMPUTE_EXTRINSIC;
+        flags |= cv::fisheye::CALIB_CHECK_COND;
+        flags |= cv::fisheye::CALIB_FIX_SKEW;
+        flags |= cv::fisheye::CALIB_FIX_K4;
+        flags |= cv::fisheye::CALIB_FIX_K3;
+        flags |= cv::fisheye::CALIB_FIX_K2;
+        flags |= cv::fisheye::CALIB_FIX_K1;*/
+
+
         rms = fisheye::calibrate(objectPoints, imagePoints, imageSize, cameraMatrix, distCoeffs, _rvecs,
-                                 _tvecs, s.flag);
+                                 _tvecs, s.flag,//flags,
+                                 //TermCriteria(TermCriteria::COUNT+TermCriteria::EPS, 100, DBL_EPSILON));
+                                 TermCriteria(3, 20, 1e-6));
+
+        cout << "calib cam mat: " << cameraMatrix << endl;
+        cout << "calib dist mat: " << distCoeffs << endl;
+
+        Mat newCamMat;
+        fisheye::estimateNewCameraMatrixForUndistortRectify(cameraMatrix, distCoeffs, imageSize,
+                                                            Matx33d::eye(), newCamMat, 1);
+        cout << "calib new cam mat: " << newCamMat << endl;
+
+
+
+
+
+
+                                 //s.flag);
 
         rvecs.reserve(_rvecs.rows);
         tvecs.reserve(_tvecs.rows);
@@ -795,6 +823,9 @@ Size  Camera_Calibration::loadCameraCalibrationParams( )
     fs["image_height"] >> imageSize.height;
     fs.release();
 
+    mono_calib_camera_matrix = cameraMatrix;
+    mono_calib_distortion_matrix = distCoeffs;
+
 
     if (s.useFisheye)
     {
@@ -829,5 +860,20 @@ void Camera_Calibration::applyCalibration(Mat view)
     }
     //! [show_results]
 
+
+}
+
+
+Mat Camera_Calibration::getMonoCalibCamMat(){
+  return mono_calib_camera_matrix;
+
+
+}
+
+
+
+Mat Camera_Calibration::getMonoCalibDistMat(){
+
+    return mono_calib_distortion_matrix;
 
 }
