@@ -132,7 +132,7 @@ destroyAllWindows();
 
 int main(int argc,char** argv){
 
-    ros::init(argc,argv,"select_hsv_range");
+    ros::init(argc,argv,"select_hsv_range2");
     ros::NodeHandle n;
     ros::Rate loop_rate(10);
     Camera_Calibration* calib  = new Camera_Calibration();

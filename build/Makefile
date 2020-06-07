@@ -1180,6 +1180,19 @@ aruco_pose_node/fast:
 .PHONY : aruco_pose_node/fast
 
 #=============================================================================
+# Target rules for targets named select_hsv_range_node2
+
+# Build rule for target.
+select_hsv_range_node2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 select_hsv_range_node2
+.PHONY : select_hsv_range_node2
+
+# fast build rule for target.
+select_hsv_range_node2/fast:
+	$(MAKE) -f camera2ros/CMakeFiles/select_hsv_range_node2.dir/build.make camera2ros/CMakeFiles/select_hsv_range_node2.dir/build
+.PHONY : select_hsv_range_node2/fast
+
+#=============================================================================
 # Target rules for targets named capture_image_node
 
 # Build rule for target.
@@ -1191,19 +1204,6 @@ capture_image_node: cmake_check_build_system
 capture_image_node/fast:
 	$(MAKE) -f camera2ros/CMakeFiles/capture_image_node.dir/build.make camera2ros/CMakeFiles/capture_image_node.dir/build
 .PHONY : capture_image_node/fast
-
-#=============================================================================
-# Target rules for targets named select_hsv_range_node
-
-# Build rule for target.
-select_hsv_range_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 select_hsv_range_node
-.PHONY : select_hsv_range_node
-
-# fast build rule for target.
-select_hsv_range_node/fast:
-	$(MAKE) -f camera2ros/CMakeFiles/select_hsv_range_node.dir/build.make camera2ros/CMakeFiles/select_hsv_range_node.dir/build
-.PHONY : select_hsv_range_node/fast
 
 #=============================================================================
 # Target rules for targets named calibrate_node
@@ -1269,6 +1269,71 @@ aruco_marker_node: cmake_check_build_system
 aruco_marker_node/fast:
 	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/build
 .PHONY : aruco_marker_node/fast
+
+#=============================================================================
+# Target rules for targets named color_id_object_node
+
+# Build rule for target.
+color_id_object_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 color_id_object_node
+.PHONY : color_id_object_node
+
+# fast build rule for target.
+color_id_object_node/fast:
+	$(MAKE) -f detect_color_object/CMakeFiles/color_id_object_node.dir/build.make detect_color_object/CMakeFiles/color_id_object_node.dir/build
+.PHONY : color_id_object_node/fast
+
+#=============================================================================
+# Target rules for targets named detect_color_object
+
+# Build rule for target.
+detect_color_object: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 detect_color_object
+.PHONY : detect_color_object
+
+# fast build rule for target.
+detect_color_object/fast:
+	$(MAKE) -f detect_color_object/CMakeFiles/detect_color_object.dir/build.make detect_color_object/CMakeFiles/detect_color_object.dir/build
+.PHONY : detect_color_object/fast
+
+#=============================================================================
+# Target rules for targets named select_hsv_range_node
+
+# Build rule for target.
+select_hsv_range_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 select_hsv_range_node
+.PHONY : select_hsv_range_node
+
+# fast build rule for target.
+select_hsv_range_node/fast:
+	$(MAKE) -f detect_color_object/CMakeFiles/select_hsv_range_node.dir/build.make detect_color_object/CMakeFiles/select_hsv_range_node.dir/build
+.PHONY : select_hsv_range_node/fast
+
+#=============================================================================
+# Target rules for targets named color_object_node
+
+# Build rule for target.
+color_object_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 color_object_node
+.PHONY : color_object_node
+
+# fast build rule for target.
+color_object_node/fast:
+	$(MAKE) -f detect_color_object/CMakeFiles/color_object_node.dir/build.make detect_color_object/CMakeFiles/color_object_node.dir/build
+.PHONY : color_object_node/fast
+
+#=============================================================================
+# Target rules for targets named disparity_node
+
+# Build rule for target.
+disparity_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 disparity_node
+.PHONY : disparity_node
+
+# fast build rule for target.
+disparity_node/fast:
+	$(MAKE) -f detect_color_object/CMakeFiles/disparity_node.dir/build.make detect_color_object/CMakeFiles/disparity_node.dir/build
+.PHONY : disparity_node/fast
 
 #=============================================================================
 # Target rules for targets named error_comp
@@ -2115,13 +2180,18 @@ help:
 	@echo "... camera2ros"
 	@echo "... process_image_node"
 	@echo "... aruco_pose_node"
+	@echo "... select_hsv_range_node2"
 	@echo "... capture_image_node"
-	@echo "... select_hsv_range_node"
 	@echo "... calibrate_node"
 	@echo "... camera_calibration"
 	@echo "... camera_calibration_node"
 	@echo "... aruco_marker"
 	@echo "... aruco_marker_node"
+	@echo "... color_id_object_node"
+	@echo "... detect_color_object"
+	@echo "... select_hsv_range_node"
+	@echo "... color_object_node"
+	@echo "... disparity_node"
 	@echo "... error_comp"
 	@echo "... error_comp_gencpp"
 	@echo "... error_comp_generate_messages_cpp"

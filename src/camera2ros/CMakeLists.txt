@@ -168,8 +168,8 @@ add_executable(detect_object_node src/detect_object.cpp ${camera2ros_SOURCES} ${
 target_link_libraries(detect_object_node ${PROJECT_NAME})
 
 target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${Eigen3_LIBRARIES} )
-add_executable(select_hsv_range_node src/select_hsv_range.cpp ${camera2ros_SOURCES} ${camera2ros_HEADERS})
-target_link_libraries(select_hsv_range_node ${PROJECT_NAME})
+add_executable(select_hsv_range_node2 src/select_hsv_range.cpp ${camera2ros_SOURCES} ${camera2ros_HEADERS})
+target_link_libraries(select_hsv_range_node2 ${PROJECT_NAME})
 
 target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 add_executable(capture_image_node src/capture_image.cpp)
