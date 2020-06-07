@@ -88,7 +88,9 @@ opencv2/highgui.hpp
 iostream
 -
 
-/home/berkay/catkin_ws/src/detect_color_object/include/detect_color_object/robot_config.h
+/home/berkay/catkin_ws/src/detect_color_object/include/detect_color_object/hsv_range.h
+
+/home/berkay/catkin_ws/src/detect_color_object/include/detect_color_object/robot_IDs.h
 
 /home/berkay/catkin_ws/src/detect_color_object/src/color_id_object.cpp
 ros/ros.h
@@ -99,8 +101,10 @@ geometry_msgs/Pose2D.h
 -
 ISLH_msgs/robotPositions.h
 /home/berkay/catkin_ws/src/detect_color_object/src/ISLH_msgs/robotPositions.h
-detect_color_object/robot_config.h
-/home/berkay/catkin_ws/src/detect_color_object/src/detect_color_object/robot_config.h
+detect_color_object/robot_IDs.h
+/home/berkay/catkin_ws/src/detect_color_object/src/detect_color_object/robot_IDs.h
+detect_color_object/hsv_range.h
+/home/berkay/catkin_ws/src/detect_color_object/src/detect_color_object/hsv_range.h
 float.h
 /home/berkay/catkin_ws/src/detect_color_object/src/float.h
 

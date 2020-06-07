@@ -1,2 +1,2 @@
-ISLH_msgs:aruco_marker:camera_calibration:detect_color_object:error_comp:pos_calculator:realization:sensor:serial:~camera2ros
+ISLH_msgs:aruco_marker:camera2ros:camera_calibration:detect_color_object:error_comp:pos_calculator:realization:sensor:serial
 -DCATKIN_DEVEL_PREFIX=/home/berkay/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/berkay/catkin_ws/install -G Unix Makefiles

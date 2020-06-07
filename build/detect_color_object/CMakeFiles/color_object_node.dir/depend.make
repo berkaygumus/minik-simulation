@@ -4,6 +4,7 @@
 detect_color_object/CMakeFiles/color_object_node.dir/src/color_object.cpp.o: /home/berkay/catkin_ws/src/camera_calibration/include/camera_calibration/camera_calibration.h
 detect_color_object/CMakeFiles/color_object_node.dir/src/color_object.cpp.o: /home/berkay/catkin_ws/src/camera_calibration/include/camera_calibration/globaldefs.h
 detect_color_object/CMakeFiles/color_object_node.dir/src/color_object.cpp.o: /home/berkay/catkin_ws/src/camera_calibration/include/camera_calibration/settings.h
+detect_color_object/CMakeFiles/color_object_node.dir/src/color_object.cpp.o: /home/berkay/catkin_ws/src/detect_color_object/include/detect_color_object/hsv_range.h
 detect_color_object/CMakeFiles/color_object_node.dir/src/color_object.cpp.o: /home/berkay/catkin_ws/src/detect_color_object/src/color_object.cpp
 detect_color_object/CMakeFiles/color_object_node.dir/src/color_object.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Pose2D.h
 detect_color_object/CMakeFiles/color_object_node.dir/src/color_object.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv/cxcore.h

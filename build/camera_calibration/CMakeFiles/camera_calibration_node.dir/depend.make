@@ -6,8 +6,6 @@ camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o: /home/
 camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o: /home/berkay/catkin_ws/src/camera_calibration/include/camera_calibration/settings.h
 camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o: /home/berkay/catkin_ws/src/camera_calibration/src/main.cpp
 camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv/cxcore.h
-camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/aruco.hpp
-camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/aruco/dictionary.hpp
 camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/calib3d.hpp
 camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/calib3d/calib3d.hpp
 camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/calib3d/calib3d_c.h

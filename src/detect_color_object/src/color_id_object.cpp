@@ -1,9 +1,10 @@
 #include <ros/ros.h>
 #include "camera_calibration/camera_calibration.h"
-//#include <globaldefs.h>
+
 #include <geometry_msgs/Pose2D.h>
 #include "ISLH_msgs/robotPositions.h"
-#include "detect_color_object/robot_config.h"
+#include "detect_color_object/robot_IDs.h"
+#include "detect_color_object/hsv_range.h"
 #include "float.h"
 
 typedef struct Marker{

@@ -4,6 +4,7 @@
 detect_color_object/CMakeFiles/select_hsv_range_node.dir/src/select_hsv_range.cpp.o: /home/berkay/catkin_ws/src/camera_calibration/include/camera_calibration/camera_calibration.h
 detect_color_object/CMakeFiles/select_hsv_range_node.dir/src/select_hsv_range.cpp.o: /home/berkay/catkin_ws/src/camera_calibration/include/camera_calibration/globaldefs.h
 detect_color_object/CMakeFiles/select_hsv_range_node.dir/src/select_hsv_range.cpp.o: /home/berkay/catkin_ws/src/camera_calibration/include/camera_calibration/settings.h
+detect_color_object/CMakeFiles/select_hsv_range_node.dir/src/select_hsv_range.cpp.o: /home/berkay/catkin_ws/src/detect_color_object/include/detect_color_object/hsv_range.h
 detect_color_object/CMakeFiles/select_hsv_range_node.dir/src/select_hsv_range.cpp.o: /home/berkay/catkin_ws/src/detect_color_object/src/select_hsv_range.cpp
 detect_color_object/CMakeFiles/select_hsv_range_node.dir/src/select_hsv_range.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv/cxcore.h
 detect_color_object/CMakeFiles/select_hsv_range_node.dir/src/select_hsv_range.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/calib3d.hpp

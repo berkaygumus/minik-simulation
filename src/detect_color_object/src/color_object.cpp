@@ -1,5 +1,6 @@
 #include <ros/ros.h>
 #include "camera_calibration/camera_calibration.h"
+#include "detect_color_object/hsv_range.h"
 #include <geometry_msgs/Pose2D.h>
 
 struct object_pos
@@ -251,8 +252,9 @@ int main(int argc,char** argv){
     int number_objects;
     //HSV RANGE Control
     vector<vector<int> > threshold_settings;
-    cout << "enter number of objects: " << endl;
-    cin >> number_objects;
+    //cout << "enter number of objects: " << endl;
+    //cin >> number_objects;
+    number_objects = 2;
 
 
     while(ros::ok()){

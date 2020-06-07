@@ -1,5 +1,6 @@
 #include <ros/ros.h>
 #include "camera_calibration/camera_calibration.h"
+#include "detect_color_object/hsv_range.h"
 
 void setInitialHSVRange(int colorID){//int colorID, int& hlow, int& slow, int& vlow, int&  hhigh, int& shigh, int& vhigh){
   int hlow, slow, vlow, hhigh, shigh, vhigh;
