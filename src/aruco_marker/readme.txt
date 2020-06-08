@@ -9,9 +9,13 @@ This class has two main functions:
   Also, cameraID must be defined at arucoMarker.h file.
 
 2)calculateRobotPos
-  It takes image from the camera,
+  It takes image from the camera or jpg file,
   detects markers, calculates robot positions and headings,
   publishes them at the workspace as "robot_list".
+
+  When "ısCamera" variable is 1, it takes image from the camera,
+  when it is 0, it takes from the jpg file defined with "input_img_name" variable.
+  These variables are at arucoMarker.h file.
 
 
 ---------------------executables-------------------------------------

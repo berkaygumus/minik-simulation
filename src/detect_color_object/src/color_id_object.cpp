@@ -144,7 +144,7 @@ void getColorImage(Mat &image, Mat &image_r, Mat &image_g, Mat &image_b){
  void checkC(vector<Point2f> &v1, vector<Point2f> &v2, vector<Point2f> &v3){
 	 //calculates how many neighbor it has (it must be 1)
 	 //the color id shape is top-bottom: If it has neighbour, it must be at top or bottom.
-   int max_dist_x = 10;//prevents creating neighborhood with side color, if it is far at x axis(horizontal), it can not be neighbor
+   int max_dist_x = 20;//prevents creating neighborhood with side color, if it is far at x axis(horizontal), it can not be neighbor
    int min_dist_y = 2;
 	 //all possible combinations are checked and calculates the number of neighbor for each center
  	for (unsigned i = 0; i < v1.size(); i++){
@@ -251,7 +251,7 @@ void getColorImage(Mat &image, Mat &image_r, Mat &image_g, Mat &image_b){
 
  vector<Robot> findRobots(vector<vector<Point2f> > mcs_l, vector<vector<Point2f> > mcs_r,Camera_Calibration* calib){
  	/// Find Groups of 3 Markers
-  int max_dist_x = 10;
+  int max_dist_x = 20;
   int min_dist_y = 2;
  	vector<Group> groups_l;//creates color groups for color id
  	for (unsigned coli = 0; coli < 3; coli++){//for each color
@@ -442,8 +442,12 @@ int main(int argc,char** argv){
 		//publisher for the robot pos list
 		ros::Publisher robotsPublisher = n.advertise<ISLH_msgs::robotPositions>("robot_list",1);
 
-		//caibration object
+		//calibration object
     Camera_Calibration* calib  = new Camera_Calibration();
+
+		bool isCamera = 0;
+		string left_img_name = "/home/berkay/catkin_ws/src/detect_color_object/images/color_id_left3.jpg";
+		string right_img_name = "/home/berkay/catkin_ws/src/detect_color_object/images/color_id_right3.jpg";
 
     VideoCapture cap_left(1); //left cam
     cap_left.set(CV_CAP_PROP_FRAME_WIDTH, 640);
@@ -460,24 +464,38 @@ int main(int argc,char** argv){
     Mat rgb_right;//undistorted rgb image
     Mat hsv_right;//undistorted hsv image
 
-    if(!cap_left.isOpened()){
-          cout << "ERROR cam1!!" << endl;
-          exit(1);
+		if(!cap_left.isOpened()){
+      cout << "there is no camera 1" << endl;
+      cout << "images are taken from the file" << endl;
+      isCamera = 0;
     }
     if(!cap_right.isOpened()){
-          cout << "ERROR cam2!!" << endl;
-          exit(1);
+      cout << "there is no camera 2" << endl;
+      cout << "images are taken from the file" << endl;
+      isCamera = 0;
     }
 
-    cap_left >> frame_left;
+		if(isCamera){
+      cap_left >> frame_left;
+    }
+    else{
+      frame_left = imread(left_img_name);//left image
+    }
+
     calib->loadStereoCalibrationParams(frame_left.size());//loads calibration parameters from the file.
 
 
     while(ros::ok()){
       ros::Time begin = ros::Time::now();
       //capture images
-      cap_left >> frame_left;
-      cap_right >> frame_right;
+			if(isCamera){
+        cap_left >> frame_left;
+        cap_right >> frame_right;
+      }
+      else{
+        frame_left = imread(left_img_name);//left image
+        frame_right = imread(right_img_name);//right image
+      }
       //cout << "elapsed capture : " << ros::Time::now() - begin << endl;
 
       //calibration

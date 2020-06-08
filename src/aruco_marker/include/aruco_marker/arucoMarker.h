@@ -39,7 +39,7 @@ class ArucoMarker{
 
     string aruco_marker_folder = "/home/berkay/catkin_ws/src/aruco_marker/aruco_markers/";//folder to add aruco marker images for markerGenerater function
     int cameraID = 1;//camera ID
-    bool isCamera = 1;
+    bool isCamera = 0;
     string input_img_name = "/home/berkay/catkin_ws/src/aruco_marker/images/aruco4.jpg";
 
     Mat cameraMatrix;
