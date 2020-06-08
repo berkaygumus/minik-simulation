@@ -8,6 +8,7 @@ int main(int argc,char** argv){
     ros::NodeHandle n;
     ros::Rate loop_rate(10);
     Camera_Calibration* calib  = new Camera_Calibration();
+    bool isCamera = 1;
 
     VideoCapture cap1(1); //left cam
     cap1.set(CV_CAP_PROP_FRAME_WIDTH, 640);
@@ -20,20 +21,24 @@ int main(int argc,char** argv){
     Mat frame2;
 
     if(!cap1.isOpened()){
-          cout << "ERROR cam1!!" << endl;
-          exit(1);
-      }
-      if(!cap2.isOpened()){
-            cout << "ERROR cam2!!" << endl;
-            exit(1);
-        }
+      cout << "there is no camera 1" << endl;
+      cout << "images are taken from the file" << endl;
+      isCamera = 0;
+    }
+    if(!cap2.isOpened()){
+      cout << "there is no camera 2" << endl;
+      cout << "images are taken from the file" << endl;
+      isCamera = 0;
+    }
 
-    //for stereo camera
-    //Mat imgl,imgr,imgU1,imgU2;
-    //imgl = imread("/home/berkay/udemy_ws/src/camera2ros/src/calib/images/left01.jpg");
-    //imgr = imread("/home/berkay/udemy_ws/src/camera2ros/src/calib/images/right01.jpg");
-    //calib->runStereoCalibrationAndSave();
-    cap1 >> frame1;
+    if(isCamera){
+      cap1 >> frame1;
+    }
+    else{
+      frame1 = imread("/home/berkay/udemy_ws/src/camera_deneme/src/capture/left/left_initial_distorted_images/000004.jpg");//left image
+      frame2 = imread("/home/berkay/udemy_ws/src/camera_deneme/src/capture/right/right_initial_distorted_images/000004.jpg");//right image
+    }
+
     calib->loadStereoCalibrationParams(frame1.size());
 
     Ptr<StereoSGBM> sgbm = StereoSGBM::create(0,16,3);
@@ -89,8 +94,14 @@ int main(int argc,char** argv){
       sgbm->setMode(StereoSGBM::MODE_SGBM);
 
 
-      cap1 >> frame1;
-      cap2 >> frame2;
+      if(isCamera){
+        cap1 >> frame1;
+        cap2 >> frame2;
+      }
+      else{
+        frame1 = imread("/home/berkay/udemy_ws/src/camera_deneme/src/capture/left/left_initial_distorted_images/000004.jpg");//left image
+        frame2 = imread("/home/berkay/udemy_ws/src/camera_deneme/src/capture/right/right_initial_distorted_images/000004.jpg");//right image
+      }
 
       Mat undist1, undist2, disp, disp8;
       calib->applyStereoCalibration( frame1,  frame2,  undist1,  undist2);

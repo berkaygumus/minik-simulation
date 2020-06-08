@@ -156,6 +156,9 @@ target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${
 add_executable(disparity_node src/disparity.cpp)
 target_link_libraries(disparity_node ${PROJECT_NAME})
 
+target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${Eigen3_LIBRARIES} )
+add_executable(capture_images_node src/capture_images.cpp)
+target_link_libraries(capture_images_node ${PROJECT_NAME})
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the

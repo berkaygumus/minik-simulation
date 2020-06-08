@@ -147,6 +147,7 @@
 /home/berkay/catkin_ws/build/aruco_marker/CMakeFiles/install/strip.dir
 /home/berkay/catkin_ws/build/aruco_marker/CMakeFiles/install/local.dir
 /home/berkay/catkin_ws/build/detect_color_object/CMakeFiles/install.dir
+/home/berkay/catkin_ws/build/detect_color_object/CMakeFiles/rebuild_cache.dir
 /home/berkay/catkin_ws/build/detect_color_object/CMakeFiles/color_id_object_node.dir
 /home/berkay/catkin_ws/build/detect_color_object/CMakeFiles/detect_color_object.dir
 /home/berkay/catkin_ws/build/detect_color_object/CMakeFiles/list_install_components.dir
@@ -155,9 +156,9 @@
 /home/berkay/catkin_ws/build/detect_color_object/CMakeFiles/color_object_node.dir
 /home/berkay/catkin_ws/build/detect_color_object/CMakeFiles/install/local.dir
 /home/berkay/catkin_ws/build/detect_color_object/CMakeFiles/disparity_node.dir
+/home/berkay/catkin_ws/build/detect_color_object/CMakeFiles/capture_images_node.dir
 /home/berkay/catkin_ws/build/detect_color_object/CMakeFiles/edit_cache.dir
 /home/berkay/catkin_ws/build/detect_color_object/CMakeFiles/test.dir
-/home/berkay/catkin_ws/build/detect_color_object/CMakeFiles/rebuild_cache.dir
 /home/berkay/catkin_ws/build/error_comp/CMakeFiles/edit_cache.dir
 /home/berkay/catkin_ws/build/error_comp/CMakeFiles/test.dir
 /home/berkay/catkin_ws/build/error_comp/CMakeFiles/list_install_components.dir

@@ -371,6 +371,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "detect_color_object/CMakeFiles/select_hsv_range_node.dir/DependInfo.cmake"
   "detect_color_object/CMakeFiles/color_object_node.dir/DependInfo.cmake"
   "detect_color_object/CMakeFiles/disparity_node.dir/DependInfo.cmake"
+  "detect_color_object/CMakeFiles/capture_images_node.dir/DependInfo.cmake"
   "error_comp/CMakeFiles/error_comp.dir/DependInfo.cmake"
   "error_comp/CMakeFiles/error_comp_gencpp.dir/DependInfo.cmake"
   "error_comp/CMakeFiles/error_comp_generate_messages_cpp.dir/DependInfo.cmake"

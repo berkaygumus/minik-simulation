@@ -42,6 +42,7 @@ void setHSVRange(int colorID, int& hlow, int& slow, int& vlow, int&  hhigh, int&
 
 Mat colorThreshold(int colorID, Mat hsv_image, int himsizex, int himsizey){
     int hlow, slow, vlow,  hhigh,  shigh, vhigh;
+    //sets hsv ranges, defined at detect_color_object/hsv_range.h
     setHSVRange( colorID,  hlow,  slow,  vlow,   hhigh,  shigh,  vhigh);
     resize(hsv_image,hsv_image,Size(himsizex,himsizey));
     Mat object_image;
@@ -54,12 +55,12 @@ Mat colorThreshold(int colorID, Mat hsv_image, int himsizex, int himsizey){
 
      // morphological opening (remove small objects from the foreground)
 
-     erode(obs_r1, obs_r1, getStructuringElement(MORPH_RECT, Size(25, 25)) );
-     dilate( obs_r1, obs_r1, getStructuringElement(MORPH_RECT, Size(25, 25)) );
+     erode(obs_r1, obs_r1, getStructuringElement(MORPH_RECT, Size(15, 15)) );
+     dilate( obs_r1, obs_r1, getStructuringElement(MORPH_RECT, Size(15, 15)) );
 
      //morphological closing (fill small holes in the foreground)
-     dilate( obs_r1, obs_r1, getStructuringElement(MORPH_RECT, Size(25, 25)) );
-     erode(obs_r1, obs_r1, getStructuringElement(MORPH_RECT, Size(25, 25)) );
+     dilate( obs_r1, obs_r1, getStructuringElement(MORPH_RECT, Size(15, 15)) );
+     erode(obs_r1, obs_r1, getStructuringElement(MORPH_RECT, Size(15, 15)) );
 
      resize(obs_r1,obs_r1,Size(sizex,sizey));
      return obs_r1;
@@ -80,13 +81,17 @@ Mat colorThreshold(int colorID, Mat hsv_image, int himsizex, int himsizey){
  }
 
  object_pos detectObject(Mat hsv_left,Mat hsv_right, int robot_id, Camera_Calibration* calib){
+   //takes left and right hsv images, robot id and calibration parameters,
+   //calculates position and radius, returns object_pos(x,y, radius)
 
+   //defined at globaldefs.h
    float himsizex = WEBCAM_FOV_WIDTH_PIXELS*SAMPLING_FACTOR; //width in terms of pixel
    float himsizey = WEBCAM_FOV_HEIGHT_PIXELS*SAMPLING_FACTOR; //height in terms of pixel
 
    //threshold for the object with HSV range
    Mat object_r(Size(himsizex,himsizey), CV_8U);
    Mat object_l(Size(himsizex,himsizey), CV_8U );
+   //color threshold(hsv range)
    object_l = colorThreshold(robot_id, hsv_left, himsizex,himsizey);
    object_r = colorThreshold(robot_id, hsv_right, himsizex,himsizey);
    //imshow("object_l",object_l);
@@ -144,6 +149,9 @@ Mat colorThreshold(int colorID, Mat hsv_image, int himsizex, int himsizey){
 
    circle(object_r, a1, width_right/2, 50, 5);
    circle(object_l, a2, width_left/2, 50, 5);
+
+   imshow("enhanced object_l",object_l);
+   imshow("enhanced object_r",object_r);
 
    float d_obs;
    double distance_x_obs;
@@ -208,6 +216,7 @@ int main(int argc,char** argv){
     ros::NodeHandle n;
     ros::Rate loop_rate(10);
 
+    //Publishers for robot 1 and robot2 positions, new robots can be added.
     ros::Publisher robotPublisher1 = n.advertise<geometry_msgs::Pose2D>("robot1", 1);
     ros::Publisher robotPublisher2 = n.advertise<geometry_msgs::Pose2D>("robot2", 1);
 
@@ -238,20 +247,12 @@ int main(int argc,char** argv){
           exit(1);
     }
 
-    //images from files
-    //frame_left = imread("/home/berkay/udemy_ws/src/camera2ros/src/calib/images/left01.jpg");
-    //frame_right = imread("/home/berkay/udemy_ws/src/camera2ros/src/calib/images/right01.jpg");
-
-    //calib->runStereoCalibrationAndSave();
-
 
     cap_left >> frame_left;
-    calib->loadStereoCalibrationParams(frame_left.size());
-    //imshow("init_left",frame_left);
-    //imshow("init_right",frame_right);
-    int number_objects;
-    //HSV RANGE Control
-    vector<vector<int> > threshold_settings;
+    calib->loadStereoCalibrationParams(frame_left.size());//loads camera calibration parameters.
+
+    int number_objects;//2: robot1 and robot2
+
     //cout << "enter number of objects: " << endl;
     //cin >> number_objects;
     number_objects = 2;
@@ -264,7 +265,7 @@ int main(int argc,char** argv){
       cap_right >> frame_right;
       cout << "elapsed capture : " << ros::Time::now() - begin << endl;
 
-      //calibration
+      //stereo calibration
       calib->applyStereoCalibration(frame_left, frame_right, rgb_left, rgb_right);
       //imshow("init_left",frame_left);
       //imshow("init_right",frame_right);
@@ -279,7 +280,7 @@ int main(int argc,char** argv){
 
       //pos calculation
       object_pos object1;
-      object1 = detectObject(hsv_left,hsv_right, 1,calib);
+      object1 = detectObject(hsv_left,hsv_right, 1,calib);//detects robot and calculates its position and radius
       cout << "object 1 pos " << object1.x << " " << object1.y << " " << object1.radius << endl;
       geometry_msgs::Pose2D robotPose1;
       robotPose1.x = object1.x;

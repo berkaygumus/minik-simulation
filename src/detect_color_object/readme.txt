@@ -20,9 +20,13 @@ Also, this package uses camera_calibration package as the library.
 >>disparity
     It generates disparity image using stereo images and shows this image.
 
+>> capture_images
+    It takes 1 or 2 images from the camera and writes them the folder.
+    The number of images(1 or 2) and file names to write must be defined properly at the code.
 
 ---------------------executables-------------------------------------
 1) select_hsv_range.cpp >> select_hsv_range_node
 2) color_object.cpp >>  color_object_node
 3) color_id_object.cpp >>  color_id_object_node
 4) disparity.cpp >>  disparity_node
+5) capture_images.cpp >> capture_images_node

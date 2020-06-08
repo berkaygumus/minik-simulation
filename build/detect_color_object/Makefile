@@ -68,6 +68,17 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -121,17 +132,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -239,6 +239,48 @@ disparity_node: detect_color_object/CMakeFiles/disparity_node.dir/rule
 disparity_node/fast:
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f detect_color_object/CMakeFiles/disparity_node.dir/build.make detect_color_object/CMakeFiles/disparity_node.dir/build
 .PHONY : disparity_node/fast
+
+# Convenience name for target.
+detect_color_object/CMakeFiles/capture_images_node.dir/rule:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 detect_color_object/CMakeFiles/capture_images_node.dir/rule
+.PHONY : detect_color_object/CMakeFiles/capture_images_node.dir/rule
+
+# Convenience name for target.
+capture_images_node: detect_color_object/CMakeFiles/capture_images_node.dir/rule
+
+.PHONY : capture_images_node
+
+# fast build rule for target.
+capture_images_node/fast:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f detect_color_object/CMakeFiles/capture_images_node.dir/build.make detect_color_object/CMakeFiles/capture_images_node.dir/build
+.PHONY : capture_images_node/fast
+
+src/capture_images.o: src/capture_images.cpp.o
+
+.PHONY : src/capture_images.o
+
+# target to build an object file
+src/capture_images.cpp.o:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f detect_color_object/CMakeFiles/capture_images_node.dir/build.make detect_color_object/CMakeFiles/capture_images_node.dir/src/capture_images.cpp.o
+.PHONY : src/capture_images.cpp.o
+
+src/capture_images.i: src/capture_images.cpp.i
+
+.PHONY : src/capture_images.i
+
+# target to preprocess a source file
+src/capture_images.cpp.i:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f detect_color_object/CMakeFiles/capture_images_node.dir/build.make detect_color_object/CMakeFiles/capture_images_node.dir/src/capture_images.cpp.i
+.PHONY : src/capture_images.cpp.i
+
+src/capture_images.s: src/capture_images.cpp.s
+
+.PHONY : src/capture_images.s
+
+# target to generate assembly for a file
+src/capture_images.cpp.s:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f detect_color_object/CMakeFiles/capture_images_node.dir/build.make detect_color_object/CMakeFiles/capture_images_node.dir/src/capture_images.cpp.s
+.PHONY : src/capture_images.cpp.s
 
 src/color_id_object.o: src/color_id_object.cpp.o
 
@@ -358,6 +400,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install"
+	@echo "... rebuild_cache"
 	@echo "... color_id_object_node"
 	@echo "... detect_color_object"
 	@echo "... list_install_components"
@@ -366,9 +409,12 @@ help:
 	@echo "... color_object_node"
 	@echo "... install/local"
 	@echo "... disparity_node"
+	@echo "... capture_images_node"
 	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... rebuild_cache"
+	@echo "... src/capture_images.o"
+	@echo "... src/capture_images.i"
+	@echo "... src/capture_images.s"
 	@echo "... src/color_id_object.o"
 	@echo "... src/color_id_object.i"
 	@echo "... src/color_id_object.s"

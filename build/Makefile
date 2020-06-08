@@ -1336,6 +1336,19 @@ disparity_node/fast:
 .PHONY : disparity_node/fast
 
 #=============================================================================
+# Target rules for targets named capture_images_node
+
+# Build rule for target.
+capture_images_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 capture_images_node
+.PHONY : capture_images_node
+
+# fast build rule for target.
+capture_images_node/fast:
+	$(MAKE) -f detect_color_object/CMakeFiles/capture_images_node.dir/build.make detect_color_object/CMakeFiles/capture_images_node.dir/build
+.PHONY : capture_images_node/fast
+
+#=============================================================================
 # Target rules for targets named error_comp
 
 # Build rule for target.
@@ -2192,6 +2205,7 @@ help:
 	@echo "... select_hsv_range_node"
 	@echo "... color_object_node"
 	@echo "... disparity_node"
+	@echo "... capture_images_node"
 	@echo "... error_comp"
 	@echo "... error_comp_gencpp"
 	@echo "... error_comp_generate_messages_cpp"

@@ -3,7 +3,7 @@
  Author: Berkay Gumus
  E-mail: berkay.gumus@boun.edu.tr
  Date created: 20.05.2020
- Date last modified: 27.05.2020
+ Date last modified: 08.06.2020
  */
 
 #include "aruco_marker/arucoMarker.h"
@@ -82,8 +82,15 @@ void ArucoMarker::calculateRobotPos(){
   VideoCapture cap(cameraID);
   cap.set(CV_CAP_PROP_FRAME_WIDTH, 640);
   cap.set(CV_CAP_PROP_FRAME_HEIGHT, 480);
+
+  if(!cap.isOpened()){
+        isCamera = 0;
+        cout << "there is no camera " << cameraID << endl;
+        cout << "images are taken from the file: " << input_img_name << endl;
+    }
+
   Mat src_image;//source image
-  cap >> src_image;
+  //cap >> src_image;
 
   //sets camera parameters: camera matrix and distortion coefficients
   setCamParameters();
@@ -92,8 +99,15 @@ void ArucoMarker::calculateRobotPos(){
   ros::Publisher robotsPublisher = n.advertise<ISLH_msgs::robotPositions>("robot_list",1);
 
   while(ros::ok()){
+
     //video capture
-    cap >> src_image;
+    if(isCamera){
+      cap >> src_image;
+    }
+    else{
+      src_image = imread(input_img_name);
+    }
+
 
     cv::Mat image,imageCopy;
     src_image.copyTo(image);
@@ -228,6 +242,10 @@ void ArucoMarker::calculateRobotPos(){
     waitKey(25);
     ros::spinOnce();
     loop_rate.sleep();
+
+    /*if(!isCamera){
+      waitKey(0);
+    }*/
 
   }
 }

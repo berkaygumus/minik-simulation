@@ -15,11 +15,11 @@ int main(int argc,char** argv){
 
     ////////////////////////////////////////////////////////////////////
     //1)for mono camera:
-    //calib->calibrate();
+    calib->calibrate();
 
     ///////////////////////////////////////////////////////////////////
     //2)for stereo camera calibration:
-    calib->runStereoCalibrationAndSave(); //it is necessary only once.
+    //calib->runStereoCalibrationAndSave(); //it is necessary only once.
 
     //////////////////////////////////////////////////////////////////
     //3)after runStereoCalibrationAndSave function runs once, this part can be used.

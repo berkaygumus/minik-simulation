@@ -101,6 +101,7 @@ void  enhanceImg(Mat &image){
 void getColorImage(Mat &image, Mat &image_r, Mat &image_g, Mat &image_b){
     int hlow, slow, vlow,  hhigh,  shigh, vhigh;
 
+		//sets hsv ranges, defined at detect_color_object/hsv_range.h
     setHSVRange(1,  hlow,  slow,  vlow,   hhigh,  shigh,  vhigh);
     inRange(image, Scalar(hlow,slow,vlow), Scalar(hhigh,shigh,vhigh), image_r);
     enhanceImg(image_r);
@@ -131,13 +132,6 @@ void getColorImage(Mat &image, Mat &image_r, Mat &image_g, Mat &image_b){
  			i--;
  			continue;
  		}
- 		/*double factor = getDist(Point2f(mu[i].m10 / mu[i].m00, mu[i].m01 / mu[i].m00),Point2f(640 / 2.0, 480 / 2.0)) / 250 + 1;
-    cout << "factor: " << factor << endl;
- 		if (mu[i].m00 * factor < 150 ||
- 			mu[i].m00 * factor > 550){
- 			mu.erase(mu.begin() + i);
- 			i--;
- 		}*/
  	}
  	///  Get the mass centers:
  	vector<Point2f> mc;
@@ -148,8 +142,11 @@ void getColorImage(Mat &image, Mat &image_r, Mat &image_g, Mat &image_b){
  }
 
  void checkC(vector<Point2f> &v1, vector<Point2f> &v2, vector<Point2f> &v3){
-   int max_dist_x = 10;
+	 //calculates how many neighbor it has (it must be 1)
+	 //the color id shape is top-bottom: If it has neighbour, it must be at top or bottom.
+   int max_dist_x = 10;//prevents creating neighborhood with side color, if it is far at x axis(horizontal), it can not be neighbor
    int min_dist_y = 2;
+	 //all possible combinations are checked and calculates the number of neighbor for each center
  	for (unsigned i = 0; i < v1.size(); i++){
  		Point2f p = v1[i];
  		int neigh = 0;
@@ -175,6 +172,7 @@ void getColorImage(Mat &image, Mat &image_r, Mat &image_g, Mat &image_b){
  		  if (dst_x < max_dist_x && dst_y > min_dist_y) neigh++;
  		}
  		if (neigh != 1){
+			//if it doesn't have only 1 neighbor, it is not a necessary center.
  			v1.erase(v1.begin() + i);
  			i--;
  		}
@@ -182,9 +180,9 @@ void getColorImage(Mat &image, Mat &image_r, Mat &image_g, Mat &image_b){
  }
 
  void checkConsistency(vector<vector<Point2f> > &mcs){
- 	checkC(mcs[0], mcs[1], mcs[2]);
- 	checkC(mcs[1], mcs[0], mcs[2]);
- 	checkC(mcs[2], mcs[1], mcs[0]);
+ 	checkC(mcs[0], mcs[1], mcs[2]);//centers at red images are checked
+ 	checkC(mcs[1], mcs[0], mcs[2]);//centers at green images are checked
+ 	checkC(mcs[2], mcs[1], mcs[0]);//centers at blue images are checked
  }
 
  Robot calculatePos(Robot r_l, Robot r_r, Camera_Calibration* calib){
@@ -197,6 +195,7 @@ void getColorImage(Mat &image, Mat &image_r, Mat &image_g, Mat &image_b){
 	double distance_x_obs;
 	double distance_y_obs;
 
+ //it can be calculated from camera matrix, however there is a problem at get functions FIX IT!!!!
 	double cam_ang=49;//atan(304/263)*180/pi;// cx/fx WEBCAM_PAN_FOV/2;
 	//cout << "fow angle: " << 2*cam_ang << endl;
 	//base distance
@@ -254,31 +253,31 @@ void getColorImage(Mat &image, Mat &image_r, Mat &image_g, Mat &image_b){
  	/// Find Groups of 3 Markers
   int max_dist_x = 10;
   int min_dist_y = 2;
- 	vector<Group> groups_l;
- 	for (unsigned coli = 0; coli < 3; coli++){
- 		for (unsigned mari = 0; mari < mcs_l[coli].size(); mari++){
- 			Marker marker;
- 			marker.color = coli;
- 			marker.pos = mcs_l[coli][mari];
- 			if (isInGroups(&groups_l, marker)) continue;
- 			Group g;
+ 	vector<Group> groups_l;//creates color groups for color id
+ 	for (unsigned coli = 0; coli < 3; coli++){//for each color
+ 		for (unsigned mari = 0; mari < mcs_l[coli].size(); mari++){//each center at the center vector
+ 			Marker marker; //creates marker containing color and pos
+ 			marker.color = coli; //color
+ 			marker.pos = mcs_l[coli][mari]; //pos
+ 			if (isInGroups(&groups_l, marker)) continue; //if it exists, it is not necessary to create again
+ 			Group g;//containing two markers(2 colors and 2 centers)
  			g.markers.push_back(marker);
- 			for (unsigned colj = 0; colj < 3; colj++){
+ 			for (unsigned colj = 0; colj < 3; colj++){//searches another(neighbor) marker
  				for (unsigned marj = 0; marj < mcs_l[colj].size(); marj++){
- 					if (coli == colj && mari == marj) continue;
+ 					if (coli == colj && mari == marj) continue; //if it is itself
 
  					//double dist = getDist(mcs_l[coli][mari], mcs_l[colj][marj]);
-          double dst_x = abs(mcs_l[coli][mari].x- mcs_l[colj][marj].x);
-          double dst_y = abs(mcs_l[coli][mari].y- mcs_l[colj][marj].y);
- 					if (dst_x < max_dist_x && dst_y > min_dist_y){
+          double dst_x = abs(mcs_l[coli][mari].x- mcs_l[colj][marj].x);//difference at horizontal
+          double dst_y = abs(mcs_l[coli][mari].y- mcs_l[colj][marj].y);//difference at verticel
+ 					if (dst_x < max_dist_x && dst_y > min_dist_y){//if it is not far at the horizontal
  						Marker m;
  						m.color = colj;
  						m.pos = mcs_l[colj][marj];
- 						g.markers.push_back(m);
+ 						g.markers.push_back(m);//another marker
  					}
  				}
  			}
- 			groups_l.push_back(g);
+ 			groups_l.push_back(g);//all groups are added to group vector
  		}
  	}
 
@@ -289,6 +288,7 @@ void getColorImage(Mat &image, Mat &image_r, Mat &image_g, Mat &image_b){
     cout << "left colors: " << groups_l[i].markers[0].color << groups_l[i].markers[1].color << endl;
   }*/
 
+//same things for right image
   vector<Group> groups_r;
  	for (unsigned coli = 0; coli < 3; coli++){
  		for (unsigned mari = 0; mari < mcs_r[coli].size(); mari++){
@@ -335,12 +335,13 @@ void getColorImage(Mat &image, Mat &image_r, Mat &image_g, Mat &image_b){
  		Robot r;
  		Group g = groups_l[groi];
 
- 		/// If group doesn't have 2 marker than it is not correct
+ 		/// If group doesn't have 2 markers then it is not correct
  		if (g.markers.size() != 2 )
  			continue;
 
     double y0 = g.markers[0].pos.y;
     double y1 = g.markers[1].pos.y;
+		//determines top color bottom color
     if(y0 < y1){
       r.top = g.markers[0];
       r.bottom = g.markers[1];
@@ -351,9 +352,9 @@ void getColorImage(Mat &image, Mat &image_r, Mat &image_g, Mat &image_b){
     }
  		/// Find ID of the robot
  		r.ID = -1;
- 		for (int i = 0; i < numrobots; i++){
+ 		for (int i = 0; i < numrobots; i++){//searches robot id list defined at detect_color_object/robot_IDs.h to determine robot id
  			if (r.top.color == robIDList[i][0] && r.bottom.color == robIDList[i][1]){
- 				r.ID = i + 1;
+ 				r.ID = i + 1; //IDs start from 1, not 0
         cout << "robot left is found and id: " << 	r.ID << endl;
  				break;
  			}
@@ -361,7 +362,7 @@ void getColorImage(Mat &image, Mat &image_r, Mat &image_g, Mat &image_b){
  		if (r.ID == -1)
  			continue;
 
- 		/// Find center position
+ 		/// Find average center position at the image
  		double x = (r.top.pos.x + r.bottom.pos.x ) / 2;
  		double y = (r.top.pos.y + r.bottom.pos.y ) / 2;
  		r.center = Point2f(x, y);
@@ -371,7 +372,7 @@ void getColorImage(Mat &image, Mat &image_r, Mat &image_g, Mat &image_b){
 
   //std::cout << "robot left :" << robots_l.size() << std::endl;
 
-  //robots at right image
+  //same things for right image
   for (unsigned groi = 0; groi < groups_r.size(); groi++){
  		Robot r;
  		Group g = groups_r[groi];
@@ -412,14 +413,14 @@ void getColorImage(Mat &image, Mat &image_r, Mat &image_g, Mat &image_b){
 
   //std::cout << "robot right :" << robots_r.size() << std::endl;
 
-	vector<Robot> robots;
+	vector<Robot> robots; // robot vector
   for(int i=0;i<robots_l.size();i++){
     for(int j=0;j<robots_r.size();j++){
-      if(robots_l[i].ID == robots_r[j].ID){
+      if(robots_l[i].ID == robots_r[j].ID){//same robot IDs for right and left
         //cout << "robot: " << endl;
         //cout << "ID: " << robots_l[i].ID << "color: " << robots_l[i].top.color << " " << robots_l[i].bottom.color << endl;
         //cout << "ID: " << robots_r[j].ID << "color: " << robots_r[j].top.color << " " << robots_r[j].bottom.color << endl;
-				Robot robot_temp = calculatePos(robots_l[i],robots_r[j],calib);
+				Robot robot_temp = calculatePos(robots_l[i],robots_r[j],calib);//calculates robot position
 				robot_temp.ID = robots_l[i].ID;
 				robot_temp.top.color = robots_l[i].top.color;
 				robot_temp.bottom.color = robots_l[i].bottom.color;
@@ -431,23 +432,6 @@ void getColorImage(Mat &image, Mat &image_r, Mat &image_g, Mat &image_b){
  	return robots;
  }
 
-/*void getColorImage(Mat &b, Mat &g, Mat &r, Mat &blue, Mat &red, Mat &yellow, Mat &green){
-
-	blue = ((r + g + b > 75) & (b * 2 / 3.0 > r) & ((b > g) | (g - b < 10)) & (g * 2 / 3.0 > r));
-	yellow = ((r > 150) & (g > 150) & (b < g - 30) & (r * 4.5 / 5.0 > b));
-	red = ((r + g + b > 75) & (r * 2 / 3.0 > g) & (r * 2 / 3.0 > b));
-	green = ((r + g + b > 75) & (r < g * 6 / 7.0) & (b < g * 6 / 7.0));
-
-	/*blue = ((r + g + b > 75) & (b * 2 / 3.0 > r) & ((b > g) | (g - b < 10)) & (g * 2 / 3.0 > r));
-	red = ((r + g + b > 75) & (r * 2 / 3.0 > g) & (r * 2 / 3.0 > b));
-	green = ((r + g + b > 75) & (r < g * 4 / 7.0) & (b < g * 4 / 7.0));
-	yellow = ((r > 150) & (g > 150) & (b < g - 100) & (r * 4 / 5.0 > b));
-
-	yellow = (r > 176)&(r < 216)&(g>194)&(g < 220)&(b>72)&(b < 143);*/
-//}
-
-
-
 
 int main(int argc,char** argv){
 
@@ -455,9 +439,10 @@ int main(int argc,char** argv){
     ros::NodeHandle n;
     ros::Rate loop_rate(10);
 
+		//publisher for the robot pos list
 		ros::Publisher robotsPublisher = n.advertise<ISLH_msgs::robotPositions>("robot_list",1);
 
-
+		//caibration object
     Camera_Calibration* calib  = new Camera_Calibration();
 
     VideoCapture cap_left(1); //left cam
@@ -484,20 +469,8 @@ int main(int argc,char** argv){
           exit(1);
     }
 
-    //images from files
-    //frame_left = imread("/home/berkay/udemy_ws/src/camera2ros/src/calib/images/left01.jpg");
-    //frame_right = imread("/home/berkay/udemy_ws/src/camera2ros/src/calib/images/right01.jpg");
-
-    //calib->runStereoCalibrationAndSave();
-
-
     cap_left >> frame_left;
-    calib->loadStereoCalibrationParams(frame_left.size());
-    //imshow("init_left",frame_left);
-    //imshow("init_right",frame_right);
-    int number_objects;
-    //HSV RANGE Control
-    vector<vector<int> > threshold_settings;
+    calib->loadStereoCalibrationParams(frame_left.size());//loads calibration parameters from the file.
 
 
     while(ros::ok()){
@@ -521,35 +494,21 @@ int main(int argc,char** argv){
       //cout << "elapsed hsv : " << ros::Time::now() - begin << endl;
 
       //HSV IMAGES AND PROCESS
-      Mat blue_l,red_l,green_l, blue_r,red_r, green_r;
-      getColorImage(hsv_right, red_r, green_r, blue_r);
+      Mat blue_l,red_l,green_l, blue_r,red_r, green_r; //binary red, green, blue images
+      getColorImage(hsv_right, red_r, green_r, blue_r); //converts HSV image to binary images
       getColorImage(hsv_left, red_l, green_l, blue_l);
 			//cout << "color image hsv : " << ros::Time::now() - begin << endl;
-      /*Mat bgr_r[3],bgr_l[3];
-      split(rgb_left,bgr_l);
-      split(rgb_right,bgr_r);
-
-
-      getColorImage(bgr_r[0], bgr_r[1], bgr_r[2], blue_r, red_r, yellow_r, green_r);
-      getColorImage(bgr_l[0], bgr_l[1], bgr_l[2], blue_l, red_l, yellow_l, green_l);*/
-      /*imshow("1.channel left", bgr_l[0]);
-      imshow("2.channel left", bgr_l[1]);
-      imshow("3.channel left", bgr_l[2]);
-      imshow("1.channel right", bgr_r[0]);
-      imshow("2.channel right", bgr_r[1]);
-      imshow("3.channel right", bgr_r[2]);*/
-
-
-
 
       //OBJECT DETECTION
-      vector<vector<Point2f> > mcs_l;
+			//left
+      vector<vector<Point2f> > mcs_l; //centers(x,y) of thresholded parts at three images(red, green, blue)
       mcs_l = vector<vector<Point2f> >(3);
 
-  		mcs_l[0] = getMC(&red_l);
-  		mcs_l[1] = getMC(&green_l);
-      mcs_l[2] = getMC(&blue_l);
+  		mcs_l[0] = getMC(&red_l);//centers of parts at red image
+  		mcs_l[1] = getMC(&green_l);//centers of parts at green_l image
+      mcs_l[2] = getMC(&blue_l);//centers of parts at blue image
 
+			//same things for right
       vector<vector<Point2f> > mcs_r;
       mcs_r = vector<vector<Point2f> >(3);
 
@@ -557,7 +516,7 @@ int main(int argc,char** argv){
   		mcs_r[1] = getMC(&green_r);
       mcs_r[2] = getMC(&blue_r);
 
-
+			//circles are added at the centers
       for (unsigned i = 0; i < mcs_l[0].size(); i++)
 			if (mcs_l[0][i].x == mcs_l[0][i].x && mcs_l[0][i].y == mcs_l[0][i].y)
 				colorCircle(red_l, (int)mcs_l[0][i].x, (int)mcs_l[0][i].y, 10, Scalar(55));
@@ -591,9 +550,10 @@ int main(int argc,char** argv){
         //imshow("yellow right", yellow_r);
         imshow("green right", green_r);
 
-        checkConsistency(mcs_l);
+        checkConsistency(mcs_l);//checks neighborhood among the centers, if it doesn't have only one neighbor, it is removed from the vector
         checkConsistency(mcs_r);
 
+				//calculates robot posiitons and creates robot vector
         vector<Robot> robots = findRobots(mcs_l, mcs_r,calib);
 				//cout << "final robot size: " << robots.size() << endl;
 
@@ -601,7 +561,7 @@ int main(int argc,char** argv){
 					//cout << "robot " << i << " id : " << robots[i].ID << " pos: " << robots[i].center << endl;
 				}
 
-				ISLH_msgs::robotPositions msg;
+				ISLH_msgs::robotPositions msg;//message to publish
 				vector<geometry_msgs::Pose2D> positions;
 				for(int i=0;i<numrobots;i++){
 					geometry_msgs::Pose2D temp_pos;
