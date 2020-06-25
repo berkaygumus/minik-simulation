@@ -24,11 +24,6 @@ Also, this package uses camera_calibration package as the library.
     It takes 1 or 2 images from the camera and writes them the folder.
     The number of images(1 or 2) and file names to write must be defined properly at the code.
 
-These nodes takes images from the camera or jpg files.
-When "ısCamera" variable is 1, it takes image from the camera,
-when it is 0, it takes from the jpg file defined with "input_img_name" variable.
-These variables are at main function at cpp file.
-
 ---------------------executables-------------------------------------
 1) select_hsv_range.cpp >> select_hsv_range_node
 2) color_object.cpp >>  color_object_node

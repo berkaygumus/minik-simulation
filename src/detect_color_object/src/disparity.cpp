@@ -8,10 +8,7 @@ int main(int argc,char** argv){
     ros::NodeHandle n;
     ros::Rate loop_rate(10);
     Camera_Calibration* calib  = new Camera_Calibration();
-
-    bool isCamera = 0;
-    string left_img_name = "/home/berkay/catkin_ws/src/detect_color_object/images/disparity_left1.jpg";
-		string right_img_name = "/home/berkay/catkin_ws/src/detect_color_object/images/disparity_right1.jpg";
+    bool isCamera = 1;
 
     VideoCapture cap1(1); //left cam
     cap1.set(CV_CAP_PROP_FRAME_WIDTH, 640);
@@ -34,15 +31,12 @@ int main(int argc,char** argv){
       isCamera = 0;
     }
 
-
-
-
     if(isCamera){
       cap1 >> frame1;
     }
     else{
-      frame1 = imread(left_img_name);//left image
-      frame2 = imread(right_img_name);//right image
+      frame1 = imread("/home/berkay/udemy_ws/src/camera_deneme/src/capture/left/left_initial_distorted_images/000004.jpg");//left image
+      frame2 = imread("/home/berkay/udemy_ws/src/camera_deneme/src/capture/right/right_initial_distorted_images/000004.jpg");//right image
     }
 
     calib->loadStereoCalibrationParams(frame1.size());

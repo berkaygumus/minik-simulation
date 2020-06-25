@@ -48,8 +48,12 @@ class ArucoMarker{
 
     string aruco_marker_folder = "/home/berkay/catkin_ws/src/aruco_marker/aruco_markers/";//folder to add aruco marker images for markerGenerater function
     int cameraID = 1;//camera ID
+<<<<<<< HEAD
     bool isCamera = 0;
     bool start = 0;
+=======
+    bool isCamera = 1;
+>>>>>>> parent of db221b8... imread property
     string input_img_name = "/home/berkay/catkin_ws/src/aruco_marker/images/aruco4.jpg";
     Mat src_image;//source image
 

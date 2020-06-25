@@ -222,9 +222,6 @@ int main(int argc,char** argv){
 
 
     Camera_Calibration* calib  = new Camera_Calibration();
-    bool isCamera = 0;
-    string left_img_name = "/home/berkay/catkin_ws/src/detect_color_object/images/color_left1.jpg";
-		string right_img_name = "/home/berkay/catkin_ws/src/detect_color_object/images/color_right1.jpg";
 
     VideoCapture cap_left(1); //left cam
     cap_left.set(CV_CAP_PROP_FRAME_WIDTH, 640);
@@ -242,26 +239,16 @@ int main(int argc,char** argv){
     Mat hsv_right;//undistorted hsv image
 
     if(!cap_left.isOpened()){
-      cout << "there is no camera 1" << endl;
-      cout << "images are taken from the file" << endl;
-      isCamera = 0;
+          cout << "ERROR cam1!!" << endl;
+          exit(1);
     }
     if(!cap_right.isOpened()){
-      cout << "there is no camera 2" << endl;
-      cout << "images are taken from the file" << endl;
-      isCamera = 0;
+          cout << "ERROR cam2!!" << endl;
+          exit(1);
     }
 
 
-
-
-    if(isCamera){
-      cap_left >> frame_left;
-    }
-    else{
-      frame_left = imread(left_img_name);//left image
-    }
-
+    cap_left >> frame_left;
     calib->loadStereoCalibrationParams(frame_left.size());//loads camera calibration parameters.
 
     int number_objects;//2: robot1 and robot2
@@ -274,14 +261,8 @@ int main(int argc,char** argv){
     while(ros::ok()){
       ros::Time begin = ros::Time::now();
       //capture images
-      if(isCamera){
-        cap_left >> frame_left;
-        cap_right >> frame_right;
-      }
-      else{
-        frame_left = imread(left_img_name);//left image
-        frame_right = imread(right_img_name);//right image
-      }
+      cap_left >> frame_left;
+      cap_right >> frame_right;
       cout << "elapsed capture : " << ros::Time::now() - begin << endl;
 
       //stereo calibration

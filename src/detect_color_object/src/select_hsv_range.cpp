@@ -40,7 +40,7 @@ void setInitialHSVRange(int colorID){//int colorID, int& hlow, int& slow, int& v
 
 }
 
-void setHSV_Range(VideoCapture cap_left,VideoCapture cap_right,int& number_objects,vector<vector <int> >& threshold_settings, Camera_Calibration* calib, bool isCamera, string left_img_name, string right_img_name){
+void setHSV_Range(VideoCapture cap_left,VideoCapture cap_right,int& number_objects,vector<vector <int> >& threshold_settings, Camera_Calibration* calib){
   Mat object_image_l,frame_left,rgb_left, hsv_left;
   Mat object_image_r,frame_right,rgb_right, hsv_right;
 
@@ -84,14 +84,8 @@ void setHSV_Range(VideoCapture cap_left,VideoCapture cap_right,int& number_objec
     vector<int>  temp_color_range;
     setInitialHSVRange(i);
     while(ok==0 && ros::ok()){
-      if(isCamera){
-        cap_left >> frame_left;
-        cap_right >> frame_right;
-      }
-      else{
-        frame_left = imread(left_img_name);//left image
-        frame_right = imread(right_img_name);//right image
-      }
+      cap_left >> frame_left;
+      cap_right >> frame_right;
       calib->applyStereoCalibration(frame_left, frame_right, rgb_left, rgb_right);
       cvtColor(rgb_right, hsv_right, COLOR_BGR2HSV);
       cvtColor(rgb_left, hsv_left, COLOR_BGR2HSV);
@@ -143,11 +137,6 @@ int main(int argc,char** argv){
     ros::Rate loop_rate(10);
     Camera_Calibration* calib  = new Camera_Calibration();
 
-    bool isCamera = 0;
-    string left_img_name = "/home/berkay/catkin_ws/src/detect_color_object/images/color_id_left3.jpg";
-    string right_img_name = "/home/berkay/catkin_ws/src/detect_color_object/images/color_id_right3.jpg";
-
-
     VideoCapture cap_left(1); //left cam
     cap_left.set(CV_CAP_PROP_FRAME_WIDTH, 640);
     cap_left.set(CV_CAP_PROP_FRAME_HEIGHT, 480);
@@ -164,31 +153,22 @@ int main(int argc,char** argv){
     Mat hsv_right;//undistorted hsv image
 
     if(!cap_left.isOpened()){
-      cout << "there is no camera 1" << endl;
-      cout << "images are taken from the file" << endl;
-      isCamera = 0;
+          cout << "ERROR cam1!!" << endl;
+          exit(1);
     }
     if(!cap_right.isOpened()){
-      cout << "there is no camera 2" << endl;
-      cout << "images are taken from the file" << endl;
-      isCamera = 0;
+          cout << "ERROR cam2!!" << endl;
+          exit(1);
     }
 
-		if(isCamera){
-      cap_left >> frame_left;
-    }
-    else{
-      frame_left = imread(left_img_name);//left image
-    }
-
+    cap_left >> frame_left;
     calib->loadStereoCalibrationParams(frame_left.size());
     int number_objects;
     //HSV RANGE Control
     vector<vector<int> > threshold_settings;
-    cout << "enter number of colors: " << endl;
+    cout << "enter number of objects: " << endl;
     cin >> number_objects;
-    cout << "select 1 at range select slider at GUI for the next color " << endl;
-    setHSV_Range(cap_left,cap_right,number_objects,threshold_settings, calib, isCamera, left_img_name, right_img_name );
+    setHSV_Range(cap_left,cap_right,number_objects,threshold_settings, calib);
 
 
 

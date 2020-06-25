@@ -17,7 +17,7 @@ int main(int argc,char** argv){
     ros::Rate loop_rate(10);
 
 
-    int nr_cameras = 2;
+    int nr_cameras = 1;
 
     VideoCapture cap1(1); //left cam
     cap1.set(CV_CAP_PROP_FRAME_WIDTH, 640);
