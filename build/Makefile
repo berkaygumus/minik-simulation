@@ -292,7 +292,7 @@ _catkin_empty_exported_target: cmake_check_build_system
 
 # fast build rule for target.
 _catkin_empty_exported_target/fast:
-	$(MAKE) -f serial/CMakeFiles/_catkin_empty_exported_target.dir/build.make serial/CMakeFiles/_catkin_empty_exported_target.dir/build
+	$(MAKE) -f diff_drive_gazebo/CMakeFiles/_catkin_empty_exported_target.dir/build.make diff_drive_gazebo/CMakeFiles/_catkin_empty_exported_target.dir/build
 .PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
@@ -1245,32 +1245,6 @@ camera_calibration_node/fast:
 .PHONY : camera_calibration_node/fast
 
 #=============================================================================
-# Target rules for targets named aruco_marker
-
-# Build rule for target.
-aruco_marker: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 aruco_marker
-.PHONY : aruco_marker
-
-# fast build rule for target.
-aruco_marker/fast:
-	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker.dir/build.make aruco_marker/CMakeFiles/aruco_marker.dir/build
-.PHONY : aruco_marker/fast
-
-#=============================================================================
-# Target rules for targets named aruco_marker_node
-
-# Build rule for target.
-aruco_marker_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 aruco_marker_node
-.PHONY : aruco_marker_node
-
-# fast build rule for target.
-aruco_marker_node/fast:
-	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/build
-.PHONY : aruco_marker_node/fast
-
-#=============================================================================
 # Target rules for targets named color_id_object_node
 
 # Build rule for target.
@@ -2102,6 +2076,97 @@ sensor_generate_messages_nodejs/fast:
 	$(MAKE) -f sensor/CMakeFiles/sensor_generate_messages_nodejs.dir/build.make sensor/CMakeFiles/sensor_generate_messages_nodejs.dir/build
 .PHONY : sensor_generate_messages_nodejs/fast
 
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_nodejs
+
+# Build rule for target.
+sensor_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_nodejs
+.PHONY : sensor_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+sensor_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+.PHONY : sensor_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_eus
+
+# Build rule for target.
+sensor_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_eus
+.PHONY : sensor_msgs_generate_messages_eus
+
+# fast build rule for target.
+sensor_msgs_generate_messages_eus/fast:
+	$(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+.PHONY : sensor_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_py
+
+# Build rule for target.
+sensor_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_py
+.PHONY : sensor_msgs_generate_messages_py
+
+# fast build rule for target.
+sensor_msgs_generate_messages_py/fast:
+	$(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_lisp
+
+# Build rule for target.
+sensor_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_lisp
+.PHONY : sensor_msgs_generate_messages_lisp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+.PHONY : sensor_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_cpp
+
+# Build rule for target.
+sensor_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_cpp
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+.PHONY : sensor_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named aruco_marker
+
+# Build rule for target.
+aruco_marker: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 aruco_marker
+.PHONY : aruco_marker
+
+# fast build rule for target.
+aruco_marker/fast:
+	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker.dir/build.make aruco_marker/CMakeFiles/aruco_marker.dir/build
+.PHONY : aruco_marker/fast
+
+#=============================================================================
+# Target rules for targets named aruco_marker_node
+
+# Build rule for target.
+aruco_marker_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 aruco_marker_node
+.PHONY : aruco_marker_node
+
+# fast build rule for target.
+aruco_marker_node/fast:
+	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/build
+.PHONY : aruco_marker_node/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2198,8 +2263,6 @@ help:
 	@echo "... calibrate_node"
 	@echo "... camera_calibration"
 	@echo "... camera_calibration_node"
-	@echo "... aruco_marker"
-	@echo "... aruco_marker_node"
 	@echo "... color_id_object_node"
 	@echo "... detect_color_object"
 	@echo "... select_hsv_range_node"
@@ -2264,6 +2327,13 @@ help:
 	@echo "... sensor_gennodejs"
 	@echo "... sensor_generate_messages_lisp"
 	@echo "... sensor_generate_messages_nodejs"
+	@echo "... sensor_msgs_generate_messages_nodejs"
+	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... aruco_marker"
+	@echo "... aruco_marker_node"
 .PHONY : help
 
 

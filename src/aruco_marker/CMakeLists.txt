@@ -12,6 +12,9 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
   camera_calibration
+  sensor_msgs
+  cv_bridge
+  image_transport
 )
 
 ## System dependencies are found with CMake's conventions
@@ -116,7 +119,9 @@ include_directories(./src/)
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES aruco_marker
-  CATKIN_DEPENDS roscpp std_msgs
+  CATKIN_DEPENDS roscpp std_msgs sensor_msgs
+  cv_bridge
+  image_transport
 #  DEPENDS system_lib
 )
 

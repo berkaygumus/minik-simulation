@@ -1,0 +1,14 @@
+material aruco/ID3
+{
+  receive_shadows
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture robot1back.png
+      }
+    }
+  }
+}

@@ -57,6 +57,19 @@ left: 4*(id-1) + 4
   cout << "markers are generated" << endl;
 }
 
+void ArucoMarker::img11callback(const sensor_msgs::Image::ConstPtr& msg){
+
+  cv_bridge::CvImagePtr cv_ptr;
+  cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
+  imshow("msg image", cv_ptr->image);
+    //src_image = msg->data;
+    cout << "callback " << endl;
+    waitKey(10);
+    src_image = cv_ptr->image;
+    start = 1;
+
+}
+
 void ArucoMarker::setCamParameters(){
   Camera_Calibration* calib  = new Camera_Calibration();
   calib->loadCameraCalibrationParams();
@@ -64,9 +77,12 @@ void ArucoMarker::setCamParameters(){
   //cameraMatrix = calib->getMonoCalibCamMat();// (Mat_<double>(3,3) << 371.42398 ,    0.00000 ,  312.84805 ,  0.00000 ,  371.39846 ,  231.62992 ,  0.00000 ,    0.00000 ,    1.00000);
   //distCoeffs = calib->getMonoCalibDistMat(); //
   //distCoeffs = (Mat_<double>(1,4) <<  -0.2180602166232231, 0.4587474927427831, -0.8959683693934485, 0.5567232386016293);
-
+/*
   cameraMatrix = (Mat_<double>(3,3) << 371.42398 ,    0.00000 ,  312.84805 ,  0.00000 ,  371.39846 ,  231.62992 ,  0.00000 ,    0.00000 ,    1.00000);
   distCoeffs = (Mat_<double>(1,5) <<  -0.36019 ,    0.19207 ,    0.00165 ,  -0.00967 ,  -0.06027);
+*/
+  cameraMatrix = (Mat_<double>(3,3) << 278.0000, 0.0000 ,  320.0000 ,  0.00000 ,  278.0000 ,  240.0000 ,  0.0000 ,    0.0000 ,    1.00000);
+  distCoeffs = (Mat_<double>(1,5) <<  0 ,    0 ,    0 ,  0 ,  0);
 
   cout << "cam mat: " << cameraMatrix << endl;
   cout << "dist mat: " << distCoeffs << endl;
@@ -89,7 +105,7 @@ void ArucoMarker::calculateRobotPos(){
         cout << "images are taken from the file: " << input_img_name << endl;
     }
 
-  Mat src_image;//source image
+
   //cap >> src_image;
 
   //sets camera parameters: camera matrix and distortion coefficients
@@ -97,16 +113,22 @@ void ArucoMarker::calculateRobotPos(){
 
   //publisher for robot pos and angle
   ros::Publisher robotsPublisher = n.advertise<ISLH_msgs::robotPositions>("robot_list",1);
+  ros::Subscriber img11sub = n.subscribe("/robot1/multisense_sl/camera/left/image_raw",1000,&ArucoMarker::img11callback,this);
 
   while(ros::ok()){
 
+    while(start==0){
+      cout << "waiting" << endl;
+      waitKey(25);
+      ros::spinOnce();
+    }
     //video capture
-    if(isCamera){
+    /*if(isCamera){
       cap >> src_image;
     }
     else{
       src_image = imread(input_img_name);
-    }
+    }*/
 
 
     cv::Mat image,imageCopy;
@@ -138,7 +160,7 @@ void ArucoMarker::calculateRobotPos(){
 
 
     vector<Vec3d> rvecs, tvecs;//rotation and translation vectors of markers
-    aruco::estimatePoseSingleMarkers(corners, 5.3, cameraMatrix, distCoeffs, rvecs, tvecs);
+    aruco::estimatePoseSingleMarkers(corners, 0.15, cameraMatrix, distCoeffs, rvecs, tvecs);
 
     /*
     The markerCorners parameter is the vector of marker corners returned by the detectMarkers() function.

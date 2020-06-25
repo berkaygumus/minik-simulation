@@ -56,16 +56,6 @@ CMAKE_BINARY_DIR = /home/berkay/catkin_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -110,6 +100,16 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -164,6 +164,81 @@ preinstall/fast:
 depend:
 	cd /home/berkay/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+.PHONY : aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_nodejs: aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+sensor_msgs_generate_messages_nodejs/fast:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+.PHONY : sensor_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+.PHONY : aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_eus: aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_eus
+
+# fast build rule for target.
+sensor_msgs_generate_messages_eus/fast:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+.PHONY : sensor_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+.PHONY : aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_py: aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_py
+
+# fast build rule for target.
+sensor_msgs_generate_messages_py/fast:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+.PHONY : aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_lisp: aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_lisp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_lisp/fast:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+.PHONY : sensor_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+.PHONY : aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_cpp: aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_cpp/fast:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+.PHONY : sensor_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 aruco_marker/CMakeFiles/aruco_marker.dir/rule:
@@ -258,13 +333,18 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... test"
+	@echo "... sensor_msgs_generate_messages_nodejs"
+	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... aruco_marker"
+	@echo "... test"
 	@echo "... aruco_marker_node"
+	@echo "... list_install_components"
 	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... src/arucoMarker.o"

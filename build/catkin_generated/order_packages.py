@@ -2,4 +2,4 @@
 source_root_dir = "/home/berkay/catkin_ws/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/home/berkay/catkin_ws/devel;/opt/ros/kinetic".split(';') if "/home/berkay/catkin_ws/devel;/opt/ros/kinetic" != "" else []
+underlay_workspaces = "/home/berkay/mybot_ws/devel;/home/berkay/catkin_ws/devel;/opt/ros/kinetic".split(';') if "/home/berkay/mybot_ws/devel;/home/berkay/catkin_ws/devel;/opt/ros/kinetic" != "" else []

@@ -8,3 +8,4 @@
 
 # modified environment variables
 export PWD="/home/berkay/catkin_ws/build"
+export ROS_PACKAGE_PATH="/home/berkay/mybot_ws/src:/home/berkay/catkin_ws/src:/opt/ros/kinetic/share"
