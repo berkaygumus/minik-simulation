@@ -2167,6 +2167,188 @@ aruco_marker_node/fast:
 	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/build
 .PHONY : aruco_marker_node/fast
 
+#=============================================================================
+# Target rules for targets named detect_aruco_object
+
+# Build rule for target.
+detect_aruco_object: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 detect_aruco_object
+.PHONY : detect_aruco_object
+
+# fast build rule for target.
+detect_aruco_object/fast:
+	$(MAKE) -f detect_aruco_object/CMakeFiles/detect_aruco_object.dir/build.make detect_aruco_object/CMakeFiles/detect_aruco_object.dir/build
+.PHONY : detect_aruco_object/fast
+
+#=============================================================================
+# Target rules for targets named detect_aruco_object_node
+
+# Build rule for target.
+detect_aruco_object_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 detect_aruco_object_node
+.PHONY : detect_aruco_object_node
+
+# fast build rule for target.
+detect_aruco_object_node/fast:
+	$(MAKE) -f detect_aruco_object/CMakeFiles/detect_aruco_object_node.dir/build.make detect_aruco_object/CMakeFiles/detect_aruco_object_node.dir/build
+.PHONY : detect_aruco_object_node/fast
+
+#=============================================================================
+# Target rules for targets named odom_publisher_node
+
+# Build rule for target.
+odom_publisher_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 odom_publisher_node
+.PHONY : odom_publisher_node
+
+# fast build rule for target.
+odom_publisher_node/fast:
+	$(MAKE) -f minik_gazebo/CMakeFiles/odom_publisher_node.dir/build.make minik_gazebo/CMakeFiles/odom_publisher_node.dir/build
+.PHONY : odom_publisher_node/fast
+
+#=============================================================================
+# Target rules for targets named minik_gazebo
+
+# Build rule for target.
+minik_gazebo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 minik_gazebo
+.PHONY : minik_gazebo
+
+# fast build rule for target.
+minik_gazebo/fast:
+	$(MAKE) -f minik_gazebo/CMakeFiles/minik_gazebo.dir/build.make minik_gazebo/CMakeFiles/minik_gazebo.dir/build
+.PHONY : minik_gazebo/fast
+
+#=============================================================================
+# Target rules for targets named nav_msgs_generate_messages_lisp
+
+# Build rule for target.
+nav_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nav_msgs_generate_messages_lisp
+.PHONY : nav_msgs_generate_messages_lisp
+
+# fast build rule for target.
+nav_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f minik_gazebo/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build.make minik_gazebo/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build
+.PHONY : nav_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named nav_msgs_generate_messages_eus
+
+# Build rule for target.
+nav_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nav_msgs_generate_messages_eus
+.PHONY : nav_msgs_generate_messages_eus
+
+# fast build rule for target.
+nav_msgs_generate_messages_eus/fast:
+	$(MAKE) -f minik_gazebo/CMakeFiles/nav_msgs_generate_messages_eus.dir/build.make minik_gazebo/CMakeFiles/nav_msgs_generate_messages_eus.dir/build
+.PHONY : nav_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named nav_msgs_generate_messages_cpp
+
+# Build rule for target.
+nav_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nav_msgs_generate_messages_cpp
+.PHONY : nav_msgs_generate_messages_cpp
+
+# fast build rule for target.
+nav_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f minik_gazebo/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build.make minik_gazebo/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build
+.PHONY : nav_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named nav_msgs_generate_messages_py
+
+# Build rule for target.
+nav_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nav_msgs_generate_messages_py
+.PHONY : nav_msgs_generate_messages_py
+
+# fast build rule for target.
+nav_msgs_generate_messages_py/fast:
+	$(MAKE) -f minik_gazebo/CMakeFiles/nav_msgs_generate_messages_py.dir/build.make minik_gazebo/CMakeFiles/nav_msgs_generate_messages_py.dir/build
+.PHONY : nav_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_msgs_generate_messages_nodejs
+
+# Build rule for target.
+actionlib_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_nodejs
+.PHONY : actionlib_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
+.PHONY : actionlib_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_msgs_generate_messages_cpp
+
+# Build rule for target.
+actionlib_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_cpp
+.PHONY : actionlib_msgs_generate_messages_cpp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
+.PHONY : actionlib_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_msgs_generate_messages_eus
+
+# Build rule for target.
+actionlib_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_eus
+.PHONY : actionlib_msgs_generate_messages_eus
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_eus/fast:
+	$(MAKE) -f minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
+.PHONY : actionlib_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_msgs_generate_messages_lisp
+
+# Build rule for target.
+actionlib_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_lisp
+.PHONY : actionlib_msgs_generate_messages_lisp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
+.PHONY : actionlib_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named nav_msgs_generate_messages_nodejs
+
+# Build rule for target.
+nav_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nav_msgs_generate_messages_nodejs
+.PHONY : nav_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+nav_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f minik_gazebo/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build.make minik_gazebo/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build
+.PHONY : nav_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_msgs_generate_messages_py
+
+# Build rule for target.
+actionlib_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_py
+.PHONY : actionlib_msgs_generate_messages_py
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_py/fast:
+	$(MAKE) -f minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
+.PHONY : actionlib_msgs_generate_messages_py/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2334,6 +2516,20 @@ help:
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... aruco_marker"
 	@echo "... aruco_marker_node"
+	@echo "... detect_aruco_object"
+	@echo "... detect_aruco_object_node"
+	@echo "... odom_publisher_node"
+	@echo "... minik_gazebo"
+	@echo "... nav_msgs_generate_messages_lisp"
+	@echo "... nav_msgs_generate_messages_eus"
+	@echo "... nav_msgs_generate_messages_cpp"
+	@echo "... nav_msgs_generate_messages_py"
+	@echo "... actionlib_msgs_generate_messages_nodejs"
+	@echo "... actionlib_msgs_generate_messages_cpp"
+	@echo "... actionlib_msgs_generate_messages_eus"
+	@echo "... actionlib_msgs_generate_messages_lisp"
+	@echo "... nav_msgs_generate_messages_nodejs"
+	@echo "... actionlib_msgs_generate_messages_py"
 .PHONY : help
 
 

@@ -9,7 +9,6 @@ int main(int argc,char** argv){
     RosThread* rosthread  = new RosThread(argc,argv,minik);
     rosthread->work();
 
-
-
+    
 
 }

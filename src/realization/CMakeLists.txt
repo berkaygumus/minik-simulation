@@ -21,6 +21,7 @@ find_package(catkin REQUIRED COMPONENTS
 SET(realization_HEADERS src/RosThread.h)
 SET(realization_SOURCES src/RosThread.cpp)
 
+
 include_directories(./src/)
 
 ## Uncomment this if the package has a setup.py. This macro ensures

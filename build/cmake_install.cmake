@@ -138,6 +138,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/berkay/catkin_ws/build/realization/cmake_install.cmake")
   include("/home/berkay/catkin_ws/build/sensor/cmake_install.cmake")
   include("/home/berkay/catkin_ws/build/aruco_marker/cmake_install.cmake")
+  include("/home/berkay/catkin_ws/build/detect_aruco_object/cmake_install.cmake")
   include("/home/berkay/catkin_ws/build/minik_gazebo/cmake_install.cmake")
 
 endif()

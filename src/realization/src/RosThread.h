@@ -14,10 +14,11 @@
 #include <cfloat>
 #include "ISLH_msgs/robotPositions.h"
 #include <geometry_msgs/PoseArray.h>
+#include <nav_msgs/Odometry.h>
 #define PI 3.14159265359
 #define N 3
 #define K 3
-#define THRESHOLD 2
+#define THRESHOLD 3
 #define LOOP_RATE 10
 //#define id 1
 
@@ -83,6 +84,8 @@ class RosThread{
 
     ros::Publisher vel_pub;
 
+    double orientation2theta(double, double, double, double);
+
     void gamaFinder();
     void gamaBDotFinder();
     void betaFinder();
@@ -110,11 +113,15 @@ class RosThread{
     void calcPosCallback1(const geometry_msgs::PoseArray::ConstPtr&);
     void calcPosCallback2(const geometry_msgs::PoseArray::ConstPtr&);
 
+    void gazeboOdomCallback0(const nav_msgs::Odometry::ConstPtr&);
+    void gazeboOdomCallback1(const nav_msgs::Odometry::ConstPtr&);
+    void gazeboOdomCallback2(const nav_msgs::Odometry::ConstPtr&);
+
     void transformCallback(const std_msgs::Bool::ConstPtr&);
 
     void distanceCalculator();
     int flagN[N];
-    int flag=0;
+    int flag=1;
     int completed = 0;
 
     void poseOverCallback(const ISLH_msgs::robotPositions::ConstPtr&);

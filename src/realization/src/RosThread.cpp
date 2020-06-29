@@ -76,6 +76,13 @@ RosThread::~RosThread(){
 
 }
 
+double RosThread::orientation2theta(double x, double y, double z, double w){
+  double siny_cosp = 2*(w*z + x*y);
+  double cosy_cosp = 1 - 2*(y*y + z*z);
+  double theta = atan2(siny_cosp,cosy_cosp);
+  return theta;
+}
+
 void RosThread::odomCallback0(const geometry_msgs::Pose::ConstPtr& msg){
   //cout << "callback0: " << t << endl;
   if(id ==0){
@@ -96,7 +103,6 @@ void RosThread::odomCallback2(const geometry_msgs::Pose::ConstPtr& msg){
     pose_theta = msg->position.z;
   }
 }
-
 
 
 ////////////////////////////////SIMULATOR POS CALLBACK//////////////////////////
@@ -249,7 +255,48 @@ void RosThread::poseOdomCallback6(const turtlesim::Pose::ConstPtr& msg){
 }*/
 
 
-////////////////////////////////SIMULATOR POS CALLBACK//////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////GAZEBO POS CALLBACK ///////////////////////
+
+void RosThread::gazeboOdomCallback0(const nav_msgs::Odometry::ConstPtr& msg){
+  int temp_id = 0;
+  cout << "robot 1" << endl;
+  if(temp_id == id){
+    pose_theta = orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);///??????????
+  }
+  for(int j=0;j<n;j++){
+    calcPos[j][temp_id][0] = msg->pose.pose.position.x;
+    calcPos[j][temp_id][1] = msg->pose.pose.position.y;
+
+  }
+}
+
+void RosThread::gazeboOdomCallback1(const nav_msgs::Odometry::ConstPtr& msg){
+  int temp_id = 1;
+  if(temp_id == id){
+    pose_theta = orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);///??????????
+  }
+  for(int j=0;j<n;j++){
+    calcPos[j][temp_id][0] = msg->pose.pose.position.x;
+    calcPos[j][temp_id][1] = msg->pose.pose.position.y;
+
+  }
+}
+
+void RosThread::gazeboOdomCallback2(const nav_msgs::Odometry::ConstPtr& msg){
+  int temp_id = 2;
+  if(temp_id == id){
+    pose_theta = orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);///??????????
+  }
+  for(int j=0;j<n;j++){
+    calcPos[j][temp_id][0] = msg->pose.pose.position.x;
+    calcPos[j][temp_id][1] = msg->pose.pose.position.y;
+
+  }
+}
+
+/////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////SENSOR CAMERA CALLBACK//////////////////////////
 void RosThread::calcPosCallback0(const geometry_msgs::PoseArray::ConstPtr& msg){
@@ -623,7 +670,7 @@ void RosThread::work(){
 
   ostringstream ss;
   ss << id +1;
-  string name =  "turtle" + ss.str();
+  string name =  "robot" + ss.str();
 
   vel_pub = velPub.advertise<geometry_msgs::Twist>(name+"/cmd_vel", 100);
   //ros::Publisher vel_pub = velPub.advertise<geometry_msgs::Twist>("turtle1/cmd_vel", 100);
@@ -638,12 +685,17 @@ void RosThread::work(){
   ros::Subscriber odom_sub1 = poseSub.subscribe("/odom0",1000,&RosThread::odomCallback0,this);
   ros::Subscriber odom_sub2 = poseSub.subscribe("/odom1",1000,&RosThread::odomCallback1,this);
   ros::Subscriber odom_sub3 = poseSub.subscribe("/odom2",1000,&RosThread::odomCallback2,this);
+
   ros::Subscriber tr_sub = trSub.subscribe("/transformCompleted",1000,&RosThread::transformCallback,this);
 
 
   ros::Subscriber calc_sub1 = poseSub.subscribe("/completedPos0",1000,&RosThread::calcPosCallback0,this);
   ros::Subscriber calc_sub2 = poseSub.subscribe("/completedPos1",1000,&RosThread::calcPosCallback1,this);
   ros::Subscriber calc_sub3 = poseSub.subscribe("/completedPos2",1000,&RosThread::calcPosCallback2,this);
+
+  ros::Subscriber calc_sub11 = poseSub.subscribe("/robot1/odom",1000,&RosThread::gazeboOdomCallback0,this);
+  ros::Subscriber calc_sub21 = poseSub.subscribe("/robot2/odom",1000,&RosThread::gazeboOdomCallback1,this);
+  ros::Subscriber calc_sub31 = poseSub.subscribe("/robot3/odom",1000,&RosThread::gazeboOdomCallback2,this);
 
   //ros::Subscriber pose_over_sub=poseOverheadCamSub.subscribe<ISLH_msgs::robotPositions>("robots_final_positions",1,&RosThread::poseOverCallback,this);
 
@@ -658,7 +710,7 @@ void RosThread::work(){
     }*/
 
     cout << "isSeen2: " << isSeen << endl;
-    if(flag==1 && isSeen){
+    if(1){//flag==1 && isSeen){
       RosThread::distanceCalculator();
       for(int i=0; i<N; i++){
         //ROS_INFO("b %d: %f , %f",i,b[i][0],b[i][1]);
@@ -696,6 +748,7 @@ void RosThread::work(){
     loop_rate.sleep();
 
   }
+
 
 
 

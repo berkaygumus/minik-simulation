@@ -56,28 +56,6 @@ CMAKE_BINARY_DIR = /home/berkay/catkin_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -88,17 +66,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -111,16 +78,26 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target test
-test/fast: test
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
 
-.PHONY : test/fast
+.PHONY : list_install_components/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -132,6 +109,29 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -165,19 +165,274 @@ depend:
 	cd /home/berkay/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+minik_gazebo/CMakeFiles/odom_publisher_node.dir/rule:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 minik_gazebo/CMakeFiles/odom_publisher_node.dir/rule
+.PHONY : minik_gazebo/CMakeFiles/odom_publisher_node.dir/rule
+
+# Convenience name for target.
+odom_publisher_node: minik_gazebo/CMakeFiles/odom_publisher_node.dir/rule
+
+.PHONY : odom_publisher_node
+
+# fast build rule for target.
+odom_publisher_node/fast:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f minik_gazebo/CMakeFiles/odom_publisher_node.dir/build.make minik_gazebo/CMakeFiles/odom_publisher_node.dir/build
+.PHONY : odom_publisher_node/fast
+
+# Convenience name for target.
+minik_gazebo/CMakeFiles/minik_gazebo.dir/rule:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 minik_gazebo/CMakeFiles/minik_gazebo.dir/rule
+.PHONY : minik_gazebo/CMakeFiles/minik_gazebo.dir/rule
+
+# Convenience name for target.
+minik_gazebo: minik_gazebo/CMakeFiles/minik_gazebo.dir/rule
+
+.PHONY : minik_gazebo
+
+# fast build rule for target.
+minik_gazebo/fast:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f minik_gazebo/CMakeFiles/minik_gazebo.dir/build.make minik_gazebo/CMakeFiles/minik_gazebo.dir/build
+.PHONY : minik_gazebo/fast
+
+# Convenience name for target.
+minik_gazebo/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 minik_gazebo/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
+.PHONY : minik_gazebo/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+nav_msgs_generate_messages_lisp: minik_gazebo/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : nav_msgs_generate_messages_lisp
+
+# fast build rule for target.
+nav_msgs_generate_messages_lisp/fast:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f minik_gazebo/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build.make minik_gazebo/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build
+.PHONY : nav_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+minik_gazebo/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 minik_gazebo/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
+.PHONY : minik_gazebo/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+nav_msgs_generate_messages_eus: minik_gazebo/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
+
+.PHONY : nav_msgs_generate_messages_eus
+
+# fast build rule for target.
+nav_msgs_generate_messages_eus/fast:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f minik_gazebo/CMakeFiles/nav_msgs_generate_messages_eus.dir/build.make minik_gazebo/CMakeFiles/nav_msgs_generate_messages_eus.dir/build
+.PHONY : nav_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+minik_gazebo/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 minik_gazebo/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
+.PHONY : minik_gazebo/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+nav_msgs_generate_messages_cpp: minik_gazebo/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : nav_msgs_generate_messages_cpp
+
+# fast build rule for target.
+nav_msgs_generate_messages_cpp/fast:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f minik_gazebo/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build.make minik_gazebo/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build
+.PHONY : nav_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+minik_gazebo/CMakeFiles/nav_msgs_generate_messages_py.dir/rule:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 minik_gazebo/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+.PHONY : minik_gazebo/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+nav_msgs_generate_messages_py: minik_gazebo/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+
+.PHONY : nav_msgs_generate_messages_py
+
+# fast build rule for target.
+nav_msgs_generate_messages_py/fast:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f minik_gazebo/CMakeFiles/nav_msgs_generate_messages_py.dir/build.make minik_gazebo/CMakeFiles/nav_msgs_generate_messages_py.dir/build
+.PHONY : nav_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
+.PHONY : minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_nodejs: minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_nodejs/fast:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
+.PHONY : actionlib_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+.PHONY : minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_cpp: minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_cpp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_cpp/fast:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
+.PHONY : actionlib_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+.PHONY : minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_eus: minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_eus
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_eus/fast:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
+.PHONY : actionlib_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+.PHONY : minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_lisp: minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_lisp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_lisp/fast:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
+.PHONY : actionlib_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+minik_gazebo/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 minik_gazebo/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule
+.PHONY : minik_gazebo/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+nav_msgs_generate_messages_nodejs: minik_gazebo/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : nav_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+nav_msgs_generate_messages_nodejs/fast:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f minik_gazebo/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build.make minik_gazebo/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build
+.PHONY : nav_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
+.PHONY : minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_py: minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_py
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_py/fast:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make minik_gazebo/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
+.PHONY : actionlib_msgs_generate_messages_py/fast
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f minik_gazebo/CMakeFiles/odom_publisher_node.dir/build.make minik_gazebo/CMakeFiles/odom_publisher_node.dir/src/main.cpp.o
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f minik_gazebo/CMakeFiles/minik_gazebo.dir/build.make minik_gazebo/CMakeFiles/minik_gazebo.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f minik_gazebo/CMakeFiles/odom_publisher_node.dir/build.make minik_gazebo/CMakeFiles/odom_publisher_node.dir/src/main.cpp.i
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f minik_gazebo/CMakeFiles/minik_gazebo.dir/build.make minik_gazebo/CMakeFiles/minik_gazebo.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f minik_gazebo/CMakeFiles/odom_publisher_node.dir/build.make minik_gazebo/CMakeFiles/odom_publisher_node.dir/src/main.cpp.s
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f minik_gazebo/CMakeFiles/minik_gazebo.dir/build.make minik_gazebo/CMakeFiles/minik_gazebo.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+src/odom_publisher.o: src/odom_publisher.cpp.o
+
+.PHONY : src/odom_publisher.o
+
+# target to build an object file
+src/odom_publisher.cpp.o:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f minik_gazebo/CMakeFiles/odom_publisher_node.dir/build.make minik_gazebo/CMakeFiles/odom_publisher_node.dir/src/odom_publisher.cpp.o
+.PHONY : src/odom_publisher.cpp.o
+
+src/odom_publisher.i: src/odom_publisher.cpp.i
+
+.PHONY : src/odom_publisher.i
+
+# target to preprocess a source file
+src/odom_publisher.cpp.i:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f minik_gazebo/CMakeFiles/odom_publisher_node.dir/build.make minik_gazebo/CMakeFiles/odom_publisher_node.dir/src/odom_publisher.cpp.i
+.PHONY : src/odom_publisher.cpp.i
+
+src/odom_publisher.s: src/odom_publisher.cpp.s
+
+.PHONY : src/odom_publisher.s
+
+# target to generate assembly for a file
+src/odom_publisher.cpp.s:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f minik_gazebo/CMakeFiles/odom_publisher_node.dir/build.make minik_gazebo/CMakeFiles/odom_publisher_node.dir/src/odom_publisher.cpp.s
+.PHONY : src/odom_publisher.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... list_install_components"
-	@echo "... install"
 	@echo "... rebuild_cache"
-	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... test"
+	@echo "... list_install_components"
+	@echo "... install/strip"
 	@echo "... edit_cache"
+	@echo "... odom_publisher_node"
+	@echo "... minik_gazebo"
+	@echo "... nav_msgs_generate_messages_lisp"
+	@echo "... nav_msgs_generate_messages_eus"
+	@echo "... test"
+	@echo "... nav_msgs_generate_messages_cpp"
+	@echo "... install"
+	@echo "... nav_msgs_generate_messages_py"
+	@echo "... actionlib_msgs_generate_messages_nodejs"
+	@echo "... actionlib_msgs_generate_messages_cpp"
+	@echo "... actionlib_msgs_generate_messages_eus"
+	@echo "... actionlib_msgs_generate_messages_lisp"
+	@echo "... nav_msgs_generate_messages_nodejs"
+	@echo "... actionlib_msgs_generate_messages_py"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/odom_publisher.o"
+	@echo "... src/odom_publisher.i"
+	@echo "... src/odom_publisher.s"
 .PHONY : help
 
 
