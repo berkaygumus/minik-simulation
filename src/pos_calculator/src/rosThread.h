@@ -21,7 +21,7 @@
 #define N 5
 #define SIZE_P 100 //length of pos data, 100 data for 10 second, f=10 hz
 #define SIZE_T 3 //length of time data, 3 last seen time data
-
+#define DIST_THRESHOLD 0.7 //threshold distance to add new pos data and to be able to use methods
 using namespace std;
 
 class RosThread{

@@ -155,10 +155,14 @@ void RosThread::odom5callback(const geometry_msgs::Pose::ConstPtr& msg){
 ///////////aruco callback
 
 void RosThread::arucoCallback1(const ISLH_msgs::robotPositions::ConstPtr& msg){
+  cout << "robot 0 observation //////////////////" << endl;
   for(int j=0;j<n;j++){
     //initialization, assumes that it is not seen
-    robotsSeen[index_t][0][j][0] = -1000;
-    robotsSeen[index_t][0][j][1] = -1000;
+    if(j!=0){
+      robotsSeen[index_t][0][j][0] = -1000;
+      robotsSeen[index_t][0][j][1] = -1000;
+    }
+
   }
 
   vector<geometry_msgs::Pose2D > msg_positions;//position vector for each marker
@@ -181,14 +185,18 @@ void RosThread::arucoCallback1(const ISLH_msgs::robotPositions::ConstPtr& msg){
      }
    }
 
-cout << "aruco 1" << endl;
+
 }
 
 void RosThread::arucoCallback2(const ISLH_msgs::robotPositions::ConstPtr& msg){
+  cout << "robot 1 observation //////////////////" << endl;
   for(int j=0;j<n;j++){
     //initialization, assumes that it is not seen
-    robotsSeen[index_t][1][j][0] = -1000;
-    robotsSeen[index_t][1][j][1] = -1000;
+    if(j!=1){
+      robotsSeen[index_t][1][j][0] = -1000;
+      robotsSeen[index_t][1][j][1] = -1000;
+    }
+
   }
 
   vector<geometry_msgs::Pose2D > msg_positions;//position vector for each marker
@@ -211,14 +219,17 @@ void RosThread::arucoCallback2(const ISLH_msgs::robotPositions::ConstPtr& msg){
      }
    }
 
-cout << "aruco 2" << endl;
+
 }
 
 void RosThread::arucoCallback3(const ISLH_msgs::robotPositions::ConstPtr& msg){
+  cout << "robot 2 observation //////////////////" << endl;
   for(int j=0;j<n;j++){
     //initialization, assumes that it is not seen
-    robotsSeen[index_t][2][j][0] = -1000;
-    robotsSeen[index_t][2][j][1] = -1000;
+    if(j!=2){
+      robotsSeen[index_t][2][j][0] = -1000;
+      robotsSeen[index_t][2][j][1] = -1000;
+    }
   }
 
   vector<geometry_msgs::Pose2D > msg_positions;//position vector for each marker
@@ -241,14 +252,17 @@ void RosThread::arucoCallback3(const ISLH_msgs::robotPositions::ConstPtr& msg){
      }
    }
 
-cout << "aruco 3" << endl;
 }
 
 void RosThread::arucoCallback4(const ISLH_msgs::robotPositions::ConstPtr& msg){
+  cout << "robot 3 observation //////////////////" << endl;
   for(int j=0;j<n;j++){
     //initialization, assumes that it is not seen
-    robotsSeen[index_t][3][j][0] = -1000;
-    robotsSeen[index_t][3][j][1] = -1000;
+    if(j!=3){
+      robotsSeen[index_t][3][j][0] = -1000;
+      robotsSeen[index_t][3][j][1] = -1000;
+    }
+
   }
 
   vector<geometry_msgs::Pose2D > msg_positions;//position vector for each marker
@@ -271,14 +285,16 @@ void RosThread::arucoCallback4(const ISLH_msgs::robotPositions::ConstPtr& msg){
      }
    }
 
-cout << "aruco 4" << endl;
 }
 
 void RosThread::arucoCallback5(const ISLH_msgs::robotPositions::ConstPtr& msg){
+  cout << "robot 4 observation //////////////////" << endl;
   for(int j=0;j<n;j++){
     //initialization, assumes that it is not seen
-    robotsSeen[index_t][4][j][0] = -1000;
-    robotsSeen[index_t][4][j][1] = -1000;
+    if(j!=4){
+      robotsSeen[index_t][4][j][0] = -1000;
+      robotsSeen[index_t][4][j][1] = -1000;
+    }
   }
 
   vector<geometry_msgs::Pose2D > msg_positions;//position vector for each marker
@@ -301,7 +317,6 @@ void RosThread::arucoCallback5(const ISLH_msgs::robotPositions::ConstPtr& msg){
      }
    }
 
-cout << "aruco 5" << endl;
 }
 
 
@@ -326,7 +341,7 @@ void RosThread::addSeenTime(int i, int j){//it's valid only for SIZE_T 3
 
 bool RosThread::checkSeenTime(int i, int j){
   //cout << "index t: " << index_t << endl;
-  if(robotsSeen[index_t][i][j][0]<-990){ //sensor sends -1000+error when there is no pos data, they must be ignored
+  if(robotsSeen[index_t][i][j][0]<-890){ //sensor sends -1000+error when there is no pos data, they must be ignored
     return false;
   }
 
@@ -343,7 +358,10 @@ bool RosThread::checkSeenTime(int i, int j){
     double x = robotsSeen[index_t][i][j][0];
     double y = robotsSeen[index_t][i][j][1];
     double dist = pow(x-prev_x,2) + pow(y-prev_y,2);
-    if(dist>1){
+    if(dist>DIST_THRESHOLD){
+      cout << "prev: " << prev_x << " " << prev_y << endl;
+      cout << "current: " << x << " " << y << endl;
+      cout << i << "-----> " << j << " dist: " << dist << endl;
       return true;
     }
     else{
@@ -541,6 +559,8 @@ void RosThread::work(){
   ros::Publisher pos_pub0 = posPub.advertise<geometry_msgs::PoseArray>("/completedPos0", 100);
   ros::Publisher pos_pub1 = posPub.advertise<geometry_msgs::PoseArray>("/completedPos1", 100);
   ros::Publisher pos_pub2 = posPub.advertise<geometry_msgs::PoseArray>("/completedPos2", 100);
+  ros::Publisher pos_pub3 = posPub.advertise<geometry_msgs::PoseArray>("/completedPos3", 100);
+  ros::Publisher pos_pub4 = posPub.advertise<geometry_msgs::PoseArray>("/completedPos4", 100);
   ros::Publisher transform_pub = trPub.advertise<std_msgs::Bool>("transformCompleted",100);
 
 
@@ -600,10 +620,14 @@ void RosThread::work(){
     geometry_msgs::PoseArray posRobots0;
     geometry_msgs::PoseArray posRobots1;
     geometry_msgs::PoseArray posRobots2;
+    geometry_msgs::PoseArray posRobots3;
+    geometry_msgs::PoseArray posRobots4;
 
     posRobots0.poses.resize(n);
     posRobots1.poses.resize(n);
     posRobots2.poses.resize(n);
+    posRobots3.poses.resize(n);
+    posRobots4.poses.resize(n);
 
     //robot 0
     for(int j=0;j<n;j++){
@@ -628,6 +652,26 @@ void RosThread::work(){
     }
 
     pos_pub2.publish(posRobots2);
+
+    //robot 3
+    for(int j=0;j<n;j++){
+      posRobots3.poses[j].position.x = posRobots[3][j][0];
+      posRobots3.poses[j].position.y = posRobots[3][j][1];
+    }
+
+    pos_pub3.publish(posRobots3);
+
+    //robot4
+    for(int j=0;j<n;j++){
+      posRobots4.poses[j].position.x = posRobots[4][j][0];
+      posRobots4.poses[j].position.y = posRobots[4][j][1];
+    }
+
+    pos_pub4.publish(posRobots4);
+
+
+
+
     double t1 =ros::Time::now().toSec();
     //cout << "delay: " << t1-t0 << " second" << endl;
 
