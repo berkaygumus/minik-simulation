@@ -8,6 +8,8 @@
 
 #include "ros/ros.h"
 #include <geometry_msgs/PoseArray.h>
+#include "ISLH_msgs/robotPositions.h"
+#include <geometry_msgs/Pose2D.h>
 #include <turtlesim/Pose.h>
 #include <std_msgs/Bool.h>
 #include <math.h>
@@ -16,7 +18,7 @@
 #define PI 3.14159265359
 #define LOOP_RATE 10
 
-#define N 3
+#define N 5
 #define SIZE_P 100 //length of pos data, 100 data for 10 second, f=10 hz
 #define SIZE_T 3 //length of time data, 3 last seen time data
 
@@ -41,10 +43,21 @@ class RosThread{
     void sensorCallback0(const geometry_msgs::PoseArray::ConstPtr&);
     void sensorCallback1(const geometry_msgs::PoseArray::ConstPtr&);
     void sensorCallback2(const geometry_msgs::PoseArray::ConstPtr&);
-    void sensorCallback3(const geometry_msgs::PoseArray::ConstPtr&);
-    void sensorCallback4(const geometry_msgs::PoseArray::ConstPtr&);
-    void sensorCallback5(const geometry_msgs::PoseArray::ConstPtr&);
-    void sensorCallback6(const geometry_msgs::PoseArray::ConstPtr&);
+
+
+    //aruco callback arucoCallback1
+    void arucoCallback1(const ISLH_msgs::robotPositions::ConstPtr&);
+    void arucoCallback2(const ISLH_msgs::robotPositions::ConstPtr&);
+    void arucoCallback3(const ISLH_msgs::robotPositions::ConstPtr&);
+    void arucoCallback4(const ISLH_msgs::robotPositions::ConstPtr&);
+    void arucoCallback5(const ISLH_msgs::robotPositions::ConstPtr&);
+
+    ///odometry
+    void odom1callback(const geometry_msgs::Pose::ConstPtr&);
+    void odom2callback(const geometry_msgs::Pose::ConstPtr&);
+    void odom3callback(const geometry_msgs::Pose::ConstPtr&);
+    void odom4callback(const geometry_msgs::Pose::ConstPtr&);
+    void odom5callback(const geometry_msgs::Pose::ConstPtr&);
 
     int n = N;
     int sizeP = SIZE_P;

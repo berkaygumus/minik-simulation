@@ -3,10 +3,10 @@
   <asset>
     <contributor>
       <author>Blender User</author>
-      <authoring_tool>Blender 2.83.0 commit date:2020-06-03, commit time:14:38, hash:211b6c29f771</authoring_tool>
+      <authoring_tool>Blender 2.83.1 commit date:2020-06-25, commit time:09:47, hash:8289fc688b3e</authoring_tool>
     </contributor>
-    <created>2020-06-23T22:07:23</created>
-    <modified>2020-06-23T22:07:23</modified>
+    <created>2020-07-06T12:11:45</created>
+    <modified>2020-07-06T12:11:45</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -84,7 +84,7 @@
               <color sid="emission">0 0 0 1</color>
             </emission>
             <diffuse>
-              <color sid="diffuse">1 1 1 1</color>
+              <color sid="diffuse">0.8 0.8 0.8 1</color>
             </diffuse>
             <index_of_refraction>
               <float sid="ior">1.45</float>
@@ -95,14 +95,14 @@
     </effect>
     <effect id="_front-effect">
       <profile_COMMON>
-        <newparam sid="robot1front_jpg-surface">
+        <newparam sid="robot5front_jpg-surface">
           <surface type="2D">
-            <init_from>robot1front_jpg</init_from>
+            <init_from>robot5front_jpg</init_from>
           </surface>
         </newparam>
-        <newparam sid="robot1front_jpg-sampler">
+        <newparam sid="robot5front_jpg-sampler">
           <sampler2D>
-            <source>robot1front_jpg-surface</source>
+            <source>robot5front_jpg-surface</source>
           </sampler2D>
         </newparam>
         <technique sid="common">
@@ -111,61 +111,7 @@
               <color sid="emission">0 0 0 1</color>
             </emission>
             <diffuse>
-              <texture texture="robot1front_jpg-sampler" texcoord="UVMap"/>
-            </diffuse>
-            <index_of_refraction>
-              <float sid="ior">1.45</float>
-            </index_of_refraction>
-          </lambert>
-        </technique>
-      </profile_COMMON>
-    </effect>
-    <effect id="_back-effect">
-      <profile_COMMON>
-        <newparam sid="robot1back_jpg-surface">
-          <surface type="2D">
-            <init_from>robot1back_jpg</init_from>
-          </surface>
-        </newparam>
-        <newparam sid="robot1back_jpg-sampler">
-          <sampler2D>
-            <source>robot1back_jpg-surface</source>
-          </sampler2D>
-        </newparam>
-        <technique sid="common">
-          <lambert>
-            <emission>
-              <color sid="emission">0 0 0 1</color>
-            </emission>
-            <diffuse>
-              <texture texture="robot1back_jpg-sampler" texcoord="UVMap"/>
-            </diffuse>
-            <index_of_refraction>
-              <float sid="ior">1.45</float>
-            </index_of_refraction>
-          </lambert>
-        </technique>
-      </profile_COMMON>
-    </effect>
-    <effect id="_right-effect">
-      <profile_COMMON>
-        <newparam sid="robot1right_jpg-surface">
-          <surface type="2D">
-            <init_from>robot1right_jpg</init_from>
-          </surface>
-        </newparam>
-        <newparam sid="robot1right_jpg-sampler">
-          <sampler2D>
-            <source>robot1right_jpg-surface</source>
-          </sampler2D>
-        </newparam>
-        <technique sid="common">
-          <lambert>
-            <emission>
-              <color sid="emission">0 0 0 1</color>
-            </emission>
-            <diffuse>
-              <texture texture="robot1right_jpg-sampler" texcoord="UVMap"/>
+              <texture texture="robot5front_jpg-sampler" texcoord="UVMap"/>
             </diffuse>
             <index_of_refraction>
               <float sid="ior">1.45</float>
@@ -176,14 +122,14 @@
     </effect>
     <effect id="_left-effect">
       <profile_COMMON>
-        <newparam sid="robot1left_jpg-surface">
+        <newparam sid="robot5left_jpg-surface">
           <surface type="2D">
-            <init_from>robot1left_jpg</init_from>
+            <init_from>robot5left_jpg</init_from>
           </surface>
         </newparam>
-        <newparam sid="robot1left_jpg-sampler">
+        <newparam sid="robot5left_jpg-sampler">
           <sampler2D>
-            <source>robot1left_jpg-surface</source>
+            <source>robot5left_jpg-surface</source>
           </sampler2D>
         </newparam>
         <technique sid="common">
@@ -192,7 +138,61 @@
               <color sid="emission">0 0 0 1</color>
             </emission>
             <diffuse>
-              <texture texture="robot1left_jpg-sampler" texcoord="UVMap"/>
+              <texture texture="robot5left_jpg-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="_back-effect">
+      <profile_COMMON>
+        <newparam sid="robot5back_jpg-surface">
+          <surface type="2D">
+            <init_from>robot5back_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="robot5back_jpg-sampler">
+          <sampler2D>
+            <source>robot5back_jpg-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="robot5back_jpg-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="_right-effect">
+      <profile_COMMON>
+        <newparam sid="robot5right_jpg-surface">
+          <surface type="2D">
+            <init_from>robot5right_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="robot5right_jpg-sampler">
+          <sampler2D>
+            <source>robot5right_jpg-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="robot5right_jpg-sampler" texcoord="UVMap"/>
             </diffuse>
             <index_of_refraction>
               <float sid="ior">1.45</float>
@@ -203,34 +203,34 @@
     </effect>
   </library_effects>
   <library_images>
-    <image id="robot1back_jpg" name="robot1back_jpg">
-      <init_from>robot1back.jpg</init_from>
+    <image id="robot5back_jpg" name="robot5back_jpg">
+      <init_from>robot5back.jpg</init_from>
     </image>
-    <image id="robot1front_jpg" name="robot1front_jpg">
-      <init_from>robot1front.jpg</init_from>
+    <image id="robot5front_jpg" name="robot5front_jpg">
+      <init_from>robot5front.jpg</init_from>
     </image>
-    <image id="robot1left_jpg" name="robot1left_jpg">
-      <init_from>robot1left.jpg</init_from>
+    <image id="robot5left_jpg" name="robot5left_jpg">
+      <init_from>robot5left.jpg</init_from>
     </image>
-    <image id="robot1right_jpg" name="robot1right_jpg">
-      <init_from>robot1right.jpg</init_from>
+    <image id="robot5right_jpg" name="robot5right_jpg">
+      <init_from>robot5right.jpg</init_from>
     </image>
   </library_images>
   <library_materials>
     <material id="Material-material" name="Material">
       <instance_effect url="#Material-effect"/>
     </material>
-    <material id="_front-material" name="1front">
+    <material id="_front-material" name="5front">
       <instance_effect url="#_front-effect"/>
     </material>
-    <material id="_back-material" name="1back">
+    <material id="_left-material" name="5left">
+      <instance_effect url="#_left-effect"/>
+    </material>
+    <material id="_back-material" name="5back">
       <instance_effect url="#_back-effect"/>
     </material>
-    <material id="_right-material" name="1right">
+    <material id="_right-material" name="5right">
       <instance_effect url="#_right-effect"/>
-    </material>
-    <material id="_left-material" name="1left">
-      <instance_effect url="#_left-effect"/>
     </material>
   </library_materials>
   <library_geometries>
@@ -280,6 +280,12 @@
           <input semantic="TEXCOORD" source="#Cube-mesh-map-0" offset="2" set="0"/>
           <p>87 7 30 21 7 31 56 7 32 86 18 180 21 18 181 55 18 182 21 7 204 88 7 205 56 7 206 21 24 246 93 24 247 54 24 248 87 30 318 55 30 319 21 30 320 86 7 468 57 7 469 21 7 470 21 7 492 54 7 493 88 7 494 21 48 534 57 48 535 93 48 536</p>
         </triangles>
+        <triangles material="_left-material" count="8">
+          <input semantic="VERTEX" source="#Cube-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Cube-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Cube-mesh-map-0" offset="2" set="0"/>
+          <p>51 5 21 52 5 22 90 5 23 89 5 207 20 5 208 51 5 209 20 5 231 91 5 232 52 5 233 53 5 237 50 5 238 20 5 239 51 5 309 20 5 310 52 5 311 89 5 495 53 5 496 20 5 497 20 5 519 50 5 520 91 5 521 53 5 525 92 5 526 50 5 527</p>
+        </triangles>
         <triangles material="_back-material" count="8">
           <input semantic="VERTEX" source="#Cube-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#Cube-mesh-normals" offset="1"/>
@@ -291,12 +297,6 @@
           <input semantic="NORMAL" source="#Cube-mesh-normals" offset="1"/>
           <input semantic="TEXCOORD" source="#Cube-mesh-map-0" offset="2" set="0"/>
           <p>78 10 57 24 10 58 68 10 59 77 12 99 24 12 100 67 12 101 24 12 123 79 12 124 68 12 125 24 27 273 96 27 274 66 27 275 78 12 345 67 12 346 24 12 347 77 34 387 69 34 388 24 34 389 24 12 411 66 12 412 79 12 413 24 50 561 69 50 562 96 50 563</p>
-        </triangles>
-        <triangles material="_left-material" count="8">
-          <input semantic="VERTEX" source="#Cube-mesh-vertices" offset="0"/>
-          <input semantic="NORMAL" source="#Cube-mesh-normals" offset="1"/>
-          <input semantic="TEXCOORD" source="#Cube-mesh-map-0" offset="2" set="0"/>
-          <p>51 5 21 52 5 22 90 5 23 89 5 207 20 5 208 51 5 209 20 5 231 91 5 232 52 5 233 53 5 237 50 5 238 20 5 239 51 5 309 20 5 310 52 5 311 89 5 495 53 5 496 20 5 497 20 5 519 50 5 520 91 5 521 53 5 525 92 5 526 50 5 527</p>
         </triangles>
       </mesh>
     </geometry>
@@ -322,13 +322,13 @@
               <instance_material symbol="_front-material" target="#_front-material">
                 <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
               </instance_material>
+              <instance_material symbol="_left-material" target="#_left-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
               <instance_material symbol="_back-material" target="#_back-material">
                 <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
               </instance_material>
               <instance_material symbol="_right-material" target="#_right-material">
-                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
-              </instance_material>
-              <instance_material symbol="_left-material" target="#_left-material">
                 <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
               </instance_material>
             </technique_common>

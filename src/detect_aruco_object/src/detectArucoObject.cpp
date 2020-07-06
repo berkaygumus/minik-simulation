@@ -52,6 +52,30 @@ void DetectArucoObject::img3callback(const sensor_msgs::Image::ConstPtr& msg){
     isImg3 = 1;
 }
 
+void DetectArucoObject::img4callback(const sensor_msgs::Image::ConstPtr& msg){
+
+  cv_bridge::CvImagePtr cv_ptr;
+  cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
+  //imshow("msg image3", cv_ptr->image);
+    //src_image = msg->data;
+    //cout << "callback3 " << endl;
+    //waitKey(10);
+    src_image4 = cv_ptr->image;
+    isImg4 = 1;
+}
+
+void DetectArucoObject::img5callback(const sensor_msgs::Image::ConstPtr& msg){
+
+  cv_bridge::CvImagePtr cv_ptr;
+  cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
+  //imshow("msg image3", cv_ptr->image);
+    //src_image = msg->data;
+    //cout << "callback3 " << endl;
+    //waitKey(10);
+    src_image5 = cv_ptr->image;
+    isImg5 = 1;
+}
+
 void DetectArucoObject::odom1callback(const geometry_msgs::Pose::ConstPtr& msg){
    odomPos[0][0] =  msg->position.x;
    odomPos[0][1] =  msg->position.y;
@@ -71,6 +95,20 @@ void DetectArucoObject::odom3callback(const geometry_msgs::Pose::ConstPtr& msg){
    odomPos[2][0] =  msg->position.x;
    odomPos[2][1] =  msg->position.y;
    odomPos[2][2] =  msg->position.z;
+
+}
+
+void DetectArucoObject::odom4callback(const geometry_msgs::Pose::ConstPtr& msg){
+   odomPos[3][0] =  msg->position.x;
+   odomPos[3][1] =  msg->position.y;
+   odomPos[3][2] =  msg->position.z;
+
+}
+
+void DetectArucoObject::odom5callback(const geometry_msgs::Pose::ConstPtr& msg){
+   odomPos[4][0] =  msg->position.x;
+   odomPos[4][1] =  msg->position.y;
+   odomPos[4][2] =  msg->position.z;
 
 }
 
@@ -269,14 +307,20 @@ void DetectArucoObject::work(){
   ros::Subscriber img1sub = n.subscribe("/robot1/multisense_sl/camera/left/image_raw",1000,&DetectArucoObject::img1callback,this);
   ros::Subscriber img2sub = n.subscribe("/robot2/multisense_sl/camera/left/image_raw",1000,&DetectArucoObject::img2callback,this);
   ros::Subscriber img3sub = n.subscribe("/robot3/multisense_sl/camera/left/image_raw",1000,&DetectArucoObject::img3callback,this);
+  ros::Subscriber img4sub = n.subscribe("/robot4/multisense_sl/camera/left/image_raw",1000,&DetectArucoObject::img4callback,this);
+  ros::Subscriber img5sub = n.subscribe("/robot5/multisense_sl/camera/left/image_raw",1000,&DetectArucoObject::img5callback,this);
 
   ros::Subscriber odom1sub = n.subscribe("/odom1",1000,&DetectArucoObject::odom1callback,this);
   ros::Subscriber odom2sub = n.subscribe("/odom2",1000,&DetectArucoObject::odom2callback,this);
   ros::Subscriber odom3sub = n.subscribe("/odom3",1000,&DetectArucoObject::odom3callback,this);
+  ros::Subscriber odom4sub = n.subscribe("/odom4",1000,&DetectArucoObject::odom4callback,this);
+  ros::Subscriber odom5sub = n.subscribe("/odom5",1000,&DetectArucoObject::odom5callback,this);
 
   robotsPublisher[0] = n.advertise<ISLH_msgs::robotPositions>("detected_aruco1",1);
   robotsPublisher[1] = n.advertise<ISLH_msgs::robotPositions>("detected_aruco2",1);
   robotsPublisher[2] = n.advertise<ISLH_msgs::robotPositions>("detected_aruco3",1);
+  robotsPublisher[3] = n.advertise<ISLH_msgs::robotPositions>("detected_aruco4",1);
+  robotsPublisher[4] = n.advertise<ISLH_msgs::robotPositions>("detected_aruco5",1);
 
   while(ros::ok()){
     if(isImg1){
@@ -287,6 +331,12 @@ void DetectArucoObject::work(){
     }
     if(isImg3){
       calculateRobotPos(src_image3,2);
+    }
+    if(isImg4){
+      calculateRobotPos(src_image4,3);
+    }
+    if(isImg5){
+      calculateRobotPos(src_image5,4);
     }
 
     waitKey(25);

@@ -17,7 +17,7 @@
 #include <cfloat>
 #define PI 3.14159265359
 #define LOOP_RATE 10
-#define N 3
+#define N 5
 
 using namespace std;
 
@@ -38,6 +38,9 @@ class OdomPublisher{
     void gazeboOdomCallback3(const nav_msgs::Odometry::ConstPtr&);
     void gazeboOdomCallback1(const nav_msgs::Odometry::ConstPtr&);
     void gazeboOdomCallback2(const nav_msgs::Odometry::ConstPtr&);
+    void gazeboOdomCallback4(const nav_msgs::Odometry::ConstPtr&);
+    void gazeboOdomCallback5(const nav_msgs::Odometry::ConstPtr&);
+
 
     //double orientation2theta(double, double, double, double);
     vector<double> calculatePos(int);

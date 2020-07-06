@@ -25,7 +25,7 @@
 #include "float.h"
 
 #include "camera_calibration/camera_calibration.h"
-#define N 3
+#define N 5
 #define PI 3.14159265359
 
 
@@ -50,14 +50,18 @@ class DetectArucoObject{
     void img1callback(const sensor_msgs::Image::ConstPtr&);
     void img2callback(const sensor_msgs::Image::ConstPtr&);
     void img3callback(const sensor_msgs::Image::ConstPtr&);
+    void img4callback(const sensor_msgs::Image::ConstPtr&);
+    void img5callback(const sensor_msgs::Image::ConstPtr&);
     //void img4callback(const sensor_msgs::Image::ConstPtr&);
     //void img5callback(const sensor_msgs::Image::ConstPtr&);
 
     void odom1callback(const geometry_msgs::Pose::ConstPtr&);
     void odom2callback(const geometry_msgs::Pose::ConstPtr&);
     void odom3callback(const geometry_msgs::Pose::ConstPtr&);
+    void odom4callback(const geometry_msgs::Pose::ConstPtr&);
+    void odom5callback(const geometry_msgs::Pose::ConstPtr&);
 
-    ros::Publisher robotsPublisher[3];
+    ros::Publisher robotsPublisher[N];
 
 
     void calculateRobotPos(Mat, int);
@@ -68,12 +72,16 @@ class DetectArucoObject{
     Mat src_image1;//source image
     Mat src_image2;//source image
     Mat src_image3;//source image
+    Mat src_image4;//source image
+    Mat src_image5;//source image
     //Mat src_image4;//source image
     //Mat src_image5;//source image
 
     bool isImg1 = 0;
     bool isImg2 = 0;
     bool isImg3 = 0;
+    bool isImg4 = 0;
+    bool isImg5 = 0;
 
 
 };

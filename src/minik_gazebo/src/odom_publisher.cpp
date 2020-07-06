@@ -97,6 +97,54 @@ void OdomPublisher::gazeboOdomCallback3(const nav_msgs::Odometry::ConstPtr& msg)
   flagN[2]=1;
 }
 
+void OdomPublisher::gazeboOdomCallback4(const nav_msgs::Odometry::ConstPtr& msg){
+  double temp_x = msg->pose.pose.position.x;
+  double temp_y = msg->pose.pose.position.y;
+
+  tf::Quaternion q(msg->pose.pose.orientation.x, msg->pose.pose.orientation.y,
+                     msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);
+  tf::Matrix3x3 m(q);
+  double roll, pitch, yaw;
+  m.getRPY(roll, pitch, yaw);
+
+  double temp_theta = yaw;
+
+  if(flag==0){
+    initPos[3][0] = temp_x;
+    initPos[3][1] = temp_y;
+    initPos[3][2] = temp_theta;//orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);
+  }
+  pos[3][0] = temp_x;
+  pos[3][1] = temp_y;
+  pos[3][2] = temp_theta;//orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);
+
+  flagN[3]=1;
+}
+
+void OdomPublisher::gazeboOdomCallback5(const nav_msgs::Odometry::ConstPtr& msg){
+  double temp_x = msg->pose.pose.position.x;
+  double temp_y = msg->pose.pose.position.y;
+
+  tf::Quaternion q(msg->pose.pose.orientation.x, msg->pose.pose.orientation.y,
+                     msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);
+  tf::Matrix3x3 m(q);
+  double roll, pitch, yaw;
+  m.getRPY(roll, pitch, yaw);
+
+  double temp_theta = yaw;
+
+  if(flag==0){
+    initPos[4][0] = temp_x;
+    initPos[4][1] = temp_y;
+    initPos[4][2] = temp_theta;//orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);
+  }
+  pos[4][0] = temp_x;
+  pos[4][1] = temp_y;
+  pos[4][2] = temp_theta;//orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);
+
+  flagN[4]=1;
+}
+
 vector<double> OdomPublisher::calculatePos(int i){
   //for initial frame
   double initX = initPos[i][0];
@@ -134,10 +182,14 @@ void OdomPublisher::work(){
   ros::Publisher pos_odom1 = posPub.advertise<geometry_msgs::Pose>("/odom1",100);
   ros::Publisher pos_odom2 = posPub.advertise<geometry_msgs::Pose>("/odom2",100);
   ros::Publisher pos_odom3 = posPub.advertise<geometry_msgs::Pose>("/odom3",100);
+  ros::Publisher pos_odom4 = posPub.advertise<geometry_msgs::Pose>("/odom4",100);
+  ros::Publisher pos_odom5 = posPub.advertise<geometry_msgs::Pose>("/odom5",100);
 
   ros::Subscriber calc_sub1 = poseSub.subscribe("/robot1/odom",1000,&OdomPublisher::gazeboOdomCallback1,this);
   ros::Subscriber calc_sub2 = poseSub.subscribe("/robot2/odom",1000,&OdomPublisher::gazeboOdomCallback2,this);
   ros::Subscriber calc_sub3 = poseSub.subscribe("/robot3/odom",1000,&OdomPublisher::gazeboOdomCallback3,this);
+  ros::Subscriber calc_sub4 = poseSub.subscribe("/robot4/odom",1000,&OdomPublisher::gazeboOdomCallback4,this);
+  ros::Subscriber calc_sub5 = poseSub.subscribe("/robot5/odom",1000,&OdomPublisher::gazeboOdomCallback5,this);
   ros::Rate loop_rate(10);
 
   while (ros::ok()){
@@ -152,6 +204,8 @@ void OdomPublisher::work(){
       vector<double> odom1 = calculatePos(0);
       vector<double> odom2 = calculatePos(1);
       vector<double> odom3 = calculatePos(2);
+      vector<double> odom4 = calculatePos(3);
+      vector<double> odom5 = calculatePos(4);
 
       geometry_msgs::Pose odomPos1;
       odomPos1.position.x = odom1[0];
@@ -168,9 +222,22 @@ void OdomPublisher::work(){
       odomPos3.position.y = odom3[1];
       odomPos3.position.z = odom3[2];
 
+
+      geometry_msgs::Pose odomPos4;
+      odomPos4.position.x = odom4[0];
+      odomPos4.position.y = odom4[1];
+      odomPos4.position.z = odom4[2];
+
+      geometry_msgs::Pose odomPos5;
+      odomPos5.position.x = odom5[0];
+      odomPos5.position.y = odom5[1];
+      odomPos5.position.z = odom5[2];
+
       pos_odom1.publish(odomPos1);
       pos_odom2.publish(odomPos2);
       pos_odom3.publish(odomPos3);
+      pos_odom4.publish(odomPos4);
+      pos_odom5.publish(odomPos5);
 
 
 

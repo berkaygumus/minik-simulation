@@ -4,7 +4,6 @@
   <xacro:include filename="$(find minik_gazebo)/urdf/materials.xacro" />
   <xacro:include filename="$(find minik_gazebo)/urdf/minik.gazebo" />
   <xacro:include filename="$(find minik_gazebo)/urdf/macros.xacro" />
-  <xacro:include filename="$(find minik_gazebo)/meshes/cube2.dae" />
 
   <link name="link_chassis">
     <!-- pose and inertial -->
@@ -23,7 +22,7 @@
     <visual name="visual_chassis">
       <origin rpy="0 0 0" xyz="0 0 -0.05"/>
       <geometry>
-        <mesh filename = "package://minik_gazebo/meshes/minik1.dae" scale="0.5 0.5 0.5"/>
+        <mesh filename = "package://minik_gazebo/meshes/minik3.dae" scale="0.5 0.5 0.5"/>
       </geometry>
 
       <!-- <material name="blue"/>-->
