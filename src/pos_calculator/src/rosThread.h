@@ -38,12 +38,12 @@ class RosThread{
     ros::NodeHandle posPub;
     ros::NodeHandle trPub;
 
-
-
+//turtlesim
+/*
     void sensorCallback0(const geometry_msgs::PoseArray::ConstPtr&);
     void sensorCallback1(const geometry_msgs::PoseArray::ConstPtr&);
     void sensorCallback2(const geometry_msgs::PoseArray::ConstPtr&);
-
+*/
 
     //aruco callback arucoCallback1
     void arucoCallback1(const ISLH_msgs::robotPositions::ConstPtr&);

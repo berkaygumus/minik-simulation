@@ -83,29 +83,9 @@ double RosThread::orientation2theta(double x, double y, double z, double w){
   return theta;
 }
 
-void RosThread::odomCallback0(const geometry_msgs::Pose::ConstPtr& msg){
-  //cout << "callback0: " << t << endl;
-  if(id ==0){
-    pose_theta = msg->position.z;
-  }
-}
-
-void RosThread::odomCallback1(const geometry_msgs::Pose::ConstPtr& msg){
-  //cout << "callback0: " << t << endl;
-  if(id ==1){
-    pose_theta = msg->position.z;
-  }
-}
-
-void RosThread::odomCallback2(const geometry_msgs::Pose::ConstPtr& msg){
-  //cout << "callback0: " << t << endl;
-  if(id ==2){
-    pose_theta = msg->position.z;
-  }
-}
 
 
-////////////////////////////////SIMULATOR POS CALLBACK//////////////////////////
+////////////////////////////////TURTLESIM SIMULATOR POS CALLBACK//////////////////////////
 
 /*void RosThread::poseOdomCallback0(const turtlesim::Pose::ConstPtr& msg){
   //ROS_INFO("00: [%d] , 01: [%d]  " , A[0][0], A[0][1]);
@@ -257,8 +237,10 @@ void RosThread::poseOdomCallback6(const turtlesim::Pose::ConstPtr& msg){
 
 //////////////////////////////////////////////////////////////////////////
 
-/////////////////////////////////GAZEBO POS CALLBACK ///////////////////////
 
+//////////////////////////////////COMPLETED PART //////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////GAZEBO POS CALLBACK ///////////////////////
+/*
 void RosThread::gazeboOdomCallback0(const nav_msgs::Odometry::ConstPtr& msg){
   int temp_id = 0;
   cout << "robot 1" << endl;
@@ -270,6 +252,8 @@ void RosThread::gazeboOdomCallback0(const nav_msgs::Odometry::ConstPtr& msg){
     calcPos[j][temp_id][1] = msg->pose.pose.position.y;
 
   }
+
+  flagN[temp_id] = 1;
 }
 
 void RosThread::gazeboOdomCallback1(const nav_msgs::Odometry::ConstPtr& msg){
@@ -282,6 +266,7 @@ void RosThread::gazeboOdomCallback1(const nav_msgs::Odometry::ConstPtr& msg){
     calcPos[j][temp_id][1] = msg->pose.pose.position.y;
 
   }
+  flagN[temp_id] = 1;
 }
 
 void RosThread::gazeboOdomCallback2(const nav_msgs::Odometry::ConstPtr& msg){
@@ -294,11 +279,77 @@ void RosThread::gazeboOdomCallback2(const nav_msgs::Odometry::ConstPtr& msg){
     calcPos[j][temp_id][1] = msg->pose.pose.position.y;
 
   }
+  flagN[temp_id] = 1;
 }
 
-/////////////////////////////////////////////////////////////////////////////////
+void RosThread::gazeboOdomCallback3(const nav_msgs::Odometry::ConstPtr& msg){
+  int temp_id = 3;
+  if(temp_id == id){
+    pose_theta = orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);///??????????
+  }
+  for(int j=0;j<n;j++){
+    calcPos[j][temp_id][0] = msg->pose.pose.position.x;
+    calcPos[j][temp_id][1] = msg->pose.pose.position.y;
 
-////////////////////////////////SENSOR CAMERA CALLBACK//////////////////////////
+  }
+  flagN[temp_id] = 1;
+}
+
+void RosThread::gazeboOdomCallback4(const nav_msgs::Odometry::ConstPtr& msg){
+  int temp_id = 4;
+  if(temp_id == id){
+    pose_theta = orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);///??????????
+  }
+  for(int j=0;j<n;j++){
+    calcPos[j][temp_id][0] = msg->pose.pose.position.x;
+    calcPos[j][temp_id][1] = msg->pose.pose.position.y;
+
+  }
+  flagN[temp_id] = 1;
+}
+*/
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////PARTIAL PART///////////////////////////////////////////////////////////////////////////////
+
+//gazebo odometry
+
+void RosThread::odomCallback0(const geometry_msgs::Pose::ConstPtr& msg){
+  //cout << "callback0: " << t << endl;
+  if(id ==0){
+    pose_theta = msg->position.z;
+  }
+}
+
+void RosThread::odomCallback1(const geometry_msgs::Pose::ConstPtr& msg){
+  //cout << "callback0: " << t << endl;
+  if(id ==1){
+    pose_theta = msg->position.z;
+  }
+}
+
+void RosThread::odomCallback2(const geometry_msgs::Pose::ConstPtr& msg){
+  //cout << "callback0: " << t << endl;
+  if(id ==2){
+    pose_theta = msg->position.z;
+  }
+}
+
+void RosThread::odomCallback3(const geometry_msgs::Pose::ConstPtr& msg){
+  //cout << "callback0: " << t << endl;
+  if(id ==3){
+    pose_theta = msg->position.z;
+  }
+}
+
+void RosThread::odomCallback4(const geometry_msgs::Pose::ConstPtr& msg){
+  //cout << "callback0: " << t << endl;
+  if(id ==4){
+    pose_theta = msg->position.z;
+  }
+}
+
+//gazebo camera pos callback
 void RosThread::calcPosCallback0(const geometry_msgs::PoseArray::ConstPtr& msg){
   int temp_id = 0;
   for(int j=0;j<n;j++){
@@ -326,7 +377,31 @@ void RosThread::calcPosCallback2(const geometry_msgs::PoseArray::ConstPtr& msg){
   }
 }
 
-////////////////////////////////SENSOR CAMERA CALLBACK//////////////////////////
+void RosThread::calcPosCallback3(const geometry_msgs::PoseArray::ConstPtr& msg){
+  int temp_id = 3;
+  for(int j=0;j<n;j++){
+    calcPos[temp_id][j][0] = msg->poses[j].position.x;
+    calcPos[temp_id][j][1] = msg->poses[j].position.y;
+
+  }
+}
+
+void RosThread::calcPosCallback4(const geometry_msgs::PoseArray::ConstPtr& msg){
+  int temp_id = 4;
+  for(int j=0;j<n;j++){
+    calcPos[temp_id][j][0] = msg->poses[j].position.x;
+    calcPos[temp_id][j][1] = msg->poses[j].position.y;
+
+  }
+}
+
+
+void RosThread::transformCallback(const std_msgs::Bool::ConstPtr& msg){
+  isSeen = msg->data;
+  cout << "isSeen: " << isSeen << endl;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////
 
 void RosThread::distanceCalculator(){
   for(int i=0;i<N; i++){
@@ -646,10 +721,7 @@ void RosThread::setVelocity(){
 
 }
 
-void RosThread::transformCallback(const std_msgs::Bool::ConstPtr& msg){
-  isSeen = msg->data;
-  cout << "isSeen: " << isSeen << endl;
-}
+
 
 void RosThread::turnToSee(){
   geometry_msgs::Twist msg;
@@ -669,7 +741,7 @@ void RosThread::work(){
 
 
   ostringstream ss;
-  ss << id +1;
+  ss << id + 1;
   string name =  "robot" + ss.str();
 
   vel_pub = velPub.advertise<geometry_msgs::Twist>(name+"/cmd_vel", 100);
@@ -680,22 +752,36 @@ void RosThread::work(){
   ros::Subscriber pose_odom_sub4 = poseOdomSub.subscribe("turtle4/pose",1000,&RosThread::poseOdomCallback3,this);
   ros::Subscriber pose_odom_sub5 = poseOdomSub.subscribe("turtle5/pose",1000,&RosThread::poseOdomCallback4,this);
   ros::Subscriber pose_odom_sub6 = poseOdomSub.subscribe("turtle6/pose",1000,&RosThread::poseOdomCallback5,this);
-  ros::Subscriber pose_odom_sub7 = poseOdomSub.subscribe("turtle7/pose",1000,&RosThread::poseOdomCallback6,this);*/
+  ros::Subscriber pose_odom_sub7 = poseOdomSub.subscribe("turtle7/pose",1000,&RosThread::poseOdomCallback6,this);
+*/
 
-  ros::Subscriber odom_sub1 = poseSub.subscribe("/odom0",1000,&RosThread::odomCallback0,this);
-  ros::Subscriber odom_sub2 = poseSub.subscribe("/odom1",1000,&RosThread::odomCallback1,this);
-  ros::Subscriber odom_sub3 = poseSub.subscribe("/odom2",1000,&RosThread::odomCallback2,this);
+  ////////////////////////partial part///////////////////////////////////////////////////////////////////////////////////
+  ///gazebo odometry//////////////////
+  ros::Subscriber odom_sub1 = poseSub.subscribe("/odom1",1000,&RosThread::odomCallback0,this);
+  ros::Subscriber odom_sub2 = poseSub.subscribe("/odom2",1000,&RosThread::odomCallback1,this);
+  ros::Subscriber odom_sub3 = poseSub.subscribe("/odom3",1000,&RosThread::odomCallback2,this);
+  ros::Subscriber odom_sub4 = poseSub.subscribe("/odom4",1000,&RosThread::odomCallback3,this);
+  ros::Subscriber odom_sub5 = poseSub.subscribe("/odom5",1000,&RosThread::odomCallback4,this);
 
   ros::Subscriber tr_sub = trSub.subscribe("/transformCompleted",1000,&RosThread::transformCallback,this);
-
 
   ros::Subscriber calc_sub1 = poseSub.subscribe("/completedPos0",1000,&RosThread::calcPosCallback0,this);
   ros::Subscriber calc_sub2 = poseSub.subscribe("/completedPos1",1000,&RosThread::calcPosCallback1,this);
   ros::Subscriber calc_sub3 = poseSub.subscribe("/completedPos2",1000,&RosThread::calcPosCallback2,this);
+  ros::Subscriber calc_sub4 = poseSub.subscribe("/completedPos3",1000,&RosThread::calcPosCallback3,this);
+  ros::Subscriber calc_sub5 = poseSub.subscribe("/completedPos4",1000,&RosThread::calcPosCallback4,this);
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  ros::Subscriber calc_sub11 = poseSub.subscribe("/robot1/odom",1000,&RosThread::gazeboOdomCallback0,this);
+
+ /////////////////////completed part ////////////////////////////////////////////////////////////////////////////////////
+
+  /*ros::Subscriber calc_sub11 = poseSub.subscribe("/robot1/odom",1000,&RosThread::gazeboOdomCallback0,this);
   ros::Subscriber calc_sub21 = poseSub.subscribe("/robot2/odom",1000,&RosThread::gazeboOdomCallback1,this);
   ros::Subscriber calc_sub31 = poseSub.subscribe("/robot3/odom",1000,&RosThread::gazeboOdomCallback2,this);
+  ros::Subscriber calc_sub41 = poseSub.subscribe("/robot4/odom",1000,&RosThread::gazeboOdomCallback3,this);
+  ros::Subscriber calc_sub51 = poseSub.subscribe("/robot5/odom",1000,&RosThread::gazeboOdomCallback4,this);
+*/
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   //ros::Subscriber pose_over_sub=poseOverheadCamSub.subscribe<ISLH_msgs::robotPositions>("robots_final_positions",1,&RosThread::poseOverCallback,this);
 
@@ -710,7 +796,7 @@ void RosThread::work(){
     }*/
 
     cout << "isSeen2: " << isSeen << endl;
-    if(1){//flag==1 && isSeen){
+    if(isSeen){//isSeen){
       RosThread::distanceCalculator();
       for(int i=0; i<N; i++){
         //ROS_INFO("b %d: %f , %f",i,b[i][0],b[i][1]);
@@ -728,12 +814,14 @@ void RosThread::work(){
 
       vel_pub.publish(msg);
     }
+
+
     else{
       //turnToSee();
       geometry_msgs::Twist msg;
 
       msg.linear.x = 0;
-      msg.angular.z = PI/4;
+      msg.angular.z = 0.8;
 
 
       vel_pub.publish(msg);

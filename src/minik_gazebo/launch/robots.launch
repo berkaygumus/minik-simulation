@@ -11,7 +11,7 @@
   <group ns="robot1">
     <param name="tf_prefix" value="robot1_tf" />
     <include file="$(find minik_gazebo)/launch/minik1.launch" >
-      <arg name="init_pose" value="-x -8 -y 1 -z 0.2" />
+      <arg name="init_pose" value="-x -8 -y 0 -z 0.2" />
       <arg name="robot_name"  value="Robot1" />
     </include>
   </group>
@@ -21,7 +21,7 @@
   <group ns="robot2">
     <param name="tf_prefix" value="robot2_tf" />
     <include file="$(find minik_gazebo)/launch/minik2.launch" >
-      <arg name="init_pose" value="-x -6 -y 1 -z 0.2" />
+      <arg name="init_pose" value="-x -6 -y 0 -z 0.2" />
       <arg name="robot_name"  value="Robot2" />
     </include>
   </group>
@@ -30,7 +30,7 @@
   <group ns="robot3">
     <param name="tf_prefix" value="robot3_tf" />
     <include file="$(find minik_gazebo)/launch/minik3.launch" >
-      <arg name="init_pose" value="-x -4 -y 1 -z 0.2" />
+      <arg name="init_pose" value="-x -4 -y 0 -z 0.2" />
       <arg name="robot_name"  value="Robot3" />
     </include>
   </group>
@@ -40,7 +40,7 @@
   <group ns="robot4">
     <param name="tf_prefix" value="robot4_tf" />
     <include file="$(find minik_gazebo)/launch/minik4.launch" >
-      <arg name="init_pose" value="-x -2 -y 1 -z 0.2" />
+      <arg name="init_pose" value="-x -2 -y 0 -z 0.2" />
       <arg name="robot_name"  value="Robot4" />
     </include>
   </group>
@@ -49,7 +49,7 @@
   <group ns="robot5">
     <param name="tf_prefix" value="robot5_tf" />
     <include file="$(find minik_gazebo)/launch/minik5.launch" >
-      <arg name="init_pose" value="-x -0 -y 1 -z 0.2" />
+      <arg name="init_pose" value="-x -0 -y 0 -z 0.2" />
       <arg name="robot_name"  value="Robot5" />
     </include>
   </group>

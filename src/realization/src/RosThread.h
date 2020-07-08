@@ -16,9 +16,10 @@
 #include <geometry_msgs/PoseArray.h>
 #include <nav_msgs/Odometry.h>
 #define PI 3.14159265359
-#define N 3
-#define K 3
+#define N 5
+#define K 6
 #define THRESHOLD 3
+#define RO_IJ 1
 #define LOOP_RATE 10
 //#define id 1
 
@@ -40,14 +41,14 @@ class RosThread{
     //int A[N][N]= {{0,1,0,0},{1,0,1,0},{0,1,0,0},{0,0,1,0}};
     //int A[N][N]= {{0,1,1,1},{1,0,1,0},{1,1,0,0},{1,0,1,0}};
     //int A[N][N]= {{0,0,0},{0,0,0},{0,0,0}};
-    int A[N][N]= {{0,0,1},{0,0,1},{1,1,0}};
+    //int A[N][N]= {{0,0,1},{0,0,1},{1,1,0}};
     //int A[N][N]= {{0,0},{0,0}};
     //int A[N][N]= {{0,1},{1,0}};
 
-    //int A[N][N]= {{0,1,0,0,1},{1,0,1,0,0},{0,1,0,1,0},{0,0,1,0,1},{1,0,0,1,0}};// cylinder for 5: 0 1 2 3 4
+    int A[N][N]= {{0,1,0,0,1},{1,0,1,0,0},{0,1,0,1,0},{0,0,1,0,1},{1,0,0,1,0}};// circle for 5: 0 1 2 3 4
     //int A[N][N]= {{0,1,0,1,0},{1,0,1,0,0},{0,1,0,0,1},{1,0,0,0,1},{0,0,1,1,0}};
 
-    //int A[N][N]= {{0,0,0,0,1,1},{0,0,1,0,0,1},{0,1,0,1,0,0},{0,0,1,0,1,0},{1,0,0,1,0,0},{1,1,0,0,0,0}}; //cylinder for 6: 1 2 3 4 0 5
+    //int A[N][N]= {{0,0,0,0,1,1},{0,0,1,0,0,1},{0,1,0,1,0,0},{0,0,1,0,1,0},{1,0,0,1,0,0},{1,1,0,0,0,0}}; //circle for 6: 1 2 3 4 0 5
     //int A[N][N]= {{0,1,0,0,0,0,1},{1,0,1,0,0,0,0},{0,1,0,1,0,0,0},{0,0,1,0,1,0,0},{0,0,0,1,0,1,0},{0,0,0,0,1,0,1},{1,0,0,0,0,1,0}};
     double b[N][2];
     double calcPos[N][N][2];
@@ -69,7 +70,7 @@ class RosThread{
 
     ////////////////////////////////parameters
     double threshold = THRESHOLD;
-    double ro_ij = 1;
+    double ro_ij = RO_IJ;
     double k=K;
     double f = LOOP_RATE;
     double step_size = 1/f;
@@ -97,27 +98,42 @@ class RosThread{
     void finalRealization();
     void Comparator();
 
+    ////////////////////////partial part/////////////////////////
     void odomCallback0(const geometry_msgs::Pose::ConstPtr&);
     void odomCallback1(const geometry_msgs::Pose::ConstPtr&);
     void odomCallback2(const geometry_msgs::Pose::ConstPtr&);
+    void odomCallback3(const geometry_msgs::Pose::ConstPtr&);
+    void odomCallback4(const geometry_msgs::Pose::ConstPtr&);
 
-    void poseOdomCallback0(const turtlesim::Pose::ConstPtr&);
+    void calcPosCallback0(const geometry_msgs::PoseArray::ConstPtr&);
+    void calcPosCallback1(const geometry_msgs::PoseArray::ConstPtr&);
+    void calcPosCallback2(const geometry_msgs::PoseArray::ConstPtr&);
+    void calcPosCallback3(const geometry_msgs::PoseArray::ConstPtr&);
+    void calcPosCallback4(const geometry_msgs::PoseArray::ConstPtr&);
+
+    void transformCallback(const std_msgs::Bool::ConstPtr&);
+
+    //////////////////////////////////////////////////////////
+
+//////////////////////turtlesim completed/////////////////////
+    /*void poseOdomCallback0(const turtlesim::Pose::ConstPtr&);
     void poseOdomCallback1(const turtlesim::Pose::ConstPtr&);
     void poseOdomCallback2(const turtlesim::Pose::ConstPtr&);
     void poseOdomCallback3(const turtlesim::Pose::ConstPtr&);
     void poseOdomCallback4(const turtlesim::Pose::ConstPtr&);
     void poseOdomCallback5(const turtlesim::Pose::ConstPtr&);
     void poseOdomCallback6(const turtlesim::Pose::ConstPtr&);
-
-    void calcPosCallback0(const geometry_msgs::PoseArray::ConstPtr&);
-    void calcPosCallback1(const geometry_msgs::PoseArray::ConstPtr&);
-    void calcPosCallback2(const geometry_msgs::PoseArray::ConstPtr&);
-
+*/
+/////////////////////completed part /////////////////////////////
+/*
     void gazeboOdomCallback0(const nav_msgs::Odometry::ConstPtr&);
     void gazeboOdomCallback1(const nav_msgs::Odometry::ConstPtr&);
     void gazeboOdomCallback2(const nav_msgs::Odometry::ConstPtr&);
+    void gazeboOdomCallback3(const nav_msgs::Odometry::ConstPtr&);
+    void gazeboOdomCallback4(const nav_msgs::Odometry::ConstPtr&);*/
+///////////////////////////////////
 
-    void transformCallback(const std_msgs::Bool::ConstPtr&);
+
 
     void distanceCalculator();
     int flagN[N];

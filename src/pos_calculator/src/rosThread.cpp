@@ -37,7 +37,7 @@ RosThread::~RosThread(){
 }
 
 //////turtlesim
-void RosThread::sensorCallback0(const geometry_msgs::PoseArray::ConstPtr& msg){
+/*void RosThread::sensorCallback0(const geometry_msgs::PoseArray::ConstPtr& msg){
   //cout << "callback0: " << t << endl;
   for(int j=0;j<n;j++){
     robotsSeen[index_t][0][j][0] = msg->poses[j].position.x;
@@ -81,9 +81,10 @@ void RosThread::sensorCallback2(const geometry_msgs::PoseArray::ConstPtr& msg){
   }
   posRobots[2][2][0] = robotsSeen[index_t][2][2][0];
   posRobots[2][2][1] = robotsSeen[index_t][2][2][1];
-}
+}*/
 
-/////odometry
+
+///// gazebo odometry
 
 
 void RosThread::odom1callback(const geometry_msgs::Pose::ConstPtr& msg){
@@ -359,9 +360,9 @@ bool RosThread::checkSeenTime(int i, int j){
     double y = robotsSeen[index_t][i][j][1];
     double dist = pow(x-prev_x,2) + pow(y-prev_y,2);
     if(dist>DIST_THRESHOLD){
-      cout << "prev: " << prev_x << " " << prev_y << endl;
-      cout << "current: " << x << " " << y << endl;
-      cout << i << "-----> " << j << " dist: " << dist << endl;
+      cout << i << "--> " << j << endl;
+      cout << "prev: " <<  prev_x << " " << prev_y << endl;
+      cout << "curr: " <<  x << " " << y << endl;
       return true;
     }
     else{
@@ -563,10 +564,12 @@ void RosThread::work(){
   ros::Publisher pos_pub4 = posPub.advertise<geometry_msgs::PoseArray>("/completedPos4", 100);
   ros::Publisher transform_pub = trPub.advertise<std_msgs::Bool>("transformCompleted",100);
 
-
+//////turtlesim
+/*
   ros::Subscriber sensor_sub1 = sensorSub.subscribe("/pos0",1000,&RosThread::sensorCallback0,this);
   ros::Subscriber sensor_sub2 = sensorSub.subscribe("/pos1",1000,&RosThread::sensorCallback1,this);
   ros::Subscriber sensor_sub3 = sensorSub.subscribe("/pos2",1000,&RosThread::sensorCallback2,this);
+*/
 
 //aruco marker sub
   ros::Subscriber aruco_sub1 = sensorSub.subscribe("/detected_aruco1",1000,&RosThread::arucoCallback1,this);
@@ -575,6 +578,7 @@ void RosThread::work(){
   ros::Subscriber aruco_sub4 = sensorSub.subscribe("/detected_aruco4",1000,&RosThread::arucoCallback4,this);
   ros::Subscriber aruco_sub5 = sensorSub.subscribe("/detected_aruco5",1000,&RosThread::arucoCallback5,this);
 
+//gazebo odom
   ros::Subscriber odom1sub = sensorSub.subscribe("/odom1",1000,&RosThread::odom1callback,this);
   ros::Subscriber odom2sub = sensorSub.subscribe("/odom2",1000,&RosThread::odom2callback,this);
   ros::Subscriber odom3sub = sensorSub.subscribe("/odom3",1000,&RosThread::odom3callback,this);
@@ -610,6 +614,12 @@ void RosThread::work(){
       cout << "not completed" << endl;
     }
     transform_pub.publish(transformIsCompleted);
+
+    /*for(int i=0;i<n;i++){
+      for(int j=0; j<n; j++){
+       cout << "last seen: " << i << " -->> " << j << " " << lastSeen[i][j][0] << endl;
+      }
+    }*/
 
 
     calculateTransform1();
