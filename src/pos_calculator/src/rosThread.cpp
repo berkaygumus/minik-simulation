@@ -591,7 +591,7 @@ void RosThread::work(){
   ros::Rate loop_rate(10);
 
   while (ros::ok()){
-    cout << "connected 0 0 " << connected[0][0];
+    //cout << "connected 0 0 " << connected[0][0];
 
 
     double t0 =ros::Time::now().toSec();

@@ -7,6 +7,18 @@
 			<uri>model://sun</uri>
 		</include>
 
+		<include>
+			<uri>model://sun</uri>
+			<pose>0 0 5 0 0 0</pose>
+			<static> false </static>
+		</include>
+
+		<include>
+			<uri>model://sun</uri>
+			<pose>-6 0 5 0 0 0</pose>
+			<static> false </static>
+		</include>
+
 		<!-- A ground plane -->
 		<include>
 			<uri>model://ground_plane</uri>

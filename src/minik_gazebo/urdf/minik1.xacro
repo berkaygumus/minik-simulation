@@ -89,7 +89,7 @@
        <geometry>
        <cylinder radius="0.05" length="0.1"/>
        </geometry>
-       <material name="white" />
+       <material name="blue" />
    </visual>
 
    <collision name="left_cam_collision">
@@ -104,7 +104,7 @@
        <geometry>
        <cylinder radius="0.05" length="0.1"/>
        </geometry>
-       <material name="white" />
+       <material name="blue" />
    </visual>
 
    <collision name="right_cam_collision">
