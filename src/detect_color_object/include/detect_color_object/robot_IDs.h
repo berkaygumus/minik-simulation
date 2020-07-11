@@ -1,4 +1,5 @@
-//color id: top color, bottom color
+//color id: {top color, bottom color}
+// 0: yellow, 1:green, 2: purple
 
 const int numrobots = 3;
 const int robIDList[3][2] = {{2,0},{1,0},{0,1}};

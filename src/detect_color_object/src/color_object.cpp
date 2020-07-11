@@ -100,8 +100,7 @@ Mat colorThreshold(int colorID, Mat hsv_image, int himsizex, int himsizey){
    //erode and dilate
    object_l = enhanceImg(object_l,himsizex,himsizey);
    object_r = enhanceImg(object_r,himsizex,himsizey);
-   imshow("enhanced object_l",object_l);
-   imshow("enhanced object_r",object_r);
+
 
    //the components of binary images
    Mat stats_left, centroids_left,stats_right, centroids_right;
@@ -150,8 +149,20 @@ Mat colorThreshold(int colorID, Mat hsv_image, int himsizex, int himsizey){
    circle(object_r, a1, width_right/2, 50, 5);
    circle(object_l, a2, width_left/2, 50, 5);
 
-   imshow("enhanced object_l",object_l);
-   imshow("enhanced object_r",object_r);
+   ostringstream ss1;
+   ss1 << robot_id;
+   string name1 =  "enhanced object_l " + ss1.str();
+
+   ostringstream ss2;
+   ss2 << robot_id;
+   string name2 =  "enhanced object_r " + ss2.str();
+
+   imshow(name1,object_l);
+   imshow(name2,object_r);
+   //imshow("enhanced object_r",object_r);
+
+   //imshow("enhanced object_l",object_l);
+   //imshow("enhanced object_r",object_r);
 
    float d_obs;
    double distance_x_obs;
@@ -222,6 +233,10 @@ int main(int argc,char** argv){
 
 
     Camera_Calibration* calib  = new Camera_Calibration();
+    bool isCamera = 0;
+    string left_img_name = "/home/berkay/catkin_ws/src/detect_color_object/images/color_left1.jpg";
+		string right_img_name = "/home/berkay/catkin_ws/src/detect_color_object/images/color_right1.jpg";
+
 
     VideoCapture cap_left(1); //left cam
     cap_left.set(CV_CAP_PROP_FRAME_WIDTH, 640);
@@ -239,16 +254,26 @@ int main(int argc,char** argv){
     Mat hsv_right;//undistorted hsv image
 
     if(!cap_left.isOpened()){
-          cout << "ERROR cam1!!" << endl;
-          exit(1);
+      cout << "there is no camera 1" << endl;
+      cout << "images are taken from the file" << endl;
+      isCamera = 0;
     }
     if(!cap_right.isOpened()){
-          cout << "ERROR cam2!!" << endl;
-          exit(1);
+      cout << "there is no camera 2" << endl;
+      cout << "images are taken from the file" << endl;
+      isCamera = 0;
     }
 
 
-    cap_left >> frame_left;
+
+
+    if(isCamera){
+      cap_left >> frame_left;
+    }
+    else{
+      frame_left = imread(left_img_name);//left image
+    }
+
     calib->loadStereoCalibrationParams(frame_left.size());//loads camera calibration parameters.
 
     int number_objects;//2: robot1 and robot2
@@ -261,16 +286,22 @@ int main(int argc,char** argv){
     while(ros::ok()){
       ros::Time begin = ros::Time::now();
       //capture images
-      cap_left >> frame_left;
-      cap_right >> frame_right;
+      if(isCamera){
+        cap_left >> frame_left;
+        cap_right >> frame_right;
+      }
+      else{
+        frame_left = imread(left_img_name);//left image
+        frame_right = imread(right_img_name);//right image
+      }
       cout << "elapsed capture : " << ros::Time::now() - begin << endl;
 
       //stereo calibration
       calib->applyStereoCalibration(frame_left, frame_right, rgb_left, rgb_right);
-      //imshow("init_left",frame_left);
-      //imshow("init_right",frame_right);
-      //imshow("undist_left",rgb_left);
-      //imshow("undist_right",rgb_right);
+      imshow("init_left",frame_left);
+      imshow("init_right",frame_right);
+      imshow("undist_left",rgb_left);
+      imshow("undist_right",rgb_right);
       cout << "elapsed calib : " << ros::Time::now() - begin << endl;
 
       //rgb to hsv

@@ -3139,6 +3139,101 @@ clean: camera_calibration/CMakeFiles/camera_calibration_node.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory aruco_marker
+
+# Convenience name for "all" pass in the directory.
+aruco_marker/all: aruco_marker/CMakeFiles/aruco_marker.dir/all
+aruco_marker/all: aruco_marker/CMakeFiles/aruco_marker_node.dir/all
+
+.PHONY : aruco_marker/all
+
+# Convenience name for "clean" pass in the directory.
+aruco_marker/clean: aruco_marker/CMakeFiles/aruco_marker.dir/clean
+aruco_marker/clean: aruco_marker/CMakeFiles/aruco_marker_node.dir/clean
+
+.PHONY : aruco_marker/clean
+
+# Convenience name for "preinstall" pass in the directory.
+aruco_marker/preinstall:
+
+.PHONY : aruco_marker/preinstall
+
+#=============================================================================
+# Target rules for target aruco_marker/CMakeFiles/aruco_marker.dir
+
+# All Build rule for target.
+aruco_marker/CMakeFiles/aruco_marker.dir/all: camera_calibration/CMakeFiles/camera_calibration.dir/all
+	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker.dir/build.make aruco_marker/CMakeFiles/aruco_marker.dir/depend
+	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker.dir/build.make aruco_marker/CMakeFiles/aruco_marker.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num= "Built target aruco_marker"
+.PHONY : aruco_marker/CMakeFiles/aruco_marker.dir/all
+
+# Include target in all.
+all: aruco_marker/CMakeFiles/aruco_marker.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+aruco_marker/CMakeFiles/aruco_marker.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 aruco_marker/CMakeFiles/aruco_marker.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
+.PHONY : aruco_marker/CMakeFiles/aruco_marker.dir/rule
+
+# Convenience name for target.
+aruco_marker: aruco_marker/CMakeFiles/aruco_marker.dir/rule
+
+.PHONY : aruco_marker
+
+# clean rule for target.
+aruco_marker/CMakeFiles/aruco_marker.dir/clean:
+	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker.dir/build.make aruco_marker/CMakeFiles/aruco_marker.dir/clean
+.PHONY : aruco_marker/CMakeFiles/aruco_marker.dir/clean
+
+# clean rule for target.
+clean: aruco_marker/CMakeFiles/aruco_marker.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target aruco_marker/CMakeFiles/aruco_marker_node.dir
+
+# All Build rule for target.
+aruco_marker/CMakeFiles/aruco_marker_node.dir/all: camera_calibration/CMakeFiles/camera_calibration.dir/all
+aruco_marker/CMakeFiles/aruco_marker_node.dir/all: aruco_marker/CMakeFiles/aruco_marker.dir/all
+	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/depend
+	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=41,42 "Built target aruco_marker_node"
+.PHONY : aruco_marker/CMakeFiles/aruco_marker_node.dir/all
+
+# Include target in all.
+all: aruco_marker/CMakeFiles/aruco_marker_node.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+aruco_marker/CMakeFiles/aruco_marker_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 aruco_marker/CMakeFiles/aruco_marker_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
+.PHONY : aruco_marker/CMakeFiles/aruco_marker_node.dir/rule
+
+# Convenience name for target.
+aruco_marker_node: aruco_marker/CMakeFiles/aruco_marker_node.dir/rule
+
+.PHONY : aruco_marker_node
+
+# clean rule for target.
+aruco_marker/CMakeFiles/aruco_marker_node.dir/clean:
+	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/clean
+.PHONY : aruco_marker/CMakeFiles/aruco_marker_node.dir/clean
+
+# clean rule for target.
+clean: aruco_marker/CMakeFiles/aruco_marker_node.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Directory level rules for directory detect_color_object
 
 # Convenience name for "all" pass in the directory.
@@ -5496,266 +5591,6 @@ clean: sensor/CMakeFiles/sensor_generate_messages_nodejs.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory aruco_marker
-
-# Convenience name for "all" pass in the directory.
-aruco_marker/all: aruco_marker/CMakeFiles/aruco_marker.dir/all
-aruco_marker/all: aruco_marker/CMakeFiles/aruco_marker_node.dir/all
-
-.PHONY : aruco_marker/all
-
-# Convenience name for "clean" pass in the directory.
-aruco_marker/clean: aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
-aruco_marker/clean: aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
-aruco_marker/clean: aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
-aruco_marker/clean: aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
-aruco_marker/clean: aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
-aruco_marker/clean: aruco_marker/CMakeFiles/aruco_marker.dir/clean
-aruco_marker/clean: aruco_marker/CMakeFiles/aruco_marker_node.dir/clean
-
-.PHONY : aruco_marker/clean
-
-# Convenience name for "preinstall" pass in the directory.
-aruco_marker/preinstall:
-
-.PHONY : aruco_marker/preinstall
-
-#=============================================================================
-# Target rules for target aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir
-
-# All Build rule for target.
-aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all:
-	$(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/depend
-	$(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_nodejs"
-.PHONY : aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
-.PHONY : aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_nodejs: aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_nodejs
-
-# clean rule for target.
-aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
-.PHONY : aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
-
-# clean rule for target.
-clean: aruco_marker/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir
-
-# All Build rule for target.
-aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all:
-	$(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/depend
-	$(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_eus"
-.PHONY : aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-
-# Build rule for subdir invocation for target.
-aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
-.PHONY : aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_eus: aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_eus
-
-# clean rule for target.
-aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean:
-	$(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
-.PHONY : aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
-
-# clean rule for target.
-clean: aruco_marker/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir
-
-# All Build rule for target.
-aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/all:
-	$(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/depend
-	$(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_py"
-.PHONY : aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-
-# Build rule for subdir invocation for target.
-aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
-.PHONY : aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_py: aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_py
-
-# clean rule for target.
-aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean:
-	$(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
-.PHONY : aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
-
-# clean rule for target.
-clean: aruco_marker/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir
-
-# All Build rule for target.
-aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all:
-	$(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/depend
-	$(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_lisp"
-.PHONY : aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-
-# Build rule for subdir invocation for target.
-aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
-.PHONY : aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_lisp: aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_lisp
-
-# clean rule for target.
-aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean:
-	$(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
-.PHONY : aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
-
-# clean rule for target.
-clean: aruco_marker/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
-
-# All Build rule for target.
-aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all:
-	$(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/depend
-	$(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_cpp"
-.PHONY : aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
-.PHONY : aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_cpp: aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_cpp
-
-# clean rule for target.
-aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean:
-	$(MAKE) -f aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
-.PHONY : aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
-
-# clean rule for target.
-clean: aruco_marker/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target aruco_marker/CMakeFiles/aruco_marker.dir
-
-# All Build rule for target.
-aruco_marker/CMakeFiles/aruco_marker.dir/all: camera_calibration/CMakeFiles/camera_calibration.dir/all
-	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker.dir/build.make aruco_marker/CMakeFiles/aruco_marker.dir/depend
-	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker.dir/build.make aruco_marker/CMakeFiles/aruco_marker.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num= "Built target aruco_marker"
-.PHONY : aruco_marker/CMakeFiles/aruco_marker.dir/all
-
-# Include target in all.
-all: aruco_marker/CMakeFiles/aruco_marker.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-aruco_marker/CMakeFiles/aruco_marker.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 aruco_marker/CMakeFiles/aruco_marker.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
-.PHONY : aruco_marker/CMakeFiles/aruco_marker.dir/rule
-
-# Convenience name for target.
-aruco_marker: aruco_marker/CMakeFiles/aruco_marker.dir/rule
-
-.PHONY : aruco_marker
-
-# clean rule for target.
-aruco_marker/CMakeFiles/aruco_marker.dir/clean:
-	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker.dir/build.make aruco_marker/CMakeFiles/aruco_marker.dir/clean
-.PHONY : aruco_marker/CMakeFiles/aruco_marker.dir/clean
-
-# clean rule for target.
-clean: aruco_marker/CMakeFiles/aruco_marker.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target aruco_marker/CMakeFiles/aruco_marker_node.dir
-
-# All Build rule for target.
-aruco_marker/CMakeFiles/aruco_marker_node.dir/all: camera_calibration/CMakeFiles/camera_calibration.dir/all
-aruco_marker/CMakeFiles/aruco_marker_node.dir/all: aruco_marker/CMakeFiles/aruco_marker.dir/all
-	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/depend
-	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=41,42 "Built target aruco_marker_node"
-.PHONY : aruco_marker/CMakeFiles/aruco_marker_node.dir/all
-
-# Include target in all.
-all: aruco_marker/CMakeFiles/aruco_marker_node.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-aruco_marker/CMakeFiles/aruco_marker_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 aruco_marker/CMakeFiles/aruco_marker_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
-.PHONY : aruco_marker/CMakeFiles/aruco_marker_node.dir/rule
-
-# Convenience name for target.
-aruco_marker_node: aruco_marker/CMakeFiles/aruco_marker_node.dir/rule
-
-.PHONY : aruco_marker_node
-
-# clean rule for target.
-aruco_marker/CMakeFiles/aruco_marker_node.dir/clean:
-	$(MAKE) -f aruco_marker/CMakeFiles/aruco_marker_node.dir/build.make aruco_marker/CMakeFiles/aruco_marker_node.dir/clean
-.PHONY : aruco_marker/CMakeFiles/aruco_marker_node.dir/clean
-
-# clean rule for target.
-clean: aruco_marker/CMakeFiles/aruco_marker_node.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Directory level rules for directory detect_aruco_object
 
 # Convenience name for "all" pass in the directory.
@@ -5765,6 +5600,11 @@ detect_aruco_object/all: detect_aruco_object/CMakeFiles/detect_aruco_object_node
 .PHONY : detect_aruco_object/all
 
 # Convenience name for "clean" pass in the directory.
+detect_aruco_object/clean: detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
+detect_aruco_object/clean: detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
+detect_aruco_object/clean: detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+detect_aruco_object/clean: detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
+detect_aruco_object/clean: detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
 detect_aruco_object/clean: detect_aruco_object/CMakeFiles/detect_aruco_object.dir/clean
 detect_aruco_object/clean: detect_aruco_object/CMakeFiles/detect_aruco_object_node.dir/clean
 
@@ -5774,6 +5614,166 @@ detect_aruco_object/clean: detect_aruco_object/CMakeFiles/detect_aruco_object_no
 detect_aruco_object/preinstall:
 
 .PHONY : detect_aruco_object/preinstall
+
+#=============================================================================
+# Target rules for target detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir
+
+# All Build rule for target.
+detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_nodejs"
+.PHONY : detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
+.PHONY : detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_nodejs: detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_nodejs
+
+# clean rule for target.
+detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
+.PHONY : detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
+
+# clean rule for target.
+clean: detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_eus.dir
+
+# All Build rule for target.
+detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all:
+	$(MAKE) -f detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_eus.dir/depend
+	$(MAKE) -f detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_eus"
+.PHONY : detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
+.PHONY : detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_eus: detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_eus
+
+# clean rule for target.
+detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) -f detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
+.PHONY : detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
+
+# clean rule for target.
+clean: detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_py.dir
+
+# All Build rule for target.
+detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_py"
+.PHONY : detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
+.PHONY : detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_py: detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_py
+
+# clean rule for target.
+detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+.PHONY : detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+
+# clean rule for target.
+clean: detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_lisp.dir
+
+# All Build rule for target.
+detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_lisp"
+.PHONY : detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
+.PHONY : detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_lisp: detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_lisp
+
+# clean rule for target.
+detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
+.PHONY : detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
+
+# clean rule for target.
+clean: detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
+
+# All Build rule for target.
+detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_cpp"
+.PHONY : detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berkay/catkin_ws/build/CMakeFiles 0
+.PHONY : detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_cpp: detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# clean rule for target.
+detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+.PHONY : detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+
+# clean rule for target.
+clean: detect_aruco_object/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+
+.PHONY : clean
 
 #=============================================================================
 # Target rules for target detect_aruco_object/CMakeFiles/detect_aruco_object.dir

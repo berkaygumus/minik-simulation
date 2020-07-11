@@ -19,7 +19,7 @@
 #define N 5
 #define K 6
 #define THRESHOLD 3
-#define RO_IJ 1
+#define RO_IJ 0.5
 #define LOOP_RATE 10
 //#define id 1
 
@@ -45,10 +45,11 @@ class RosThread{
     //int A[N][N]= {{0,0},{0,0}};
     //int A[N][N]= {{0,1},{1,0}};
 
-    int A[N][N]= {{0,1,0,0,1},{1,0,1,0,0},{0,1,0,1,0},{0,0,1,0,1},{1,0,0,1,0}}; //topology 1  // circle for 5: 0 1 2 3 4
+    //int A[N][N]= {{0,1,0,0,1},{1,0,1,0,0},{0,1,0,1,0},{0,0,1,0,1},{1,0,0,1,0}}; //topology 1  // circle for 5: 0 1 2 3 4
     //int A[N][N]= {{0,1,0,1,0},{1,0,1,0,0},{0,1,0,0,1},{1,0,0,0,1},{0,0,1,1,0}};  // topology 2
     //int A[N][N]= {{0,1,0,0,0},{1,0,1,0,1},{0,1,0,1,0},{0,0,1,0,0},{0,1,0,0,0}};  // topology 3
-    //int A[N][N]= {{0,1,0,0,1},{1,0,1,0,0},{0,1,0,0,0},{0,0,0,0,1},{1,0,0,1,0}}; //topology 4
+    int A[N][N]= {{0,1,0,0,1},{1,0,1,0,0},{0,1,0,0,0},{0,0,0,0,1},{1,0,0,1,0}}; //topology 4
+    //int A[N][N]= {{0,1,0,0,1},{1,0,1,0,1},{0,1,0,1,0},{0,0,1,0,0},{1,1,0,0,0}};  // topology 5
 
     //int A[N][N]= {{0,0,0,0,1,1},{0,0,1,0,0,1},{0,1,0,1,0,0},{0,0,1,0,1,0},{1,0,0,1,0,0},{1,1,0,0,0,0}}; //circle for 6: 1 2 3 4 0 5
     //int A[N][N]= {{0,1,0,0,0,0,1},{1,0,1,0,0,0,0},{0,1,0,1,0,0,0},{0,0,1,0,1,0,0},{0,0,0,1,0,1,0},{0,0,0,0,1,0,1},{1,0,0,0,0,1,0}};
@@ -124,8 +125,8 @@ class RosThread{
     void poseOdomCallback3(const turtlesim::Pose::ConstPtr&);
     void poseOdomCallback4(const turtlesim::Pose::ConstPtr&);
     void poseOdomCallback5(const turtlesim::Pose::ConstPtr&);
-    void poseOdomCallback6(const turtlesim::Pose::ConstPtr&);
-*/
+    void poseOdomCallback6(const turtlesim::Pose::ConstPtr&);*/
+
 /////////////////////completed part /////////////////////////////
 /*
     void gazeboOdomCallback0(const nav_msgs::Odometry::ConstPtr&);

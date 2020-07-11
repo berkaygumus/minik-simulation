@@ -12,17 +12,13 @@ int main(int argc,char** argv){
     /////////////////////////////////////////////////////
     //generates 4 markers for one robot
     //takes robotIDs vector as input
-
+    /*
     vector<int> robotIDs;
     robotIDs.push_back(1);
     robotIDs.push_back(2);
-    robotIDs.push_back(3);
-    robotIDs.push_back(4);
-    robotIDs.push_back(5);
-    aruco_marker->markerGenerater(robotIDs);
+    aruco_marker->markerGenerater(robotIDs);*/
 
     /////////////////////////////////////////////////////
     //takes image from the camera, detects aruco markers of the robot at the field of view and publishes robot positions and headings
-    //aruco_marker->calculateRobotPos();
-
+    aruco_marker->calculateRobotPos();
 }

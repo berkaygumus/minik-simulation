@@ -774,8 +774,8 @@ void RosThread::work(){
 
 
  /////////////////////completed part ////////////////////////////////////////////////////////////////////////////////////
-
-  /*ros::Subscriber calc_sub11 = poseSub.subscribe("/robot1/odom",1000,&RosThread::gazeboOdomCallback0,this);
+/*
+  ros::Subscriber calc_sub11 = poseSub.subscribe("/robot1/odom",1000,&RosThread::gazeboOdomCallback0,this);
   ros::Subscriber calc_sub21 = poseSub.subscribe("/robot2/odom",1000,&RosThread::gazeboOdomCallback1,this);
   ros::Subscriber calc_sub31 = poseSub.subscribe("/robot3/odom",1000,&RosThread::gazeboOdomCallback2,this);
   ros::Subscriber calc_sub41 = poseSub.subscribe("/robot4/odom",1000,&RosThread::gazeboOdomCallback3,this);
@@ -790,11 +790,11 @@ void RosThread::work(){
 
   while (ros::ok()){
 
-    flag = 1;
-    /*for(int i=0;i<N;i++){
+  /*  flag = 1;
+    for(int i=0;i<N;i++){
       flag = flag * flagN[i];
-    }*/
-
+    }
+*/
     cout << "isSeen2: " << isSeen << endl;
     if(isSeen){//isSeen){
       RosThread::distanceCalculator();

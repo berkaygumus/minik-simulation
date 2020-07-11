@@ -7,17 +7,7 @@ aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /home/berka
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /home/berkay/catkin_ws/src/camera_calibration/include/camera_calibration/camera_calibration.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /home/berkay/catkin_ws/src/camera_calibration/include/camera_calibration/globaldefs.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /home/berkay/catkin_ws/src/camera_calibration/include/camera_calibration/settings.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/cv_bridge/cv_bridge.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Pose2D.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/image_transport/camera_publisher.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/image_transport/camera_subscriber.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/image_transport/exception.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/image_transport/image_transport.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/image_transport/loader_fwds.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/image_transport/publisher.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/image_transport/single_subscriber_publisher.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/image_transport/subscriber.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/image_transport/transport_hints.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv/cxcore.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/aruco.hpp
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/aruco/dictionary.hpp
@@ -28,7 +18,6 @@ aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/ki
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/core/affine.hpp
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/core/base.hpp
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/core/bufferpool.hpp
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/core/core.hpp
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/core/core_c.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/core/cuda.hpp
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/core/cuda.inl.hpp
@@ -90,12 +79,10 @@ aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/ki
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/flann/saving.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/flann/timer.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/highgui.hpp
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/highgui/highgui.hpp
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/highgui/highgui_c.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/imgcodecs.hpp
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/imgcodecs/imgcodecs_c.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/imgproc.hpp
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/imgproc/imgproc.hpp
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/imgproc/imgproc_c.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/imgproc/types_c.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/ml.hpp
@@ -210,12 +197,6 @@ aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/ki
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/ros/wall_timer.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/sensor_msgs/CameraInfo.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/sensor_msgs/CompressedImage.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/sensor_msgs/Image.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/sensor_msgs/RegionOfInterest.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/sensor_msgs/image_encodings.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/arucoMarker.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 
@@ -225,17 +206,7 @@ aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /home/berkay/catki
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /home/berkay/catkin_ws/src/camera_calibration/include/camera_calibration/camera_calibration.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /home/berkay/catkin_ws/src/camera_calibration/include/camera_calibration/globaldefs.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /home/berkay/catkin_ws/src/camera_calibration/include/camera_calibration/settings.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/cv_bridge/cv_bridge.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Pose2D.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/image_transport/camera_publisher.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/image_transport/camera_subscriber.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/image_transport/exception.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/image_transport/image_transport.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/image_transport/loader_fwds.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/image_transport/publisher.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/image_transport/single_subscriber_publisher.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/image_transport/subscriber.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/image_transport/transport_hints.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv/cxcore.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/aruco.hpp
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/aruco/dictionary.hpp
@@ -246,7 +217,6 @@ aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/i
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/core/affine.hpp
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/core/base.hpp
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/core/bufferpool.hpp
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/core/core.hpp
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/core/core_c.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/core/cuda.hpp
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/core/cuda.inl.hpp
@@ -308,12 +278,10 @@ aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/i
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/flann/saving.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/flann/timer.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/highgui.hpp
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/highgui/highgui.hpp
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/highgui/highgui_c.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/imgcodecs.hpp
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/imgcodecs/imgcodecs_c.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/imgproc.hpp
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/imgproc/imgproc.hpp
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/imgproc/imgproc_c.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/imgproc/types_c.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/ml.hpp
@@ -428,12 +396,6 @@ aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/i
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/ros/wall_timer.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/sensor_msgs/CameraInfo.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/sensor_msgs/CompressedImage.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/sensor_msgs/Image.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/sensor_msgs/RegionOfInterest.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/sensor_msgs/image_encodings.h
-aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 aruco_marker/CMakeFiles/aruco_marker_node.dir/src/main.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 
