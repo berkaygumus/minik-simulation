@@ -55,12 +55,12 @@ Mat colorThreshold(int colorID, Mat hsv_image, int himsizex, int himsizey){
 
      // morphological opening (remove small objects from the foreground)
 
-     erode(obs_r1, obs_r1, getStructuringElement(MORPH_RECT, Size(15, 15)) );
-     dilate( obs_r1, obs_r1, getStructuringElement(MORPH_RECT, Size(15, 15)) );
+     erode(obs_r1, obs_r1, getStructuringElement(MORPH_RECT, Size(5, 5)) );
+     dilate( obs_r1, obs_r1, getStructuringElement(MORPH_RECT, Size(5, 5)) );
 
      //morphological closing (fill small holes in the foreground)
-     dilate( obs_r1, obs_r1, getStructuringElement(MORPH_RECT, Size(15, 15)) );
-     erode(obs_r1, obs_r1, getStructuringElement(MORPH_RECT, Size(15, 15)) );
+     dilate( obs_r1, obs_r1, getStructuringElement(MORPH_RECT, Size(5, 5)) );
+     erode(obs_r1, obs_r1, getStructuringElement(MORPH_RECT, Size(5, 5)) );
 
      resize(obs_r1,obs_r1,Size(sizex,sizey));
      return obs_r1;
@@ -294,40 +294,44 @@ int main(int argc,char** argv){
         frame_left = imread(left_img_name);//left image
         frame_right = imread(right_img_name);//right image
       }
-      cout << "elapsed capture : " << ros::Time::now() - begin << endl;
+      //cout << "elapsed capture : " << ros::Time::now() - begin << endl;
 
       //stereo calibration
       calib->applyStereoCalibration(frame_left, frame_right, rgb_left, rgb_right);
-      imshow("init_left",frame_left);
-      imshow("init_right",frame_right);
-      imshow("undist_left",rgb_left);
-      imshow("undist_right",rgb_right);
-      cout << "elapsed calib : " << ros::Time::now() - begin << endl;
+      imshow("initial left",frame_left);
+      imshow("initial right",frame_right);
+      imshow("undistorted left",rgb_left);
+      imshow("undistorted right",rgb_right);
+      //cout << "elapsed calib : " << ros::Time::now() - begin << endl;
 
       //rgb to hsv
       cvtColor(rgb_right, hsv_right, COLOR_BGR2HSV);
       cvtColor(rgb_left, hsv_left, COLOR_BGR2HSV);
-      cout << "elapsed hsv : " << ros::Time::now() - begin << endl;
-
+      //cout << "elapsed hsv : " << ros::Time::now() - begin << endl;
+      cout << "detected objects: " << endl;
       //pos calculation
-      object_pos object1;
+      /*object_pos object1;
       object1 = detectObject(hsv_left,hsv_right, 1,calib);//detects robot and calculates its position and radius
       cout << "object 1 pos " << object1.x << " " << object1.y << " " << object1.radius << endl;
       geometry_msgs::Pose2D robotPose1;
       robotPose1.x = object1.x;
       robotPose1.y = object1.y;
       robotPublisher1.publish(robotPose1);
-      cout << "elapsed object1 : " << ros::Time::now() - begin << endl;
-
+      //cout << "elapsed object1 : " << ros::Time::now() - begin << endl;
+*/
       object_pos object2;
       object2 = detectObject(hsv_left,hsv_right, 2,calib);
-      cout << "object 2 pos " << object2.x << " " << object2.y << " " << object2.radius << endl;
+      cout << "object 2 pos(mm) x: " << object2.x << " y: " << object2.y << " radius: " << object2.radius << endl;
       geometry_msgs::Pose2D robotPose2;
       robotPose2.x = object2.x;
       robotPose2.y = object2.y;
       robotPublisher2.publish(robotPose2);
-      cout << "elapsed object2 : " << ros::Time::now() - begin << endl;
+      //cout << "elapsed object2 : " << ros::Time::now() - begin << endl;
 
+      object_pos object3;
+      object3 = detectObject(hsv_left,hsv_right, 3,calib);
+      cout << "object 3 pos(mm) x: " << object3.x << " y: " << object3.y << " radius: " << object3.radius << endl;
+      cout << endl;
       waitKey(25);
       ros::spinOnce();
       loop_rate.sleep();

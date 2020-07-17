@@ -57,38 +57,38 @@ include camera_calibration/CMakeFiles/camera_calibration_node.dir/progress.make
 # Include the compile flags for this target's objects.
 include camera_calibration/CMakeFiles/camera_calibration_node.dir/flags.make
 
-camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o: camera_calibration/CMakeFiles/camera_calibration_node.dir/flags.make
-camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o: /home/berkay/catkin_ws/src/camera_calibration/src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o"
-	cd /home/berkay/catkin_ws/build/camera_calibration && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/camera_calibration_node.dir/src/main.cpp.o -c /home/berkay/catkin_ws/src/camera_calibration/src/main.cpp
+camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main2.cpp.o: camera_calibration/CMakeFiles/camera_calibration_node.dir/flags.make
+camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main2.cpp.o: /home/berkay/catkin_ws/src/camera_calibration/src/main2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main2.cpp.o"
+	cd /home/berkay/catkin_ws/build/camera_calibration && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/camera_calibration_node.dir/src/main2.cpp.o -c /home/berkay/catkin_ws/src/camera_calibration/src/main2.cpp
 
-camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/camera_calibration_node.dir/src/main.cpp.i"
-	cd /home/berkay/catkin_ws/build/camera_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/berkay/catkin_ws/src/camera_calibration/src/main.cpp > CMakeFiles/camera_calibration_node.dir/src/main.cpp.i
+camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/camera_calibration_node.dir/src/main2.cpp.i"
+	cd /home/berkay/catkin_ws/build/camera_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/berkay/catkin_ws/src/camera_calibration/src/main2.cpp > CMakeFiles/camera_calibration_node.dir/src/main2.cpp.i
 
-camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/camera_calibration_node.dir/src/main.cpp.s"
-	cd /home/berkay/catkin_ws/build/camera_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/berkay/catkin_ws/src/camera_calibration/src/main.cpp -o CMakeFiles/camera_calibration_node.dir/src/main.cpp.s
+camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/camera_calibration_node.dir/src/main2.cpp.s"
+	cd /home/berkay/catkin_ws/build/camera_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/berkay/catkin_ws/src/camera_calibration/src/main2.cpp -o CMakeFiles/camera_calibration_node.dir/src/main2.cpp.s
 
-camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o.requires:
+camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main2.cpp.o.requires:
 
-.PHONY : camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o.requires
+.PHONY : camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main2.cpp.o.requires
 
-camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o.provides: camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o.requires
-	$(MAKE) -f camera_calibration/CMakeFiles/camera_calibration_node.dir/build.make camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o.provides.build
-.PHONY : camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o.provides
+camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main2.cpp.o.provides: camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main2.cpp.o.requires
+	$(MAKE) -f camera_calibration/CMakeFiles/camera_calibration_node.dir/build.make camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main2.cpp.o.provides.build
+.PHONY : camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main2.cpp.o.provides
 
-camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o.provides.build: camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o
+camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main2.cpp.o.provides.build: camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main2.cpp.o
 
 
 # Object files for target camera_calibration_node
 camera_calibration_node_OBJECTS = \
-"CMakeFiles/camera_calibration_node.dir/src/main.cpp.o"
+"CMakeFiles/camera_calibration_node.dir/src/main2.cpp.o"
 
 # External object files for target camera_calibration_node
 camera_calibration_node_EXTERNAL_OBJECTS =
 
-/home/berkay/catkin_ws/devel/lib/camera_calibration/camera_calibration_node: camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o
+/home/berkay/catkin_ws/devel/lib/camera_calibration/camera_calibration_node: camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main2.cpp.o
 /home/berkay/catkin_ws/devel/lib/camera_calibration/camera_calibration_node: camera_calibration/CMakeFiles/camera_calibration_node.dir/build.make
 /home/berkay/catkin_ws/devel/lib/camera_calibration/camera_calibration_node: /home/berkay/catkin_ws/devel/lib/libcamera_calibration.so
 /home/berkay/catkin_ws/devel/lib/camera_calibration/camera_calibration_node: /opt/ros/kinetic/lib/libroscpp.so
@@ -164,7 +164,7 @@ camera_calibration/CMakeFiles/camera_calibration_node.dir/build: /home/berkay/ca
 
 .PHONY : camera_calibration/CMakeFiles/camera_calibration_node.dir/build
 
-camera_calibration/CMakeFiles/camera_calibration_node.dir/requires: camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o.requires
+camera_calibration/CMakeFiles/camera_calibration_node.dir/requires: camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main2.cpp.o.requires
 
 .PHONY : camera_calibration/CMakeFiles/camera_calibration_node.dir/requires
 

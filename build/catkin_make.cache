@@ -1,2 +1,2 @@
-ISLH_msgs:aruco_marker:camera2ros:camera_calibration:detect_aruco_object:detect_color_object:diff_drive_gazebo:error_comp:minik_gazebo:my_simulations:pos_calculator:realization:sensor:serial
+ISLH_msgs:aruco_marker:camera_calibration:detect_aruco_object:detect_color_object:diff_drive_gazebo:error_comp:minik_gazebo:my_simulations:pos_calculator:realization:sensor:serial
 -DCATKIN_DEVEL_PREFIX=/home/berkay/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/berkay/catkin_ws/install -G Unix Makefiles

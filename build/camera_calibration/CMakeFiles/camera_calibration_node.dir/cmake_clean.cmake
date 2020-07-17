@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/camera_calibration_node.dir/src/main.cpp.o"
+  "CMakeFiles/camera_calibration_node.dir/src/main2.cpp.o"
   "/home/berkay/catkin_ws/devel/lib/camera_calibration/camera_calibration_node.pdb"
   "/home/berkay/catkin_ws/devel/lib/camera_calibration/camera_calibration_node"
 )

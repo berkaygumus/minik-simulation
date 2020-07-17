@@ -189,7 +189,7 @@ void ArucoMarker::calculateRobotPos(){
         positions.push_back(tvec);
         headings.push_back(heading);
         robot_IDs.push_back(robot_id);
-        cout << "marker id: " << marker_IDs[i] << " pos: " << tvec << " angles: " << angles << endl;
+        //cout << "marker id: " << marker_IDs[i] << " pos: " << tvec << " angles: " << angles << endl;
         ///cout << "tvec: " << endl;
         ///cout << tvec << endl;
 
@@ -198,9 +198,9 @@ void ArucoMarker::calculateRobotPos(){
         aruco::drawAxis(imageCopy, cameraMatrix, distCoeffs, rvec, tvec, 10);//draws axes of markers detected on imageCopy
     }
 
-  //  cout << "before combined: " << endl;
+    cout << "detected robots: " << endl;
     for(int i=0; i < positions.size();i++){
-      //cout << "robot id: " << robot_IDs[i] << " pos: " << positions[i] << " heading: " <<  headings[i] << endl;
+      cout << "robot id: " << robot_IDs[i] << " pos: " << positions[i] << " heading: " <<  headings[i] << endl;
     }
 
 

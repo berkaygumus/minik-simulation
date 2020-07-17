@@ -222,32 +222,32 @@ src/camera_calibration.cpp.s:
 	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera_calibration/CMakeFiles/camera_calibration.dir/build.make camera_calibration/CMakeFiles/camera_calibration.dir/src/camera_calibration.cpp.s
 .PHONY : src/camera_calibration.cpp.s
 
-src/main.o: src/main.cpp.o
+src/main2.o: src/main2.cpp.o
 
-.PHONY : src/main.o
+.PHONY : src/main2.o
 
 # target to build an object file
-src/main.cpp.o:
-	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera_calibration/CMakeFiles/camera_calibration_node.dir/build.make camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+src/main2.cpp.o:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera_calibration/CMakeFiles/camera_calibration_node.dir/build.make camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main2.cpp.o
+.PHONY : src/main2.cpp.o
 
-src/main.i: src/main.cpp.i
+src/main2.i: src/main2.cpp.i
 
-.PHONY : src/main.i
+.PHONY : src/main2.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera_calibration/CMakeFiles/camera_calibration_node.dir/build.make camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+src/main2.cpp.i:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera_calibration/CMakeFiles/camera_calibration_node.dir/build.make camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main2.cpp.i
+.PHONY : src/main2.cpp.i
 
-src/main.s: src/main.cpp.s
+src/main2.s: src/main2.cpp.s
 
-.PHONY : src/main.s
+.PHONY : src/main2.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera_calibration/CMakeFiles/camera_calibration_node.dir/build.make camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+src/main2.cpp.s:
+	cd /home/berkay/catkin_ws/build && $(MAKE) -f camera_calibration/CMakeFiles/camera_calibration_node.dir/build.make camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main2.cpp.s
+.PHONY : src/main2.cpp.s
 
 src/settings.o: src/settings.cpp.o
 
@@ -321,9 +321,9 @@ help:
 	@echo "... src/camera_calibration.o"
 	@echo "... src/camera_calibration.i"
 	@echo "... src/camera_calibration.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... src/main2.o"
+	@echo "... src/main2.i"
+	@echo "... src/main2.s"
 	@echo "... src/settings.o"
 	@echo "... src/settings.i"
 	@echo "... src/settings.s"

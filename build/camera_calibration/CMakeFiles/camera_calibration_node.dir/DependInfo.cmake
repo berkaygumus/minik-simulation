@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/berkay/catkin_ws/src/camera_calibration/src/main.cpp" "/home/berkay/catkin_ws/build/camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main.cpp.o"
+  "/home/berkay/catkin_ws/src/camera_calibration/src/main2.cpp" "/home/berkay/catkin_ws/build/camera_calibration/CMakeFiles/camera_calibration_node.dir/src/main2.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

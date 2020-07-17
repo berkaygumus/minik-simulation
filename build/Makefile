@@ -1102,123 +1102,6 @@ ISLH_msgs_geneus/fast:
 .PHONY : ISLH_msgs_geneus/fast
 
 #=============================================================================
-# Target rules for targets named camera2ros_imread_node
-
-# Build rule for target.
-camera2ros_imread_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 camera2ros_imread_node
-.PHONY : camera2ros_imread_node
-
-# fast build rule for target.
-camera2ros_imread_node/fast:
-	$(MAKE) -f camera2ros/CMakeFiles/camera2ros_imread_node.dir/build.make camera2ros/CMakeFiles/camera2ros_imread_node.dir/build
-.PHONY : camera2ros_imread_node/fast
-
-#=============================================================================
-# Target rules for targets named detect_object_node
-
-# Build rule for target.
-detect_object_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 detect_object_node
-.PHONY : detect_object_node
-
-# fast build rule for target.
-detect_object_node/fast:
-	$(MAKE) -f camera2ros/CMakeFiles/detect_object_node.dir/build.make camera2ros/CMakeFiles/detect_object_node.dir/build
-.PHONY : detect_object_node/fast
-
-#=============================================================================
-# Target rules for targets named camera2ros_node
-
-# Build rule for target.
-camera2ros_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 camera2ros_node
-.PHONY : camera2ros_node
-
-# fast build rule for target.
-camera2ros_node/fast:
-	$(MAKE) -f camera2ros/CMakeFiles/camera2ros_node.dir/build.make camera2ros/CMakeFiles/camera2ros_node.dir/build
-.PHONY : camera2ros_node/fast
-
-#=============================================================================
-# Target rules for targets named camera2ros
-
-# Build rule for target.
-camera2ros: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 camera2ros
-.PHONY : camera2ros
-
-# fast build rule for target.
-camera2ros/fast:
-	$(MAKE) -f camera2ros/CMakeFiles/camera2ros.dir/build.make camera2ros/CMakeFiles/camera2ros.dir/build
-.PHONY : camera2ros/fast
-
-#=============================================================================
-# Target rules for targets named process_image_node
-
-# Build rule for target.
-process_image_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 process_image_node
-.PHONY : process_image_node
-
-# fast build rule for target.
-process_image_node/fast:
-	$(MAKE) -f camera2ros/CMakeFiles/process_image_node.dir/build.make camera2ros/CMakeFiles/process_image_node.dir/build
-.PHONY : process_image_node/fast
-
-#=============================================================================
-# Target rules for targets named aruco_pose_node
-
-# Build rule for target.
-aruco_pose_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 aruco_pose_node
-.PHONY : aruco_pose_node
-
-# fast build rule for target.
-aruco_pose_node/fast:
-	$(MAKE) -f camera2ros/CMakeFiles/aruco_pose_node.dir/build.make camera2ros/CMakeFiles/aruco_pose_node.dir/build
-.PHONY : aruco_pose_node/fast
-
-#=============================================================================
-# Target rules for targets named select_hsv_range_node2
-
-# Build rule for target.
-select_hsv_range_node2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 select_hsv_range_node2
-.PHONY : select_hsv_range_node2
-
-# fast build rule for target.
-select_hsv_range_node2/fast:
-	$(MAKE) -f camera2ros/CMakeFiles/select_hsv_range_node2.dir/build.make camera2ros/CMakeFiles/select_hsv_range_node2.dir/build
-.PHONY : select_hsv_range_node2/fast
-
-#=============================================================================
-# Target rules for targets named capture_image_node
-
-# Build rule for target.
-capture_image_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 capture_image_node
-.PHONY : capture_image_node
-
-# fast build rule for target.
-capture_image_node/fast:
-	$(MAKE) -f camera2ros/CMakeFiles/capture_image_node.dir/build.make camera2ros/CMakeFiles/capture_image_node.dir/build
-.PHONY : capture_image_node/fast
-
-#=============================================================================
-# Target rules for targets named calibrate_node
-
-# Build rule for target.
-calibrate_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 calibrate_node
-.PHONY : calibrate_node
-
-# fast build rule for target.
-calibrate_node/fast:
-	$(MAKE) -f camera2ros/CMakeFiles/calibrate_node.dir/build.make camera2ros/CMakeFiles/calibrate_node.dir/build
-.PHONY : calibrate_node/fast
-
-#=============================================================================
 # Target rules for targets named camera_calibration
 
 # Build rule for target.
@@ -2434,15 +2317,6 @@ help:
 	@echo "... _ISLH_msgs_generate_messages_check_deps_robotPose"
 	@echo "... ISLH_msgs_generate_messages_cpp"
 	@echo "... ISLH_msgs_geneus"
-	@echo "... camera2ros_imread_node"
-	@echo "... detect_object_node"
-	@echo "... camera2ros_node"
-	@echo "... camera2ros"
-	@echo "... process_image_node"
-	@echo "... aruco_pose_node"
-	@echo "... select_hsv_range_node2"
-	@echo "... capture_image_node"
-	@echo "... calibrate_node"
 	@echo "... camera_calibration"
 	@echo "... camera_calibration_node"
 	@echo "... aruco_marker"

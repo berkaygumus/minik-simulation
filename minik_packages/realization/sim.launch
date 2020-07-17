@@ -1,0 +1,27 @@
+<launch>
+
+	<!--
+	<node pkg="realization" type="realization_node0" name="realization_node0" />
+ -->
+	<node pkg="realization" type="realization_node0" name="realization_node0" />
+	<node pkg="realization" type="realization_node1" name="realization_node1" />
+	<node pkg="realization" type="realization_node2" name="realization_node2" />
+	<node pkg="realization" type="realization_node4" name="realization_node4" />
+  <node pkg="realization" type="realization_node3" name="realization_node3" />
+
+
+
+	<!--
+	<node pkg="realization" type="realization_node2" name="realization_node2" />
+	<node pkg="realization" type="realization_node3" name="realization_node3" />
+	<node pkg="realization" type="realization_node4" name="realization_node4" />
+	<node pkg="realization" type="realization_node5" name="realization_node5" />
+	<node pkg="realization" type="realization_node6" name="realization_node6" />
+
+	<node pkg="realization" type="realization_node4" name="realization_node4" />
+	<node pkg="realization" type="realization_node5" name="realization_node5" />
+	<node pkg="realization" type="realization_node6" name="realization_node6" />
+	-->
+
+
+</launch>
