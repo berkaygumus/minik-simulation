@@ -11,6 +11,8 @@
   <!-- include our robots -->
   <include file="$(find minik_gazebo)/launch/robots.launch"/>
 
+  <!--
   <node pkg="minik_gazebo" type="odom_publisher_node" name="odom_publisher_node" />
+  -->
 
 </launch>

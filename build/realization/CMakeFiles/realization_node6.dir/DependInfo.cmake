@@ -19,6 +19,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/berkay/catkin_ws/src/realization/./src"
+  "/opt/ros/kinetic/include/opencv-3.3.1-dev"
+  "/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv"
   "/home/berkay/catkin_ws/src/realization/include"
   "/home/berkay/catkin_ws/devel/include"
   "/opt/ros/kinetic/include"

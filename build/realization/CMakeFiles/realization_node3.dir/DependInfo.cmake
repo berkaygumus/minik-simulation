@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/berkay/catkin_ws/src/realization/src/RosThread.cpp" "/home/berkay/catkin_ws/build/realization/CMakeFiles/realization_node3.dir/src/RosThread.cpp.o"
   "/home/berkay/catkin_ws/src/realization/src/main3.cpp" "/home/berkay/catkin_ws/build/realization/CMakeFiles/realization_node3.dir/src/main3.cpp.o"
+  "/home/berkay/catkin_ws/src/realization/src/realization_complete.cpp" "/home/berkay/catkin_ws/build/realization/CMakeFiles/realization_node3.dir/src/realization_complete.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -19,6 +20,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/berkay/catkin_ws/src/realization/./src"
+  "/opt/ros/kinetic/include/opencv-3.3.1-dev"
+  "/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv"
   "/home/berkay/catkin_ws/src/realization/include"
   "/home/berkay/catkin_ws/devel/include"
   "/opt/ros/kinetic/include"

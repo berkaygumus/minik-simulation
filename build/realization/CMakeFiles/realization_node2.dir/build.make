@@ -105,16 +105,42 @@ realization/CMakeFiles/realization_node2.dir/src/RosThread.cpp.o.provides: reali
 realization/CMakeFiles/realization_node2.dir/src/RosThread.cpp.o.provides.build: realization/CMakeFiles/realization_node2.dir/src/RosThread.cpp.o
 
 
+realization/CMakeFiles/realization_node2.dir/src/realization_complete.cpp.o: realization/CMakeFiles/realization_node2.dir/flags.make
+realization/CMakeFiles/realization_node2.dir/src/realization_complete.cpp.o: /home/berkay/catkin_ws/src/realization/src/realization_complete.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object realization/CMakeFiles/realization_node2.dir/src/realization_complete.cpp.o"
+	cd /home/berkay/catkin_ws/build/realization && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/realization_node2.dir/src/realization_complete.cpp.o -c /home/berkay/catkin_ws/src/realization/src/realization_complete.cpp
+
+realization/CMakeFiles/realization_node2.dir/src/realization_complete.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/realization_node2.dir/src/realization_complete.cpp.i"
+	cd /home/berkay/catkin_ws/build/realization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/berkay/catkin_ws/src/realization/src/realization_complete.cpp > CMakeFiles/realization_node2.dir/src/realization_complete.cpp.i
+
+realization/CMakeFiles/realization_node2.dir/src/realization_complete.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/realization_node2.dir/src/realization_complete.cpp.s"
+	cd /home/berkay/catkin_ws/build/realization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/berkay/catkin_ws/src/realization/src/realization_complete.cpp -o CMakeFiles/realization_node2.dir/src/realization_complete.cpp.s
+
+realization/CMakeFiles/realization_node2.dir/src/realization_complete.cpp.o.requires:
+
+.PHONY : realization/CMakeFiles/realization_node2.dir/src/realization_complete.cpp.o.requires
+
+realization/CMakeFiles/realization_node2.dir/src/realization_complete.cpp.o.provides: realization/CMakeFiles/realization_node2.dir/src/realization_complete.cpp.o.requires
+	$(MAKE) -f realization/CMakeFiles/realization_node2.dir/build.make realization/CMakeFiles/realization_node2.dir/src/realization_complete.cpp.o.provides.build
+.PHONY : realization/CMakeFiles/realization_node2.dir/src/realization_complete.cpp.o.provides
+
+realization/CMakeFiles/realization_node2.dir/src/realization_complete.cpp.o.provides.build: realization/CMakeFiles/realization_node2.dir/src/realization_complete.cpp.o
+
+
 # Object files for target realization_node2
 realization_node2_OBJECTS = \
 "CMakeFiles/realization_node2.dir/src/main2.cpp.o" \
-"CMakeFiles/realization_node2.dir/src/RosThread.cpp.o"
+"CMakeFiles/realization_node2.dir/src/RosThread.cpp.o" \
+"CMakeFiles/realization_node2.dir/src/realization_complete.cpp.o"
 
 # External object files for target realization_node2
 realization_node2_EXTERNAL_OBJECTS =
 
 /home/berkay/catkin_ws/devel/lib/realization/realization_node2: realization/CMakeFiles/realization_node2.dir/src/main2.cpp.o
 /home/berkay/catkin_ws/devel/lib/realization/realization_node2: realization/CMakeFiles/realization_node2.dir/src/RosThread.cpp.o
+/home/berkay/catkin_ws/devel/lib/realization/realization_node2: realization/CMakeFiles/realization_node2.dir/src/realization_complete.cpp.o
 /home/berkay/catkin_ws/devel/lib/realization/realization_node2: realization/CMakeFiles/realization_node2.dir/build.make
 /home/berkay/catkin_ws/devel/lib/realization/realization_node2: /home/berkay/catkin_ws/devel/lib/librealization.so
 /home/berkay/catkin_ws/devel/lib/realization/realization_node2: /opt/ros/kinetic/lib/libroscpp.so
@@ -137,7 +163,7 @@ realization_node2_EXTERNAL_OBJECTS =
 /home/berkay/catkin_ws/devel/lib/realization/realization_node2: /usr/lib/x86_64-linux-gnu/libpthread.so
 /home/berkay/catkin_ws/devel/lib/realization/realization_node2: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
 /home/berkay/catkin_ws/devel/lib/realization/realization_node2: realization/CMakeFiles/realization_node2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/berkay/catkin_ws/devel/lib/realization/realization_node2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable /home/berkay/catkin_ws/devel/lib/realization/realization_node2"
 	cd /home/berkay/catkin_ws/build/realization && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/realization_node2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -147,6 +173,7 @@ realization/CMakeFiles/realization_node2.dir/build: /home/berkay/catkin_ws/devel
 
 realization/CMakeFiles/realization_node2.dir/requires: realization/CMakeFiles/realization_node2.dir/src/main2.cpp.o.requires
 realization/CMakeFiles/realization_node2.dir/requires: realization/CMakeFiles/realization_node2.dir/src/RosThread.cpp.o.requires
+realization/CMakeFiles/realization_node2.dir/requires: realization/CMakeFiles/realization_node2.dir/src/realization_complete.cpp.o.requires
 
 .PHONY : realization/CMakeFiles/realization_node2.dir/requires
 

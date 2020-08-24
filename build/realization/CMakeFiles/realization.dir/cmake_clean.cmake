@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/realization.dir/src/main0.cpp.o"
+  "CMakeFiles/realization.dir/src/main0partial.cpp.o"
   "/home/berkay/catkin_ws/devel/lib/librealization.pdb"
   "/home/berkay/catkin_ws/devel/lib/librealization.so"
 )

@@ -1,0 +1,10 @@
+goal_topology: [0, 1, 0, 0, 1,
+                1, 0, 1, 0, 0,
+                0, 1, 0, 1, 0,
+                0, 0, 1, 0, 1,
+                1, 0, 0, 1, 0]
+ro_ij: 0.5
+k: 6
+threshold: 3
+quite_mode: true
+print_fi_b_dot: true

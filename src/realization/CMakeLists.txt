@@ -17,12 +17,13 @@ find_package(catkin REQUIRED COMPONENTS
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
+find_package( OpenCV REQUIRED )
 
-SET(realization_HEADERS src/RosThread.h)
-SET(realization_SOURCES src/RosThread.cpp)
+SET(realization_HEADERS src/realization_partial.h src/realization_complete.h)
+SET(realization_SOURCES src/realization_partial.cpp src/realization_complete.cpp)
 
 
-include_directories(./src/)
+include_directories(./src/ ${OpenCV_INCLUDE_DIRS})
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -158,31 +159,43 @@ include_directories(include
 #   ${catkin_LIBRARIES}
 # )
 
-add_library(${PROJECT_NAME} src/main0.cpp)
+add_library(${PROJECT_NAME} src/main0partial.cpp)
 ##add_library(${PROJECT_NAME})
 
 target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES})
 
-add_executable(realization_node0 src/main0.cpp ${realization_SOURCES} ${realization_HEADERS})
-target_link_libraries(realization_node0 ${PROJECT_NAME})
+add_executable(realization_partial_node0 src/main0partial.cpp ${realization_SOURCES} ${realization_HEADERS})
+target_link_libraries(realization_partial_node0 ${PROJECT_NAME})
 
-add_executable(realization_node1 src/main1.cpp ${realization_SOURCES} ${realization_HEADERS})
-target_link_libraries(realization_node1 ${PROJECT_NAME})
+add_executable(realization_partial_node1 src/main1partial.cpp ${realization_SOURCES} ${realization_HEADERS})
+target_link_libraries(realization_partial_node1 ${PROJECT_NAME})
 
-add_executable(realization_node2 src/main2.cpp ${realization_SOURCES} ${realization_HEADERS})
-target_link_libraries(realization_node2 ${PROJECT_NAME})
+add_executable(realization_partial_node2 src/main2partial.cpp ${realization_SOURCES} ${realization_HEADERS})
+target_link_libraries(realization_partial_node2 ${PROJECT_NAME})
 
-add_executable(realization_node3 src/main3.cpp ${realization_SOURCES} ${realization_HEADERS})
-target_link_libraries(realization_node3 ${PROJECT_NAME})
+add_executable(realization_partial_node3 src/main3partial.cpp ${realization_SOURCES} ${realization_HEADERS})
+target_link_libraries(realization_partial_node3 ${PROJECT_NAME})
 
-add_executable(realization_node4 src/main4.cpp ${realization_SOURCES} ${realization_HEADERS})
-target_link_libraries(realization_node4 ${PROJECT_NAME})
+add_executable(realization_partial_node4 src/main4partial.cpp ${realization_SOURCES} ${realization_HEADERS})
+target_link_libraries(realization_partial_node4 ${PROJECT_NAME})
 
-add_executable(realization_node5 src/main5.cpp ${realization_SOURCES} ${realization_HEADERS})
-target_link_libraries(realization_node5 ${PROJECT_NAME})
 
-add_executable(realization_node6 src/main6.cpp ${realization_SOURCES} ${realization_HEADERS})
-target_link_libraries(realization_node6 ${PROJECT_NAME})
+add_executable(realization_complete_node0 src/main0complete.cpp ${realization_SOURCES} ${realization_HEADERS})
+target_link_libraries(realization_complete_node0 ${PROJECT_NAME})
+
+add_executable(realization_complete_node1 src/main1complete.cpp ${realization_SOURCES} ${realization_HEADERS})
+target_link_libraries(realization_complete_node1 ${PROJECT_NAME})
+
+add_executable(realization_complete_node2 src/main2complete.cpp ${realization_SOURCES} ${realization_HEADERS})
+target_link_libraries(realization_complete_node2 ${PROJECT_NAME})
+
+add_executable(realization_complete_node3 src/main3complete.cpp ${realization_SOURCES} ${realization_HEADERS})
+target_link_libraries(realization_complete_node3 ${PROJECT_NAME})
+
+add_executable(realization_complete_node4 src/main4complete.cpp ${realization_SOURCES} ${realization_HEADERS})
+target_link_libraries(realization_complete_node4 ${PROJECT_NAME})
+
+
 
 #############
 ## Install ##

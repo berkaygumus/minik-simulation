@@ -1,9 +1,13 @@
 /*
+ Package name: detect_aruco_object
  File name: detectArucoObject.cpp
  Author: Berkay Gumus
  E-mail: berkay.gumus@boun.edu.tr
  Date created: 20.05.2020
- Date last modified: 08.06.2020
+ Date last modified: 24.08.2020
+
+ subscribes odometry and source image messages;
+ calculates and publishes positions, headings, ID's of robots detected by each robot
  */
 
 #include "detect_aruco_object/detectArucoObject.h"
@@ -16,71 +20,76 @@ DetectArucoObject::~DetectArucoObject(){
 
 }
 
+//subscriber for image from the camera on robot 1
 void DetectArucoObject::img1callback(const sensor_msgs::Image::ConstPtr& msg){
-
-  cv_bridge::CvImagePtr cv_ptr;
+  cv_bridge::CvImagePtr cv_ptr; //cv_bridge to convert ROS image message to opencv imaga
   cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
-  //imshow("msg image1", cv_ptr->image);
-    //src_image = msg->data;
-    //cout << "callback1 " << endl;
-  //  waitKey(10);
-    src_image1 = cv_ptr->image;
-    isImg1 = 1;
+  /*
+  //prints source image
+  imshow("msg image1", cv_ptr->image);
+  waitKey(10);
+  */
+  src_image1 = cv_ptr->image;//source image
+  isImg1 = 1; //the image is taken
 }
 
 void DetectArucoObject::img2callback(const sensor_msgs::Image::ConstPtr& msg){
 
   cv_bridge::CvImagePtr cv_ptr;
   cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
-  //imshow("msg image2", cv_ptr->image);
-    //src_image = msg->data;
-    //cout << "callback2 " << endl;
-    //waitKey(10);
-    src_image2 = cv_ptr->image;
-    isImg2 = 1;
+  /*
+  //prints source image
+  imshow("msg image2", cv_ptr->image);
+  waitKey(10);
+  */
+  src_image2 = cv_ptr->image;
+  isImg2 = 1;
 }
 
 void DetectArucoObject::img3callback(const sensor_msgs::Image::ConstPtr& msg){
 
   cv_bridge::CvImagePtr cv_ptr;
   cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
-  //imshow("msg image3", cv_ptr->image);
-    //src_image = msg->data;
-    //cout << "callback3 " << endl;
-    //waitKey(10);
-    src_image3 = cv_ptr->image;
-    isImg3 = 1;
+  /*
+  //prints source image
+  imshow("msg image3", cv_ptr->image);
+  waitKey(10);
+  */
+  src_image3 = cv_ptr->image;
+  isImg3 = 1;
 }
 
 void DetectArucoObject::img4callback(const sensor_msgs::Image::ConstPtr& msg){
 
   cv_bridge::CvImagePtr cv_ptr;
   cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
-  //imshow("msg image3", cv_ptr->image);
-    //src_image = msg->data;
-    //cout << "callback3 " << endl;
-    //waitKey(10);
-    src_image4 = cv_ptr->image;
-    isImg4 = 1;
+  /*
+  //prints source image
+  imshow("msg image4", cv_ptr->image);
+  waitKey(10);
+  */
+  src_image4 = cv_ptr->image;
+  isImg4 = 1;
 }
 
 void DetectArucoObject::img5callback(const sensor_msgs::Image::ConstPtr& msg){
 
   cv_bridge::CvImagePtr cv_ptr;
   cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
-  //imshow("msg image3", cv_ptr->image);
-    //src_image = msg->data;
-    //cout << "callback3 " << endl;
-    //waitKey(10);
-    src_image5 = cv_ptr->image;
-    isImg5 = 1;
+  /*
+  //prints source image
+  imshow("msg image5", cv_ptr->image);
+  waitKey(10);
+  */
+  src_image5 = cv_ptr->image;
+  isImg5 = 1;
 }
 
+//subscriber for odometry
 void DetectArucoObject::odom1callback(const geometry_msgs::Pose::ConstPtr& msg){
    odomPos[0][0] =  msg->position.x;
    odomPos[0][1] =  msg->position.y;
    odomPos[0][2] =  msg->position.z;
-   //cout << "odom1: " << odomPos[0][0] << endl;
 
 }
 
@@ -114,16 +123,23 @@ void DetectArucoObject::odom5callback(const geometry_msgs::Pose::ConstPtr& msg){
 
 
 void DetectArucoObject::calculateRobotPos(Mat src_image, int id){
-  cout << endl << "ID " << id << "////////////////////////////" << endl;
+  /*
+  takes source image from the camera on the robot and this robot ID;
+  calculates positions and headings of robots detected by this robot with respect to initial robot frame;
+  publishes robot ID's, positions and headings of detected robots
+  */
+  cout << endl << "Observer Robot ID " << id << "////////////////////////////" << endl;
+  //camera matrix and distortion coefficients are necessary for aruco marker detection and position calculations
   Mat cameraMatrix = (Mat_<double>(3,3) << 278.0000, 0.0000 ,  320.0000 ,  0.00000 ,  278.0000 ,  240.0000 ,  0.0000 ,    0.0000 ,    1.00000);
   Mat distCoeffs = (Mat_<double>(1,5) <<  0 ,    0 ,    0 ,  0 ,  0);
 
+  //aruco marker dictionary
   cv::Ptr<cv::aruco::Dictionary> dictionary = cv::aruco::getPredefinedDictionary(cv::aruco::DICT_6X6_250);
   cv::Mat image,imageCopy;
   src_image.copyTo(image);
   image.copyTo(imageCopy);
-  vector<int> marker_IDs; //marker ID vector
-  vector<vector<Point2f> > corners; //marker corners vector
+  vector<int> marker_IDs; //marker ID vector for detected markers
+  vector<vector<Point2f> > corners; //marker corners vector for detected markers
 
   aruco::detectMarkers(image, dictionary, corners, marker_IDs);//marker detection
 
@@ -155,36 +171,38 @@ void DetectArucoObject::calculateRobotPos(Mat src_image, int id){
   The output parameters rvecs and tvecs are the rotation and translation vectors respectively, for each of the markers in markerCorners.
   */
 
-  vector<Vec3d> positions; //position vector for each marker
-  vector<float> headings; //heading of the robot (the angle around z axis) vector for each marker
-  vector<int> robot_IDs; //robotID vector
+  vector<Vec3d> positions; //position vector for each robot related to marker detected
+  vector<float> headings; //heading vector for each robot related to marker detected
+  vector<int> robot_IDs; //robotID vector for each robot related to marker detected
+
+  //for each marker detected
   for (int i = 0; i < rvecs.size(); ++i) {
       cv::Vec3d tvec = tvecs[i]; //position vector
       cv::Vec3d rvec = rvecs[i]; //rotation vector
       int aruco_id = marker_IDs[i];  //marker ID
-      //cout << "id i: " << marker_IDs[i] <<  endl;
+      //cout << "id: " << marker_IDs[i] <<  endl;
       //cout << "rvec: " << endl;
       //cout << rvec*180/M_PI << endl;
 
-
-
-
+      //converts rotation matrix to rotation vector
       Mat rotM = Mat::zeros(3,3, CV_32F);//rotation matrix
       Mat jacobian;
       Rodrigues(rvec, rotM, jacobian); //calculates rotation matrix using rotation vector
       Mat mtxR,mtxQ;
-      Vec3d angles = RQDecomp3x3(rotM, mtxR, mtxQ); //calculates angles around axes using rotation matrix(in terms of degree)
+      Vec3d angles = RQDecomp3x3(rotM, mtxR, mtxQ); //calculates rotation vector using rotation matrix(in terms of degree) and RQ decomposition
 
       double y_angle = angles[1];//related axis is y axis
       //aruco marker detection frame is different from the odometry frame
       //aruco marker pos and theta, not robot pos and theta
+      //aruco marker detection frame to odometry frame
       double arucoPosX = tvec[2];
       double arucoPosY = -tvec[0];
       double arucoPosTheta = -y_angle + 180 ;
       //cout <<"odom frame aruco: x: " << arucoPosX << " y: " << arucoPosY << " theta: " << arucoPosTheta << endl;
 
+      //calculation of robot pos using aruco pos, aruco marker is not at the center of robot, the pos must be shifted
       double l = 0.15;//distance between marker and center of robot observed
-      arucoPosTheta = arucoPosTheta * PI /180 ;
+      arucoPosTheta = arucoPosTheta * PI /180 ;//in terms of radian
       double robotPosX = arucoPosX - l * cos(arucoPosTheta) + 0.15;//the distance between stereo camera and observer robot center is 0.15
       double robotPosY = arucoPosY - l * sin(arucoPosTheta) + 0.05;//the source image comes from left cam, the shift is 0.05
       //cout <<"odom frame robot: x: " << robotPosX << " y: " << robotPosY << endl;
@@ -224,9 +242,9 @@ void DetectArucoObject::calculateRobotPos(Mat src_image, int id){
       aruco::drawAxis(imageCopy, cameraMatrix, distCoeffs, rvec, tvec, 0.3);//draws axes of markers detected on imageCopy
   }
 
-  for(int i=0; i < positions.size();i++){
-    //cout << "ID: " << robot_IDs[i] << " pos: " << positions[i] << " heading: " <<  headings[i] << endl;
-  }
+  /*for(int i=0; i < positions.size();i++){
+    cout << "ID: " << robot_IDs[i] << " pos: " << positions[i] << " heading: " <<  headings[i] << endl;
+  }*/
 
 
   //combines data belonged the same robot (if its two sides are detected)
@@ -243,18 +261,19 @@ void DetectArucoObject::calculateRobotPos(Mat src_image, int id){
           j--; //index is decreased
       }
     }
-    cout << "ID: " << robot_IDs[i] << " combined pos: " << positions[i] << " combined heading: " <<  headings[i] << endl;
+    cout << "Robot ID: " << robot_IDs[i] << " final pos: " << positions[i] << " final heading: " <<  headings[i] << endl;
   }
 
+  //shows image with markers detected
   ostringstream ss;
   ss << id +1;
   string name =  "robot" + ss.str();
-  cv::imshow(name, imageCopy); //shows image with markers detected
+  cv::imshow(name, imageCopy);
 
   //positions with respect to current robot frame are done,
   //but these posiitons must be converted wrt initial robot frame
 
-  //obser robot pos and theta
+  //observer robot pos and theta from odometry data
   double observerTh = odomPos[id][2];
   double observerX = odomPos[id][0];
   double observerY = odomPos[id][1];
@@ -270,7 +289,7 @@ void DetectArucoObject::calculateRobotPos(Mat src_image, int id){
 
   }
 
-
+  //calculations are done :D
   ////////////////////////////////////////////////////////////////////////////////
 
   ISLH_msgs::robotPositions msg; //message to publish: -> geometry_msgs::Pose2D[] positions
@@ -278,65 +297,66 @@ void DetectArucoObject::calculateRobotPos(Mat src_image, int id){
                                 //                     -> int32[] IDs
 
   vector<geometry_msgs::Pose2D > msg_positions; //pos vector
-  for(int i=0;i<robot_IDs.size();i++){
+  for(int i=0;i<robot_IDs.size();i++){//for each robot detected
     geometry_msgs::Pose2D temp_pos; //temp pos
     temp_pos.x = positions[i][0];
     temp_pos.y = positions[i][1];
     temp_pos.theta = headings[i];
 
-    msg_positions.push_back(temp_pos);
+    msg_positions.push_back(temp_pos); //msg_positions message
   }
 
-    msg.positions = msg_positions;
-    msg.directions = headings;
-    msg.IDs = robot_IDs;
+  msg.positions = msg_positions; //position vector
+  msg.directions = headings; //heading vector
+  msg.IDs = robot_IDs; //Robot ID vector
 
-
-
-    robotsPublisher[id].publish(msg);
-    cout << "published" << endl;
+  robotsPublisher[id].publish(msg);//publishes message
+  cout << "published" << endl;
 
 }
 
 
 
 void DetectArucoObject::work(){
+
   ros::Rate loop_rate(10);
 
-
+  //subscribers for images
   ros::Subscriber img1sub = n.subscribe("/robot1/multisense_sl/camera/left/image_raw",1000,&DetectArucoObject::img1callback,this);
   ros::Subscriber img2sub = n.subscribe("/robot2/multisense_sl/camera/left/image_raw",1000,&DetectArucoObject::img2callback,this);
   ros::Subscriber img3sub = n.subscribe("/robot3/multisense_sl/camera/left/image_raw",1000,&DetectArucoObject::img3callback,this);
   ros::Subscriber img4sub = n.subscribe("/robot4/multisense_sl/camera/left/image_raw",1000,&DetectArucoObject::img4callback,this);
   ros::Subscriber img5sub = n.subscribe("/robot5/multisense_sl/camera/left/image_raw",1000,&DetectArucoObject::img5callback,this);
 
+  //subscribers for odometry
   ros::Subscriber odom1sub = n.subscribe("/odom1",1000,&DetectArucoObject::odom1callback,this);
   ros::Subscriber odom2sub = n.subscribe("/odom2",1000,&DetectArucoObject::odom2callback,this);
   ros::Subscriber odom3sub = n.subscribe("/odom3",1000,&DetectArucoObject::odom3callback,this);
   ros::Subscriber odom4sub = n.subscribe("/odom4",1000,&DetectArucoObject::odom4callback,this);
   ros::Subscriber odom5sub = n.subscribe("/odom5",1000,&DetectArucoObject::odom5callback,this);
 
-  robotsPublisher[0] = n.advertise<ISLH_msgs::robotPositions>("detected_aruco1",1);
-  robotsPublisher[1] = n.advertise<ISLH_msgs::robotPositions>("detected_aruco2",1);
-  robotsPublisher[2] = n.advertise<ISLH_msgs::robotPositions>("detected_aruco3",1);
-  robotsPublisher[3] = n.advertise<ISLH_msgs::robotPositions>("detected_aruco4",1);
-  robotsPublisher[4] = n.advertise<ISLH_msgs::robotPositions>("detected_aruco5",1);
+  //publishers for positions of detected robots by each robot
+  robotsPublisher[0] = n.advertise<ISLH_msgs::robotPositions>("detected_aruco1",1);//positions of detected robots by robot 1
+  robotsPublisher[1] = n.advertise<ISLH_msgs::robotPositions>("detected_aruco2",1);//positions of detected robots by robot 2
+  robotsPublisher[2] = n.advertise<ISLH_msgs::robotPositions>("detected_aruco3",1);//positions of detected robots by robot 3
+  robotsPublisher[3] = n.advertise<ISLH_msgs::robotPositions>("detected_aruco4",1);//positions of detected robots by robot 4
+  robotsPublisher[4] = n.advertise<ISLH_msgs::robotPositions>("detected_aruco5",1);//positions of detected robots by robot 5
 
   while(ros::ok()){
-    if(isImg1){
-      calculateRobotPos(src_image1,0);
+    if(isImg1){//if source image is taken
+      calculateRobotPos(src_image1,0);//calculates and publishes positions, headings, ID's of robots detected by robot 1
     }
     if(isImg2){
-      calculateRobotPos(src_image2,1);
+      calculateRobotPos(src_image2,1);//calculates and publishes positions, headings, ID's of robots detected by robot 2
     }
     if(isImg3){
-      calculateRobotPos(src_image3,2);
+      calculateRobotPos(src_image3,2);//calculates and publishes positions, headings, ID's of robots detected by robot 3
     }
     if(isImg4){
-      calculateRobotPos(src_image4,3);
+      calculateRobotPos(src_image4,3);//calculates and publishes positions, headings, ID's of robots detected by robot 4
     }
     if(isImg5){
-      calculateRobotPos(src_image5,4);
+      calculateRobotPos(src_image5,4);//calculates and publishes positions, headings, ID's of robots detected by robot 5
     }
 
     waitKey(25);

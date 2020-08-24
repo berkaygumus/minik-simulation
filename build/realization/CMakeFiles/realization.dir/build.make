@@ -57,38 +57,38 @@ include realization/CMakeFiles/realization.dir/progress.make
 # Include the compile flags for this target's objects.
 include realization/CMakeFiles/realization.dir/flags.make
 
-realization/CMakeFiles/realization.dir/src/main0.cpp.o: realization/CMakeFiles/realization.dir/flags.make
-realization/CMakeFiles/realization.dir/src/main0.cpp.o: /home/berkay/catkin_ws/src/realization/src/main0.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object realization/CMakeFiles/realization.dir/src/main0.cpp.o"
-	cd /home/berkay/catkin_ws/build/realization && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/realization.dir/src/main0.cpp.o -c /home/berkay/catkin_ws/src/realization/src/main0.cpp
+realization/CMakeFiles/realization.dir/src/main0partial.cpp.o: realization/CMakeFiles/realization.dir/flags.make
+realization/CMakeFiles/realization.dir/src/main0partial.cpp.o: /home/berkay/catkin_ws/src/realization/src/main0partial.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/berkay/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object realization/CMakeFiles/realization.dir/src/main0partial.cpp.o"
+	cd /home/berkay/catkin_ws/build/realization && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/realization.dir/src/main0partial.cpp.o -c /home/berkay/catkin_ws/src/realization/src/main0partial.cpp
 
-realization/CMakeFiles/realization.dir/src/main0.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/realization.dir/src/main0.cpp.i"
-	cd /home/berkay/catkin_ws/build/realization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/berkay/catkin_ws/src/realization/src/main0.cpp > CMakeFiles/realization.dir/src/main0.cpp.i
+realization/CMakeFiles/realization.dir/src/main0partial.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/realization.dir/src/main0partial.cpp.i"
+	cd /home/berkay/catkin_ws/build/realization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/berkay/catkin_ws/src/realization/src/main0partial.cpp > CMakeFiles/realization.dir/src/main0partial.cpp.i
 
-realization/CMakeFiles/realization.dir/src/main0.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/realization.dir/src/main0.cpp.s"
-	cd /home/berkay/catkin_ws/build/realization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/berkay/catkin_ws/src/realization/src/main0.cpp -o CMakeFiles/realization.dir/src/main0.cpp.s
+realization/CMakeFiles/realization.dir/src/main0partial.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/realization.dir/src/main0partial.cpp.s"
+	cd /home/berkay/catkin_ws/build/realization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/berkay/catkin_ws/src/realization/src/main0partial.cpp -o CMakeFiles/realization.dir/src/main0partial.cpp.s
 
-realization/CMakeFiles/realization.dir/src/main0.cpp.o.requires:
+realization/CMakeFiles/realization.dir/src/main0partial.cpp.o.requires:
 
-.PHONY : realization/CMakeFiles/realization.dir/src/main0.cpp.o.requires
+.PHONY : realization/CMakeFiles/realization.dir/src/main0partial.cpp.o.requires
 
-realization/CMakeFiles/realization.dir/src/main0.cpp.o.provides: realization/CMakeFiles/realization.dir/src/main0.cpp.o.requires
-	$(MAKE) -f realization/CMakeFiles/realization.dir/build.make realization/CMakeFiles/realization.dir/src/main0.cpp.o.provides.build
-.PHONY : realization/CMakeFiles/realization.dir/src/main0.cpp.o.provides
+realization/CMakeFiles/realization.dir/src/main0partial.cpp.o.provides: realization/CMakeFiles/realization.dir/src/main0partial.cpp.o.requires
+	$(MAKE) -f realization/CMakeFiles/realization.dir/build.make realization/CMakeFiles/realization.dir/src/main0partial.cpp.o.provides.build
+.PHONY : realization/CMakeFiles/realization.dir/src/main0partial.cpp.o.provides
 
-realization/CMakeFiles/realization.dir/src/main0.cpp.o.provides.build: realization/CMakeFiles/realization.dir/src/main0.cpp.o
+realization/CMakeFiles/realization.dir/src/main0partial.cpp.o.provides.build: realization/CMakeFiles/realization.dir/src/main0partial.cpp.o
 
 
 # Object files for target realization
 realization_OBJECTS = \
-"CMakeFiles/realization.dir/src/main0.cpp.o"
+"CMakeFiles/realization.dir/src/main0partial.cpp.o"
 
 # External object files for target realization
 realization_EXTERNAL_OBJECTS =
 
-/home/berkay/catkin_ws/devel/lib/librealization.so: realization/CMakeFiles/realization.dir/src/main0.cpp.o
+/home/berkay/catkin_ws/devel/lib/librealization.so: realization/CMakeFiles/realization.dir/src/main0partial.cpp.o
 /home/berkay/catkin_ws/devel/lib/librealization.so: realization/CMakeFiles/realization.dir/build.make
 /home/berkay/catkin_ws/devel/lib/librealization.so: /opt/ros/kinetic/lib/libroscpp.so
 /home/berkay/catkin_ws/devel/lib/librealization.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
@@ -118,7 +118,7 @@ realization/CMakeFiles/realization.dir/build: /home/berkay/catkin_ws/devel/lib/l
 
 .PHONY : realization/CMakeFiles/realization.dir/build
 
-realization/CMakeFiles/realization.dir/requires: realization/CMakeFiles/realization.dir/src/main0.cpp.o.requires
+realization/CMakeFiles/realization.dir/requires: realization/CMakeFiles/realization.dir/src/main0partial.cpp.o.requires
 
 .PHONY : realization/CMakeFiles/realization.dir/requires
 

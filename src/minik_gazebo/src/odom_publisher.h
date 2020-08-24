@@ -1,9 +1,13 @@
 /*
- File name: odomPublisher.h
- Author: Berkay Gümüş
- E-mail: berkay.gumus@boun.edu.tr
- Date created: 28.06.2020
- Date last modified:
+Package name: minik_gazebo
+File name: odom_publisher.h
+Author: Berkay Gumus
+E-mail: berkay.gumus@boun.edu.tr
+Date created: 28.06.2020
+Date last modified: 24.08.2020
+
+Takes robot positions and headings with respect to world frame,
+converts to them with respect to initial robot frames
  */
 
 #include "ros/ros.h"
@@ -35,14 +39,13 @@ class OdomPublisher{
     ros::NodeHandle posPub;
     ros::NodeHandle poseSub;
 
-    void gazeboOdomCallback3(const nav_msgs::Odometry::ConstPtr&);
+    //subscribers for posit,ons with respect to world frame for each robot
     void gazeboOdomCallback1(const nav_msgs::Odometry::ConstPtr&);
     void gazeboOdomCallback2(const nav_msgs::Odometry::ConstPtr&);
+    void gazeboOdomCallback3(const nav_msgs::Odometry::ConstPtr&);
     void gazeboOdomCallback4(const nav_msgs::Odometry::ConstPtr&);
     void gazeboOdomCallback5(const nav_msgs::Odometry::ConstPtr&);
 
-
-    //double orientation2theta(double, double, double, double);
     vector<double> calculatePos(int);
 
     int n = N;
