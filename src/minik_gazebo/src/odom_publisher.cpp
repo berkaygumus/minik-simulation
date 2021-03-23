@@ -19,9 +19,13 @@ converts to them with respect to initial robot frames
 
 using namespace std;
 
-
+#define NOISE_RATIO 0.05
+#define STUCK 0.05
 
 OdomPublisher::OdomPublisher(){
+  for(int i=0;i<n;i++){
+    path_dist[i] = 0;
+  }
 }
 
 OdomPublisher::~OdomPublisher(){
@@ -49,7 +53,20 @@ void OdomPublisher::gazeboOdomCallback1(const nav_msgs::Odometry::ConstPtr& msg)
     initPos[0][0] = temp_x;
     initPos[0][1] = temp_y;
     initPos[0][2] = temp_theta;//orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);
+    prevPos[0][0] = temp_x;
+    prevPos[0][1] = temp_y;
+    noisyPos[0][0] = temp_x;
+    noisyPos[0][1] = temp_y;
+
   }
+  else{
+    if(prevPos[0][3]==1){
+      prevPos[0][0] = pos[0][0];
+      prevPos[0][1] = pos[0][1];
+      prevPos[0][3] = 0;
+    }
+  }
+
   //current position and heading
   pos[0][0] = temp_x;
   pos[0][1] = temp_y;
@@ -76,6 +93,17 @@ void OdomPublisher::gazeboOdomCallback2(const nav_msgs::Odometry::ConstPtr& msg)
     initPos[1][0] = temp_x;
     initPos[1][1] = temp_y;
     initPos[1][2] = temp_theta;//orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);
+    prevPos[1][0] = temp_x;
+    prevPos[1][1] = temp_y;
+    noisyPos[1][0] = temp_x;
+    noisyPos[1][1] = temp_y;
+  }
+  else{
+    if(prevPos[1][3]==1){
+      prevPos[1][0] = pos[1][0];
+      prevPos[1][1] = pos[1][1];
+      prevPos[1][3] = 0;
+    }
   }
   pos[1][0] = temp_x;
   pos[1][1] = temp_y;
@@ -101,6 +129,17 @@ void OdomPublisher::gazeboOdomCallback3(const nav_msgs::Odometry::ConstPtr& msg)
     initPos[2][0] = temp_x;
     initPos[2][1] = temp_y;
     initPos[2][2] = temp_theta;//orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);
+    prevPos[2][0] = temp_x;
+    prevPos[2][1] = temp_y;
+    noisyPos[2][0] = temp_x;
+    noisyPos[2][1] = temp_y;
+  }
+  else{
+    if(prevPos[2][3]==1){
+      prevPos[2][0] = pos[2][0];
+      prevPos[2][1] = pos[2][1];
+      prevPos[2][3] = 0;
+    }
   }
   pos[2][0] = temp_x;
   pos[2][1] = temp_y;
@@ -126,6 +165,17 @@ void OdomPublisher::gazeboOdomCallback4(const nav_msgs::Odometry::ConstPtr& msg)
     initPos[3][0] = temp_x;
     initPos[3][1] = temp_y;
     initPos[3][2] = temp_theta;//orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);
+    prevPos[3][0] = temp_x;
+    prevPos[3][1] = temp_y;
+    noisyPos[3][0] = temp_x;
+    noisyPos[3][1] = temp_y;
+  }
+  else{
+    if(prevPos[3][3]==1){
+      prevPos[3][0] = pos[3][0];
+      prevPos[3][1] = pos[3][1];
+      prevPos[3][3] = 0;
+    }
   }
   pos[3][0] = temp_x;
   pos[3][1] = temp_y;
@@ -151,6 +201,17 @@ void OdomPublisher::gazeboOdomCallback5(const nav_msgs::Odometry::ConstPtr& msg)
     initPos[4][0] = temp_x;
     initPos[4][1] = temp_y;
     initPos[4][2] = temp_theta;//orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);
+    prevPos[4][0] = temp_x;
+    prevPos[4][1] = temp_y;
+    noisyPos[4][0] = temp_x;
+    noisyPos[4][1] = temp_y;
+  }
+  else{
+    if(prevPos[4][3]==1){
+      prevPos[4][0] = pos[4][0];
+      prevPos[4][1] = pos[4][1];
+      prevPos[4][3] = 0;
+    }
   }
   pos[4][0] = temp_x;
   pos[4][1] = temp_y;
@@ -167,11 +228,43 @@ vector<double> OdomPublisher::calculatePos(int i){
   double initY = initPos[i][1];
   double initTheta = initPos[i][2];
 
-  // position wrt world frame
-  double posX0 = pos[i][0];
-  double posY0 = pos[i][1];
-  double posTheta0 = pos[i][2];
+  double dx = pos[i][0] - prevPos[i][0];
+  double dy = pos[i][1] - prevPos[i][1];
+  prevPos[i][3]=1;
+  double dist_factor = sqrt(pow(dx,2)+pow(dy,2));
+  path_dist[i] = path_dist[i] + dist_factor;
+  cout << "d" << i <<": " << dx << " " << dy << endl;
+  cout << "path dist:" <<i<< ": "  << path_dist[i] << endl;
+  /*adding noise to odometry data
+  there are two kind of noise: gaussian noise and stuck noise
+  gaussian noise: 2d gaussian distribution, mean: 0, standard deviation is NOISE_RATIO*distance(between previous pos and current pos, I assume the movement is discrete)
+  stuck noise: not random, opposite to the velocity direction: noise_x = -STUCK*distance*cos(heading)
+                                                               noise_y = -STUCK*distance*sin(heading)
+  */
+  std::normal_distribution<double> distribution(0,NOISE_RATIO);
+  double gaussian_number_x = distribution(generator);
+  double gaussian_number_y = distribution(generator);
 
+  double gaussian_noise_x = gaussian_number_x * dist_factor - dist_factor*cos(pos[i][2])*STUCK;
+  double gaussian_noise_y = gaussian_number_y * dist_factor - dist_factor*sin(pos[i][2])*STUCK;
+  cout << "noise" << i <<": " << gaussian_noise_x << " " << gaussian_noise_y << endl;
+  double tempNoisyPosX = noisyPos[i][0];
+  double tempNoisyPosY = noisyPos[i][1];
+
+  noisyPos[i][0] = noisyPos[i][0] + dx + gaussian_noise_x;
+  noisyPos[i][1] = noisyPos[i][1] + dy + gaussian_noise_y;
+
+  noisyPrevPos[i][0] = tempNoisyPosX;
+  noisyPrevPos[i][1] = tempNoisyPosY;
+
+  //cout << "real pos" << i <<": " << pos[i][0] << " " << pos[i][1] << endl;
+  //cout << "noisy pos" << i <<": " << noisyPos[i][0] << " " << noisyPos[i][1] << endl;
+  //cout << "dif pos" << i <<": " << noisyPos[i][0] - pos[i][0]  << " " << noisyPos[i][1] - pos[i][1] << endl ;
+
+////////////////////////////////
+  double posX0 = noisyPos[i][0];
+  double posY0 = noisyPos[i][1];
+  double posTheta0 = pos[i][2];
   //initialization of position wrt frame robot r
   vector<double> posR;
   posR.resize(3);
@@ -186,7 +279,7 @@ vector<double> OdomPublisher::calculatePos(int i){
   posR[0] = rot[0][0] * trans[0] + rot[0][1] * trans[1];
   posR[1] = rot[1][0] * trans[0] + rot[1][1] * trans[1];
   posR[2] = posTheta0 - initTheta;
-
+  cout << "odom pos" << i <<": " << posR[0] << " " << posR[1] << endl<< endl;
   //cout << i <<"-->" << j << " pos: " << posR[0] << " " << posR[1] << endl;
 
   //return position and heading wrt initial robot frame

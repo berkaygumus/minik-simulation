@@ -9,7 +9,7 @@
   <!-- <node name="gazebo_gui" pkg="gazebo" type="gui" respawn="false" output="screen"/> -->
 
   <!-- include our robots -->
-  <include file="$(find minik_gazebo)/launch/robots.launch"/>
+  <include file="$(find minik_gazebo)/launch/robots10.launch"/>
 
   <!--
   <node pkg="minik_gazebo" type="odom_publisher_node" name="odom_publisher_node" />

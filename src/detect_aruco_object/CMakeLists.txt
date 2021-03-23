@@ -225,3 +225,5 @@ target_link_libraries(detect_aruco_object_node ${PROJECT_NAME})
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+SET(CMAKE_CXX_FLAGS "-std=c++11 -O3")

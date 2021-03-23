@@ -37,6 +37,14 @@ RealizationPartial::RealizationPartial(int argc,char** argv,int ID){
 
     getParamHandle.getParam("/quite_mode", this->quite_mode);
 
+    getParamHandle.getParam("/print_fi_b_dot", this->print_fi_b_dot);
+
+    getParamHandle.getParam("/print_distances", this->print_distances);
+
+    getParamHandle.getParam("/print_eta", this->print_eta);
+
+    getParamHandle.getParam("/print_fi_eta_dot", this->print_fi_eta_dot);
+
     //eta initialization
     for(int i=0;i<N;i++){
       for(int j=0;j<N;j++){
@@ -62,6 +70,168 @@ double RealizationPartial::orientation2theta(double x, double y, double z, doubl
   return theta;
 }
 
+
+//subscribers for real pos from gazebo
+void RealizationPartial::gazeboOdomCallback0(const nav_msgs::Odometry::ConstPtr& msg){
+  int temp_id = 0;
+  if(temp_id == id){
+
+    real_pose_x = msg->pose.pose.position.x;
+    real_pose_y = msg->pose.pose.position.y;
+    if(!initialize_prev){
+      initialize_prev = true;
+    }
+    else{
+      real_path_distance = real_path_distance + sqrt(pow(real_prev_pose_x-real_pose_x,2)+pow(real_prev_pose_y-real_pose_y,2));//path distance update
+    }
+    real_prev_pose_x = real_pose_x;//previous position
+    real_prev_pose_y = real_pose_y;
+
+  }
+
+  for(int j=0;j<n;j++){
+    real_pose[j][temp_id][0] = msg->pose.pose.position.x;
+    real_pose[j][temp_id][1] = msg->pose.pose.position.y;
+
+  }
+
+}
+
+void RealizationPartial::gazeboOdomCallback1(const nav_msgs::Odometry::ConstPtr& msg){
+  int temp_id = 1;
+  if(temp_id == id){
+
+    real_pose_x = msg->pose.pose.position.x;
+    real_pose_y = msg->pose.pose.position.y;
+    if(!initialize_prev){
+      initialize_prev = true;
+    }
+    else{
+      real_path_distance = real_path_distance + sqrt(pow(real_prev_pose_x-real_pose_x,2)+pow(real_prev_pose_y-real_pose_y,2));//path distance update
+    }
+    real_prev_pose_x = real_pose_x;//previous position
+    real_prev_pose_y = real_pose_y;
+
+  }
+
+  for(int j=0;j<n;j++){
+    real_pose[j][temp_id][0] = msg->pose.pose.position.x;
+    real_pose[j][temp_id][1] = msg->pose.pose.position.y;
+
+  }
+}
+
+void RealizationPartial::gazeboOdomCallback2(const nav_msgs::Odometry::ConstPtr& msg){
+  int temp_id = 2;
+  if(temp_id == id){
+
+    real_pose_x = msg->pose.pose.position.x;
+    real_pose_y = msg->pose.pose.position.y;
+    if(!initialize_prev){
+      initialize_prev = true;
+    }
+    else{
+      real_path_distance = real_path_distance + sqrt(pow(real_prev_pose_x-real_pose_x,2)+pow(real_prev_pose_y-real_pose_y,2));//path distance update
+    }
+    real_prev_pose_x = real_pose_x;//previous position
+    real_prev_pose_y = real_pose_y;
+
+  }
+
+  for(int j=0;j<n;j++){
+    real_pose[j][temp_id][0] = msg->pose.pose.position.x;
+    real_pose[j][temp_id][1] = msg->pose.pose.position.y;
+
+  }
+}
+
+void RealizationPartial::gazeboOdomCallback3(const nav_msgs::Odometry::ConstPtr& msg){
+  int temp_id = 3;
+  if(temp_id == id){
+
+    real_pose_x = msg->pose.pose.position.x;
+    real_pose_y = msg->pose.pose.position.y;
+    if(!initialize_prev){
+      initialize_prev = true;
+    }
+    else{
+      real_path_distance = real_path_distance + sqrt(pow(real_prev_pose_x-real_pose_x,2)+pow(real_prev_pose_y-real_pose_y,2));//path distance update
+    }
+    real_prev_pose_x = real_pose_x;//previous position
+    real_prev_pose_y = real_pose_y;
+
+  }
+
+  for(int j=0;j<n;j++){
+    real_pose[j][temp_id][0] = msg->pose.pose.position.x;
+    real_pose[j][temp_id][1] = msg->pose.pose.position.y;
+
+  }
+}
+
+void RealizationPartial::gazeboOdomCallback4(const nav_msgs::Odometry::ConstPtr& msg){
+  int temp_id = 4;
+  if(temp_id == id){
+
+    real_pose_x = msg->pose.pose.position.x;
+    real_pose_y = msg->pose.pose.position.y;
+    if(!initialize_prev){
+      initialize_prev = true;
+    }
+    else{
+      real_path_distance = real_path_distance + sqrt(pow(real_prev_pose_x-real_pose_x,2)+pow(real_prev_pose_y-real_pose_y,2));//path distance update
+    }
+    real_prev_pose_x = real_pose_x;//previous position
+    real_prev_pose_y = real_pose_y;
+
+  }
+
+  for(int j=0;j<n;j++){
+    real_pose[j][temp_id][0] = msg->pose.pose.position.x;
+    real_pose[j][temp_id][1] = msg->pose.pose.position.y;
+
+  }
+}
+
+void RealizationPartial::realDistanceCalculator(){
+  //calculates distances among robots
+  for(int i=0;i<N; i++){
+    for(int j=0; j<N; j++){
+      if(i!=j){
+        realDistance[i][j]=sqrt(pow(real_pose[i][i][0]-real_pose[i][j][0],2)+pow(real_pose[i][i][1]-real_pose[i][j][1],2));
+        realDistance[j][i] = realDistance[i][j];
+        if(print_distances){
+          if(i<j){
+            cout << "real distance " << i << j << " " << realDistance[i][j] << endl;
+          }
+        }
+      }
+    }
+  }
+}
+
+void RealizationPartial::RealComparator(){
+  //checks goal topology is realized
+  realCompleted = 1;
+  for(int i=0;i<N;i++){
+    for(int j=0;j<N;j++){
+      if(i<j){
+          if(realDistance[i][j] < threshold){
+            realCompleted = realCompleted * A[i][j];
+          }
+          else{
+            realCompleted = realCompleted * (1-A[i][j]);
+          }
+      }
+    }
+  }
+  if(realCompleted == 1){
+    cout << "REAL MISSION COMPLETED !!! " << endl;
+  }
+  else{
+    cout << "real next time :(" << endl;
+  }
+}
 
 //subscribers for odometry from gazebo
 
@@ -203,7 +373,7 @@ void RealizationPartial::distanceCalculator(){
       if(i!=j){
         distance[i][j]=sqrt(pow(calcPos[i][i][0]-calcPos[i][j][0],2)+pow(calcPos[i][i][1]-calcPos[i][j][1],2));
         distance[j][i] = distance[i][j];
-        if(!quite_mode){
+        if(print_distances){
           if(i<j){
             cout << "distance " << i << j << " " << distance[i][j] << endl;
           }
@@ -212,6 +382,8 @@ void RealizationPartial::distanceCalculator(){
     }
   }
 }
+
+
 
 
 void RealizationPartial::gamaFinder(){
@@ -299,7 +471,7 @@ void RealizationPartial::fiBDotFinder(){
   for(int i=0; i<N; i++){
     for(int j=0; j<2;j++){
       fi_b_dot[i][j] = -(1/k)*pow(pow(gama_sum,k)/(beta_product+pow(gama_sum,k)),((1/k)-1))*(k*pow(gama_sum,k-1)*gama_b_dot[i][j]*(beta_product+pow(gama_sum,k))-pow(gama_sum,k)*(beta_b_dot[i][j]+k*pow(gama_sum,k-1)*gama_b_dot[i][j]))/pow((beta_product+pow(gama_sum,k)),2);
-      if(!quite_mode){
+      if(print_fi_b_dot){
         cout << "fi_b_dot " << i << " " << j << " " << fi_b_dot[i][j] << endl;
       }
     }
@@ -404,27 +576,16 @@ void RealizationPartial::etaFinder(){
           cout << "differential eta: " << fi_eta_dot2[i][j]*step_size << endl;
           cout << "runga eta " << i << j << " " << eta[i][j] <<endl;
           cout << "diff runge and diff " <<  step_size * fi_eta_dot2[i][j] - (  k1[i][j]/6 + k2[i][j]/3 + k3[i][j]/3 + k4[i][j]/6  ) << endl;*/
-          if(!quite_mode){
+          if(print_fi_eta_dot){
             cout << "fi eta dot " << i << j << " " << fi_eta_dot[i][j] <<endl;
+          }
+          if(print_eta){
+            cout << "eta " << i << j << " " << eta[i][j] <<endl;
           }
         }
 
     }
   }
-
-
-
-  /*for(int i=0; i<N; i++){
-    for(int j=0; j<N; j++){
-      if(i!=j){
-        if(fi_eta_dot[i][j]>-999999999){
-            eta[i][j] = eta[i][j] + fi_eta_dot[i][j]/f ;////derivative
-            cout << "eta " << i << j << " " << eta[i][j] <<endl;
-        }
-      }
-
-    }
-  }*/
 }
 
 void RealizationPartial::Comparator(){
@@ -450,6 +611,8 @@ void RealizationPartial::Comparator(){
   }
 }
 
+
+
 void RealizationPartial::finalRealization(){
   //calculates velocities and eta values
   RealizationPartial::gamaFinder(); //calculates gamma
@@ -461,6 +624,7 @@ void RealizationPartial::finalRealization(){
   RealizationPartial::etaFinder(); //calculates new eta values using runge kutta
   RealizationPartial::setVelocity();//calculates linear and angular velocities
   RealizationPartial::Comparator(); //checks goal topology is realized
+  RealizationPartial::RealComparator();
 
 }
 
@@ -562,13 +726,21 @@ void RealizationPartial::work(){
   ros::Subscriber calc_sub4 = poseSub.subscribe("/completedPos3",1000,&RealizationPartial::calcPosCallback3,this);
   ros::Subscriber calc_sub5 = poseSub.subscribe("/completedPos4",1000,&RealizationPartial::calcPosCallback4,this);
 
+  //subscriber for gazebo pose
+  ros::Subscriber calc_sub11 = poseSub.subscribe("/robot1/odom",1000,&RealizationPartial::gazeboOdomCallback0,this);
+  ros::Subscriber calc_sub21 = poseSub.subscribe("/robot2/odom",1000,&RealizationPartial::gazeboOdomCallback1,this);
+  ros::Subscriber calc_sub31 = poseSub.subscribe("/robot3/odom",1000,&RealizationPartial::gazeboOdomCallback2,this);
+  ros::Subscriber calc_sub41 = poseSub.subscribe("/robot4/odom",1000,&RealizationPartial::gazeboOdomCallback3,this);
+  ros::Subscriber calc_sub51 = poseSub.subscribe("/robot5/odom",1000,&RealizationPartial::gazeboOdomCallback4,this);
+
   ros::Rate loop_rate(f);
 
 
-  while (ros::ok()){
+  while (ros::ok() && !completed_stop){
 
     if(isSeen){//if transformations are completed and positions are calculated
       RealizationPartial::distanceCalculator();//calculates distances among robots
+      RealizationPartial::realDistanceCalculator();
       RealizationPartial::finalRealization(); //realization algortihm
 
       geometry_msgs::Twist msg;//velocity message
@@ -594,4 +766,52 @@ void RealizationPartial::work(){
     ros::spinOnce();
     loop_rate.sleep();
   }
+
+
+  ostringstream ss2;
+  ss2 << id + 1;
+  string path_distance_param_name =  "robot" + ss2.str();//param name related to path distance
+  string real_path_distance_param_name =  "real robot" + ss2.str();//param name related to path distance
+
+  string ok = "ok";
+  string fail = "fail";
+
+  string real_ok = "real ok";
+  string real_fail = "real fail";
+
+  getParamHandle.setParam(path_distance_param_name, this->path_distance);
+  //cout << path_distance_param_name << ": " << this->path_distance;
+
+  //cout << path_distance_param_name << ": " << this->path_distance;
+
+  string path_file; //path file name to save
+  getParamHandle.getParam("/yaml_file_name", path_file);
+  cout << "param name " << path_distance_param_name << endl;
+
+  FileStorage fs(path_file, FileStorage::APPEND);
+  if( fs.isOpened() ){
+    cout << "opened" <<endl;
+    //fs.write(path_distance_param_name,this->path_distance);//this->path_distance;
+    fs.write(real_path_distance_param_name,this->real_path_distance);//this->path_distance;
+    //fs.release();
+    if(completed == 1){
+      fs.write(ok,1);
+    }
+    else{
+      fs.write(fail,0);
+    }
+    if(realCompleted == 1){
+      fs.write(real_ok,1);
+    }
+    else{
+      fs.write(real_fail,0);
+    }
+
+    cout << "path distance " << id+1 <<" saved to " << path_file  << endl;
+  }
+  else{
+    cout << "yaml file is not opened" << endl;
+  }
+
+
 }

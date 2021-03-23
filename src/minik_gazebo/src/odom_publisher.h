@@ -50,9 +50,15 @@ class OdomPublisher{
 
     int n = N;
     double initPos[N][3];
-    double pos[N][3];
+    double pos[N][4];
+    double noisyPos[N][3];
+    double prevPos[N][4];
+    double noisyPrevPos[N][3];
+    double path_dist[N];
     int flagN[N];
     int flag = 0;
+
+    std::default_random_engine generator;
 
 
 };

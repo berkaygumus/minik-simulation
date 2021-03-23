@@ -93,6 +93,9 @@ class DetectArucoObject{
     bool isImg4 = 0;
     bool isImg5 = 0;
 
+    std::default_random_engine generator;
+    
+
 
 
 

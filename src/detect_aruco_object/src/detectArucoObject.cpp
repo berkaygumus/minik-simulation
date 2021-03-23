@@ -11,6 +11,9 @@
  */
 
 #include "detect_aruco_object/detectArucoObject.h"
+#include <random>
+
+#define NOISE_RATIO 0.05
 
 DetectArucoObject::DetectArucoObject(){
 
@@ -207,6 +210,23 @@ void DetectArucoObject::calculateRobotPos(Mat src_image, int id){
       double robotPosY = arucoPosY - l * sin(arucoPosTheta) + 0.05;//the source image comes from left cam, the shift is 0.05
       //cout <<"odom frame robot: x: " << robotPosX << " y: " << robotPosY << endl;
 
+      /* adding noise to aruco marker DetectionParameters: gaussian noise
+      gaussian noise: gaussian distribution, mean: 0, standard deviation is NOISE_RATIO*distance(between the robot and aruco marker)
+      */
+      std::normal_distribution<double> distribution(0,NOISE_RATIO);
+      double gaussian_number_x = distribution(generator);
+      double gaussian_number_y = distribution(generator);
+      double dist_factor = sqrt(pow(robotPosX,2)+pow(robotPosY,2));
+      double gaussian_noise_x = gaussian_number_x * dist_factor;
+      double gaussian_noise_y = gaussian_number_y * dist_factor;
+
+      cout << "real pos " << robotPosX << " " << robotPosY << endl;
+      cout << "gaussian_noise_x " << gaussian_noise_x << " gaussian_noise_y" << gaussian_noise_y << endl;
+      robotPosX = robotPosX + gaussian_noise_x;
+      robotPosY = robotPosY + gaussian_noise_y;
+
+      cout << "noisy pos " << robotPosX << " " << robotPosY << endl;
+
       /*
       aruco marker arrangement on the robot
       front: 4*(id) + 1
@@ -268,7 +288,7 @@ void DetectArucoObject::calculateRobotPos(Mat src_image, int id){
   ostringstream ss;
   ss << id +1;
   string name =  "robot" + ss.str();
-  cv::imshow(name, imageCopy);
+  //+++cv::imshow(name, imageCopy);
 
   //positions with respect to current robot frame are done,
   //but these posiitons must be converted wrt initial robot frame
@@ -358,6 +378,7 @@ void DetectArucoObject::work(){
     if(isImg5){
       calculateRobotPos(src_image5,4);//calculates and publishes positions, headings, ID's of robots detected by robot 5
     }
+
 
     waitKey(25);
     ros::spinOnce();

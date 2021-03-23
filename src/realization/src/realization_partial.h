@@ -18,6 +18,8 @@
 
 //file storage
 #include <opencv2/core.hpp>
+#include "opencv2/opencv.hpp"
+#include <opencv2/core/persistence.hpp>
 #include <iostream>
 #include <string>
 
@@ -57,13 +59,25 @@ class RealizationPartial{
     double fi_eta_dot[N][N];
     double fi_eta_dot2[N][N];
 
+    double realDistance[N][N];//distance matrix
+    double real_pose[N][N][2];//robot posiitons; calcPos[reference frame][target robot]
+    float real_pose_x,real_pose_y;
+    float real_prev_pose_x = 0;//previous position
+    float real_prev_pose_y = 0;
+    int realCompleted = 0;
+    double real_path_distance = 0;
+
     ////////////////////////////////parameters
     double threshold;
     double ro_ij;
     double k;
     double f = LOOP_RATE;
     double step_size = 1/f;
-    bool quite_mode;//not to print values
+    bool quite_mode;//not to print values,
+    bool print_fi_b_dot;//to print derivative of fi with respect to b
+    bool print_distances; //to print distances among robots
+    bool print_eta;
+    bool print_fi_eta_dot;
     ////////////////////////////////
 
 
@@ -89,6 +103,16 @@ class RealizationPartial{
     void etaFinder();
     void finalRealization();
     void Comparator();
+
+    void RealComparator();
+    void realDistanceCalculator();
+
+    //for gazebo pos
+    void gazeboOdomCallback0(const nav_msgs::Odometry::ConstPtr&);
+    void gazeboOdomCallback1(const nav_msgs::Odometry::ConstPtr&);
+    void gazeboOdomCallback2(const nav_msgs::Odometry::ConstPtr&);
+    void gazeboOdomCallback3(const nav_msgs::Odometry::ConstPtr&);
+    void gazeboOdomCallback4(const nav_msgs::Odometry::ConstPtr&);
 
     ////////////////////////partial part/////////////////////////
     //subscribers for odometry from gazebo
@@ -118,6 +142,7 @@ class RealizationPartial{
     int completed_stop = 0;
     int time_counter = 0;
     double path_distance = 0;
+    bool initialize_prev = 0;
 
     void poseOverCallback(const ISLH_msgs::robotPositions::ConstPtr&);
     //void turtleService();

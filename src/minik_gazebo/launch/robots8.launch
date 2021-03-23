@@ -1,0 +1,60 @@
+<launch>
+  <!-- No namespace here as we will share this description.
+       Access with slash at the beginning -->
+
+  <param name="minik1_description" command="$(find xacro)/xacro --inorder '$(find minik_gazebo)/urdf/minik1.xacro'" />
+  <param name="minik2_description" command="$(find xacro)/xacro --inorder '$(find minik_gazebo)/urdf/minik2.xacro'" />
+  <param name="minik3_description" command="$(find xacro)/xacro --inorder '$(find minik_gazebo)/urdf/minik3.xacro'" />
+  <param name="minik4_description" command="$(find xacro)/xacro --inorder '$(find minik_gazebo)/urdf/minik4.xacro'" />
+  <param name="minik5_description" command="$(find xacro)/xacro --inorder '$(find minik_gazebo)/urdf/minik5.xacro'" />
+  <!-- BEGIN ROBOT 1-->
+  <group ns="robot1">
+    <param name="tf_prefix" value="robot1_tf" />
+    <include file="$(find minik_gazebo)/launch/minik1.launch" >
+      <arg name="init_pose" value="-x -6 -y 0 -z 0.2" />
+      <arg name="robot_name"  value="Robot1" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 2-->
+  <group ns="robot2">
+    <param name="tf_prefix" value="robot2_tf" />
+    <include file="$(find minik_gazebo)/launch/minik2.launch" >
+      <arg name="init_pose" value="-x -0 -y 0 -z 0.2" />
+      <arg name="robot_name"  value="Robot2" />
+    </include>
+  </group>
+
+<!-- BEGIN ROBOT 3-->
+  <group ns="robot3">
+    <param name="tf_prefix" value="robot3_tf" />
+    <include file="$(find minik_gazebo)/launch/minik3.launch" >
+      <arg name="init_pose" value="-x -2 -y -2 -z 0.2" />
+      <arg name="robot_name"  value="Robot3" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 4-->
+  <group ns="robot4">
+    <param name="tf_prefix" value="robot4_tf" />
+    <include file="$(find minik_gazebo)/launch/minik4.launch" >
+      <arg name="init_pose" value="-x -4 -y 0 -z 0.2" />
+      <arg name="robot_name"  value="Robot4" />
+    </include>
+  </group>
+
+<!-- BEGIN ROBOT 5-->
+  <group ns="robot5">
+    <param name="tf_prefix" value="robot5_tf" />
+    <include file="$(find minik_gazebo)/launch/minik5.launch" >
+      <arg name="init_pose" value="-x -0 -y 2 -z 0.2" />
+      <arg name="robot_name"  value="Robot5" />
+    </include>
+  </group>
+
+
+
+
+</launch>

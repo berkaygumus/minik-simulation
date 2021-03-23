@@ -2,7 +2,7 @@
 
 	<!--
 	<node pkg="realization" type="realization_node0" name="realization_node0" />-->
-	<rosparam file="$(find realization)/config/rosparam.YAML" />
+	<rosparam file="$(find realization)/config/goal4.YAML" />
 	<!--
 	<node pkg="detect_aruco_object" type="detect_aruco_object_node" name="detect_aruco_object_node" />
 	<node pkg="pos_calculator" type="pos_calculator_node" name="pos_calculator_node" />

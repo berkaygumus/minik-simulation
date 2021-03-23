@@ -18,6 +18,8 @@
 
 //file storage
 #include <opencv2/core.hpp>
+#include "opencv2/opencv.hpp"
+#include <opencv2/core/persistence.hpp>
 #include <iostream>
 #include <string>
 
@@ -47,6 +49,7 @@ class RealizationComplete{
     float pose_x,pose_y,pose_theta;//position and heading
     float prev_pose_x = 0;//previous position
     float prev_pose_y = 0;
+    bool initialize_prev = 0;
     int id;//robot ID
     double gama_sum=0;//gamma
     double beta_product = 1;//beta
@@ -64,7 +67,10 @@ class RealizationComplete{
     double f = LOOP_RATE;
     double step_size = 1/f;
     bool quite_mode;//not to print values,
-    bool print_fi_b_dot;
+    bool print_fi_b_dot;//to print derivative of fi with respect to b
+    bool print_distances; //to print distances among robots
+    bool print_eta;
+    bool print_fi_eta_dot;
     ////////////////////////////////
 
 
@@ -128,6 +134,6 @@ class RealizationComplete{
     double linear_vel;
     double angular_vel;
 
-
+    std::default_random_engine generator;
 
 };

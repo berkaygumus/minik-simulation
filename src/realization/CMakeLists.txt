@@ -162,7 +162,7 @@ include_directories(include
 add_library(${PROJECT_NAME} src/main0partial.cpp)
 ##add_library(${PROJECT_NAME})
 
-target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
 add_executable(realization_partial_node0 src/main0partial.cpp ${realization_SOURCES} ${realization_HEADERS})
 target_link_libraries(realization_partial_node0 ${PROJECT_NAME})
@@ -251,3 +251,5 @@ target_link_libraries(realization_complete_node4 ${PROJECT_NAME})
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+SET(CMAKE_CXX_FLAGS "-std=c++11 -O3")

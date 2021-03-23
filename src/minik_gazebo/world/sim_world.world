@@ -24,11 +24,12 @@
 			<uri>model://ground_plane</uri>
 		</include>
 
+		<!--
 		<include>
 			<uri>model://postbox</uri>
 			<pose>5 0 0.1 0 0 0</pose>
 			<static> false </static>
 		</include>
-
+		-->
 	</world>
 </sdf>

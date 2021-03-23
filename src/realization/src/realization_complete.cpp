@@ -8,6 +8,7 @@
 using namespace std;
 using namespace cv;
 
+#define NOISE_RATIO 0.05
 
 RealizationComplete::RealizationComplete(int argc,char** argv,int ID){
 
@@ -39,6 +40,13 @@ RealizationComplete::RealizationComplete(int argc,char** argv,int ID){
 
     getParamHandle.getParam("/print_fi_b_dot", this->print_fi_b_dot);
 
+    getParamHandle.getParam("/print_distances", this->print_distances);
+
+    getParamHandle.getParam("/print_eta", this->print_eta);
+
+    getParamHandle.getParam("/print_fi_eta_dot", this->print_fi_eta_dot);
+
+
 
     //eta initialization
     for(int i=0;i<N;i++){
@@ -67,184 +75,65 @@ double RealizationComplete::orientation2theta(double x, double y, double z, doub
 
 
 
-////////////////////////////////TURTLESIM SIMULATOR POS CALLBACK//////////////////////////
-
-/*void RealizationComplete::poseOdomCallback0(const turtlesim::Pose::ConstPtr& msg){
-  //ROS_INFO("00: [%d] , 01: [%d]  " , A[0][0], A[0][1]);
-  int temp_id = 0;
-  b[temp_id][0] = msg->x;
-  b[temp_id][1] = msg->y;
-  if(id==temp_id){
-    pose_x = msg->x;
-    pose_y = msg->y;
-    pose_theta = msg->theta;
-  }
-
-
-  for(int j=0;j<n;j++){
-    calcPos[j][temp_id][0] = msg->x;
-    calcPos[j][temp_id][1] = msg->y;
-
-  }
-
-  flagN[temp_id]=1;
-}
-
-void RealizationComplete::poseOdomCallback1(const turtlesim::Pose::ConstPtr& msg){
-  //ROS_INFO("00: [%d] , 01: [%d]  " , A[0][0], A[0][1]);
-  int temp_id = 1;
-  b[temp_id][0] = msg->x;
-  b[temp_id][1] = msg->y;
-  if(id==temp_id){
-    pose_x = msg->x;
-    pose_y = msg->y;
-    pose_theta = msg->theta;
-  }
-
-
-  for(int j=0;j<n;j++){
-    calcPos[j][temp_id][0] = msg->x;
-    calcPos[j][temp_id][1] = msg->y;
-
-  }
-
-  flagN[temp_id]=1;
-}
-
-void RealizationComplete::poseOdomCallback2(const turtlesim::Pose::ConstPtr& msg){
-  //ROS_INFO("00: [%d] , 01: [%d]  " , A[0][0], A[0][1]);
-  int temp_id = 2;
-  b[temp_id][0] = msg->x;
-  b[temp_id][1] = msg->y;
-  if(id==temp_id){
-    pose_x = msg->x;
-    pose_y = msg->y;
-    pose_theta = msg->theta;
-  }
-
-
-  for(int j=0;j<n;j++){
-    calcPos[j][temp_id][0] = msg->x;
-    calcPos[j][temp_id][1] = msg->y;
-
-  }
-
-  flagN[temp_id]=1;
-}
-
-void RealizationComplete::poseOdomCallback3(const turtlesim::Pose::ConstPtr& msg){
-  //ROS_INFO("00: [%d] , 01: [%d]  " , A[0][0], A[0][1]);
-  int temp_id = 3;
-  b[temp_id][0] = msg->x;
-  b[temp_id][1] = msg->y;
-  if(id==temp_id){
-    pose_x = msg->x;
-    pose_y = msg->y;
-    pose_theta = msg->theta;
-  }
-
-
-  for(int j=0;j<n;j++){
-    calcPos[j][temp_id][0] = msg->x;
-    calcPos[j][temp_id][1] = msg->y;
-
-  }
-
-  flagN[temp_id]=1;
-}
-
-void RealizationComplete::poseOdomCallback4(const turtlesim::Pose::ConstPtr& msg){
-  //ROS_INFO("00: [%d] , 01: [%d]  " , A[0][0], A[0][1]);
-  int temp_id = 4;
-  b[temp_id][0] = msg->x;
-  b[temp_id][1] = msg->y;
-  if(id==temp_id){
-    pose_x = msg->x;
-    pose_y = msg->y;
-    pose_theta = msg->theta;
-  }
-
-
-  for(int j=0;j<n;j++){
-    calcPos[j][temp_id][0] = msg->x;
-    calcPos[j][temp_id][1] = msg->y;
-
-  }
-
-  flagN[temp_id]=1;
-}
-
-void RealizationComplete::poseOdomCallback5(const turtlesim::Pose::ConstPtr& msg){
-  //ROS_INFO("00: [%d] , 01: [%d]  " , A[0][0], A[0][1]);
-  int temp_id = 5;
-  b[temp_id][0] = msg->x;
-  b[temp_id][1] = msg->y;
-  if(id==temp_id){
-    pose_x = msg->x;
-    pose_y = msg->y;
-    pose_theta = msg->theta;
-  }
-
-
-  for(int j=0;j<n;j++){
-    calcPos[j][temp_id][0] = msg->x;
-    calcPos[j][temp_id][1] = msg->y;
-
-  }
-
-  flagN[temp_id]=1;
-}
-
-void RealizationComplete::poseOdomCallback6(const turtlesim::Pose::ConstPtr& msg){
-  //ROS_INFO("00: [%d] , 01: [%d]  " , A[0][0], A[0][1]);
-  int temp_id = 6;
-  b[temp_id][0] = msg->x;
-  b[temp_id][1] = msg->y;
-  if(id==temp_id){
-    pose_x = msg->x;
-    pose_y = msg->y;
-    pose_theta = msg->theta;
-  }
-
-
-  for(int j=0;j<n;j++){
-    calcPos[j][temp_id][0] = msg->x;
-    calcPos[j][temp_id][1] = msg->y;
-
-  }
-
-  flagN[temp_id]=1;
-}*/
-
-
-//////////////////////////////////////////////////////////////////////////
-
-
-//////////////////////////////////COMPLETED PART //////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////GAZEBO POS CALLBACK ///////////////////////
-
+//subscribers for odometry from gazebo
 void RealizationComplete::gazeboOdomCallback0(const nav_msgs::Odometry::ConstPtr& msg){
   int temp_id = 0;
   if(temp_id == id){
-    pose_theta = orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);///??????????
+    //converts quaternion to angles
+    pose_theta = orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);
+    pose_x = msg->pose.pose.position.x;
+    pose_y = msg->pose.pose.position.y;
+    if(!initialize_prev){
+      initialize_prev = true;
+    }
+    else{
+      path_distance = path_distance + sqrt(pow(prev_pose_x-pose_x,2)+pow(prev_pose_y-pose_y,2));//path distance update
+    }
+    prev_pose_x = pose_x;//previous position
+    prev_pose_y = pose_y;
+
   }
+
+  /*adding noise to robot posR
+    gaussian noise: gaussian distribution, mean: 0, standard deviation is NOISE_RATIO
+  */
+
+  std::normal_distribution<double> distribution(0,NOISE_RATIO);
+  double gaussian_number_x = distribution(generator);
+  double gaussian_number_y = distribution(generator);
+
   for(int j=0;j<n;j++){
-    calcPos[j][temp_id][0] = msg->pose.pose.position.x;
-    calcPos[j][temp_id][1] = msg->pose.pose.position.y;
+    calcPos[j][temp_id][0] = msg->pose.pose.position.x + gaussian_number_x;
+    calcPos[j][temp_id][1] = msg->pose.pose.position.y + gaussian_number_y;
 
   }
 
-  flagN[temp_id] = 1;
+  flagN[temp_id] = 1;//position data is taken
 }
 
 void RealizationComplete::gazeboOdomCallback1(const nav_msgs::Odometry::ConstPtr& msg){
   int temp_id = 1;
   if(temp_id == id){
-    pose_theta = orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);///??????????
+    pose_theta = orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);
+    pose_x = msg->pose.pose.position.x;
+    pose_y = msg->pose.pose.position.y;
+    if(!initialize_prev){
+      initialize_prev = true;
+    }
+    else{
+      path_distance = path_distance + sqrt(pow(prev_pose_x-pose_x,2)+pow(prev_pose_y-pose_y,2));//path distance update
+    }
+    prev_pose_x = pose_x;//previous position
+    prev_pose_y = pose_y;
   }
+
+  std::normal_distribution<double> distribution(0,NOISE_RATIO);
+  double gaussian_number_x = distribution(generator);
+  double gaussian_number_y = distribution(generator);
+
   for(int j=0;j<n;j++){
-    calcPos[j][temp_id][0] = msg->pose.pose.position.x;
-    calcPos[j][temp_id][1] = msg->pose.pose.position.y;
+    calcPos[j][temp_id][0] = msg->pose.pose.position.x + gaussian_number_x;
+    calcPos[j][temp_id][1] = msg->pose.pose.position.y + gaussian_number_y;
 
   }
   flagN[temp_id] = 1;
@@ -253,11 +142,26 @@ void RealizationComplete::gazeboOdomCallback1(const nav_msgs::Odometry::ConstPtr
 void RealizationComplete::gazeboOdomCallback2(const nav_msgs::Odometry::ConstPtr& msg){
   int temp_id = 2;
   if(temp_id == id){
-    pose_theta = orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);///??????????
+    pose_theta = orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);
+    pose_x = msg->pose.pose.position.x;
+    pose_y = msg->pose.pose.position.y;
+    if(!initialize_prev){
+      initialize_prev = true;
+    }
+    else{
+      path_distance = path_distance + sqrt(pow(prev_pose_x-pose_x,2)+pow(prev_pose_y-pose_y,2));//path distance update
+    }
+    prev_pose_x = pose_x;//previous position
+    prev_pose_y = pose_y;
   }
+
+  std::normal_distribution<double> distribution(0,NOISE_RATIO);
+  double gaussian_number_x = distribution(generator);
+  double gaussian_number_y = distribution(generator);
+
   for(int j=0;j<n;j++){
-    calcPos[j][temp_id][0] = msg->pose.pose.position.x;
-    calcPos[j][temp_id][1] = msg->pose.pose.position.y;
+    calcPos[j][temp_id][0] = msg->pose.pose.position.x + gaussian_number_x;
+    calcPos[j][temp_id][1] = msg->pose.pose.position.y + gaussian_number_y;
 
   }
   flagN[temp_id] = 1;
@@ -266,11 +170,26 @@ void RealizationComplete::gazeboOdomCallback2(const nav_msgs::Odometry::ConstPtr
 void RealizationComplete::gazeboOdomCallback3(const nav_msgs::Odometry::ConstPtr& msg){
   int temp_id = 3;
   if(temp_id == id){
-    pose_theta = orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);///??????????
+    pose_theta = orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);
+    pose_x = msg->pose.pose.position.x;
+    pose_y = msg->pose.pose.position.y;
+    if(!initialize_prev){
+      initialize_prev = true;
+    }
+    else{
+      path_distance = path_distance + sqrt(pow(prev_pose_x-pose_x,2)+pow(prev_pose_y-pose_y,2));//path distance update
+    }
+    prev_pose_x = pose_x;//previous position
+    prev_pose_y = pose_y;
   }
+
+  std::normal_distribution<double> distribution(0,NOISE_RATIO);
+  double gaussian_number_x = distribution(generator);
+  double gaussian_number_y = distribution(generator);
+
   for(int j=0;j<n;j++){
-    calcPos[j][temp_id][0] = msg->pose.pose.position.x;
-    calcPos[j][temp_id][1] = msg->pose.pose.position.y;
+    calcPos[j][temp_id][0] = msg->pose.pose.position.x + gaussian_number_x;
+    calcPos[j][temp_id][1] = msg->pose.pose.position.y + gaussian_number_y;
 
   }
   flagN[temp_id] = 1;
@@ -279,11 +198,26 @@ void RealizationComplete::gazeboOdomCallback3(const nav_msgs::Odometry::ConstPtr
 void RealizationComplete::gazeboOdomCallback4(const nav_msgs::Odometry::ConstPtr& msg){
   int temp_id = 4;
   if(temp_id == id){
-    pose_theta = orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);///??????????
+    pose_theta = orientation2theta(0, 0, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);
+    pose_x = msg->pose.pose.position.x;
+    pose_y = msg->pose.pose.position.y;
+    if(!initialize_prev){
+      initialize_prev = true;
+    }
+    else{
+      path_distance = path_distance + sqrt(pow(prev_pose_x-pose_x,2)+pow(prev_pose_y-pose_y,2));//path distance update
+    }
+    prev_pose_x = pose_x;//previous position
+    prev_pose_y = pose_y;
   }
+
+  std::normal_distribution<double> distribution(0,NOISE_RATIO);
+  double gaussian_number_x = distribution(generator);
+  double gaussian_number_y = distribution(generator);
+
   for(int j=0;j<n;j++){
-    calcPos[j][temp_id][0] = msg->pose.pose.position.x;
-    calcPos[j][temp_id][1] = msg->pose.pose.position.y;
+    calcPos[j][temp_id][0] = msg->pose.pose.position.x + gaussian_number_x;
+    calcPos[j][temp_id][1] = msg->pose.pose.position.y + gaussian_number_y;
 
   }
   flagN[temp_id] = 1;
@@ -298,7 +232,7 @@ void RealizationComplete::distanceCalculator(){
       if(i!=j){
         distance[i][j]=sqrt(pow(calcPos[i][i][0]-calcPos[i][j][0],2)+pow(calcPos[i][i][1]-calcPos[i][j][1],2));
         distance[j][i] = distance[i][j];
-        if(!quite_mode){
+        if(print_distances){
           if(i<j){
             cout << "distance " << i << j << " " << distance[i][j] << endl;
           }
@@ -499,27 +433,17 @@ void RealizationComplete::etaFinder(){
           cout << "differential eta: " << fi_eta_dot2[i][j]*step_size << endl;
           cout << "runga eta " << i << j << " " << eta[i][j] <<endl;
           cout << "diff runge and diff " <<  step_size * fi_eta_dot2[i][j] - (  k1[i][j]/6 + k2[i][j]/3 + k3[i][j]/3 + k4[i][j]/6  ) << endl;*/
-          if(!quite_mode){
+          if(print_fi_eta_dot){
             cout << "fi eta dot " << i << j << " " << fi_eta_dot[i][j] <<endl;
           }
+          if(print_eta){
+            cout << "eta " << i << j << " " << eta[i][j] <<endl;
+          }
+
         }
 
     }
   }
-
-
-
-  /*for(int i=0; i<N; i++){
-    for(int j=0; j<N; j++){
-      if(i!=j){
-        if(fi_eta_dot[i][j]>-999999999){
-            eta[i][j] = eta[i][j] + fi_eta_dot[i][j]/f ;////derivative
-            cout << "eta " << i << j << " " << eta[i][j] <<endl;
-        }
-      }
-
-    }
-  }*/
 }
 
 void RealizationComplete::Comparator(){
@@ -627,32 +551,15 @@ void RealizationComplete::work(){
 
   vel_pub = velPub.advertise<geometry_msgs::Twist>(name+"/cmd_vel", 100);//publisher for velocity at gazebo
 
-  //ros::Publisher vel_pub = velPub.advertise<geometry_msgs::Twist>("turtle1/cmd_vel", 100);
-  /*ros::Subscriber pose_odom_sub1 = poseOdomSub.subscribe("turtle1/pose",1000,&RealizationComplete::poseOdomCallback0,this);
-  ros::Subscriber pose_odom_sub2 = poseOdomSub.subscribe("turtle2/pose",1000,&RealizationComplete::poseOdomCallback1,this);
-  ros::Subscriber pose_odom_sub3 = poseOdomSub.subscribe("turtle3/pose",1000,&RealizationComplete::poseOdomCallback2,this);
-  ros::Subscriber pose_odom_sub4 = poseOdomSub.subscribe("turtle4/pose",1000,&RealizationComplete::poseOdomCallback3,this);
-  ros::Subscriber pose_odom_sub5 = poseOdomSub.subscribe("turtle5/pose",1000,&RealizationComplete::poseOdomCallback4,this);
-  ros::Subscriber pose_odom_sub6 = poseOdomSub.subscribe("turtle6/pose",1000,&RealizationComplete::poseOdomCallback5,this);
-  ros::Subscriber pose_odom_sub7 = poseOdomSub.subscribe("turtle7/pose",1000,&RealizationComplete::poseOdomCallback6,this);
-*/
-
-
- /////////////////////completed part ////////////////////////////////////////////////////////////////////////////////////
-
   ros::Subscriber calc_sub11 = poseSub.subscribe("/robot1/odom",1000,&RealizationComplete::gazeboOdomCallback0,this);
   ros::Subscriber calc_sub21 = poseSub.subscribe("/robot2/odom",1000,&RealizationComplete::gazeboOdomCallback1,this);
   ros::Subscriber calc_sub31 = poseSub.subscribe("/robot3/odom",1000,&RealizationComplete::gazeboOdomCallback2,this);
   ros::Subscriber calc_sub41 = poseSub.subscribe("/robot4/odom",1000,&RealizationComplete::gazeboOdomCallback3,this);
   ros::Subscriber calc_sub51 = poseSub.subscribe("/robot5/odom",1000,&RealizationComplete::gazeboOdomCallback4,this);
 
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-  //ros::Subscriber pose_over_sub=poseOverheadCamSub.subscribe<ISLH_msgs::robotPositions>("robots_final_positions",1,&RealizationComplete::poseOverCallback,this);
-
   ros::Rate loop_rate(f);
 
-  while (ros::ok()){
+  while (ros::ok() && !completed_stop){
 
     flag = 1;
     for(int i=0;i<N;i++){
@@ -664,12 +571,50 @@ void RealizationComplete::work(){
 
     geometry_msgs::Twist msg;//velocity message
 
-    msg.linear.x = this->linear_vel;
-    msg.angular.z = this->angular_vel;
+    if(flag){//realization starts
+      msg.linear.x = this->linear_vel;
+      msg.angular.z = this->angular_vel;
+    }
+    else{//waits until all position data is taken
+      msg.linear.x = 0;
+      msg.angular.z = 0;
+    }
+
 
     vel_pub.publish(msg); //publishes velocity message
 
     ros::spinOnce();
     loop_rate.sleep();
+  }
+
+  ostringstream ss2;
+  ss2 << id + 1;
+  string path_distance_param_name =  "robot" + ss2.str();//param name related to path distance
+  cout << path_distance_param_name << ": " << this->path_distance;
+  string ok = "ok";
+  string fail = "fail";
+
+  getParamHandle.setParam(path_distance_param_name, this->path_distance);
+
+  string path_file; //path file name to save
+  getParamHandle.getParam("/yaml_file_name", path_file);
+  cout << "param name " << path_distance_param_name << endl;
+
+  FileStorage fs(path_file, FileStorage::APPEND);
+  if( fs.isOpened() ){
+    cout << "opened" <<endl;
+    fs.write(path_distance_param_name,this->path_distance);//this->path_distance;
+    //fs.release();
+    cout << "path distance " << id+1 <<" saved to " << path_file  << endl;
+    if(completed == 1){
+      fs.write(ok,1);
+    }
+    else{
+      fs.write(fail,0);
+    }
+
+  }
+  else{
+    cout << "yaml file is not opened" << endl;
   }
 }
