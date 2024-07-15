@@ -1,8 +1,0 @@
-prefix=/home/berkay/catkin_ws/devel
-
-Name: detect_color_object
-Description: Description of detect_color_object
-Version: 0.0.0
-Cflags: -I/home/berkay/catkin_ws/src/detect_color_object/include
-Libs: -L${prefix}/lib -ldetect_color_object
-Requires: ISLH_msgs roscpp std_msgs camera_calibration

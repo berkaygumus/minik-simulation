@@ -1,8 +1,0 @@
-prefix=/home/berkay/catkin_ws/devel
-
-Name: ISLH_msgs
-Description: Description of ISLH_msgs
-Version: 0.0.0
-Cflags: -I/home/berkay/catkin_ws/devel/include
-Libs: -L${prefix}/lib 
-Requires: geometry_msgs roscpp std_msgs message_runtime

@@ -1,8 +1,0 @@
-prefix=/home/berkay/catkin_ws/devel
-
-Name: camera_calibration
-Description: Description of camera_calibration
-Version: 0.0.0
-Cflags: -I/home/berkay/catkin_ws/src/camera_calibration/include
-Libs: -L${prefix}/lib -lcamera_calibration
-Requires: roscpp std_msgs

@@ -1,8 +1,0 @@
-prefix=/home/berkay/catkin_ws/install
-
-Name: detect_aruco_object
-Description: Description of detect_aruco_object
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib -ldetect_aruco_object
-Requires: roscpp std_msgs sensor_msgs cv_bridge image_transport

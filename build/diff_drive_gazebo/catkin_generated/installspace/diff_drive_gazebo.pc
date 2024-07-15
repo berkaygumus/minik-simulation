@@ -1,8 +1,0 @@
-prefix=/home/berkay/catkin_ws/install
-
-Name: diff_drive_gazebo
-Description: Description of diff_drive_gazebo
-Version: 1.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

@@ -1,8 +1,0 @@
-prefix=/home/berkay/catkin_ws/devel
-
-Name: minik_gazebo
-Description: Description of minik_gazebo
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: urdf roscpp std_msgs genmsg nav_msgs geometry_msgs
