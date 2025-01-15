@@ -5,4 +5,6 @@ Includes:
 * Object detection and pose estimation with ArUco markers
 * Bachelor's thesis report
 
-[![Multi-Robot Realization](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DEt9crQAIICg%26t%3D24s)](https://www.youtube.com/watch?v=Et9crQAIICg&t=24s)
+
+https://github.com/user-attachments/assets/9bd9c915-805c-4a56-a58b-3c56eaead8c9
+
